@@ -1,4 +1,4 @@
-package U6E5;
+package depuracion_entornos.entornos_swing;
 
 import javax.swing.*;
 import java.awt.*;

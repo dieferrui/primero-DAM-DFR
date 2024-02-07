@@ -1,4 +1,4 @@
-package entornoJavadoc;
+package depuracion_entornos.entorno_login;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -122,7 +122,7 @@ public class EntornoLogin extends JFrame {
 
         try {
     
-            File imagen = new File("entornoJavadoc\\descarga.ico");
+            File imagen = new File("entorno_login\\descarga.ico");
             BufferedImage bufferedImage = ImageIO.read(imagen);
             return bufferedImage.getScaledInstance(16, 16, Image.SCALE_SMOOTH);
 
@@ -180,11 +180,11 @@ public class EntornoLogin extends JFrame {
 
             if (isImage1) {
 
-                newImage = ImageIO.read(new File("entornoJavadoc\\back2.png"));
+                newImage = ImageIO.read(new File("entorno_login\\back2.png"));
 
             } else {
 
-                newImage = ImageIO.read(new File("entornoJavadoc\\back.png"));
+                newImage = ImageIO.read(new File("entorno_login\\back.png"));
 
             }
 
@@ -206,7 +206,7 @@ public class EntornoLogin extends JFrame {
             
             try {
 
-                backImagen = ImageIO.read(new File("entornoJavadoc\\back.png"));
+                backImagen = ImageIO.read(new File("entorno_login\\back.png"));
 
             } catch (IOException e) {
 

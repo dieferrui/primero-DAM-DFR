@@ -1,3 +1,5 @@
+package depuracion_entornos.entornos_swing;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;

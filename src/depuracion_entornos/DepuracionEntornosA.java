@@ -1,3 +1,5 @@
+package depuracion_entornos;
+
 import java.util.Scanner;
 
 public class DepuracionEntornosA {

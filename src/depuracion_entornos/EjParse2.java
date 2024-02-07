@@ -1,3 +1,5 @@
+package depuracion_entornos;
+
 public class EjParse2 {
 
     public static void main(String[] args) {

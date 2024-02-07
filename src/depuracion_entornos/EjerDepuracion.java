@@ -1,4 +1,6 @@
 
+package depuracion_entornos;
+
 public class EjerDepuracion {
     
     public static void main(String[] args) {
