@@ -50,6 +50,7 @@ public abstract class Game {
         try {
             
             answer = MainGame.SC.nextInt();
+            MainGame.SC.nextLine();
 
         } catch (InputMismatchException e) {
 
