@@ -1,4 +1,4 @@
-package scripts_sueltos.javatime;
+package programas_java.scripts_sueltos.javatime;
 
 import java.util.Scanner;
 import java.time.LocalDate;

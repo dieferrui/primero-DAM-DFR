@@ -1,4 +1,4 @@
-package practica.demo_vehiculo;
+package programas_java.practica_demovehiculo;
 
 public class Smartphone implements IRadio, IGPS, IMusicPlayer {
 

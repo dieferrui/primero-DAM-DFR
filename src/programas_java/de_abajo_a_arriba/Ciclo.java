@@ -1,4 +1,4 @@
-package de_abajo_a_arriba;
+package programas_java.de_abajo_a_arriba;
 
 import java.util.Scanner;
 import java.util.Random;

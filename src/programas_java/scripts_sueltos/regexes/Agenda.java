@@ -1,4 +1,4 @@
-package scripts_sueltos.regexes;
+package programas_java.scripts_sueltos.regexes;
 
 import java.util.Scanner;
 import java.util.regex.Pattern;

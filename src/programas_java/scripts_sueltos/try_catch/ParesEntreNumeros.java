@@ -1,4 +1,4 @@
-package scripts_sueltos.try_catch;
+package programas_java.scripts_sueltos.try_catch;
 
 public class ParesEntreNumeros {
 

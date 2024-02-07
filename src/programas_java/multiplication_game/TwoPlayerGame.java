@@ -1,4 +1,4 @@
-package multiplication_game;
+package programas_java.multiplication_game;
 
 public class TwoPlayerGame extends Game {
 

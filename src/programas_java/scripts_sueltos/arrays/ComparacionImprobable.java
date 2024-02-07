@@ -1,4 +1,4 @@
-package scripts_sueltos.arrays;
+package programas_java.scripts_sueltos.arrays;
 
 import java.util.Arrays;
 

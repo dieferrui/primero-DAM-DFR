@@ -1,4 +1,4 @@
-package scripts_sueltos.ejercicios_simples;
+package programas_java.scripts_sueltos.ejercicios_simples;
 
 import java.util.Scanner;
 

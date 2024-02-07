@@ -1,4 +1,4 @@
-package scripts_sueltos.constantes;
+package programas_java.scripts_sueltos.constantes;
 
 public class CantidadesReceta {
 

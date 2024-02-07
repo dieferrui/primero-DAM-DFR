@@ -1,4 +1,4 @@
-package scripts_sueltos.clases;
+package programas_java.scripts_sueltos.clases;
 
 import java.util.Scanner;
 import java.util.ArrayList;

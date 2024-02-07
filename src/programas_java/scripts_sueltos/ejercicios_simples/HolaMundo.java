@@ -1,4 +1,4 @@
-package scripts_sueltos.ejercicios_simples;
+package programas_java.scripts_sueltos.ejercicios_simples;
 
 // El programa "Hola, mundo!" en Java
 public class HolaMundo {

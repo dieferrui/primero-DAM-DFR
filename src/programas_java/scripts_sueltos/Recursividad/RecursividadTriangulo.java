@@ -1,4 +1,4 @@
-package scripts_sueltos.recursividad;
+package programas_java.scripts_sueltos.recursividad;
 
 import java.util.Scanner;
 

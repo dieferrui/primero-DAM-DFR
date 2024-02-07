@@ -1,5 +1,5 @@
 
-package scripts_sueltos.randoms;
+package programas_java.scripts_sueltos.randoms;
 
 public class RandomNormal {
 

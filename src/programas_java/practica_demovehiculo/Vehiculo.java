@@ -1,4 +1,4 @@
-package practica.demo_vehiculo;
+package programas_java.practica_demovehiculo;
 
 /**
  * Superclase que engloba todos los vehículos que tienen ruedas.

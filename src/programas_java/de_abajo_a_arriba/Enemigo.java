@@ -1,4 +1,4 @@
-package de_abajo_a_arriba;
+package programas_java.de_abajo_a_arriba;
 
 public class Enemigo {
     
