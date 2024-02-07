@@ -1,3 +1,5 @@
+package scripts_sueltos.constantes;
+
 public class CantidadesReceta {
 
     public static void main(String[] args) {

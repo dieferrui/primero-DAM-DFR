@@ -1,3 +1,5 @@
+package scripts_sueltos.try_catch;
+
 public class ParesEntreNumeros {
 
     public static void main(String[] args) {

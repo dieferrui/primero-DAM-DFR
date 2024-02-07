@@ -1,3 +1,5 @@
+package scripts_sueltos.ejercicios_simples;
+
 public class SentenciaRuptura {
 
     public static void main(String[] args) {

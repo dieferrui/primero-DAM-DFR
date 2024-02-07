@@ -1,3 +1,5 @@
+package scripts_sueltos.ejercicios_simples;
+
 import java.util.Scanner;
 
 public class ParticipaMaraton {

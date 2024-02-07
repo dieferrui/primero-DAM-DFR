@@ -1,3 +1,5 @@
+package scripts_sueltos.arrays;
+
 import java.util.Scanner;
 
 public class MaximoDeArray {

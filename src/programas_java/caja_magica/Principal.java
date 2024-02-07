@@ -1,3 +1,5 @@
+package caja_magica;
+
 import java.util.Scanner;
 
 public class Principal {

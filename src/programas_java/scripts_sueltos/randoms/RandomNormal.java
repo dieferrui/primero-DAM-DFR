@@ -1,4 +1,6 @@
 
+package scripts_sueltos.randoms;
+
 public class RandomNormal {
 
     public static void main(String[] args) {

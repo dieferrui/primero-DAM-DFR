@@ -1,3 +1,5 @@
+package scripts_sueltos.recursividad;
+
 import java.util.Scanner;
 
 public class RecursividadTriangulo {

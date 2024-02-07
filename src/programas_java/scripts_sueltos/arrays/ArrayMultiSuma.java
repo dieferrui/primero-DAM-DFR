@@ -1,3 +1,5 @@
+package scripts_sueltos.arrays;
+
 public class ArrayMultiSuma {
 
     public static void main(String[] args) {

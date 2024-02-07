@@ -1,4 +1,4 @@
-package practica.demo_vehiculo;
+package practica_demovehiculo;
 
 public class Camion implements IVehiculoMotor {
 

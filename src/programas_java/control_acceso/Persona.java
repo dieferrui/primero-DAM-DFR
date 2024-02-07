@@ -1,4 +1,4 @@
-package ControlAcceso;
+package control_acceso;
 
 import java.time.format.DateTimeFormatter;
 import java.time.LocalDateTime;

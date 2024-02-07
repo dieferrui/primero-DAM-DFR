@@ -1,4 +1,4 @@
-package ControlAcceso;
+package control_acceso;
 
 import java.util.ArrayList;
 import java.util.Scanner;

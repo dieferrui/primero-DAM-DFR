@@ -1,3 +1,5 @@
+package scripts_sueltos.try_catch;
+
 public class EntradasCine {
 
     public static void main(String[] args) {

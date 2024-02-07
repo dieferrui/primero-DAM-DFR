@@ -1,4 +1,4 @@
-package practica.demo_vehiculo;
+package practica_demovehiculo;
 
 public interface IGPS {
 

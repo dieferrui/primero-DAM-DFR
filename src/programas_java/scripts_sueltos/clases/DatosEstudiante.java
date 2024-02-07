@@ -1,3 +1,5 @@
+package scripts_sueltos.clases;
+
 public class DatosEstudiante {
     
     public static void main(String[] args) {

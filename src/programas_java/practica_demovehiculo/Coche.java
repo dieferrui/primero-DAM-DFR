@@ -1,4 +1,4 @@
-package practica.demo_vehiculo;
+package practica_demovehiculo;
 
 public class Coche extends Vehiculo implements IRadio, IClimatizador, IVehiculoMotor {
 

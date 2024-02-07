@@ -1,3 +1,5 @@
+package scripts_sueltos.ejercicios_simples;
+
 // Un programa que muestra los distintos tipos de datos primitivos.
 public class TiposDatos {
     public static void main(String[] args) {

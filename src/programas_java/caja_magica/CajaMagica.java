@@ -1,13 +1,17 @@
+package caja_magica;
+
 public class CajaMagica {
     
     private Objeto objeto;
 
     public Objeto verContenido() {
+        
         if (this.objeto == null) {
             return objeto;
         } else {
             return objeto;
         }
+
     }
 
     public void ponerQuitar(Aventurero aventurero, Objeto objeto) {

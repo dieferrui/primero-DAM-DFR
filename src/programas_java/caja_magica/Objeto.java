@@ -1,3 +1,5 @@
+package caja_magica;
+
 public class Objeto {
     
     private String nombre;

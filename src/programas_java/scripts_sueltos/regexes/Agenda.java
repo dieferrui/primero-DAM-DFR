@@ -1,3 +1,5 @@
+package scripts_sueltos.regexes;
+
 import java.util.Scanner;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
