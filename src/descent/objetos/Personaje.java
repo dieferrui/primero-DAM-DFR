@@ -1,10 +1,9 @@
-package descent.objetos;
+package juego_descent.bea.objetos;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
-
-import descent.funcionalidades.*;
+import funcionalidades.MenuPrincipal;
 
 public class Personaje extends Entidad {
     

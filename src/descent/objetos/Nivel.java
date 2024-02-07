@@ -1,8 +1,10 @@
-package descent.objetos;
+package juego_descent.bea.objetos;
 
 import java.util.ArrayList;
 import java.util.Random;
-import descent.funcionalidades.*;
+import funcionalidades.MenuPrincipal;
+import funcionalidades.PromptsOpenAI;
+
 import java.io.IOException;
 
 public class Nivel {

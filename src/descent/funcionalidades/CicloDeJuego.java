@@ -1,6 +1,8 @@
-package descent.funcionalidades;
+package juego_descent.bea.funcionalidades;
 
-import descent.objetos.*;
+import objetos.Nivel;
+import objetos.Personaje;
+
 import java.util.Scanner;
 
 public class CicloDeJuego {
@@ -13,7 +15,7 @@ public class CicloDeJuego {
                         + "mazmorra legendaria, llena de riquezas. Muchos han sido los que\n"
                         + "han entrado en busca de fama y fortuna, pero ninguno ha llegado\n"
                         + "a encontrar el final. Aún así, aquí estás, delante de sus puertas.\n"
-                        + "Bienvenido a DESCENT.\n");
+                        + "Bienvenido a \n");
 
         Personaje player = Personaje.crearPersonaje();
 
@@ -32,13 +34,15 @@ public class CicloDeJuego {
 
             if (depth == 0) {
                 
-                nextLevel = Nivel.generarNivel(depth, player.getLevel());
+                //TODO nextLevel = Nivel.generarNivel(depth, player.getLevel());
+                nextLevel = Nivel.generarNivel(depth, 2);
             
             } else {
 
                 try {
 
-                    nextLevel = Nivel.generarNivel(depth, player.getLevel(), nextLevel);
+                    // TODO nextLevel = Nivel.generarNivel(depth, player.getLevel(), nextLevel);
+                    nextLevel = Nivel.generarNivel(depth, 3, nextLevel);
 
                 } catch (Exception e) {
 

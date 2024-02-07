@@ -1,4 +1,4 @@
-package descent.objetos;
+package juego_descent.bea.objetos;
 
 public class Objeto {
     
