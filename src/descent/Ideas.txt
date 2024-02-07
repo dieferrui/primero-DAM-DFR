@@ -1,0 +1,8 @@
+
+Los niveles se generan con o sin enemigos dentro, y con o sin trampas.
+
+Los enemigos se añaden a una pool de enemigos escogibles al generar el nivel que debe cambiar según la
+temática y el nivel del jugador. El inventario de los enemigos puede ser simplemente un array de strings.
+La función de recoger loot traducirá el string y generará una instancia del objeto correspondiente a recibir.
+
+Pensar en que cada x niveles tenga que haber una boss fight.

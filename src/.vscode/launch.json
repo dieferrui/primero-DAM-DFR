@@ -1,0 +1,378 @@
+{
+    // Use IntelliSense para saber los atributos posibles.
+    // Mantenga el puntero para ver las descripciones de los existentes atributos.
+    // Para más información, visite: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "EntornoLogin",
+            "request": "launch",
+            "mainClass": "entornoJavadoc.EntornoLogin",
+            "projectName": "Primero-DAM-DFR_b076e95"
+        },
+        {
+            "type": "java",
+            "name": "Ciclo",
+            "request": "launch",
+            "mainClass": "de_abajo_a_arriba.Ciclo",
+            "projectName": "Primero-DAM-DFR_74c5f2dc"
+        },
+        {
+            "type": "java",
+            "name": "MainGame",
+            "request": "launch",
+            "mainClass": "MultiplicationGame.MainGame",
+            "projectName": "Primero-DAM-DFR_74c5f2dc"
+        },
+        {
+            "type": "java",
+            "name": "EntornoLogin",
+            "request": "launch",
+            "mainClass": "entornoJavadoc.EntornoLogin",
+            "projectName": "Primero-DAM-DFR_74c5f2dc"
+        },
+        {
+            "type": "java",
+            "name": "EntornoLogin",
+            "request": "launch",
+            "mainClass": "EntornoLogin",
+            "projectName": "Primero-DAM-DFR_74c5f2dc"
+        },
+        {
+            "type": "java",
+            "name": "MainGame",
+            "request": "launch",
+            "mainClass": "MultiplicationGame.MainGame",
+            "projectName": "Primero-DAM-DFR_b076e95"
+        },
+        {
+            "type": "java",
+            "name": "MenuPrincipal",
+            "request": "launch",
+            "mainClass": "Descent.Funcionalidades.MenuPrincipal",
+            "projectName": "Primero-DAM-DFR_b076e95"
+        },
+        {
+            "type": "java",
+            "name": "MenuPrincipal",
+            "request": "launch",
+            "mainClass": "Descent.Funcionalidades.MenuPrincipal",
+            "projectName": "Primero-DAM-DFR_74c5f2dc"
+        },
+        {
+            "type": "java",
+            "name": "EjercicioEspejo",
+            "request": "launch",
+            "mainClass": "U6E5.EjercicioEspejo",
+            "projectName": "Primero-DAM-DFR_74c5f2dc"
+        },
+        {
+            "type": "java",
+            "name": "DepuracionEntornosA",
+            "request": "launch",
+            "mainClass": "DepuracionEntornosA",
+            "projectName": "Primero-DAM-DFR_74c5f2dc"
+        },
+        {
+            "type": "java",
+            "name": "EjercicioEspejo",
+            "request": "launch",
+            "mainClass": "Entornos.U6E5.EjercicioEspejo",
+            "projectName": "Primero-DAM-DFR_74c5f2dc"
+        },
+        {
+            "type": "java",
+            "name": "MenuPrincipal",
+            "request": "launch",
+            "mainClass": "Gauntlet.Funcionalidades.MenuPrincipal",
+            "projectName": "Primero-DAM-DFR_74c5f2dc"
+        },
+        {
+            "type": "java",
+            "name": "MenuPrincipal",
+            "request": "launch",
+            "mainClass": "Gauntlet.MenuPrincipal",
+            "projectName": "Primero-DAM-DFR_74c5f2dc"
+        },
+        {
+            "type": "java",
+            "name": "MainMenu",
+            "request": "launch",
+            "mainClass": "Gauntlet.MainMenu",
+            "projectName": "Primero-DAM-DFR_74c5f2dc"
+        },
+        {
+            "type": "java",
+            "name": "JavaApplication10",
+            "request": "launch",
+            "mainClass": "JavaApplication10",
+            "projectName": "Primero-DAM-DFR_3e4f60a9"
+        },
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "AdiosMundo",
+            "request": "launch",
+            "mainClass": "AdiosMundo",
+            "projectName": "Primero-DAM-DFR_3e4f60a9"
+        },
+        {
+            "type": "java",
+            "name": "BilleteTren",
+            "request": "launch",
+            "mainClass": "BilleteTren",
+            "projectName": "Primero-DAM-DFR_3e4f60a9"
+        },
+        {
+            "type": "java",
+            "name": "BuscaLetra",
+            "request": "launch",
+            "mainClass": "BuscaLetra",
+            "projectName": "Primero-DAM-DFR_3e4f60a9"
+        },
+        {
+            "type": "java",
+            "name": "CalcSimple",
+            "request": "launch",
+            "mainClass": "CalcSimple",
+            "projectName": "Primero-DAM-DFR_3e4f60a9"
+        },
+        {
+            "type": "java",
+            "name": "CalculoImc",
+            "request": "launch",
+            "mainClass": "CalculoImc",
+            "projectName": "Primero-DAM-DFR_3e4f60a9"
+        },
+        {
+            "type": "java",
+            "name": "CalculoPrimos",
+            "request": "launch",
+            "mainClass": "CalculoPrimos",
+            "projectName": "Primero-DAM-DFR_3e4f60a9"
+        },
+        {
+            "type": "java",
+            "name": "CalculoPrimosMejorado",
+            "request": "launch",
+            "mainClass": "CalculoPrimosMejorado",
+            "projectName": "Primero-DAM-DFR_3e4f60a9"
+        },
+        {
+            "type": "java",
+            "name": "CantidadesReceta",
+            "request": "launch",
+            "mainClass": "CantidadesReceta",
+            "projectName": "Primero-DAM-DFR_3e4f60a9"
+        },
+        {
+            "type": "java",
+            "name": "CelsiusKelvin",
+            "request": "launch",
+            "mainClass": "CelsiusKelvin",
+            "projectName": "Primero-DAM-DFR_3e4f60a9"
+        },
+        {
+            "type": "java",
+            "name": "CreaRombos",
+            "request": "launch",
+            "mainClass": "CreaRombos",
+            "projectName": "Primero-DAM-DFR_3e4f60a9"
+        },
+        {
+            "type": "java",
+            "name": "CuestionDeFormas",
+            "request": "launch",
+            "mainClass": "CuestionDeFormas",
+            "projectName": "Primero-DAM-DFR_3e4f60a9"
+        },
+        {
+            "type": "java",
+            "name": "DiasDelMes",
+            "request": "launch",
+            "mainClass": "DiasDelMes",
+            "projectName": "Primero-DAM-DFR_3e4f60a9"
+        },
+        {
+            "type": "java",
+            "name": "EcoEco",
+            "request": "launch",
+            "mainClass": "EcoEco",
+            "projectName": "Primero-DAM-DFR_3e4f60a9"
+        },
+        {
+            "type": "java",
+            "name": "EjParse2",
+            "request": "launch",
+            "mainClass": "EjParse2",
+            "projectName": "Primero-DAM-DFR_3e4f60a9"
+        },
+        {
+            "type": "java",
+            "name": "EjerDepuracion",
+            "request": "launch",
+            "mainClass": "EjerDepuracion",
+            "projectName": "Primero-DAM-DFR_3e4f60a9"
+        },
+        {
+            "type": "java",
+            "name": "EjerciciosParse",
+            "request": "launch",
+            "mainClass": "EjerciciosParse",
+            "projectName": "Primero-DAM-DFR_3e4f60a9"
+        },
+        {
+            "type": "java",
+            "name": "EntradasCine",
+            "request": "launch",
+            "mainClass": "EntradasCine",
+            "projectName": "Primero-DAM-DFR_3e4f60a9"
+        },
+        {
+            "type": "java",
+            "name": "Felicidades",
+            "request": "launch",
+            "mainClass": "Felicidades",
+            "projectName": "Primero-DAM-DFR_3e4f60a9"
+        },
+        {
+            "type": "java",
+            "name": "HolaMundo",
+            "request": "launch",
+            "mainClass": "HolaMundo",
+            "projectName": "Primero-DAM-DFR_3e4f60a9"
+        },
+        {
+            "type": "java",
+            "name": "HorasPagadas",
+            "request": "launch",
+            "mainClass": "HorasPagadas",
+            "projectName": "Primero-DAM-DFR_3e4f60a9"
+        },
+        {
+            "type": "java",
+            "name": "MayorDos",
+            "request": "launch",
+            "mainClass": "MayorDos",
+            "projectName": "Primero-DAM-DFR_3e4f60a9"
+        },
+        {
+            "type": "java",
+            "name": "MayorEdad",
+            "request": "launch",
+            "mainClass": "MayorEdad",
+            "projectName": "Primero-DAM-DFR_3e4f60a9"
+        },
+        {
+            "type": "java",
+            "name": "MayorMenorTres",
+            "request": "launch",
+            "mainClass": "MayorMenorTres",
+            "projectName": "Primero-DAM-DFR_3e4f60a9"
+        },
+        {
+            "type": "java",
+            "name": "OrganizarAnimales",
+            "request": "launch",
+            "mainClass": "OrganizarAnimales",
+            "projectName": "Primero-DAM-DFR_3e4f60a9"
+        },
+        {
+            "type": "java",
+            "name": "ParesEntreNumeros",
+            "request": "launch",
+            "mainClass": "ParesEntreNumeros",
+            "projectName": "Primero-DAM-DFR_3e4f60a9"
+        },
+        {
+            "type": "java",
+            "name": "ParticipaMaraton",
+            "request": "launch",
+            "mainClass": "ParticipaMaraton",
+            "projectName": "Primero-DAM-DFR_3e4f60a9"
+        },
+        {
+            "type": "java",
+            "name": "PrecioTarta",
+            "request": "launch",
+            "mainClass": "PrecioTarta",
+            "projectName": "Primero-DAM-DFR_3e4f60a9"
+        },
+        {
+            "type": "java",
+            "name": "RandomNormal",
+            "request": "launch",
+            "mainClass": "RandomNormal",
+            "projectName": "Primero-DAM-DFR_3e4f60a9"
+        },
+        {
+            "type": "java",
+            "name": "RestoCociente",
+            "request": "launch",
+            "mainClass": "RestoCociente",
+            "projectName": "Primero-DAM-DFR_3e4f60a9"
+        },
+        {
+            "type": "java",
+            "name": "SentenciaRuptura",
+            "request": "launch",
+            "mainClass": "SentenciaRuptura",
+            "projectName": "Primero-DAM-DFR_3e4f60a9"
+        },
+        {
+            "type": "java",
+            "name": "SerieNumerica",
+            "request": "launch",
+            "mainClass": "SerieNumerica",
+            "projectName": "Primero-DAM-DFR_3e4f60a9"
+        },
+        {
+            "type": "java",
+            "name": "SumaDos",
+            "request": "launch",
+            "mainClass": "SumaDos",
+            "projectName": "Primero-DAM-DFR_3e4f60a9"
+        },
+        {
+            "type": "java",
+            "name": "SumaEntero",
+            "request": "launch",
+            "mainClass": "SumaEntero",
+            "projectName": "Primero-DAM-DFR_3e4f60a9"
+        },
+        {
+            "type": "java",
+            "name": "SwitchMes",
+            "request": "launch",
+            "mainClass": "SwitchMes",
+            "projectName": "Primero-DAM-DFR_3e4f60a9"
+        },
+        {
+            "type": "java",
+            "name": "TablaMulti",
+            "request": "launch",
+            "mainClass": "TablaMulti",
+            "projectName": "Primero-DAM-DFR_3e4f60a9"
+        },
+        {
+            "type": "java",
+            "name": "TiposDatos",
+            "request": "launch",
+            "mainClass": "TiposDatos",
+            "projectName": "Primero-DAM-DFR_3e4f60a9"
+        },
+        {
+            "type": "java",
+            "name": "VolumenCono",
+            "request": "launch",
+            "mainClass": "VolumenCono",
+            "projectName": "Primero-DAM-DFR_3e4f60a9"
+        }
+    ]
+}

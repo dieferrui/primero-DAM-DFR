@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+    <html lang="es">
+        <head>
+            <title>Formulario productos</title>
+            <link rel="icon" type="" href="">
+            <link rel="stylesheet" type="" href="">
+            <meta name="keywords"
+                content="productos, formulario, segunda mano"/>
+            <meta charset="UTF-8"/>
+            <meta description="Página con formulario para vender productos"/>
+            <meta author="Diego Fernández Ruiz"/>
+            <noscript>
+                <b>Necesitas tener los scripts activados para visualizar correctamente la página.</b>
+            </noscript>
+
+        </head>
+        <body>
+            <h1>Información sobre el producto</h1>
+            <form action="form_manager.php" method="post">
+                <fieldset>
+                    <legend>Datos básicos</legend>
+                    <label for="nombre">Nombre</label><br/>
+                        <input type="text" name="nombre" value="" placeholder="Nombre del producto" /><br/>
+                    <label for="descripcion">Descripción</label><br/>
+                        <textarea name="descripcion" cols="40" rows="5">Escribe aquí la descripción del producto</textarea><br/>
+                    Foto <input type="file" name="adjunto" /><br/> 
+                </fieldset>
+                <fieldset>
+                    <legend>Datos económicos</legend>
+                    <label for="precio">Precio</label>
+                        <input type="text" name="precio" value="" size="6" maxlenght="5"/> Euros
+                    Impuestos
+                        <select id="imp" name="imp">
+                            <option value="" selected="selected">- selecciona - </option>
+                            <option value="i4">4%</option>
+                            <option value="i7">7%</option>
+                            <option value="i17">17%</option>
+                            <option value="i25">25%</option></select><br/>
+                    Promoción <br/>
+                        <input type="radio" name="promo" value="none" checked="checked" /> Ninguna <br/>
+                        <input type="radio" name="promo" value="grat" /> Transporte gratuito </br>
+                        <input type="radio" name="promo" value="desc" /> Descuento 5% </br>
+                    <input type="button" name="guardar" value="Guardar" />
+                    <input type="reset" name="limpiar" value="Borrar" />
+                </fieldset>
+            </form>
+        </body>
+    </html>

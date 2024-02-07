@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<viaje>
+    <clientes>
+        <cliente id="AGT001">
+            <nombre>Adelina</nombre>
+            <apellidos>
+                <apell1>Gutiérrez</apell1>
+                <apell2>Tarazona</apell2>
+            </apellidos>
+        </cliente>
+        <cliente id="DFR001">
+            <nombre>Diego</nombre>
+            <apellidos>
+                <apell1>Fernández</apell1>
+                <apell2>Ruiz</apell2>
+            </apellidos>
+        </cliente>
+        <cliente id="DFR002">
+            <nombre>Damian</nombre>
+            <apellidos>
+                <apell1>Ferrer</apell1>
+                <apell2>Ramos</apell2>
+            </apellidos>
+        </cliente>
+    </clientes>
+    <fecha_inicio>20/02/1986</fecha_inicio>
+    <fecha_fin>11/07/1999</fecha_fin>
+    <origen>Murcia</origen>
+    <destinos>
+        <destino ciudad="Valencia">
+            <hotel>Grandeur</hotel>
+            <noches>11</noches>
+        </destino>
+        <destino ciudad="Madrid">
+            <hotel>Schweppes</hotel>
+            <noches>33</noches>
+        </destino>
+        <destino ciudad="HELL">
+            <hotel>Sufrimiento</hotel>
+            <noches>Indefinidas</noches>
+        </destino>
+    </destinos>
+</viaje>

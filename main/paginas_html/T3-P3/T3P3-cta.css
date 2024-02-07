@@ -1,0 +1,22 @@
+#cta-button {
+    background-color: #626bb2;
+    color:white;
+    padding: 15px, 30px;
+    border-style: hidden;
+    border-radius:3px;
+    font-size: 20px;
+    font-variant: small-caps;
+}
+
+#cta-container {
+    background-image: url(fondus.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    align-content: center;
+    padding: 60px;
+}
+
+#cta-text {
+    font-size: 28px;
+    font-weight: bold;
+}

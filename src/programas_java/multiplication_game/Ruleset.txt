@@ -1,0 +1,7 @@
+Multiplication Game.
+
+El juego trata de resolver multiplicaciones. Cada turno se deberá resolver
+una multiplicación entre dos números aleatorios entre el 1 y el 50. El jugador
+que falle tendrá la opción de perder si alguno de los demás jugadores acierta 
+su respuesta durante el turno. Si todos los jugadores aciertan o fallan, se 
+pasa a la siguiente ronda.

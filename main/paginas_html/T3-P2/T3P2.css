@@ -1,0 +1,41 @@
+header {
+    background-color: #333;
+    padding: 10px;
+    opacity: 50%;
+    color:#fff
+}
+
+section {
+    margin: 20px;
+    padding: 20px;
+    border: 1px;
+    border-color: #ddd;
+    border-style: solid;
+    background-image: url(bckgr.jpg);
+    background-size: 50%;
+    background-repeat: repeat;
+}
+
+div {
+    height: 150px;
+    width: 200px;
+    margin: 10px;
+    padding: 20px;
+    border-style: solid;
+    border-color: #07c;
+    background-color: #e6f7ff;
+    color: #333;
+    border-radius: 50px;
+    
+} div:hover {
+    background-color: #cce5ff;
+    cursor: pointer;
+}
+
+footer {
+    background-color: #333;
+    color:#fff;
+    padding: 10px;
+    width: 100%;
+    opacity: 50%;
+}

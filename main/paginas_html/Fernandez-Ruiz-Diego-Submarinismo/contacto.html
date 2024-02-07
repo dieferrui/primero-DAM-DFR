@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+    <html lang="es">
+
+        <head>
+            <!-- Las etiquetas comentadas son opcionales o irrelevantes -->
+            <!--<base href="" target="_blank"/>-->
+            <title>Contacto Submarinismo</title>
+            <meta charset="UTF-8"/>
+            <meta author="Diego Fernández"/>
+            <meta description="Contacto de la página Moo submarinismo"/>
+            <meta name="keywords"
+                content="Moo, submarinismo, España, Valencia, contacto"/>
+            <!--<meta http-equiv="refresh" content=""/>-->
+            <link rel="icon" type="image/x-icon" href="vaca.ico">
+            <link rel="stylesheet" type="text/css" href="stile1.css">
+            <noscript>
+                <b>Necesitas tener los scripts activados para visualizar correctamente la página.</b>
+            </noscript>
+        </head>
+
+        <body>
+            <header>
+                <h1>Moo se vuelve submarinista<img src="MooScuba.png" alt="Moo in Scuba gear" title="Este es Moo"></h1></tr>
+                <img src="Acuario.png" alt="Peces flotando en el fondo" style="width:100%">
+                <nav>
+                    <ul>
+                        <li><h3><a href="indice.html">Índice</a></h3></li>
+                        <li><h3><a href="contacto.html">Contacto</a></h3></li>
+                    </ul>
+                </nav>
+            </header>
+
+            <section>
+                <h2>Formulario de contacto</h2>
+                <form action="formulario_contacto.php" method="post" enctype="text/plain">
+                    <fieldset>
+                        <legend>Datos de Login</legend>
+                        <label for="email">Email</label><br>
+                            <input type="text" name="email" value="" placeholder="email@empresa.com" /><br>
+                        <label for="contrasena">Contraseña</label><br/>
+                            <input type="password" name="contrasena" maxlength="4" placeholder="introduce 4 dígitos" /><br>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Información extra</legend>
+                        <label for="prof">Profundidad</label>
+                            <select id="prof" name="prof">
+                                <option value="15" selected="selected">15m</option>
+                                <option value="20">20m</option>
+                                <option value="25">25m</option>
+                            </select><br>
+                            <input type="checkbox" id="amogus" value="suscripción">
+                            <label for="amogus">Deseo suscribirme para recibir información de la página</label><br>
+                            <input type="radio" name="acepto" value="si" checked="checked" />
+                            <label for="acepto">Acepto las condiciones propuestas</label><br>
+                            <input type="radio" name="acepto" value="no" /> 
+                            <label for="acepto">NO acepto las condiciones propuestas</label><br>  
+                    </fieldset>
+                    <input type="submit" name="mandar" value="Mandar Formulario" />
+                    <input type="reset" name="borrar" value="Borrar formulario" />
+                </form>
+            </section>
+
+            <footer>
+                <h4>Suscríbete a mis redes sociales<br>
+                        <a href="https://www.instagram.com" target="_blank"><img src="instagram.png" alt="enlace a instagram" style="height:40px" style="width:40px"></a>
+                        <a href="https://www.facebook.com" target="_blank"><img src="facebook.png" alt="enlace a facebook" style="height:40px" style="width:40px"></a>
+                        <a href="https://www.twitter.com" target="_blank"><img src="twitter.png" alt="enlace a twitter" style="height:40px" style="width:40px"></a>
+                </h4>
+                <p>O manda un correo electrónico
+                    <a href="mailto:moo@MooSubmarinista.com?subject=Solicitud%20de&20información%20submarinismo" target="_top">Pincha aquí!</a>
+                </p>
+                <p>Aviso Legal&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;Política de privacidad
+                </p>
+            </footer>
+        </body>
+    </html>

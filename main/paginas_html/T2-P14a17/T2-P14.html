@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+    <html lang="es">
+        <head>
+            <title>Formulario inscripción</title>
+            <link rel="icon" type="" href="">
+            <link rel="stylesheet" type="" href="">
+            <meta name="keywords"
+                content="formulario, DNI, nombre, boletín"/>
+            <meta charset="UTF-8"/>
+            <meta description="Página ejemplo de formulario HTML"/>
+            <meta author="Diego Fernández"/>
+            <noscript>
+                <b>Necesitas tener los scripts activados para visualizar correctamente la página.</b>
+            </noscript>
+
+        </head>
+        <body>
+            <h1>Formulario Inscripción</h1>
+            <form action="form_manager.php" method="post">
+                <fieldset>
+                    <legend>Datos personales</legend>
+                    <label for="nombre">Nombre</label><br/>
+                        <input type="text" name="nombre" value="" /><br/>
+                    <label for="apellidos">Apellidos</label><br/>
+                        <input type="text" name="apellidos" value=""/><br/>
+                    <label for="dni">DNI</label><br/>
+                        <input type="text" name="dni" value="" size="10" maxlength="9" /><br/>
+                    Sexo <br/>
+                        <input type="radio" name="sexo" value="hombre" /> Hombre
+                        <input type="radio" name="sexo" value="mujer" checked="checked" /> Mujer </br>
+                    Subir foto
+                        <input type="file" name="adjunto" /><br/>
+                        <input name="boletin" type ="checkbox" value="boletin"/> Suscribirse al boletín de novedades</br>
+                </fieldset>
+                <fieldset>
+                    <legend>Datos de usuario</legend>
+                    <label for="usuario">Nombre de Usuario</label><br/>
+                        <input type="text" name="usuario" value="" size="11" maxlenght="10"/><br/>
+                    <label for="contrasena1">Contraseña</label><br/>
+                        <input type="password" name="contrasena1" value="" size="11" maxlenght="10"/><br/>
+                    <label for="contrasena2">Repita la contraseña</label><br/>
+                        <input type="password" name="contrasena2" value="" size="11" maxlenght="10"/><br/>
+                    <br/><input type="button" name="guardar" value="Guardar Cambios" />
+                    <input type="reset" name="limpiar" value="Borrar datos" />
+                </fieldset>
+            </form>
+        </body>
+    </html>

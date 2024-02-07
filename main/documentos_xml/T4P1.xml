@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<empleado>
+    <nombre_apellidos>Diego Fernández Ruiz</nombre_apellidos>
+    <anno_nacimiento>1997</anno_nacimiento>
+    <residencia>
+        <ciudad>Riba-roja de Túria</ciudad>
+        <pais>España</pais>
+    </residencia>
+    <datos_contacto>
+        <telefono>696788261</telefono>
+        <correo>diegoLOTR011@gmail.com</correo>
+        <perfil_linkedin>No aplicable</perfil_linkedin>
+    </datos_contacto>
+    <descripcion></descripcion>
+    <competencias>
+        <competencia nombre="Ingles" nivel="alto"></competencia>
+        <competencia nombre="Francés" nivel="basico"></competencia>
+    </competencias>
+    <formacion>
+        <titulacion>Técnico en Desarrollo de Videojuegos</titulacion>
+        <centro>Complejo Educativo de Cheste</centro>
+        <anno_form>2023</anno_form>
+    </formacion>
+    <experiencias>
+        <experiencia id="X001">
+            <puesto>Programador</puesto>
+            <empresa>Team Cherry</empresa>
+            <proyecto>Hollow Knight: Silksong</proyecto>
+            <anno_inicio>2025</anno_inicio>
+            <anno_fin>2068</anno_fin>
+        </experiencia>
+        <experiencia id="X002">
+            <puesto>Programador</puesto>
+            <empresa>Zenith Studios</empresa>
+            <proyecto>Tanktastic!</proyecto>
+            <anno_inicio>2068</anno_inicio>
+            <anno_fin>2086</anno_fin>
+        </experiencia>
+    </experiencias>
+</empleado>
