@@ -1,8 +1,8 @@
-package Descent.Objetos;
+package descent.objetos;
 
 import java.util.ArrayList;
 import java.util.Random;
-import Descent.Funcionalidades.*;
+import descent.funcionalidades.*;
 import java.io.IOException;
 
 public class Nivel {

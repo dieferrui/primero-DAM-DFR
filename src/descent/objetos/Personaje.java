@@ -1,11 +1,10 @@
-package Descent.Objetos;
+package descent.objetos;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
 
-import Descent.Funcionalidades.MenuPrincipal;
-import Descent.Objetos.Entidad;
+import descent.funcionalidades.*;
 
 public class Personaje extends Entidad {
     

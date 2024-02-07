@@ -1,8 +1,6 @@
-package Descent.Objetos;
+package descent.objetos;
 
 import java.util.ArrayList;
-
-import descendents.objetos.Entidad;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

@@ -1,6 +1,6 @@
-package Descent.Funcionalidades;
+package descent.funcionalidades;
 
-import Descent.Objetos.*;
+import descent.objetos.*;
 import java.util.Scanner;
 
 public class CicloDeJuego {

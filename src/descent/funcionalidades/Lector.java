@@ -1,4 +1,4 @@
-package Descent.Funcionalidades;
+package descent.funcionalidades;
 
 import java.awt.Desktop;
 import java.io.File;

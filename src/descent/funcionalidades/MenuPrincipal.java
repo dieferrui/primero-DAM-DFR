@@ -1,4 +1,4 @@
-package Descent.Funcionalidades;
+package descent.funcionalidades;
 
 import java.util.Scanner;
 import java.awt.Desktop;
@@ -6,8 +6,6 @@ import java.io.File;
 import java.io.IOException;
 import java.io.FileInputStream;
 import java.util.Properties;
-
-import Descent.Objetos.*;
 
 public class MenuPrincipal {
 
@@ -20,7 +18,7 @@ public class MenuPrincipal {
         try {
 
             Properties properties = new Properties();
-            properties.load(new FileInputStream("D:\\Primero-DAM-DFR\\Primero-DAM-DFR\\Descent\\Funcionalidades\\config.properties"));
+            properties.load(new FileInputStream("src\\descent\\funcionalidades\\config.properties"));
 
             apiKey = properties.getProperty("openai.apiKey");
 
@@ -31,8 +29,8 @@ public class MenuPrincipal {
         }
     
         String selectMenu;
-        String pathGuia = "D:\\Primero-DAM-DFR\\Primero-DAM-DFR\\Descent\\guia.txt";
-        String pathPuntos = "D:\\Primero-DAM-DFR\\Primero-DAM-DFR\\Descent\\puntuaciones.txt";
+        String pathGuia = "src\\descent\\guia.txt";
+        String pathPuntos = "src\\descent\\puntuaciones.txt";
 
         do {
             

@@ -1,4 +1,4 @@
-package Descent.Funcionalidades;
+package descent.funcionalidades;
 
 import java.util.Scanner;
 

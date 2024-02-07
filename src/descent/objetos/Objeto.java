@@ -1,4 +1,4 @@
-package Descent.Objetos;
+package descent.objetos;
 
 public class Objeto {
     
