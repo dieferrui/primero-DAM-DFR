@@ -5,14 +5,11 @@ public class ThreePlayerGame extends Game {
     public void gameCycle() {
 
         String[] playersNames = namePlayers();
-
-        String playerOneName;
-        String playerTwoName;
-        String playerThreeName;
+        Boolean[] states;
         
-        playerOneName = playersNames[0];
-        playerTwoName = playersNames[1];
-        playerThreeName = playersNames[2];
+        String playerOneName = playersNames[0];
+        String playerTwoName = playersNames[1];
+        String playerThreeName = playersNames[2];
 
         Player playerOne = new Player(playerOneName, 1);
         Player playerTwo = new Player(playerTwoName, 2);
@@ -32,35 +29,9 @@ public class ThreePlayerGame extends Game {
             System.out.println(playerTwo.getName() + RESPONDS + playerTwo.isState() + ".");
             System.out.println(playerThree.getName() + RESPONDS + playerThree.isState() + ".\n");
 
-            if (playerOne.isState() && playerTwo.isState() && !playerThree.isState()) {
-
-                System.out.println(playerThree.getName() + LOSES);
-
-            } else if (playerOne.isState() && !playerTwo.isState() && playerThree.isState()) {
-
-                System.out.println(playerTwo.getName() + LOSES);
-
-            } else if (!playerOne.isState() && playerTwo.isState() && playerThree.isState()) {
-
-                System.out.println(playerOne.getName() + LOSES);
-
-            } else if (!playerOne.isState() && !playerTwo.isState() && playerThree.isState()) {
-
-                System.out.println(playerOne.getName() + AND + playerTwo.getName() + LOSE);
-
-            } else if (!playerOne.isState() && playerTwo.isState() && !playerThree.isState()) {
-
-                System.out.println(playerOne.getName() + AND + playerThree.getName() + LOSE);
-
-            } else if (playerOne.isState() && !playerTwo.isState() && !playerThree.isState()) {
-
-                System.out.println(playerTwo.getName() + AND + playerThree.getName() + LOSE);
-                
-            }
-
-            System.out.println();
+            states = responseChecker(playerOne, playerTwo, playerThree);
             
-        } while (playerOne.isState() == playerTwo.isState() && playerOne.isState() == playerThree.isState());
+        } while (states[0].equals(states[1]) && states[0].equals(states[2]));
         
     }
 
@@ -86,5 +57,54 @@ public class ThreePlayerGame extends Game {
         String[] players = {player1, player2, player3};
         return players;
 
+    }
+
+    public Boolean[] responseChecker(Player playerOne, Player playerTwo, Player playerThree) {
+
+        if (playerOne.isState() && playerTwo.isState()) {
+
+            if (!playerThree.isState()) {
+
+                System.out.println(playerThree.getName() + LOSES);
+
+            }
+
+        } else if (playerOne.isState() && !playerTwo.isState()) {
+
+            if (playerThree.isState()) {
+
+                System.out.println(playerTwo.getName() + LOSES);
+
+            } else {
+
+                System.out.println(playerTwo.getName() + AND + playerThree.getName() + LOSE);
+
+            }
+            
+        } else if (!playerOne.isState() && playerTwo.isState()) {
+
+            if (playerThree.isState()) {
+                
+                System.out.println(playerOne.getName() + LOSES);
+
+            } else {
+
+                System.out.println(playerOne.getName() + AND + playerThree.getName() + LOSE);
+
+            }
+
+        } else if (!playerOne.isState() && !playerTwo.isState()) {
+
+            if (playerThree.isState()) {
+
+                System.out.println(playerOne.getName() + AND + playerTwo.getName() + LOSE);
+
+            }
+        }
+
+        System.out.println();
+
+        Boolean[] states = {playerOne.isState(), playerTwo.isState(), playerThree.isState()};
+        return states;
     }
 }
