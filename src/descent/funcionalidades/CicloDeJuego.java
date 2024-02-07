@@ -1,7 +1,6 @@
-package juego_descent.bea.funcionalidades;
+package descent.funcionalidades;
 
-import objetos.Nivel;
-import objetos.Personaje;
+import descent.objetos.*;
 
 import java.util.Scanner;
 

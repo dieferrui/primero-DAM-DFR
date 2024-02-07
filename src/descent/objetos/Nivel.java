@@ -1,9 +1,8 @@
-package juego_descent.bea.objetos;
+package descent.objetos;
 
 import java.util.ArrayList;
 import java.util.Random;
-import funcionalidades.MenuPrincipal;
-import funcionalidades.PromptsOpenAI;
+import descent.funcionalidades.*;
 
 import java.io.IOException;
 

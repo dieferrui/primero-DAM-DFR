@@ -1,4 +1,4 @@
-package juego_descent.bea.objetos;
+package descent.objetos;
 
 import java.util.ArrayList;
 

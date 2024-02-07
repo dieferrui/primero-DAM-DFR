@@ -1,4 +1,4 @@
-package juego_descent.bea.funcionalidades;
+package descent.funcionalidades;
 
 import java.net.HttpURLConnection;
 import java.net.URI;
@@ -17,7 +17,6 @@ public class PromptsOpenAI {
 
     public static String solicitarPromptDiego(String apiKey, String prompt) throws Exception {
 
-        //String endpoint = "https://api.openai.com/v1/engines/davinci-codex/completions";
         String endpoint = "https://api.openai.com/v1/completions";
         URL url = new URL(endpoint);
         HttpURLConnection connection = null;

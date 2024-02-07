@@ -1,4 +1,4 @@
-package juego_descent.bea.funcionalidades;
+package descent.funcionalidades;
 
 import java.util.Scanner;
 import java.awt.Desktop;
@@ -18,12 +18,9 @@ public class MenuPrincipal {
         try {
 
             Properties properties = new Properties();
-            properties.load(new FileInputStream("C:\\Users\\labea\\OneDrive - Conselleria " +
-                    "d'Educació\\Modulo_PROGRAMACION\\GenericRepos\\PROGRAMACION_2324_DAM\\src\\descent" +
-                    "\\funcionalidades\\config.properties"));
+            properties.load(new FileInputStream("primero-DAM-DFR\\src\\descent\\funcionalidades\\config.properties"));
 
-            //apiKey = properties.getProperty("openai.apiKey");
-            apiKey = "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";
+            apiKey = properties.getProperty("openai.apiKey");
 
         } catch (Exception e) {
 
@@ -32,8 +29,8 @@ public class MenuPrincipal {
         }
     
         String selectMenu;
-        String pathGuia = "D:\\Primero-DAM-DFR\\Primero-DAM-DFR\\Descent\\guia.txt";
-        String pathPuntos = "D:\\Primero-DAM-DFR\\Primero-DAM-DFR\\Descent\\puntuaciones.txt";
+        String pathGuia = "primero-DAM-DFR\\src\\descent\\guia.txt";
+        String pathPuntos = "primero-DAM-DFR\\src\\descent\\puntuaciones.txt";
 
         do {
             
