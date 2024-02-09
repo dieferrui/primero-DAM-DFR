@@ -4,14 +4,10 @@ import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.HashSet;
 
 public class MultiplicationGame {
 
     private Random random = new Random();
-    private static final String LOSES = " loses.";
-    private static final String LOSE = " lose.";
-    private static final String AND = " and ";
     private static final String RESPONDS = "'s response was ";
 
     public MultiplicationGame() {
@@ -35,6 +31,8 @@ public class MultiplicationGame {
 
         do {
 
+            states.clear();
+
             for (Player player : players) {
 
                 playerTurn(player);
@@ -46,7 +44,7 @@ public class MultiplicationGame {
             
         } while (deepEquals(trueArray, states) || deepEquals(falseArray, states));
         
-        compareResults(players, states);
+        compareResults(players);
         System.out.println();
     }
 
@@ -85,14 +83,12 @@ public class MultiplicationGame {
 
                 player.setState(true);
                 System.out.println("Correct\n");
-                MainGame.SC.reset();
         
             } else {
         
                 player.setState(false);
                 System.out.println("Wrong, answer was " + values[2] + ".\n");
-                MainGame.SC.reset();
-        
+
             }
         }
     }
@@ -164,26 +160,20 @@ public class MultiplicationGame {
 
     }
 
-    public void compareResults(Player[] players, List<Boolean> states) {
+    public void compareResults(Player[] players) {
 
-        HashSet<Object> hashStates = new HashSet<>(states);
+        for (Player player : players) {
 
-        if (hashStates.size() > 1) {
-
-            for (Player player : players) {
-
-                if (!player.isState()) {
+            if (!player.isState()) {
     
-                    System.out.println(player.getName() + " has lost the game.");
+                System.out.println(player.getName() + " has lost the game.");
     
-                } else {
+            } else {
 
-                    System.out.println(player.getName() + " has won the game.");
+                System.out.println(player.getName() + " has won the game.");
 
-                }
             }
         }
-
     }
 
 }
