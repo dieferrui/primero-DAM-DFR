@@ -9,7 +9,7 @@ public class MainGame {
     public static void main(String[] args) {
 
         String select;
-        String rulesetPath = "MultiplicationGame\\Ruleset.txt";
+        String rulesetPath = "multiplication_game\\Ruleset.txt";
         MultiplicationGame game = new MultiplicationGame();
 
         do {
