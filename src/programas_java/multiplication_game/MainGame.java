@@ -10,8 +10,7 @@ public class MainGame {
 
         String select;
         String rulesetPath = "MultiplicationGame\\Ruleset.txt";
-        TwoPlayerGame game2 = new TwoPlayerGame();
-        ThreePlayerGame game3 = new ThreePlayerGame();
+        MultiplicationGame game = new MultiplicationGame();
 
         do {
 
@@ -22,8 +21,8 @@ public class MainGame {
 
             switch (select) {
 
-                case "1": game2.gameCycle(); break;
-                case "2": game3.gameCycle(); break;
+                case "1": game.gameCycle(2); break;
+                case "2": game.gameCycle(3); break;
                 case "3": Lector.openFile(rulesetPath); break;
                 default: break;
             }
