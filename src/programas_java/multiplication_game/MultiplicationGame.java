@@ -31,7 +31,7 @@ public class MultiplicationGame {
         }
 
         Player[] players = makePlayers(numPlayers);
-        ArrayList<Boolean> states = new ArrayList<>(numPlayers);
+        ArrayList<Object> states = new ArrayList<>(numPlayers);
 
         do {
 
@@ -145,7 +145,7 @@ public class MultiplicationGame {
     }
 
     // Method to deep compare ArrayLists
-    public boolean deepEquals(List<Boolean> list1, List<Boolean> list2) {
+    public boolean deepEquals(List<Boolean> list1, List<Object> list2) {
 
         boolean result = true;
         Object[] array1 = list1.toArray();
@@ -164,7 +164,7 @@ public class MultiplicationGame {
 
     }
 
-    public void compareResults(Player[] players, List<Object> states) {
+    public void compareResults(Player[] players, ArrayList<Object> states) {
 
         HashSet<Object> hashStates = new HashSet<>(states);
 
