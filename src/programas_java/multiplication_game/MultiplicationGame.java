@@ -91,7 +91,7 @@ public class MultiplicationGame {
 
         } catch (InputMismatchException e) {
 
-            MainGame.SC.next();
+            MainGame.SC.nextLine();
             player.setState(false);
             System.out.println("Wrong answer, chucklenuts...\n");
 
