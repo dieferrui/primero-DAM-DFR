@@ -30,6 +30,6 @@ public class MainGame {
         } while (!select.equals("4"));
 
         SC.close();
-
     }
+    
 }

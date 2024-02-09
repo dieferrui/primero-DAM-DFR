@@ -35,7 +35,6 @@ public class MultiplicationGame {
             for (Player player : players) {
 
                 playerTurn(player);
-                System.out.println();
                 states.add(player.isState());
 
             }
@@ -63,7 +62,6 @@ public class MultiplicationGame {
         }
 
         return players;
-
     }
 
     // Method that runs each player's turn and sets their state based on answer
@@ -88,7 +86,6 @@ public class MultiplicationGame {
 
         } catch (InputMismatchException e) {
 
-            MainGame.SC.next();
             player.setState(false);
             System.out.println("Wrong answer, chucklenuts...\n");
 
@@ -100,7 +97,7 @@ public class MultiplicationGame {
             if (values[2] == answer) {
 
                 player.setState(true);
-                System.out.println("Correct\n");
+                System.out.println("Correct.\n");
         
             } else {
                 
@@ -123,7 +120,6 @@ public class MultiplicationGame {
         result = value1 * value2;
 
         return new int[]{value1, value2, result};
-
     }
 
     // Method to generate the string each time a player is asked to multiply
@@ -135,7 +131,6 @@ public class MultiplicationGame {
         question.append(values[0] + " x " + values[1] + "...");
 
         return question.toString();
-
     }
 
     // Method to deep compare ArrayLists
@@ -155,7 +150,6 @@ public class MultiplicationGame {
         }
 
         return result;
-
     }
 
 

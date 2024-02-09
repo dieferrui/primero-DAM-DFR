@@ -10,7 +10,6 @@ public class Player {
 
         this.name = name;
         this.playerNumber = playerNumber;
-
     }
 
     public String getName() {
