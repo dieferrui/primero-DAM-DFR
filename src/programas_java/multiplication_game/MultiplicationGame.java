@@ -17,6 +17,7 @@ public class MultiplicationGame {
 
         ArrayList<Boolean> trueArray = new ArrayList<>();
         ArrayList<Boolean> falseArray = new ArrayList<>();
+        int rounds = 1;
         
         for (int i = 0; i < numPlayers; i++) {
 
@@ -32,12 +33,16 @@ public class MultiplicationGame {
 
             states.clear();
 
+            System.out.println("Round " + rounds);
+
             for (Player player : players) {
 
                 playerTurn(player);
                 states.add(player.isState());
 
             }
+
+            rounds++;
             
         } while (deepEquals(trueArray, states) || deepEquals(falseArray, states));
         
@@ -86,6 +91,7 @@ public class MultiplicationGame {
 
         } catch (InputMismatchException e) {
 
+            MainGame.SC.next();
             player.setState(false);
             System.out.println("Wrong answer, chucklenuts...\n");
 
@@ -155,6 +161,8 @@ public class MultiplicationGame {
 
     // Method to compare player's results after a game is finished
     public void compareResults(Player[] players) {
+
+        System.out.println("Game finished.\nResults: ");
 
         for (Player player : players) {
 
