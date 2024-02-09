@@ -62,9 +62,7 @@ public class Player {
             return false;
         if (playerNumber != other.playerNumber)
             return false;
-        if (state != other.state)
-            return false;
-        return true;
+        return (state != other.state);
     }
 
     @Override
