@@ -15,7 +15,7 @@ public class MainGame {
         do {
 
             System.out.println("Multiplication Game");
-            System.out.println("Choose game mode:\n1. Versus\n2. Triple match\n3. Rules\n4. Exit");
+            System.out.println("Choose game mode:\n1. One on One\n2. Threesome\n3. Rules\n4. Exit");
 
             select = SC.nextLine();
 

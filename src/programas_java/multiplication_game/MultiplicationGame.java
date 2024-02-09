@@ -8,7 +8,6 @@ import java.util.List;
 public class MultiplicationGame {
 
     private Random random = new Random();
-    private static final String RESPONDS = "'s response was ";
 
     public MultiplicationGame() {
         // Game needs an instance, but doesn't need any parameters
@@ -36,7 +35,6 @@ public class MultiplicationGame {
             for (Player player : players) {
 
                 playerTurn(player);
-                System.out.println(player.getName() + RESPONDS + player.isState() + ".");
                 System.out.println();
                 states.add(player.isState());
 
@@ -46,6 +44,26 @@ public class MultiplicationGame {
         
         compareResults(players);
         System.out.println();
+    }
+
+    // Method to generate players
+    public Player[] makePlayers(int numPlayers) {
+
+        Player[] players = new Player[numPlayers];
+
+        for (int i = 1; i <= numPlayers; i++) {
+
+            System.out.print("Enter player " + i + "'s name: ");
+            String nameOfPlayer = MainGame.SC.nextLine();
+            System.out.println();
+
+            Player player = new Player(nameOfPlayer, i);
+            players[i - 1] = player;
+
+        }
+
+        return players;
+
     }
 
     // Method that runs each player's turn and sets their state based on answer
@@ -85,7 +103,7 @@ public class MultiplicationGame {
                 System.out.println("Correct\n");
         
             } else {
-        
+                
                 player.setState(false);
                 System.out.println("Wrong, answer was " + values[2] + ".\n");
 
@@ -120,26 +138,6 @@ public class MultiplicationGame {
 
     }
 
-    // method to generate players
-    public Player[] makePlayers(int numPlayers) {
-
-        Player[] players = new Player[numPlayers];
-
-        for (int i = 1; i <= numPlayers; i++) {
-
-            System.out.print("Enter player " + i + "'s name: ");
-            String nameOfPlayer = MainGame.SC.nextLine();
-            System.out.println();
-
-            Player player = new Player(nameOfPlayer, i);
-            players[i - 1] = player;
-
-        }
-
-        return players;
-
-    }
-
     // Method to deep compare ArrayLists
     public boolean deepEquals(List<Boolean> list1, List<Boolean> list2) {
 
@@ -160,6 +158,8 @@ public class MultiplicationGame {
 
     }
 
+
+    // Method to compare player's results after a game is finished
     public void compareResults(Player[] players) {
 
         for (Player player : players) {
