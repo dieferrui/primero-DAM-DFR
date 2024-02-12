@@ -1,0 +1,10 @@
+Hangman Game.
+
+El juego consiste en adivinar la palabra que es seleccionada aleatoriamente por el sistema.
+Cada turno, cada jugador podrá especificar una letra para comprobar si se encuentra en la
+palabra desconocida. En caso afirmativo, tanto ese jugador como el resto podrá ver la letra
+en las posiciones que coincidan en la palabra. Alternativamente, el jugador puede intentar
+adivinar la palabra entera escribiéndola directamente. Cada jugador dispone de seis vidas.
+Cuando se introduce una letra que no está en la palabra, el jugador pierde una vida; si se
+intenta responder y la palabra es incorrecta se pierden dos vidas. El juego termina cuando
+los jugadores se quedan sin vidas o cuando un jugador encuentra la palabra.

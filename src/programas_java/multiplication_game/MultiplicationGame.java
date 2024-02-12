@@ -5,7 +5,7 @@ import java.util.Random;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MultiplicationGame {
+public class MultiplicationGame extends Game {
 
     private Random random = new Random();
 
@@ -48,25 +48,6 @@ public class MultiplicationGame {
         
         compareResults(players);
         System.out.println();
-    }
-
-    // Method to generate players
-    public Player[] makePlayers(int numPlayers) {
-
-        Player[] players = new Player[numPlayers];
-
-        for (int i = 1; i <= numPlayers; i++) {
-
-            System.out.print("Enter player " + i + "'s name: ");
-            String nameOfPlayer = MainGame.SC.nextLine();
-            System.out.println();
-
-            Player player = new Player(nameOfPlayer, i);
-            players[i - 1] = player;
-
-        }
-
-        return players;
     }
 
     // Method that runs each player's turn and sets their state based on answer

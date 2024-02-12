@@ -5,11 +5,19 @@ public class Player {
     String name;
     int playerNumber;
     boolean state;
+    int lives;
 
     public Player(String name, int playerNumber) {
 
         this.name = name;
         this.playerNumber = playerNumber;
+    }
+
+    public Player(String name, int playerNumber, int lives) {
+
+        this.name = name;
+        this.playerNumber = playerNumber;
+        this.lives = lives;
     }
 
     public String getName() {
@@ -67,7 +75,7 @@ public class Player {
 
     @Override
     public String toString() {
-        return "Player [name=" + name + ", playerNumber=" + playerNumber + ", state=" + state + "]";
+        return "Player [name=" + name + ", playerNumber=" + playerNumber + "]";
     }
 
 }
