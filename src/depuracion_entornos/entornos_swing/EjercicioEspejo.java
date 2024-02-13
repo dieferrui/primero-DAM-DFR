@@ -56,7 +56,7 @@ public class EjercicioEspejo {
 
         // Etiqueta y campo para la provincia
         columna2Panel.add(new JLabel("Provincia:"));
-        String[] provincias = {"Castellón", "Valencia", "Alicante"};
+        String[] provincias = { "Castellón", "Valencia", "Alicante" };
         provinciasComboBox = new JComboBox<>(provincias);
         columna2Panel.add(provinciasComboBox);
 
@@ -102,7 +102,7 @@ public class EjercicioEspejo {
                 mostrarVentanaConfirmacion();
             }
         });
-        
+
         // Ajustar tamaño y centrar el botón de enviar
         JPanel botonesPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
         botonesPanel.add(enviarButton);
@@ -182,6 +182,9 @@ public class EjercicioEspejo {
         resultadoSexoLabel.setText("Sexo: " + sexoSeleccionado);
     }
 
+    /**
+     * @param args
+     */
     public static void main(String[] args) {
         SwingUtilities.invokeLater(new Runnable() {
             @Override

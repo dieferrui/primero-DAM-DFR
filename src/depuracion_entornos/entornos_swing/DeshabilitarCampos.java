@@ -105,6 +105,10 @@ public class DeshabilitarCampos extends JPanel {
         // Podeu afegir més components o personalitzar segons les vostres necessitats.
     }
 
+    
+    /** 
+     * @return int
+     */
     private int mostrarDialogoConfirmacio() {
         return JOptionPane.showConfirmDialog(DeshabilitarCampos.this,
                 "Vols acceptar les dades del formulari?",

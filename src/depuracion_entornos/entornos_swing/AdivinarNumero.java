@@ -82,6 +82,10 @@ public class AdivinarNumero extends JFrame {
         }
     }
 
+    
+    /** 
+     * @return int
+     */
     private int generarNumeroAleatori() {
         Random random = new Random();
         int numeroAleatori = random.nextInt(10) + 1; // Generar un número entre 1 i 10
