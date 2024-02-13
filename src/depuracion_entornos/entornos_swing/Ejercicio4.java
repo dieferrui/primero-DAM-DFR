@@ -5,145 +5,156 @@ import java.awt.event.ActionListener;
 
 public class Ejercicio4 extends JPanel {
 
-    private JTextField nomTextField;
-    private JSpinner edatSpinner;
+    private JTextField nombreTextField;
+    private JSpinner edadSpinner;
     private JComboBox<String> provinciaComboBox;
-    private JRadioButton masculiRadioButton;
-    private JRadioButton femeniRadioButton;
-    private JRadioButton altreRadioButton;
-    private JCheckBox acceptaPublicitatCheckBox;
+    private JRadioButton hombreRadioButton;
+    private JRadioButton mujerRadioButton;
+    private JRadioButton otroRadioButton;
+    private JCheckBox publicidadCheckBox;
     private JButton enviarButton;
-    private ButtonGroup grupSexe;
+    private ButtonGroup sexoGroup;
 
     public Ejercicio4() {
-        // Estableix el layout del panell (en aquest cas, usem GridLayout)
-        setLayout(new GridLayout(7, 1, 5, 5)); // 7 files, 1 columna
 
-        // Afegir components al panell
-        JLabel label = new JLabel("Formulari d'inscripció");
-        label.setFont(new Font("Arial", Font.BOLD, 16));
+        // Usamos un grid layout al ser más conveniente
+        setLayout(new GridLayout(7, 1, 5, 5));
+
+        // Añadir componentes
+        JLabel label = new JLabel("Formulario inscripción");
+        label.setFont(new Font("Calibri", Font.BOLD, 18));
         label.setHorizontalAlignment(JLabel.CENTER);
         add(label);
 
-        // Panell per al nom i l'edat (en una columna)
-        JPanel nomEdatPanel = new JPanel(new GridLayout(1, 2, 5, 5));
+        // Panel del nombre y edad
+        JPanel panelPrimero = new JPanel(new GridLayout(1, 2, 5, 5));
 
-        // Casella de text per al nom
-        nomTextField = new JTextField(20);
-        JPanel nomPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
-        nomPanel.add(new JLabel("Nom: "));
-        nomPanel.add(nomTextField);
-        nomEdatPanel.add(nomPanel);
+        // Casilla del nombre
+        nombreTextField = new JTextField(20);
+        JPanel nombrePanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
+        nombrePanel.add(new JLabel("Nombre: "));
+        nombrePanel.add(nombreTextField);
+        panelPrimero.add(nombrePanel);
 
-        // Spinner per a l'edat amb restriccions (mínim 18, màxim 99)
-        SpinnerModel edatModel = new SpinnerNumberModel(18, 18, 99, 1);
-        edatSpinner = new JSpinner(edatModel);
-        JPanel edatPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
-        edatPanel.add(new JLabel("Edat: "));
-        edatPanel.add(edatSpinner);
-        nomEdatPanel.add(edatPanel);
+        // Spinner para edad
+        SpinnerModel spinnerEdad = new SpinnerNumberModel(18, 18, 99, 1);
+        edadSpinner = new JSpinner(spinnerEdad);
+        JPanel panelEdad = new JPanel(new FlowLayout(FlowLayout.LEFT));
+        panelEdad.add(new JLabel("Edad: "));
+        panelEdad.add(edadSpinner);
+        panelPrimero.add(panelEdad);
 
-        add(nomEdatPanel);
+        add(panelPrimero);
 
-        // Desplegable per a seleccionar la província
-        String[] provincies = {"Alacant", "València", "Castelló"};
-        provinciaComboBox = new JComboBox<>(provincies);
+        // ComboBox provincia
+        String[] provincias = {"Alacant", "València", "Castelló"};
+        provinciaComboBox = new JComboBox<>(provincias);
         JPanel provinciaPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
-        provinciaPanel.add(new JLabel("Província: "));
+        provinciaPanel.add(new JLabel("Provincia: "));
         provinciaPanel.add(provinciaComboBox);
         add(provinciaPanel);
 
-        // RadioButtons per a seleccionar el sexe (en una fila)
-        grupSexe = new ButtonGroup(); // Inicialitzar el grup de botons d'opció
-        JPanel sexePanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
-        sexePanel.add(new JLabel("Sexe: "));
-        masculiRadioButton = new JRadioButton("Masculí");
-        femeniRadioButton = new JRadioButton("Femení");
-        altreRadioButton = new JRadioButton("Altres");
-        grupSexe.add(masculiRadioButton);
-        grupSexe.add(femeniRadioButton);
-        grupSexe.add(altreRadioButton);
-        sexePanel.add(masculiRadioButton);
-        sexePanel.add(femeniRadioButton);
-        sexePanel.add(altreRadioButton);
-        add(sexePanel);
+        // RadioButton sexo
+        sexoGroup = new ButtonGroup();
+        JPanel panelSexo = new JPanel(new FlowLayout(FlowLayout.LEFT)); // PanelSexo jaja
+        panelSexo.add(new JLabel("Sexo: "));
+        hombreRadioButton = new JRadioButton("Hombre");
+        mujerRadioButton = new JRadioButton("Mujer");
+        otroRadioButton = new JRadioButton("Otro");
+        sexoGroup.add(hombreRadioButton);
+        sexoGroup.add(mujerRadioButton);
+        sexoGroup.add(otroRadioButton);
+        panelSexo.add(hombreRadioButton);
+        panelSexo.add(mujerRadioButton);
+        panelSexo.add(otroRadioButton);
+        add(panelSexo);
 
-        // CheckBox per a acceptar la publicitat
-        acceptaPublicitatCheckBox = new JCheckBox("Accepta la publicitat");
-        JPanel publicitatPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
-        publicitatPanel.add(acceptaPublicitatCheckBox);
-        add(publicitatPanel);
+        // CheckBox publicidad (si no se acepta no se puede enviar el formulario)
+        publicidadCheckBox = new JCheckBox("Accepta la publicitat");
+        JPanel panelPubli = new JPanel(new FlowLayout(FlowLayout.RIGHT));
+        panelPubli.add(publicidadCheckBox);
+        add(panelPubli);
 
-        // Botó d'enviar
+        // Botón enviar con action listener
         enviarButton = new JButton("Enviar");
         enviarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (acceptaPublicitatCheckBox.isSelected()) {
-                    // L'usuari accepta la publicitat, processar les dades
-                    int resposta = mostrarDialogoConfirmacio();
-                    if (resposta == JOptionPane.YES_OPTION) {
+                if (publicidadCheckBox.isSelected()) {
+                    
+                    int seleccion = ventanaConfirmacion();
+
+                    if (seleccion == JOptionPane.YES_OPTION) {
                         mostrarDialogoInformacio("Has acceptat les dades del formulari");
                         reiniciarValorsPerDefecte();
-                    } else if (resposta == JOptionPane.NO_OPTION) {
-                        System.exit(0); // Sortir completament de l'aplicació
-                    } else if (resposta == JOptionPane.CANCEL_OPTION) {
-                        // No fer res, mostrarà novament el formulari
+
+                    } else if (seleccion == JOptionPane.NO_OPTION) {
+
+                        System.exit(0);
+                        
+                    } else if (seleccion == JOptionPane.CANCEL_OPTION) {
+
+                        // Esto no hace nada más que mostrar el formulario otra vez
+
                     }
+
                 } else {
-                    // L'usuari no accepta la publicitat, mostrar missatge d'advertència
+                    
                     JOptionPane.showMessageDialog(Ejercicio4.this,
-                            "Per a enviar les dades, heu d'acceptar la publicitat.",
-                            "Advertència", JOptionPane.WARNING_MESSAGE);
+                            "Acepte la publicidad para poder enviar el formulario de isncripción.",
+                            "Aviso!", JOptionPane.WARNING_MESSAGE);
                 }
             }
         });
-        // Inicialment, desactivar el botó enviar
+        
+        // El botón debe estar desactivado incialmente hasta que se acepte la publicidad
         enviarButton.setEnabled(false);
         add(enviarButton);
 
-        // Configurant el listener per a la casella de selecció
-        acceptaPublicitatCheckBox.addActionListener(new ActionListener() {
+        // Listener de la casilla de publi
+        publicidadCheckBox.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // Habilitar o deshabilitar el botó enviar segons l'estat de la casella de selecció
-                enviarButton.setEnabled(acceptaPublicitatCheckBox.isSelected());
+                
+                enviarButton.setEnabled(publicidadCheckBox.isSelected());
+
             }
         });
-
-        // Podeu afegir més components o personalitzar segons les vostres necessitats.
     }
 
-    private int mostrarDialogoConfirmacio() {
+    private int ventanaConfirmacion() {
+
         return JOptionPane.showConfirmDialog(Ejercicio4.this,
-                "Vols acceptar les dades del formulari?",
-                "Confirmació", JOptionPane.YES_NO_CANCEL_OPTION);
+                "¿Confirmas los datos del formulario?",
+                "Confirmar", JOptionPane.YES_NO_CANCEL_OPTION);
+        
     }
 
-    private void mostrarDialogoInformacio(String missatge) {
-        JOptionPane.showMessageDialog(Ejercicio4.this, missatge, "Informació", JOptionPane.INFORMATION_MESSAGE);
+    private void mostrarDialogoInformacio(String mensaje) {
+
+        JOptionPane.showMessageDialog(Ejercicio4.this, mensaje, "Información", JOptionPane.INFORMATION_MESSAGE);
+
     }
 
     private void reiniciarValorsPerDefecte() {
-        // Restablir els valors per defecte aquí
-        nomTextField.setText("");
-        edatSpinner.setValue(18);
+        
+        nombreTextField.setText("");
+        edadSpinner.setValue(18);
         provinciaComboBox.setSelectedIndex(0);
-        grupSexe.clearSelection(); // Limpiar la selección del grupo de botones de opción
-        acceptaPublicitatCheckBox.setSelected(false);
+        sexoGroup.clearSelection();
+        publicidadCheckBox.setSelected(false);
+
     }
 
     public static void main(String[] args) {
-        // Crear una finestra per provar el panell
-        JFrame frame = new JFrame("Prova del Formulari d'Inscripció");
+        
+        JFrame frame = new JFrame("Formulario de inscripción");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        // Afegir el panell a la finestra
         frame.getContentPane().add(new Ejercicio4());
 
-        // Configurar la finestra
-        frame.setSize(400, 300);
-        frame.setLocationRelativeTo(null); // Centrar la finestra en pantalla
+        frame.setSize(500, 400);
+        frame.setLocationRelativeTo(null);
         frame.setVisible(true);
     }
 }
