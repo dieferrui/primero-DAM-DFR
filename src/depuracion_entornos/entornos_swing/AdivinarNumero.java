@@ -6,12 +6,12 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.Random;
 
-public class Ejercicio7 extends JFrame {
+public class AdivinarNumero extends JFrame {
     private JTextField campEncert;
     private JButton jugaButton;
     private JLabel resultatLabel;
 
-    public Ejercicio7() {
+    public AdivinarNumero() {
         setTitle("Joc Encertar Número");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(300, 150);
@@ -92,7 +92,7 @@ public class Ejercicio7 extends JFrame {
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
-                Ejercicio7 joc = new Ejercicio7();
+                AdivinarNumero joc = new AdivinarNumero();
                 joc.setVisible(true);
             }
         });

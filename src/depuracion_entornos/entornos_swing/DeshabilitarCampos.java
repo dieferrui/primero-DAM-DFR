@@ -3,19 +3,19 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Ejercicio6 extends JPanel {
+public class DeshabilitarCampos extends JPanel {
 
-    private JTextField nomTextField;
-    private JSpinner edatSpinner;
+    private JTextField nombreTextField;
+    private JSpinner edadSpinner;
     private JComboBox<String> provinciaComboBox;
-    private JRadioButton masculiRadioButton;
-    private JRadioButton femeniRadioButton;
-    private JRadioButton altreRadioButton;
-    private JCheckBox acceptaPublicitatCheckBox;
+    private JRadioButton hombreRadioButton;
+    private JRadioButton mujerRadioButton;
+    private JRadioButton otroRadioButton;
+    private JCheckBox publiCheckBox;
     private JButton enviarButton;
-    private ButtonGroup grupSexe;
+    private ButtonGroup sexoGroup;
 
-    public Ejercicio6() {
+    public DeshabilitarCampos() {
         // Estableix el layout del panell (en aquest cas, usem GridLayout)
         setLayout(new GridLayout(7, 1, 5, 5)); // 7 files, 1 columna
 
@@ -29,18 +29,18 @@ public class Ejercicio6 extends JPanel {
         JPanel nomEdatPanel = new JPanel(new GridLayout(1, 2, 5, 5));
 
         // Casella de text per al nom
-        nomTextField = new JTextField(20);
+        nombreTextField = new JTextField(20);
         JPanel nomPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
         nomPanel.add(new JLabel("Nom: "));
-        nomPanel.add(nomTextField);
+        nomPanel.add(nombreTextField);
         nomEdatPanel.add(nomPanel);
 
         // Spinner per a l'edat amb restriccions (mínim 18, màxim 99)
         SpinnerModel edatModel = new SpinnerNumberModel(18, 18, 99, 1);
-        edatSpinner = new JSpinner(edatModel);
+        edadSpinner = new JSpinner(edatModel);
         JPanel edatPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
         edatPanel.add(new JLabel("Edat: "));
-        edatPanel.add(edatSpinner);
+        edatPanel.add(edadSpinner);
         nomEdatPanel.add(edatPanel);
 
         add(nomEdatPanel);
@@ -54,24 +54,24 @@ public class Ejercicio6 extends JPanel {
         add(provinciaPanel);
 
         // RadioButtons per a seleccionar el sexe (en una fila)
-        grupSexe = new ButtonGroup(); // Inicialitzar el grup de botons d'opció
+        sexoGroup = new ButtonGroup(); // Inicialitzar el grup de botons d'opció
         JPanel sexePanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
         sexePanel.add(new JLabel("Sexe: "));
-        masculiRadioButton = new JRadioButton("Masculí");
-        femeniRadioButton = new JRadioButton("Femení");
-        altreRadioButton = new JRadioButton("Altres");
-        grupSexe.add(masculiRadioButton);
-        grupSexe.add(femeniRadioButton);
-        grupSexe.add(altreRadioButton);
-        sexePanel.add(masculiRadioButton);
-        sexePanel.add(femeniRadioButton);
-        sexePanel.add(altreRadioButton);
+        hombreRadioButton = new JRadioButton("Masculí");
+        mujerRadioButton = new JRadioButton("Femení");
+        otroRadioButton = new JRadioButton("Altres");
+        sexoGroup.add(hombreRadioButton);
+        sexoGroup.add(mujerRadioButton);
+        sexoGroup.add(otroRadioButton);
+        sexePanel.add(hombreRadioButton);
+        sexePanel.add(mujerRadioButton);
+        sexePanel.add(otroRadioButton);
         add(sexePanel);
 
         // CheckBox per a acceptar la publicitat
-        acceptaPublicitatCheckBox = new JCheckBox("Accepta la publicitat");
+        publiCheckBox = new JCheckBox("Accepta la publicitat");
         JPanel publicitatPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
-        publicitatPanel.add(acceptaPublicitatCheckBox);
+        publicitatPanel.add(publiCheckBox);
         add(publicitatPanel);
 
         // Botó d'enviar
@@ -79,7 +79,7 @@ public class Ejercicio6 extends JPanel {
         enviarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (acceptaPublicitatCheckBox.isSelected()) {
+                if (publiCheckBox.isSelected()) {
                     // L'usuari accepta la publicitat, processar les dades
                     int resposta = mostrarDialogoConfirmacio();
                     if (resposta == JOptionPane.YES_OPTION) {
@@ -92,7 +92,7 @@ public class Ejercicio6 extends JPanel {
                     }
                 } else {
                     // L'usuari no accepta la publicitat, mostrar missatge d'advertència
-                    JOptionPane.showMessageDialog(Ejercicio6.this,
+                    JOptionPane.showMessageDialog(DeshabilitarCampos.this,
                             "Per a enviar les dades, heu d'acceptar la publicitat.",
                             "Advertència", JOptionPane.WARNING_MESSAGE);
                 }
@@ -106,22 +106,22 @@ public class Ejercicio6 extends JPanel {
     }
 
     private int mostrarDialogoConfirmacio() {
-        return JOptionPane.showConfirmDialog(Ejercicio6.this,
+        return JOptionPane.showConfirmDialog(DeshabilitarCampos.this,
                 "Vols acceptar les dades del formulari?",
                 "Confirmació", JOptionPane.YES_NO_CANCEL_OPTION);
     }
 
     private void mostrarDialogoInformacio(String missatge) {
-        JOptionPane.showMessageDialog(Ejercicio6.this, missatge, "Informació", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(DeshabilitarCampos.this, missatge, "Informació", JOptionPane.INFORMATION_MESSAGE);
     }
 
     private void reiniciarValorsPerDefecte() {
         // Restablir els valors per defecte aquí
-        nomTextField.setText("");
-        edatSpinner.setValue(18);
+        nombreTextField.setText("");
+        edadSpinner.setValue(18);
         provinciaComboBox.setSelectedIndex(0);
-        grupSexe.clearSelection(); // Limpiar la selección del grupo de botones de opción
-        acceptaPublicitatCheckBox.setSelected(false);
+        sexoGroup.clearSelection(); // Limpiar la selección del grupo de botones de opción
+        publiCheckBox.setSelected(false);
     }
 
     public static void main(String[] args) {
@@ -130,7 +130,7 @@ public class Ejercicio6 extends JPanel {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         // Afegir el panell a la finestra
-        Ejercicio6 formularioPanel = new Ejercicio6();
+        DeshabilitarCampos formularioPanel = new DeshabilitarCampos();
         frame.getContentPane().add(formularioPanel);
 
         // Crear el menú de opciones
@@ -144,7 +144,7 @@ public class Ejercicio6 extends JPanel {
         deshabilitarNom.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                formularioPanel.nomTextField.setEnabled(!deshabilitarNom.isSelected());
+                formularioPanel.nombreTextField.setEnabled(!deshabilitarNom.isSelected());
             }
         });
         subMenu.add(deshabilitarNom);
@@ -153,7 +153,7 @@ public class Ejercicio6 extends JPanel {
         deshabilitarEdat.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                formularioPanel.edatSpinner.setEnabled(!deshabilitarEdat.isSelected());
+                formularioPanel.edadSpinner.setEnabled(!deshabilitarEdat.isSelected());
             }
         });
         subMenu.add(deshabilitarEdat);
@@ -171,9 +171,9 @@ public class Ejercicio6 extends JPanel {
         deshabilitarSexe.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                formularioPanel.masculiRadioButton.setEnabled(!deshabilitarSexe.isSelected());
-                formularioPanel.femeniRadioButton.setEnabled(!deshabilitarSexe.isSelected());
-                formularioPanel.altreRadioButton.setEnabled(!deshabilitarSexe.isSelected());
+                formularioPanel.hombreRadioButton.setEnabled(!deshabilitarSexe.isSelected());
+                formularioPanel.mujerRadioButton.setEnabled(!deshabilitarSexe.isSelected());
+                formularioPanel.otroRadioButton.setEnabled(!deshabilitarSexe.isSelected());
             }
         });
         subMenu.add(deshabilitarSexe);
@@ -182,7 +182,7 @@ public class Ejercicio6 extends JPanel {
         deshabilitarPublicitat.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                formularioPanel.acceptaPublicitatCheckBox.setEnabled(!deshabilitarPublicitat.isSelected());
+                formularioPanel.publiCheckBox.setEnabled(!deshabilitarPublicitat.isSelected());
             }
         });
         subMenu.add(deshabilitarPublicitat);
