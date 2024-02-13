@@ -3,7 +3,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Ejercicio4 extends JPanel {
+public class FormularioInscripcion extends JPanel {
 
     private JTextField nombreTextField;
     private JSpinner edadSpinner;
@@ -15,7 +15,7 @@ public class Ejercicio4 extends JPanel {
     private JButton enviarButton;
     private ButtonGroup sexoGroup;
 
-    public Ejercicio4() {
+    public FormularioInscripcion() {
 
         // Usamos un grid layout al ser más conveniente
         setLayout(new GridLayout(7, 1, 5, 5));
@@ -70,7 +70,7 @@ public class Ejercicio4 extends JPanel {
         add(panelSexo);
 
         // CheckBox publicidad (si no se acepta no se puede enviar el formulario)
-        publicidadCheckBox = new JCheckBox("Accepta la publicitat");
+        publicidadCheckBox = new JCheckBox("Acepto toda la publicidad");
         JPanel panelPubli = new JPanel(new FlowLayout(FlowLayout.RIGHT));
         panelPubli.add(publicidadCheckBox);
         add(panelPubli);
@@ -85,7 +85,7 @@ public class Ejercicio4 extends JPanel {
                     int seleccion = ventanaConfirmacion();
 
                     if (seleccion == JOptionPane.YES_OPTION) {
-                        mostrarDialogoInformacio("Has acceptat les dades del formulari");
+                        mostrarDialogoInformacio("Datos enviados");
                         reiniciarValorsPerDefecte();
 
                     } else if (seleccion == JOptionPane.NO_OPTION) {
@@ -100,7 +100,7 @@ public class Ejercicio4 extends JPanel {
 
                 } else {
                     
-                    JOptionPane.showMessageDialog(Ejercicio4.this,
+                    JOptionPane.showMessageDialog(FormularioInscripcion.this,
                             "Acepte la publicidad para poder enviar el formulario de isncripción.",
                             "Aviso!", JOptionPane.WARNING_MESSAGE);
                 }
@@ -124,7 +124,7 @@ public class Ejercicio4 extends JPanel {
 
     private int ventanaConfirmacion() {
 
-        return JOptionPane.showConfirmDialog(Ejercicio4.this,
+        return JOptionPane.showConfirmDialog(FormularioInscripcion.this,
                 "¿Confirmas los datos del formulario?",
                 "Confirmar", JOptionPane.YES_NO_CANCEL_OPTION);
         
@@ -132,7 +132,7 @@ public class Ejercicio4 extends JPanel {
 
     private void mostrarDialogoInformacio(String mensaje) {
 
-        JOptionPane.showMessageDialog(Ejercicio4.this, mensaje, "Información", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(FormularioInscripcion.this, mensaje, "Información", JOptionPane.INFORMATION_MESSAGE);
 
     }
 
@@ -151,7 +151,7 @@ public class Ejercicio4 extends JPanel {
         JFrame frame = new JFrame("Formulario de inscripción");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        frame.getContentPane().add(new Ejercicio4());
+        frame.getContentPane().add(new FormularioInscripcion());
 
         frame.setSize(500, 400);
         frame.setLocationRelativeTo(null);
