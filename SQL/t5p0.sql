@@ -147,4 +147,8 @@ select	tema, estante, ejemplares,
 	decode(estante, 'BA', 'BA', 'CA', 'CA', 'DA', 'DA', 'EA', 'EA', 'ANEXO')
 	"Reubica"
 from	libreria;
+
+select	tema, estante, ejemplares,
+	decode(estante, 'AA', 'ANEXO', estante) "Reubica"
+from	libreria;
 	
