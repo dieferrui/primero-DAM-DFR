@@ -67,10 +67,11 @@ public class PromptsOpenAI {
 
     public static String solicitarPrompt(String apiKey, String prompt) throws Exception {
 
-        String apiUrl = "https://api.openai.com/v1/completions?model=gpt-3.5"; // URL del endpoint de completions
+        String apiUrl = "https://api.openai.com/v1/completions"; // URL del endpoint de completions
 
         // Parámetros de la solicitud
         Map<Object, Object> requestBody = new HashMap<>();
+        requestBody.put("model", "gpt-3.5-turbo");
         requestBody.put("prompt", "Dime hola");
         requestBody.put("max_tokens", 200);
 
