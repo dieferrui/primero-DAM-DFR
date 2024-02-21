@@ -73,6 +73,8 @@ public class Main {
                     eleccionMenu = "4";
                     break;
             }
+
+            System.out.println();
             
         } while (!eleccionMenu.equals("4"));
     }

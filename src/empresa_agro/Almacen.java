@@ -16,7 +16,7 @@ public class Almacen {
         } else {
 
             int numKilos;
-            int precioKilos;
+            double precioKilos;
 
             producto.setAlmacenado(true);
 

@@ -7,7 +7,7 @@ public abstract class Producto {
     private boolean isAlmacenado;
 
     private int stockEnKilos;
-    private int precioPorKilo;
+    private double precioPorKilo;
 
     public Producto(int diasCaducidad, String numLote) {
         
@@ -40,10 +40,10 @@ public abstract class Producto {
     public void setStockEnKilos(int stockEnKilos) {
         this.stockEnKilos = stockEnKilos;
     }
-    public int getPrecioPorKilo() {
+    public double getPrecioPorKilo() {
         return precioPorKilo;
     }
-    public void setPrecioPorKilo(int precioPorKilo) {
+    public void setPrecioPorKilo(double precioPorKilo) {
         this.precioPorKilo = precioPorKilo;
     }
 
