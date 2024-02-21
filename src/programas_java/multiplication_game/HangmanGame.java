@@ -1,6 +1,7 @@
 package programas_java.multiplication_game;
 
 import java.util.Random;
+import java.util.ArrayList;
 
 public class HangmanGame extends Game {
     
@@ -15,6 +16,7 @@ public class HangmanGame extends Game {
         Player[] players = makePlayers(numPlayers);
         int rounds = 1;
         Palabra palabra = selectPalabra();
+        String palabraProgreso = startProgress(palabra);
         
         for (Player player : players) {
 
@@ -28,8 +30,8 @@ public class HangmanGame extends Game {
 
             for (Player player : players) {
 
-                showPalabra(palabra);
-                playerTurn(player, palabra);
+                System.out.println("Adivina la palabra:\n" + palabraProgreso);
+                playerTurn(player, palabra, palabraProgreso);
 
             }
 
@@ -60,8 +62,34 @@ public class HangmanGame extends Game {
 
     }
 
-    public String showPalabra(Palabra palabra) {
+    public String startProgress(Palabra palabra) {
 
-        
+        int palabraLength = palabra.getPalabra().length();
+        ArrayList<Character> occultPalabra = new ArrayList<>();
+        String palabro = palabra.toString();
+
+        for (int i = 0; i < palabraLength; i++) {
+
+            char ch = palabro.charAt(i);
+
+            if (ch == ' ') {
+
+                occultPalabra.add(' ');
+
+            } else {
+
+                occultPalabra.add('-');
+
+            }
+
+        }
+
+        return occultPalabra.toString();
     }
+
+    public void playerTurn(Player player, Palabra palabra, String palabraProgreso) {
+
+        // TODO continuar el código
+    }
+    
 }

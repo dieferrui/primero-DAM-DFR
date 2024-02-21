@@ -106,7 +106,7 @@ public class Palabra {
 
     @Override
     public String toString() {
-        return "Palabra [isSolved=" + isSolved + ", palabra=" + palabra + "]";
+        return palabra;
     }
 
 }
