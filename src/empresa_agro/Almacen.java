@@ -16,13 +16,13 @@ public class Almacen {
         } else {
 
             int numKilos;
-            double precioKilos;
+            int precioKilos;
 
             producto.setAlmacenado(true);
 
             do {
                 
-                System.out.println("Indique la cantidad de stock en kilos: ");
+                System.out.println("Indique la cantidad de stock en kilos (Sólo números enteros): ");
                 numKilos = Main.SC.nextInt();
 
                 if (numKilos <= 0) {
@@ -39,8 +39,8 @@ public class Almacen {
 
             do {
 
-                System.out.println("Indique el precio por kilo del producto: ");
-                precioKilos = Main.SC.nextDouble();
+                System.out.println("Indique el precio por kilo del producto (Sólo números enteros): ");
+                precioKilos = Main.SC.nextInt();
 
                 if (precioKilos <= 0) {
                     
