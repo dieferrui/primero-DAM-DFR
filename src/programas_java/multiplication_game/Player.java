@@ -78,4 +78,12 @@ public class Player {
         return "Player [name=" + name + ", playerNumber=" + playerNumber + "]";
     }
 
+    public int getLives() {
+        return lives;
+    }
+
+    public void setLives(int lives) {
+        this.lives = lives;
+    }
+
 }
