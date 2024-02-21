@@ -40,7 +40,7 @@ public class Almacen {
             do {
 
                 System.out.println("Indique el precio por kilo del producto: ");
-                precioKilos = Main.SC.nextInt();
+                precioKilos = Main.SC.nextDouble();
 
                 if (precioKilos <= 0) {
                     
