@@ -26,7 +26,7 @@ public class Main {
             Almacen almacen = new Almacen();
 
             System.out.println("(Se ha creado un almacén de testeo)");
-            System.out.println("Elija qué quiere hacer a continuación:\n1. Ver productos almacenados\n"
+            System.out.println("Elija qué quiere hacer a continuación: \n1. Ver productos almacenados\n"
                                 + "2. Almacenar producto\n3. Extraer stock de producto");
             eleccionMenu = SC.nextLine();
 
