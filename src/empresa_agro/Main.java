@@ -20,12 +20,11 @@ public class Main {
         System.out.println("Con esta aplicación podrá testear las funciones del almacén\n"
                             + "con un producto de cada tipo: leche entera (fresco), queso\n"
                             + "de cabra (refrigerado) y helados (congelado).\n");
-        
+
+        Almacen almacen = new Almacen();
+
         do {
             
-            Almacen almacen = new Almacen();
-
-            System.out.println("(Se ha creado un almacén de testeo)");
             System.out.println("Elija qué quiere hacer a continuación: \n1. Ver productos almacenados\n"
                                 + "2. Almacenar producto\n3. Extraer stock de producto");
             eleccionMenu = SC.nextLine();
@@ -66,7 +65,7 @@ public class Main {
                     break;
                 
                 case "4":
-                    System.out.println("Eliminando cambios...");
+                    System.out.println("Saliendo...");
                     break;
 
                 default:
