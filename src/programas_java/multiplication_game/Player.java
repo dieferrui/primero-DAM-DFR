@@ -6,6 +6,7 @@ public class Player {
     int playerNumber;
     boolean state;
     int lives;
+    String hangman;
 
     public Player(String name, int playerNumber) {
 
@@ -42,6 +43,14 @@ public class Player {
 
     public void setPlayerNumber(int playerNumber) {
         this.playerNumber = playerNumber;
+    }
+
+    public String getHangman() {
+        return hangman;
+    }
+
+    public void setHangman(String hangman) {
+        this.hangman = hangman;
     }
 
     @Override

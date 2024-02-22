@@ -6,11 +6,11 @@ public class Palabra {
     
     private static Random random = new Random();
     private boolean isSolved = false;
-    private String palabra;
+    private String palabraValor;
 
     public Palabra(String tipo) {
 
-        this.palabra = getPalabra(tipo);
+        this.palabraValor = getPalabra(tipo);
 
     }
 
@@ -69,11 +69,11 @@ public class Palabra {
     }
 
     public String getPalabra() {
-        return palabra;
+        return palabraValor;
     }
 
-    public void setPalabra(String palabra) {
-        this.palabra = palabra;
+    public void setPalabra(String palabraValor) {
+        this.palabraValor = palabraValor;
     }
 
     @Override
@@ -81,7 +81,7 @@ public class Palabra {
         final int prime = 31;
         int result = 1;
         result = prime * result + (isSolved ? 1231 : 1237);
-        result = prime * result + ((palabra == null) ? 0 : palabra.hashCode());
+        result = prime * result + ((palabraValor == null) ? 0 : palabraValor.hashCode());
         return result;
     }
 
@@ -96,17 +96,17 @@ public class Palabra {
         Palabra other = (Palabra) obj;
         if (isSolved != other.isSolved)
             return false;
-        if (palabra == null) {
-            if (other.palabra != null)
+        if (palabraValor == null) {
+            if (other.palabraValor != null)
                 return false;
-        } else if (!palabra.equals(other.palabra))
+        } else if (!palabraValor.equals(other.palabraValor))
             return false;
         return true;
     }
 
     @Override
     public String toString() {
-        return palabra;
+        return palabraValor;
     }
 
 }
