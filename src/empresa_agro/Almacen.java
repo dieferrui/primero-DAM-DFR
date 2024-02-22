@@ -54,6 +54,7 @@ public class Almacen {
             
             } while (precioKilos <= 0);
 
+            System.out.flush();
             cantidadDeStock++;
             productosAlmacenados.add(producto);
             productosAlmacenados.sort(null);

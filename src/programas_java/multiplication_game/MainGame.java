@@ -28,6 +28,7 @@ public class MainGame {
         } while (!mainSelect.equals("3"));
 
         SC.close();
+        MultiplicationGame.scm.close();
     }
 
     public static void multiplyGame() {

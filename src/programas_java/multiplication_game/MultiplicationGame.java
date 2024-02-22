@@ -4,10 +4,12 @@ import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class MultiplicationGame extends Game {
 
     private Random random = new Random();
+    protected static Scanner scm = new Scanner(System.in);
 
     public MultiplicationGame() {
         // Game needs an instance, but doesn't need any parameters
@@ -67,12 +69,12 @@ public class MultiplicationGame extends Game {
         // Catches any input that isn't an int and punishes the funny player with a wrong answer
         try {
             
-            answer = MainGame.SC.nextInt();
-            MainGame.SC.nextLine();
+            answer = scm.nextInt();
+            scm.nextLine();
 
         } catch (InputMismatchException e) {
 
-            MainGame.SC.nextLine();
+            scm.nextLine();
             player.setState(false);
             System.out.println("Wrong answer, chucklenuts...\n");
 
