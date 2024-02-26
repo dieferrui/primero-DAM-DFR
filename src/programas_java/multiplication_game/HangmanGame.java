@@ -35,7 +35,7 @@ public class HangmanGame extends Game {
 
                 System.out.println("Turno de " + player.getName());
                 player.showHangman();
-                System.out.println(letrasFalsas.toString());
+                System.out.println(letrasFalsas.toString() + "\n");
                 playerTurn(player, palabra, palabraProgreso, letrasFalsas);
                 player.showHangman();
 
