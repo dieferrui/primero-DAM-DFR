@@ -148,6 +148,10 @@ public class HangmanGame extends Game {
                 break;
 
             default:
+                
+                System.out.println("No has seleccionado ninguna opción.\n" +
+                                    "Por tonto, pierdes una vida.");
+                player.setLives(player.getLives() - 1);
                 break;
             
         }
