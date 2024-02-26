@@ -68,7 +68,7 @@ public class Player {
                 System.out.println("    + - - + \n" +
                                 "    |     | \n" + 
                                 "    0     | \n" + 
-                                "   /|\\   | \n" +
+                                "   /|\\    | \n" +
                                 "          | \n" +
                                 "          | \n" +
                                 "          | \n" +
@@ -78,7 +78,7 @@ public class Player {
                 System.out.println("    + - - + \n" +
                                 "    |     | \n" + 
                                 "    0     | \n" + 
-                                "   /|\\   | \n" +
+                                "   /|\\    | \n" +
                                 "   /      | \n" +
                                 "          | \n" +
                                 "          | \n" +
@@ -88,8 +88,8 @@ public class Player {
                 System.out.println("    + - - + \n" +
                                 "    |     | \n" + 
                                 "    0     | \n" + 
-                                "   /|\\   | \n" +
-                                "   / \\   | \n" +
+                                "   /|\\    | \n" +
+                                "   / \\    | \n" +
                                 "          | \n" +
                                 "          | \n" +
                                 "============\n"); break;
