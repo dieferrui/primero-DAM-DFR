@@ -202,7 +202,7 @@ public class HangmanGame extends Game {
 
             case 3:
 
-                for (int i = 0; i < palabraProgreso.length(); i++) {
+                for (int i = 0; i < palabraProgreso.length() - 1; i++) {
 
                     if (((Character)palabra.getPalabra().charAt(i)).equals(letraElegida.charAt(0))) {
 
