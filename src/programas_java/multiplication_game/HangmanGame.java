@@ -126,6 +126,7 @@ public class HangmanGame extends Game {
                     
                     System.out.println("Elige carácter: ");
                     String letraElegida = sch.nextLine();
+                    letraElegida = letraElegida.toUpperCase();
 
                     caseInPoint = tryLetter(letraElegida, palabra, palabraProgreso, letrasFalsas);
 
