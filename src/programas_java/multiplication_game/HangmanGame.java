@@ -43,7 +43,14 @@ public class HangmanGame extends Game {
 
                     players.remove(player);
                     System.out.println("Has sido eliminado de la partida.\n");
+                    break;
 
+                }
+
+                if (palabra.isSolved()) {
+
+                    break;
+                    
                 }
 
             }

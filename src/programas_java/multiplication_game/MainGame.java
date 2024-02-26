@@ -34,7 +34,7 @@ public class MainGame {
     public static void multiplyGame() {
 
         String select;
-        String rulesetPath = "src\\programas_java\\multiplication_game\\MultiRuleset.txt";
+        String rulesetPath = "primero-DAM-DFR\\src\\programas_java\\multiplication_game\\MultiRuleset.txt";
         MultiplicationGame game = new MultiplicationGame();
 
         do {
@@ -58,13 +58,13 @@ public class MainGame {
     public static void hangmanGame() {
 
         String select;
-        String rulesetPath = "src\\programas_java\\multiplication_game\\HangsRuleset.txt";
+        String rulesetPath = "primero-DAM-DFR\\src\\programas_java\\multiplication_game\\HangsRuleset.txt";
         HangmanGame game = new HangmanGame();
 
         do {
 
             System.out.println("Hangman");
-            System.out.println("Choose game mode:\n1. Head to Head\n2. Three Dead Men\n3. Rules\n4. Exit");
+            System.out.println("Choose game mode:\n1. Head to Head\n2. Three Dead Men\n3. Four Horsemen\n4. Rules\n5. Exit");
 
             select = SC.nextLine();
 
@@ -72,7 +72,8 @@ public class MainGame {
 
                 case "1": game.gameCycle(2); break;
                 case "2": game.gameCycle(3); break;
-                case "3": Lector.openFile(rulesetPath); break;
+                case "3": game.gameCycle(4); break;
+                case "4": Lector.openFile(rulesetPath); break;
                 default: break;
             }
 
