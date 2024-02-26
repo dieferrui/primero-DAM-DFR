@@ -85,14 +85,15 @@ public class HangmanGame extends Game {
     public String startProgress(Palabra palabra) {
 
         StringBuilder palabraOculta = new StringBuilder(palabra.getPalabra());
+        char spaceChar = ' ';
 
         for (int i = 0; i < palabraOculta.length(); i++) {
 
-            Character pointedChar = (Character)palabraOculta.charAt(i);
+            Character pointedChar = palabraOculta.charAt(i);
 
-            if (!pointedChar.equals(' ')) {
+            if (!pointedChar.equals(spaceChar)) {
 
-                palabraOculta = palabraOculta.replace(i, i, "-");
+                palabraOculta = palabraOculta.replace(i, i + 1, "-");
 
             }
 
@@ -194,14 +195,19 @@ public class HangmanGame extends Game {
 
             case 3:
 
-                for (int i = 0; i < palabraProgreso.length() - 2; i++) {
+                StringBuilder updatedPalabraProgreso = new StringBuilder(palabraProgreso);
+
+                for (int i = 0; i < palabra.getPalabra().length(); i++) {
 
                     if (palabra.getPalabra().charAt(i) == letraElegida.charAt(0)) {
 
-                        palabraProgreso = palabraProgreso.replace(palabraProgreso.charAt(i), letraElegida.charAt(0));
+                        updatedPalabraProgreso.setCharAt(i, letraElegida.charAt(0));
 
                     }
+                    
                 }
+
+                palabraProgreso = updatedPalabraProgreso.toString();
 
                 break;
             
