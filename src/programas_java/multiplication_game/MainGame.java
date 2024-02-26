@@ -29,6 +29,7 @@ public class MainGame {
 
         SC.close();
         MultiplicationGame.scm.close();
+        HangmanGame.sch.close();
     }
 
     public static void multiplyGame() {
@@ -77,7 +78,7 @@ public class MainGame {
                 default: break;
             }
 
-        } while (!select.equals("4"));
+        } while (!select.equals("5"));
     }
     
 }
