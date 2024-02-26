@@ -133,7 +133,7 @@ public class HangmanGame extends Game {
                     String letraElegida = sch.nextLine();
                     letraElegida = letraElegida.toUpperCase();
 
-                    caseInPoint = tryLetter(letraElegida, palabra, palabraProgreso, letrasFalsas);
+                    caseInPoint = tryLetter(letraElegida, palabra, letrasFalsas);
 
                     palabraProgreso = executeResult(player, letraElegida, caseInPoint, palabraProgreso, palabra);
 
@@ -164,7 +164,7 @@ public class HangmanGame extends Game {
     }
 
     // Method to compare the letter that the player introduced with the occult word
-    private int tryLetter(String letraElegida, Palabra palabra, String palabraProgreso, StringBuilder letrasFalsas) {
+    private int tryLetter(String letraElegida, Palabra palabra, StringBuilder letrasFalsas) {
 
         int caseHappen;
 
