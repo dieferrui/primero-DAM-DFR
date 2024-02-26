@@ -69,7 +69,8 @@ public class HangmanGame extends Game {
 
     }
 
-    public Palabra selectPalabra() {
+    // Method to select word theme
+    private Palabra selectPalabra() {
 
         System.out.println("Elija la temática de la palabra:\n1. Grupos musicales\n2. Videojuegos"
         + "\n3. Animes\n4. Tanques");
@@ -91,7 +92,8 @@ public class HangmanGame extends Game {
 
     }
 
-    public String startProgress(Palabra palabra) {
+    // Method to generate the blank word that shows the player's progress
+    private String startProgress(Palabra palabra) {
 
         StringBuilder palabraOculta = new StringBuilder(palabra.getPalabra());
         char spaceChar = ' ';
@@ -112,7 +114,8 @@ public class HangmanGame extends Game {
 
     }
 
-    public String playerTurn(Player player, Palabra palabra, String palabraProgreso, StringBuilder letrasFalsas) {
+    // Method to manage what the player does in their turn
+    private String playerTurn(Player player, Palabra palabra, String palabraProgreso, StringBuilder letrasFalsas) {
 
         System.out.println("Adivina la palabra:\n" + palabraProgreso);
         System.out.println("¿Qué quieres hacer en tu turno, " + player.getName() + "?");
@@ -160,7 +163,8 @@ public class HangmanGame extends Game {
 
     }
 
-    public int tryLetter(String letraElegida, Palabra palabra, String palabraProgreso, StringBuilder letrasFalsas) {
+    // Method to compare the letter that the player introduced with the occult word
+    private int tryLetter(String letraElegida, Palabra palabra, String palabraProgreso, StringBuilder letrasFalsas) {
 
         int caseHappen;
 
@@ -195,7 +199,8 @@ public class HangmanGame extends Game {
 
     }
 
-    public String executeResult(Player player, String letraElegida, int caseInPoint, String palabraProgreso, Palabra palabra) {
+    // Method to substract lives to the player or updates the hint word after a letter is found
+    private String executeResult(Player player, String letraElegida, int caseInPoint, String palabraProgreso, Palabra palabra) {
 
         switch (caseInPoint) {
 
@@ -239,7 +244,8 @@ public class HangmanGame extends Game {
 
     }
 
-    public void compararPalabra(String resultado, Palabra palabra, Player player) {
+    // Method to compare the answer given with the occult word
+    private void compararPalabra(String resultado, Palabra palabra, Player player) {
 
         if (resultado.equals(palabra.getPalabra())) {
 

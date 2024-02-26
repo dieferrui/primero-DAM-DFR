@@ -53,7 +53,7 @@ public class MultiplicationGame extends Game {
     }
 
     // Method that runs each player's turn and sets their state based on answer
-    public void playerTurn(Player player) {
+    private void playerTurn(Player player) {
 
         int answer = 0;
         player.setState(true);
@@ -98,7 +98,7 @@ public class MultiplicationGame extends Game {
     }
 
     // Method that generates the values required for the multiplications
-    public int[] generateValues() {
+    private int[] generateValues() {
 
         int value1;
         int value2;
@@ -112,7 +112,7 @@ public class MultiplicationGame extends Game {
     }
 
     // Method to generate the string each time a player is asked to multiply
-    public String askValues(int[] values) {
+    private String askValues(int[] values) {
 
         StringBuilder question = new StringBuilder();
         
@@ -123,7 +123,7 @@ public class MultiplicationGame extends Game {
     }
 
     // Method to deep compare ArrayLists
-    public boolean deepEquals(List<Boolean> list1, List<Boolean> list2) {
+    private boolean deepEquals(List<Boolean> list1, List<Boolean> list2) {
 
         boolean result = true;
         Object[] array1 = list1.toArray();
@@ -143,7 +143,7 @@ public class MultiplicationGame extends Game {
 
 
     // Method to compare player's results after a game is finished
-    public void compareResults(Player[] players) {
+    private void compareResults(Player[] players) {
 
         System.out.println("Game finished.\nResults: ");
 
