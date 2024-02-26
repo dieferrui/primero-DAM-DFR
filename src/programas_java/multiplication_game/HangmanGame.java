@@ -160,7 +160,7 @@ public class HangmanGame extends Game {
             System.out.println("Has introducido más de un carácter, inténtalo de nuevo.");
             caseHappen = 1;
 
-        } else if (palabraProgreso.contains(letraElegida)) {
+        } else if (letrasFalsas.toString().contains(letraElegida)) {
 
             System.out.println("Este carácter ya es visible.\n"
                                 + "Pierdes una vida.\n");
@@ -203,7 +203,7 @@ public class HangmanGame extends Game {
 
                 for (int i = 0; i < palabraProgreso.length(); i++) {
 
-                    if (palabra.getPalabra().charAt(i) == letraElegida.charAt(0)) {
+                    if (((Character)palabra.getPalabra().charAt(i)).equals(letraElegida.charAt(0))) {
 
                         palabraProgreso = palabraProgreso.replace(palabraProgreso.charAt(i), letraElegida.charAt(0));
 
