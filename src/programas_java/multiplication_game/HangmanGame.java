@@ -56,7 +56,7 @@ public class HangmanGame extends Game {
 
             rounds++;
             
-        } while (players.size() > 1 || !palabra.isSolved());
+        } while (players.size() > 1 && !palabra.isSolved());
 
         System.out.println("Fin del juego.\n");
 
