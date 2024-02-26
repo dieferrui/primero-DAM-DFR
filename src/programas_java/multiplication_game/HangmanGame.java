@@ -56,7 +56,7 @@ public class HangmanGame extends Game {
 
             rounds++;
             
-        } while (players.size() > 1 || palabra.isSolved());
+        } while (players.size() > 1 || !palabra.isSolved());
 
         System.out.println("Fin del juego.\n");
 
@@ -134,7 +134,7 @@ public class HangmanGame extends Game {
             case "2":
                 
                 System.out.println("Introduce tu respuesta: ");
-                String respuesta = sch.nextLine();
+                String respuesta = sch.nextLine().toUpperCase();
 
                 compararPalabra(respuesta, palabra, player);
 
