@@ -93,10 +93,10 @@ public class HangmanGame extends Game {
 
             if (!pointedChar.equals(spaceChar)) {
 
-                palabraOculta = palabraOculta.replace(i, i + 1, "-");
+                palabraOculta.setCharAt(i, '-');
 
             }
-
+            
         }
 
         return palabraOculta.toString();
@@ -204,7 +204,7 @@ public class HangmanGame extends Game {
                         updatedPalabraProgreso.setCharAt(i, letraElegida.charAt(0));
 
                     }
-                    
+
                 }
 
                 palabraProgreso = updatedPalabraProgreso.toString();
