@@ -1,9 +1,7 @@
 package programas_java.multiplication_game;
 
-import java.util.Random;
 import java.util.ArrayList;
 import java.util.Scanner;
-import java.lang.StringBuilder;
 
 public class HangmanGame extends Game {
     
@@ -86,27 +84,21 @@ public class HangmanGame extends Game {
 
     public String startProgress(Palabra palabra) {
 
-        int palabraLength = palabra.getPalabra().length();
-        ArrayList<Character> occultPalabra = new ArrayList<>();
-        String palabro = palabra.toString();
+        StringBuilder palabraOculta = new StringBuilder(palabra.getPalabra());
 
-        for (int i = 0; i < palabraLength; i++) {
+        for (int i = 0; i < palabraOculta.length(); i++) {
 
-            char ch = palabro.charAt(i);
+            Character pointedChar = (Character)palabraOculta.charAt(i);
 
-            if (ch == ' ') {
+            if (!pointedChar.equals(' ')) {
 
-                occultPalabra.add(' ');
-
-            } else {
-
-                occultPalabra.add('-');
+                palabraOculta = palabraOculta.replace(i, i, "-");
 
             }
 
         }
 
-        return occultPalabra.toString();
+        return palabraOculta.toString();
 
     }
 
@@ -202,9 +194,9 @@ public class HangmanGame extends Game {
 
             case 3:
 
-                for (int i = 0; i < palabraProgreso.length() - 1; i++) {
+                for (int i = 0; i < palabraProgreso.length() - 2; i++) {
 
-                    if (((Character)palabra.getPalabra().charAt(i)).equals(letraElegida.charAt(0))) {
+                    if (palabra.getPalabra().charAt(i) == letraElegida.charAt(0)) {
 
                         palabraProgreso = palabraProgreso.replace(palabraProgreso.charAt(i), letraElegida.charAt(0));
 
