@@ -34,7 +34,9 @@ public class HangmanGame extends Game {
                 System.out.println("Turno de " + player.getName());
                 player.showHangman();
                 System.out.println(letrasFalsas.toString() + "\n");
-                playerTurn(player, palabra, palabraProgreso, letrasFalsas);
+
+                palabraProgreso = playerTurn(player, palabra, palabraProgreso, letrasFalsas);
+
                 player.showHangman();
 
                 if (player.getLives() <= 0) {
@@ -103,7 +105,7 @@ public class HangmanGame extends Game {
 
     }
 
-    public void playerTurn(Player player, Palabra palabra, String palabraProgreso, StringBuilder letrasFalsas) {
+    public String playerTurn(Player player, Palabra palabra, String palabraProgreso, StringBuilder letrasFalsas) {
 
         System.out.println("Adivina la palabra:\n" + palabraProgreso);
         System.out.println("¿Qué quieres hacer en tu turno, " + player.getName() + "?");
@@ -142,6 +144,8 @@ public class HangmanGame extends Game {
                 break;
             
         }
+
+        return palabraProgreso;
 
     }
 
