@@ -6,7 +6,6 @@ public class Player {
     int playerNumber;
     boolean state;
     int lives;
-    String hangman;
 
     public Player(String name, int playerNumber) {
 
@@ -19,6 +18,83 @@ public class Player {
         this.name = name;
         this.playerNumber = playerNumber;
         this.lives = lives;
+    }
+
+    public void showHangman() {
+
+        switch (this.lives) {
+
+            case 6:
+                System.out.println("    + - - + \n" +
+                                "    |     | \n" + 
+                                "          | \n" + 
+                                "          | \n" +
+                                "          | \n" +
+                                "          | \n" +
+                                "          | \n" +
+                                "============\n"); break;
+            
+            case 5:
+                System.out.println("    + - - + \n" +
+                                "    |     | \n" + 
+                                "    0     | \n" + 
+                                "          | \n" +
+                                "          | \n" +
+                                "          | \n" +
+                                "          | \n" +
+                                "============\n"); break;
+
+            case 4:
+                System.out.println("    + - - + \n" +
+                                "    |     | \n" + 
+                                "    0     | \n" + 
+                                "    |     | \n" +
+                                "          | \n" +
+                                "          | \n" +
+                                "          | \n" +
+                                "============\n"); break;
+
+            case 3:
+                System.out.println("    + - - + \n" +
+                                "    |     | \n" + 
+                                "    0     | \n" + 
+                                "   /|     | \n" +
+                                "          | \n" +
+                                "          | \n" +
+                                "          | \n" +
+                                "============\n"); break;
+
+            case 2:
+                System.out.println("    + - - + \n" +
+                                "    |     | \n" + 
+                                "    0     | \n" + 
+                                "   /|\\   | \n" +
+                                "          | \n" +
+                                "          | \n" +
+                                "          | \n" +
+                                "============\n"); break;
+
+            case 1:
+                System.out.println("    + - - + \n" +
+                                "    |     | \n" + 
+                                "    0     | \n" + 
+                                "   /|\\   | \n" +
+                                "   /      | \n" +
+                                "          | \n" +
+                                "          | \n" +
+                                "============\n"); break;
+
+            default:
+                System.out.println("    + - - + \n" +
+                                "    |     | \n" + 
+                                "    0     | \n" + 
+                                "   /|\\   | \n" +
+                                "   / \\   | \n" +
+                                "          | \n" +
+                                "          | \n" +
+                                "============\n"); break;
+        }
+            
     }
 
     public String getName() {
@@ -43,14 +119,6 @@ public class Player {
 
     public void setPlayerNumber(int playerNumber) {
         this.playerNumber = playerNumber;
-    }
-
-    public String getHangman() {
-        return hangman;
-    }
-
-    public void setHangman(String hangman) {
-        this.hangman = hangman;
     }
 
     @Override

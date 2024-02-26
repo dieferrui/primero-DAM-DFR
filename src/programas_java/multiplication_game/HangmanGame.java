@@ -3,22 +3,23 @@ package programas_java.multiplication_game;
 import java.util.Random;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.lang.StringBuilder;
 
 public class HangmanGame extends Game {
     
-    private Random random = new Random();
     protected static Scanner sch = new Scanner(System.in);
 
     public HangmanGame() {
         // Needs an instance, don't need params
     }
 
-    public void gameCycle(int numPlayers) { // TODO revisar el ciclo cuando se acaben las demás clases
+    public void gameCycle(int numPlayers) {
 
-        Player[] players = makePlayers(numPlayers);
+        ArrayList<Player> players = makePlayersAsList(numPlayers);
         int rounds = 1;
         Palabra palabra = selectPalabra();
         String palabraProgreso = startProgress(palabra);
+        StringBuilder letrasFalsas = new StringBuilder();
         
         for (Player player : players) {
 
@@ -28,18 +29,36 @@ public class HangmanGame extends Game {
 
         do {
 
-            System.out.println("Round " + rounds);
+            System.out.println("Round " + rounds + "\n");
 
             for (Player player : players) {
 
+                System.out.println("Turno de " + player.getName());
                 player.showHangman();
-                playerTurn(player, palabra, palabraProgreso);
+                System.out.println(letrasFalsas.toString());
+                playerTurn(player, palabra, palabraProgreso, letrasFalsas);
+                player.showHangman();
+
+                if (player.getLives() <= 0) {
+
+                    players.remove(player);
+                    System.out.println("Has sido eliminado de la partida.\n");
+
+                }
+
+            }
+
+            if (players.size() == 1 && !palabra.isSolved()) {
+
+                System.out.println("El jugador " + players.get(0).getName() + " gana por eliminación.\n");
 
             }
 
             rounds++;
             
-        } while (players.length > 1 || palabra.isSolved());
+        } while (players.size() > 1 || palabra.isSolved());
+
+        System.out.println("Fin del juego.\n");
 
     }
 
@@ -59,7 +78,8 @@ public class HangmanGame extends Game {
             default: word = new Palabra("Tanque"); break;
 
         }
-
+         
+        System.out.println();
         return word;
 
     }
@@ -90,16 +110,15 @@ public class HangmanGame extends Game {
 
     }
 
-    public void playerTurn(Player player, Palabra palabra, String palabraProgreso) {
+    public void playerTurn(Player player, Palabra palabra, String palabraProgreso, StringBuilder letrasFalsas) {
 
         System.out.println("Adivina la palabra:\n" + palabraProgreso);
         System.out.println("¿Qué quieres hacer en tu turno, " + player.getName() + "?");
         System.out.println("1. Elegir carácter\n2. Resolver");
         String hangMenu = sch.nextLine();
+        int caseInPoint;
 
         switch (hangMenu) {
-
-            int caseInPoint;
 
             case "1":
 
@@ -107,17 +126,32 @@ public class HangmanGame extends Game {
                     
                     System.out.println("Elige carácter: ");
                     String letraElegida = sch.nextLine();
-                    
-                    caseInPoint = tryLetter(letraElegida, palabra, palabraProgreso);
 
-                    executeResult(player, letraElegida, caseInPoint, palabraProgreso, palabra);
+                    caseInPoint = tryLetter(letraElegida, palabra, palabraProgreso, letrasFalsas);
+
+                    palabraProgreso = executeResult(player, letraElegida, caseInPoint, palabraProgreso, palabra);
 
                 } while (caseInPoint == 1);
+
+                break;
+
+            case "2":
+                
+                System.out.println("Introduce tu respuesta: ");
+                String respuesta = sch.nextLine();
+
+                compararPalabra(respuesta, palabra, player);
+
+                break;
+
+            default:
+                break;
+            
         }
 
     }
 
-    public int tryLetter(String letraElegida, Palabra palabra, String palabraProgreso) {
+    public int tryLetter(String letraElegida, Palabra palabra, String palabraProgreso, StringBuilder letrasFalsas) {
 
         int caseHappen;
 
@@ -128,7 +162,8 @@ public class HangmanGame extends Game {
 
         } else if (palabraProgreso.contains(letraElegida)) {
 
-            System.out.println("Este carácter ya es visible.");
+            System.out.println("Este carácter ya es visible.\n"
+                                + "Pierdes una vida.\n");
             caseHappen = 2;
 
         } else if (palabra.getPalabra().contains(letraElegida)) {
@@ -138,7 +173,11 @@ public class HangmanGame extends Game {
 
         } else {
 
-            System.out.println("El carácter no está en la palabra oculta.");
+            System.out.println("El carácter no está en la palabra oculta.\n"
+                                + "Pierdes una vida.\n");
+
+            letrasFalsas.append(letraElegida + ", ");
+
             caseHappen = 4;
 
         }
@@ -147,7 +186,7 @@ public class HangmanGame extends Game {
 
     }
 
-    public void executeResult(Player player, String letraElegida, int caseInPoint, String palabraProgreso, Palabra palabra) {
+    public String executeResult(Player player, String letraElegida, int caseInPoint, String palabraProgreso, Palabra palabra) {
 
         switch (caseInPoint) {
 
@@ -158,6 +197,7 @@ public class HangmanGame extends Game {
             case 2:
 
                 player.setLives(player.getLives() - 1);
+                break;
 
             case 3:
 
@@ -168,18 +208,38 @@ public class HangmanGame extends Game {
                         palabraProgreso.replace(palabraProgreso.charAt(i), letraElegida.charAt(0));
 
                     }
-
                 }
+
+                break;
             
             case 4:
 
                 player.setLives(player.getLives() - 1);
+                break;
 
             default:
                 break;
 
         }
 
+        return palabraProgreso;
+
+    }
+
+    public void compararPalabra(String resultado, Palabra palabra, Player player) {
+
+        if (resultado.equals(palabra.getPalabra())) {
+
+            System.out.println("¡La respuesta es correcta!");
+            palabra.setSolved(true);
+
+        } else {
+
+            System.out.println("La respuesta no es correcta.\n"
+                                + "Pierdes dos vidas.\n");
+            player.setLives(player.getLives() - 2);
+
+        }
     }
     
 }

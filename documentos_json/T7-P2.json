@@ -1,0 +1,45 @@
+{
+    "nombre" : "Los dribleros estupendos",
+    "color-equipacion" : "Rojo y naranja",
+    "nombre-estadio" : "El canasto del diablo",
+    "nombre-entrenador" : "Mauricio Guadarrama",
+    "indicador-historica" : false,
+    "referencia-web" : null,
+    "Jugadores" : [
+        { "base" : [
+            {
+                "nombre" : "Juanito Valderrama",
+                "dorsal" : 1
+            },
+            {
+                "nombre" : "Pepito Gamón",
+                "dorsal" : 9
+            },
+            {
+                "nombre" : "Amancio Ortiga",
+                "dorsal" : 12
+            }
+        ],
+        "alero" : [
+            {
+                "nombre" : "Ignacio Jorge",
+                "dorsal" : 19
+            },
+            {
+                "nombre" : "Aleksandr Filkacock",
+                "dorsal" : 99
+            }
+        ],
+        "pivot" : [
+            {
+                "nombre" : "Alejandro Castilla",
+                "dorsal" : 42
+            },
+            {
+                "nombre" : "Jaime Fitnessmann",
+                "dorsal" : 33
+            }
+        ]
+        }
+    ]     
+}
