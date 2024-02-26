@@ -96,7 +96,7 @@ public class HangmanGame extends Game {
                 palabraOculta.setCharAt(i, '-');
 
             }
-            
+
         }
 
         return palabraOculta.toString();
@@ -195,22 +195,21 @@ public class HangmanGame extends Game {
 
             case 3:
 
-                StringBuilder updatedPalabraProgreso = new StringBuilder(palabraProgreso);
+                char[] palabraProgresoArray = palabraProgreso.toCharArray();
 
                 for (int i = 0; i < palabra.getPalabra().length(); i++) {
 
                     if (palabra.getPalabra().charAt(i) == letraElegida.charAt(0)) {
 
-                        updatedPalabraProgreso.setCharAt(i, letraElegida.charAt(0));
+                        palabraProgresoArray[i] = letraElegida.charAt(0);
 
                     }
 
                 }
 
-                palabraProgreso = updatedPalabraProgreso.toString();
-
+                palabraProgreso = new String(palabraProgresoArray);
                 break;
-            
+                
             case 4:
 
                 player.setLives(player.getLives() - 1);
