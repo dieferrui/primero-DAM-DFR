@@ -205,7 +205,7 @@ public class HangmanGame extends Game {
 
                     if (palabra.getPalabra().charAt(i) == letraElegida.charAt(0)) {
 
-                        palabraProgreso.replace(palabraProgreso.charAt(i), letraElegida.charAt(0));
+                        palabraProgreso = palabraProgreso.replace(palabraProgreso.charAt(i), letraElegida.charAt(0));
 
                     }
                 }
