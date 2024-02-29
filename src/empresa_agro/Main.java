@@ -77,6 +77,9 @@ public class Main {
             System.out.println();
             
         } while (!eleccionMenu.equals("4"));
+
+        SC.close();
+        Almacen.sca.close();
     }
     
 }

@@ -1,6 +1,6 @@
 package empresa_agro;
 
-public abstract class Producto {
+public class Producto {
     
     private int diasCaducidad;
     private String numLote;

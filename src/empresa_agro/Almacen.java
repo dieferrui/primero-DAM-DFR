@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class Almacen {
 
-    private Scanner sca = new Scanner(System.in);
+    protected static Scanner sca = new Scanner(System.in);
     private int cantidadDeStock = 0;
     private ArrayList<Producto> productosAlmacenados = new ArrayList<>();
     
@@ -57,7 +57,7 @@ public class Almacen {
             } while (precioKilos <= 0);
 
             System.out.flush();
-            cantidadDeStock++;
+            cantidadDeStock += producto.getStockEnKilos();
             productosAlmacenados.add(producto);
             productosAlmacenados.sort(null);
 
