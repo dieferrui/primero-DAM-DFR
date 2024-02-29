@@ -1,0 +1,30 @@
+{
+    "nombre": "Edvard Munch",
+    "fecha-nacimiento": "12-12-1863",
+    "lugar-nacimiento": "Loten, Noruega",
+    "fecha-defuncion": "23-01-1944",
+    "lugar-defuncion": "Oslo, Noruega",
+    "obras":
+        [
+            {
+                "nombre": "Madonna",
+                "anno-creacion": 1895,
+                "URL": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Edvard_Munch_-_Madonna_%281894-1895%29.jpg/250px-Edvard_Munch_-_Madonna_%281894-1895%29.jpg"
+            },
+            {
+                "nombre": "Manos",
+                "anno-creacion": 1893,
+                "URL": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Edvard_Munch_-_The_Hands_%281893%29.jpg/103px-Edvard_Munch_-_The_Hands_%281893%29.jpg"
+            },
+            {
+                "nombre": "Dama en el mar",
+                "anno-creacion": 1896,
+                "URL": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Edvard_Munch%2C_Lady_from_the_sea.jpg/120px-Edvard_Munch%2C_Lady_from_the_sea.jpg"
+            },
+            {
+                "nombre": "Modelo con silla de mimbre",
+                "anno-creacion": 1921,
+                "URL": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Model_by_the_Wicker_Chair.jpeg/98px-Model_by_the_Wicker_Chair.jpeg"
+            }
+        ]
+}
