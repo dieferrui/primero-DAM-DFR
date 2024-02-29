@@ -1,9 +1,11 @@
 package empresa_agro;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Almacen {
 
+    private Scanner sca = new Scanner(System.in);
     private int cantidadDeStock = 0;
     private ArrayList<Producto> productosAlmacenados = new ArrayList<>();
     
@@ -23,7 +25,7 @@ public class Almacen {
             do {
                 
                 System.out.println("Indique la cantidad de stock en kilos (Sólo números enteros): ");
-                numKilos = Main.SC.nextInt();
+                numKilos = sca.nextInt();
 
                 if (numKilos <= 0) {
 
@@ -40,7 +42,7 @@ public class Almacen {
             do {
 
                 System.out.println("Indique el precio por kilo del producto (Sólo números enteros): ");
-                precioKilos = Main.SC.nextInt();
+                precioKilos = sca.nextInt();
 
                 if (precioKilos <= 0) {
                     
@@ -80,7 +82,7 @@ public class Almacen {
 
         System.out.println("Indique qué cantidad de stock quiere extraer del\n"
                             + "producto en stock con fecha de caducidad más próxima: ");
-        int cantidadProducto = Main.SC.nextInt();
+        int cantidadProducto = sca.nextInt();
 
         Producto productoAfectado = productosAlmacenados.get(0);
         int stockDisponible = productoAfectado.getStockEnKilos();
