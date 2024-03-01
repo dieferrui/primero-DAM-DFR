@@ -1,4 +1,4 @@
-package programas_java.multiplication_game;
+package programas_java.games.multiplicaton;
 
 import java.util.InputMismatchException;
 import java.util.Random;

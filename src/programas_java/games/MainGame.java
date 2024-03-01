@@ -1,6 +1,10 @@
-package programas_java.multiplication_game;
+package programas_java.games;
 
 import java.util.Scanner;
+
+import programas_java.games.chess.ChessGame;
+import programas_java.games.hangman.HangmanGame;
+import programas_java.games.multiplicaton.MultiplicationGame;
 
 public class MainGame {
 
@@ -14,13 +18,14 @@ public class MainGame {
             
             System.out.println("Welcome to the Game selection screen.");
             System.out.println("What game would you like to play?\n1. Multiplication Game\n"
-                            + "2. Hangman\n3. Exit");
+                            + "2. Hangman\n3. Chess\n4. Exit");
             mainSelect = SC.nextLine();
 
             switch (mainSelect) {
 
                 case "1": multiplyGame(); break;
                 case "2": hangmanGame(); break;
+                case "3": chessGame(); break;
                 default: break;
             }
 
@@ -30,6 +35,7 @@ public class MainGame {
         SC.close();
         MultiplicationGame.scm.close();
         HangmanGame.sch.close();
+        ChessGame.scc.close();
     }
 
     public static void multiplyGame() {
@@ -79,6 +85,30 @@ public class MainGame {
             }
 
         } while (!select.equals("5"));
+    }
+
+    public static void chessGame() {
+
+        String select;
+        String rulesetPath = "primero-DAM-DFR\\src\\programas_java\\multiplication_game\\ChessRuleset.txt";
+        ChessGame game = new ChessGame();
+
+        do {
+
+            System.out.println("Chess");
+            System.out.println("Choose game mode:\n1. Classic\n2. Quantum\n3. Rules\n4. Exit");
+
+            select = SC.nextLine();
+
+            switch (select) {
+
+                case "1": game.gameSelection(false); break;
+                case "2": game.gameSelection(true); break;
+                case "3": Lector.openFile(rulesetPath); break;
+                default: break;
+            }
+
+        } while (!select.equals("4"));
     }
     
 }
