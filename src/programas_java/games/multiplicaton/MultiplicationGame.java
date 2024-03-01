@@ -161,4 +161,8 @@ public class MultiplicationGame extends Game {
         }
     }
 
+    public static Scanner getScm() {
+        return scm;
+    }
+
 }

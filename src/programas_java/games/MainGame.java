@@ -33,8 +33,8 @@ public class MainGame {
         } while (!mainSelect.equals("3"));
 
         SC.close();
-        MultiplicationGame.scm.close();
-        HangmanGame.sch.close();
+        MultiplicationGame.getScm().close();
+        HangmanGame.getSch().close();
         ChessGame.scc.close();
     }
 

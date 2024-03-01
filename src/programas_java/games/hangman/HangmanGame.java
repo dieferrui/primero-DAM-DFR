@@ -260,5 +260,9 @@ public class HangmanGame extends Game {
 
         }
     }
+
+    public static Scanner getSch() {
+        return sch;
+    }
     
 }
