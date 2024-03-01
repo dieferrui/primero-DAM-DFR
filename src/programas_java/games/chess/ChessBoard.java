@@ -5,14 +5,15 @@ import chess.pieces.*;
 public class ChessBoard {
 
     Square[][] board = new Square[8][8];
-    private final String WHITE = "white";
-    private final String BLACK = "black";
-    private final String PAWN = "pawn";
-    private final String TOWER = "tower";
-    private final String HORSE = "horse";
-    private final String BISHOP = "bishop";
-    private final String QUEEN = "queen";
-    private final String KING = "king";
+
+    private static final String WHITE = "white";
+    private static final String BLACK = "black";
+    private static final String PAWN = "pawn";
+    private static final String TOWER = "tower";
+    private static final String HORSE = "horse";
+    private static final String BISHOP = "bishop";
+    private static final String QUEEN = "queen";
+    private static final String KING = "king";
     
     private void prepareBoard() {
 
@@ -27,6 +28,7 @@ public class ChessBoard {
                 board[fil][col] = new Square(idCompleta);
 
                 Piece startPiece = generatePiece(fil, col);
+                board[fil][col].setPiece(startPiece);
 
             }
         }
