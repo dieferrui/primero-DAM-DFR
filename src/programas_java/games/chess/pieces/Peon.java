@@ -1,4 +1,6 @@
-package programas_java.chess.pieces;
+package programas_java.games.chess.pieces;
+
+import programas_java.games.chess.*;
 
 public class Peon extends Piece {
     
@@ -8,9 +10,18 @@ public class Peon extends Piece {
         
     }
 
-    public void movePiece() {
+    public int[][] movePiece(Square square, ChessBoard board) {
 
-        // TODO
+        int filPos = square.getFil();
+        int colPos = square.getCol();
+
+        if (this.getColor().equals("white")) {
+
+            if (this.getNumberOfMoves() < 1) {
+
+                
+            }
+        }
 
     }
 }

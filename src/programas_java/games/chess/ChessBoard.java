@@ -1,10 +1,15 @@
 package programas_java.games.chess;
 
-import chess.pieces.*;
+import programas_java.games.*;
+import programas_java.games.chess.pieces.*;
 
 public class ChessBoard {
 
-    Square[][] board = new Square[8][8];
+    public ChessBoard() {
+        // Empty constructor
+    }
+
+    Square[][] boardLayout = new Square[8][8];
 
     private static final String WHITE = "white";
     private static final String BLACK = "black";
@@ -15,7 +20,7 @@ public class ChessBoard {
     private static final String QUEEN = "queen";
     private static final String KING = "king";
     
-    private void prepareBoard() {
+    public void prepareBoard() {
 
         for (int fil = 0; fil < 8; fil++) {
 
@@ -25,10 +30,10 @@ public class ChessBoard {
                 int idNum = 8 - fil;
 
                 String idCompleta = "" + idLetra + idNum;
-                board[fil][col] = new Square(idCompleta);
+                boardLayout[fil][col] = new Square(idCompleta);
 
                 Piece startPiece = generatePiece(fil, col);
-                board[fil][col].setPiece(startPiece);
+                boardLayout[fil][col].setPiece(startPiece);
 
             }
         }
@@ -72,5 +77,6 @@ public class ChessBoard {
         }
 
         return pieceReturned;
+
     }
 }

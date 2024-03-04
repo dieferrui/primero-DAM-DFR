@@ -6,6 +6,7 @@ public class Player {
     int playerNumber;
     boolean state;
     int lives;
+    String color;
 
     public Player(String name, int playerNumber) {
 
@@ -121,6 +122,22 @@ public class Player {
         this.playerNumber = playerNumber;
     }
 
+    public int getLives() {
+        return lives;
+    }
+
+    public void setLives(int lives) {
+        this.lives = lives;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
@@ -153,14 +170,6 @@ public class Player {
     @Override
     public String toString() {
         return "Player [name=" + name + ", playerNumber=" + playerNumber + "]";
-    }
-
-    public int getLives() {
-        return lives;
-    }
-
-    public void setLives(int lives) {
-        this.lives = lives;
     }
 
 }

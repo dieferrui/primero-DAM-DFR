@@ -2,6 +2,7 @@ package programas_java.games.hangman;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+import programas_java.games.*;
 
 public class HangmanGame extends Game {
     

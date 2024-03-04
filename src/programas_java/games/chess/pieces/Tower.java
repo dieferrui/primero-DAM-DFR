@@ -1,4 +1,4 @@
-package programas_java.chess.pieces;
+package programas_java.games.chess.pieces;
 
 public class Tower extends Piece {
     

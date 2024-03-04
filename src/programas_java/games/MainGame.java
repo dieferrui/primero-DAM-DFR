@@ -35,7 +35,7 @@ public class MainGame {
         SC.close();
         MultiplicationGame.getScm().close();
         HangmanGame.getSch().close();
-        ChessGame.scc.close();
+        ChessGame.getScc().close();
     }
 
     public static void multiplyGame() {
