@@ -9,7 +9,7 @@ public class ChessBoard {
         // Empty constructor
     }
 
-    Square[][] boardLayout = new Square[8][8];
+    public Square[][] boardLayout = new Square[8][8];
 
     private static final String WHITE = "white";
     private static final String BLACK = "black";
@@ -30,7 +30,7 @@ public class ChessBoard {
                 int idNum = 8 - fil;
 
                 String idCompleta = "" + idLetra + idNum;
-                boardLayout[fil][col] = new Square(idCompleta);
+                boardLayout[fil][col] = new Square(idCompleta, fil, col);
 
                 Piece startPiece = generatePiece(fil, col);
                 boardLayout[fil][col].setPiece(startPiece);

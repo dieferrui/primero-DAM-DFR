@@ -1,6 +1,6 @@
 package programas_java.games.chess.pieces;
 
-public abstract class Piece {
+public class Piece {
     
     protected String color;
     protected String type;
@@ -12,8 +12,6 @@ public abstract class Piece {
         this.type = type;
 
     }
-
-    public abstract void movePiece();
 
     public String getColor() {
         return color;

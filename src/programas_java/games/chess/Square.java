@@ -9,9 +9,11 @@ public class Square {
     private int fil;
     private int col;
 
-    public Square(String squareID) {
+    public Square(String squareID, int fil, int col) {
 
         this.squareID = squareID;
+        this.fil = fil;
+        this.col = col;
 
     }
 
