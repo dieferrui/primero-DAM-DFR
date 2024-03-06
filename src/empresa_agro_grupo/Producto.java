@@ -1,19 +1,22 @@
-package empresa_agro_grupo;
-
 import java.time.LocalDate;
 
-public class Producto {
-    
-    private LocalDate fechaCad;
-    private String numLote;
-    private int udPorStock;
+public abstract class Producto {
 
-    public Producto(LocalDate fechaCad, String numLote, int udPorStock) {
+    private LocalDate fechaCad;
+    private String numeroLote;
+    private int unidadesStock;
+    private double peso;
+    private int cantidad;
+
+
+    public Producto(LocalDate fechaCad, String numeroLote, int unidadesStock, double peso, int cantidad) {
 
         this.fechaCad = fechaCad;
-        this.numLote = numLote;
-        this.udPorStock = udPorStock;
-
+        this.numeroLote = numeroLote;
+        this.unidadesStock = unidadesStock;
+        this.peso = peso;
+        this.cantidad = cantidad;
+        
     }
 
     public LocalDate getFechaCad() {
@@ -24,20 +27,37 @@ public class Producto {
         this.fechaCad = fechaCad;
     }
 
-    public String getNumLote() {
-        return numLote;
+    public String getNumeroLote() {
+        return numeroLote;
     }
 
-    public void setNumLote(String numLote) {
-        this.numLote = numLote;
+    public void setNumeroLote(String numeroLote) {
+        this.numeroLote = numeroLote;
     }
 
-    public int getUdPorStock() {
-        return udPorStock;
+    public int getUnidadesStock() {
+        return unidadesStock;
     }
 
-    public void setUdPorStock(int udPorStock) {
-        this.udPorStock = udPorStock;
+    public void setUnidadesStock(int unidadesStock) {
+        this.unidadesStock = unidadesStock;
     }
 
+    public double getPeso() {
+        return peso;
+    }
+
+    public void setPeso(int peso) {
+        this.peso = peso;
+    }
+
+    public int getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
+    }
+
+    public abstract String mostrarDatos();
 }
