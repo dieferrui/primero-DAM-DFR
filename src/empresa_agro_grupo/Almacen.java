@@ -95,17 +95,15 @@ public class Almacen {
 
                 casos = restarProducto(producto, cantARestar);
 
-            }
+                if (casos[0] == 0) {
 
-            if (casos[0] == 0) {
-
-                cantARestar = casos[1];
-                continue;
-
-            } else {
-
-                break;
-
+                    cantARestar = casos[1];
+    
+                } else {
+    
+                    break;
+    
+                }
             }
         }
     }
