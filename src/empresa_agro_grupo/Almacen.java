@@ -46,7 +46,7 @@ public class Almacen {
         if (productoEntrante.getStock() > espacioDisponible) {
 
             System.out.println("No hay espacio disponible para " + productoEntrante.toString() +
-                "\n Sólo se almacenarán " + espacioDisponible + " kg.");
+                "\nSólo se almacenarán " + espacioDisponible + " kg.");
             return espacioDisponible;
 
         } else {
@@ -119,7 +119,7 @@ public class Almacen {
         if (cant > producto.getStock()) {
 
             System.out.println("Se extraerá todo (" + producto.getStock() + ") el stock del producto " + 
-            producto.getProducto().getNumeroLote() + " a " + producto.getPrecio() + " euros/kg.");
+            producto.getProducto().getNumeroLote() + " a " + producto.getPrecio() + " euros/kg.\n");
 
             espacioOcupado -= producto.getStock();
             productosAlmacenados.remove(producto);
@@ -130,7 +130,7 @@ public class Almacen {
         } else if (cant == producto.getStock()) {
 
             System.out.println("Se extraerá todo (" + producto.getStock() + ") el stock del producto " + 
-            producto.getProducto().getNumeroLote() + " a " + producto.getPrecio() + " euros/kg.");
+            producto.getProducto().getNumeroLote() + " a " + producto.getPrecio() + " euros/kg.\n");
 
             espacioOcupado -= cant;
             productosAlmacenados.remove(producto);
@@ -140,7 +140,7 @@ public class Almacen {
         } else {
 
             System.out.println("Se extraerán " + cant + "kg del producto " + 
-            producto.getProducto().getNumeroLote() + " a " + producto.getPrecio() + " euros/kg.");
+            producto.getProducto().getNumeroLote() + " a " + producto.getPrecio() + " euros/kg.\n");
 
             espacioOcupado -= cant;
             producto.setStock(producto.getStock() - cant);
