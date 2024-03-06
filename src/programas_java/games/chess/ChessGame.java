@@ -57,27 +57,41 @@ public class ChessGame extends Game {
     private void playerTurn(Player player, ChessBoard board) {
 
         String selectedPiece;
+        int movesThisTurn = 0;
+
+        /*
+        Es posible que el jugador seleccione a lo largo del turno una pieza que no
+        se puede mover. Si ocurre esto, el turno se vuelve a iniciar.
+        */
 
         System.out.println(player.getName() + "'s turn...\n");
-        System.out.println("Select piece to move (type exact square where piece is):");
 
-        Square[] pieces = checkPieces(player, board);
+        do {
 
-        for (Square square : pieces) {
+            System.out.println("Select piece to move (type exact square where piece is):");
 
-            System.out.printf("%s in square %s%n", square.getPiece().getType(), square.toString());
+            Square[] pieces = checkPieces(player, board);
 
-        }
+            // Muestra al jugador cada pieza que puede mover
+            for (Square square : pieces) {
 
-        selectedPiece = scc.nextLine();
+                System.out.printf("%s in square %s%n", square.getPiece().getType(), square.toString());
 
-        for (Square square : pieces) {
-
-            if (selectedPiece.equals(square.getSquareID())) {
-
-                movePiece(square, board);
             }
-        }
+
+            selectedPiece = scc.nextLine();
+
+            // Trata de mover la pieza (de entre las posibles) en el tablero
+            for (Square square : pieces) {
+
+                if (selectedPiece.equals(square.getSquareID())) {
+
+                    movesThisTurn = movePiece(square, board);
+
+                }
+            }
+
+        } while (movesThisTurn < 1);
         
         // TODO finalizar el método
     }
@@ -88,6 +102,7 @@ public class ChessGame extends Game {
         ArrayList<Square> validPieces = new ArrayList<>();
         Square[] returnedPieces;
 
+        // Compara el color del jugador con el de las piezas en el tablero para ver cuáles puede mover
         for (int fil = 0; fil < 8; fil++) {
 
             for (int col = 0; col < 8; col++) {
@@ -107,7 +122,7 @@ public class ChessGame extends Game {
     // Método para elegir a qué casilla se desea mover la pieza seleccionada
     private int movePiece(Square square, ChessBoard board) {
 
-        ArrayList<String> validMoves = square.getPiece().movePiece(square, board);
+        ArrayList<Square> validMoves = square.getPiece().movePiece(square, board);
         int localMoves = 0;
 
         if (validMoves.isEmpty()) {
@@ -120,18 +135,33 @@ public class ChessGame extends Game {
 
             System.out.println("Select square to move: ");
 
-            for (String move : validMoves) {
+            // Muestra las casillas válidas al jugador
+            for (Square move : validMoves) {
 
-                System.out.printf("Move %s to square %s%n", square.getPiece().getType(), move);
+                System.out.printf("Move %s to square %s%n", square.getPiece().getType(), move.getSquareID());
 
             }
 
-            // TODO finalizar el método
+            String nextMove = scc.nextLine();
 
+            // Mueve la pieza a la casilla seleccionada
+            for (Square[] targetSquares : board.boardLayout) {
+
+                for (Square target : targetSquares) {
+
+                    if (nextMove.equals(target.getSquareID())) {
+
+                        target.setPiece(square.getPiece());
+
+                    }
+                }
+            }
+
+            // "Elimina" la pieza de la casilla original
+            square.setPiece(null);
         }
 
         return localMoves;
-
     }
 
     public static Scanner getScc() {

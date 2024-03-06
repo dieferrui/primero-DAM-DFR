@@ -16,7 +16,7 @@ public abstract class Piece {
 
     }
 
-    public abstract ArrayList<String> movePiece(Square square, ChessBoard board);
+    public abstract ArrayList<Square> movePiece(Square square, ChessBoard board);
 
     public String getColor() {
         return color;

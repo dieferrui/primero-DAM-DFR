@@ -11,11 +11,11 @@ public class Peon extends Piece {
         
     }
 
-    public ArrayList<String> movePiece(Square square, ChessBoard board) {
+    public ArrayList<Square> movePiece(Square square, ChessBoard board) {
 
         int filPos = square.getFil();
         int colPos = square.getCol();
-        ArrayList<String> validMoves;
+        ArrayList<Square> validMoves;
 
         if (this.getColor().equals("white")) {
 
@@ -30,35 +30,35 @@ public class Peon extends Piece {
         return validMoves;
     }
 
-    private ArrayList<String> moveIfWhite(Square square, ChessBoard board, int filPos, int colPos) {
+    private ArrayList<Square> moveIfWhite(Square square, ChessBoard board, int filPos, int colPos) {
 
-        ArrayList<String> validMoves = new ArrayList<>();
+        ArrayList<Square> validMoves = new ArrayList<>();
 
         if (square.getPiece().getNumberOfMoves() < 1 && board.boardLayout[filPos + 2][colPos].getPiece() == null &&
             board.boardLayout[filPos + 1][colPos].getPiece() == null) {
 
-            String initialMove = board.boardLayout[filPos + 2][colPos].getSquareID();
+            Square initialMove = board.boardLayout[filPos + 2][colPos];
             validMoves.add(initialMove);
 
         }
 
         if (board.boardLayout[filPos + 1][colPos].getPiece() == null) {
 
-            String advance = board.boardLayout[filPos + 1][colPos].getSquareID();
+            Square advance = board.boardLayout[filPos + 1][colPos];
             validMoves.add(advance);
 
         }
 
         if (board.boardLayout[filPos + 1][colPos - 1].getPiece() != null) {
 
-            String eatLeft = board.boardLayout[filPos + 1][colPos - 1].getSquareID();
+            Square eatLeft = board.boardLayout[filPos + 1][colPos - 1];
             validMoves.add(eatLeft);
 
         }
 
         if (board.boardLayout[filPos + 1][colPos + 1].getPiece() != null) {
 
-            String eatRight = board.boardLayout[filPos + 1][colPos + 1].getSquareID();
+            Square eatRight = board.boardLayout[filPos + 1][colPos + 1];
             validMoves.add(eatRight);
 
         }
@@ -66,35 +66,35 @@ public class Peon extends Piece {
         return validMoves;
     }
 
-    private ArrayList<String> moveIfBlack(Square square, ChessBoard board, int filPos, int colPos) {
+    private ArrayList<Square> moveIfBlack(Square square, ChessBoard board, int filPos, int colPos) {
 
-        ArrayList<String> validMoves = new ArrayList<>();
+        ArrayList<Square> validMoves = new ArrayList<>();
 
         if (square.getPiece().getNumberOfMoves() < 1 && board.boardLayout[filPos - 2][colPos].getPiece() == null &&
             board.boardLayout[filPos - 1][colPos].getPiece() == null) {
 
-            String initialMove = board.boardLayout[filPos - 2][colPos].getSquareID();
+            Square initialMove = board.boardLayout[filPos - 2][colPos];
             validMoves.add(initialMove);
 
         }
 
         if (board.boardLayout[filPos - 1][colPos].getPiece() == null) {
 
-            String advance = board.boardLayout[filPos - 1][colPos].getSquareID();
+            Square advance = board.boardLayout[filPos - 1][colPos];
             validMoves.add(advance);
 
         }
 
         if (board.boardLayout[filPos - 1][colPos - 1].getPiece() != null) {
 
-            String eatLeft = board.boardLayout[filPos - 1][colPos - 1].getSquareID();
+            Square eatLeft = board.boardLayout[filPos - 1][colPos - 1];
             validMoves.add(eatLeft);
 
         }
 
         if (board.boardLayout[filPos - 1][colPos + 1].getPiece() != null) {
 
-            String eatRight = board.boardLayout[filPos - 1][colPos + 1].getSquareID();
+            Square eatRight = board.boardLayout[filPos - 1][colPos + 1];
             validMoves.add(eatRight);
 
         }
