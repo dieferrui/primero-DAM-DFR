@@ -72,6 +72,7 @@ public class Almacen {
 
         for (PAlmacenado productoActual : productosAlmacenados) {
 
+            sb.delete(0, sb.length());
             sb.append("-----------------------\n");
             sb.append(cuenta + ". ");
             sb.append(productoActual.toString()).append("\n");
