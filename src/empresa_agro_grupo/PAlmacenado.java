@@ -1,24 +1,14 @@
-import java.time.LocalDate;
-
 public class PAlmacenado {
 
     private Producto producto;
-    private LocalDate fechaCad;
-    private String numeroLote;
     private int stock;
     private double precio;
-    private String descripcion;
-    private String tipo;
 
-    public PAlmacenado(Producto producto, double precio, String descripcion) {
+    public PAlmacenado(Producto producto, int stock, double precio) {
 
         this.producto = producto;
-        this.fechaCad = producto.getFechaCad();
-        this.numeroLote = producto.getNumeroLote();
+        this.stock = stock;
         this.precio = precio;
-        this.descripcion = descripcion;
-        this.tipo = producto.getClass().getName();
-        aumentarStock(producto);
 
     }
 
@@ -28,22 +18,6 @@ public class PAlmacenado {
 
     public void setProducto(Producto producto) {
         this.producto = producto;
-    }
-
-    public LocalDate getFechaCad() {
-        return fechaCad;
-    }
-
-    public void setFechaCad(LocalDate fechaCad) {
-        this.fechaCad = fechaCad;
-    }
-
-    public String getNumeroLote() {
-        return numeroLote;
-    }
-
-    public void setNumeroLote(String numeroLote) {
-        this.numeroLote = numeroLote;
     }
 
     public int getStock() {
@@ -62,24 +36,9 @@ public class PAlmacenado {
         this.precio = precio;
     }
 
-    public String getDescripcion() {
-        return descripcion;
-    }
-
-    public String getTipo() {
-        return tipo;
-    }
-
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
-    }
-
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
-    }
-
-    protected void aumentarStock(Producto producto) {
-        this.stock = stock + producto.getCantidad();
+    @Override
+    public String toString() {
+        return "Producto: " + producto.getNumeroLote() + " - Stock: " + stock + " - Precio: " + precio;
     }
 
 }

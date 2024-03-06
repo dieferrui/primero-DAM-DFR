@@ -4,9 +4,9 @@ public class PCongelado extends Producto {
 
     private double tempCong;
 
-    public PCongelado(LocalDate fechaCad, String numeroLote, int unidadesStock, double peso, int cantidad, double tempCong) {
+    public PCongelado(LocalDate fechaCad, String numeroLote, double tempCong) {
 
-        super(fechaCad, numeroLote, unidadesStock, peso, cantidad);
+        super(fechaCad, numeroLote);
         this.tempCong = tempCong;
 
     }
@@ -24,10 +24,12 @@ public class PCongelado extends Producto {
     }
 
     @Override
-    public String mostrarDatos() { StringBuilder sb = new StringBuilder();
-
-        sb.append(tempCong);
-        return sb.toString();
+    public String toString() { 
         
+        StringBuilder sb = new StringBuilder();
+        sb.append("Temp. recomendada de congelación: ");
+        sb.append(tempCong);
+
+        return sb.toString();
     }
 }

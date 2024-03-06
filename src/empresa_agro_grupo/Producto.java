@@ -1,22 +1,15 @@
 import java.time.LocalDate;
 
-public abstract class Producto {
+public class Producto {
 
     private LocalDate fechaCad;
     private String numeroLote;
-    private int unidadesStock;
-    private double peso;
-    private int cantidad;
 
-
-    public Producto(LocalDate fechaCad, String numeroLote, int unidadesStock, double peso, int cantidad) {
+    public Producto(LocalDate fechaCad, String numeroLote) {
 
         this.fechaCad = fechaCad;
         this.numeroLote = numeroLote;
-        this.unidadesStock = unidadesStock;
-        this.peso = peso;
-        this.cantidad = cantidad;
-        
+
     }
 
     public LocalDate getFechaCad() {
@@ -35,29 +28,9 @@ public abstract class Producto {
         this.numeroLote = numeroLote;
     }
 
-    public int getUnidadesStock() {
-        return unidadesStock;
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
     }
 
-    public void setUnidadesStock(int unidadesStock) {
-        this.unidadesStock = unidadesStock;
-    }
-
-    public double getPeso() {
-        return peso;
-    }
-
-    public void setPeso(int peso) {
-        this.peso = peso;
-    }
-
-    public int getCantidad() {
-        return cantidad;
-    }
-
-    public void setCantidad(int cantidad) {
-        this.cantidad = cantidad;
-    }
-
-    public abstract String mostrarDatos();
 }
