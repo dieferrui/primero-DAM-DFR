@@ -15,6 +15,7 @@ public class ChessGame extends Game {
         // Empty constructor
     }
 
+    // Método necesario para elegir el tipo de juego
     public void gameSelection(boolean isQuantum) {
 
         this.isQuantum = isQuantum;
@@ -22,6 +23,7 @@ public class ChessGame extends Game {
 
     }
 
+    // Método para ciclo de juego
     public void gameCycle(int numPlayers) {
 
         int kingNumber;
@@ -51,6 +53,7 @@ public class ChessGame extends Game {
 
     }
 
+    // Método del turno del jugador
     private void playerTurn(Player player, ChessBoard board) {
 
         String selectedPiece;
@@ -62,7 +65,7 @@ public class ChessGame extends Game {
 
         for (Square square : pieces) {
 
-            System.out.printf("%s in square %s\n", square.getPiece().getType(), square.toString());
+            System.out.printf("%s in square %s%n", square.getPiece().getType(), square.toString());
 
         }
 
@@ -76,9 +79,10 @@ public class ChessGame extends Game {
             }
         }
         
-        // Seguir aquí
+        // TODO finalizar el método
     }
 
+    // Método para visualizar qué piezas puede mover el jugador
     private Square[] checkPieces(Player player, ChessBoard board) {
 
         ArrayList<Square> validPieces = new ArrayList<>();
@@ -100,9 +104,34 @@ public class ChessGame extends Game {
         return returnedPieces;
     }
 
-    private void movePiece(Square square, ChessBoard board) {
+    // Método para elegir a qué casilla se desea mover la pieza seleccionada
+    private int movePiece(Square square, ChessBoard board) {
 
-        
+        ArrayList<String> validMoves = square.getPiece().movePiece(square, board);
+        int localMoves = 0;
+
+        if (validMoves.isEmpty()) {
+
+            System.out.println("This piece can't move.");
+
+        } else {
+
+            localMoves++;
+
+            System.out.println("Select square to move: ");
+
+            for (String move : validMoves) {
+
+                System.out.printf("Move %s to square %s%n", square.getPiece().getType(), move);
+
+            }
+
+            // TODO finalizar el método
+
+        }
+
+        return localMoves;
+
     }
 
     public static Scanner getScc() {

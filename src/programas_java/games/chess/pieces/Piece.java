@@ -1,6 +1,9 @@
 package programas_java.games.chess.pieces;
 
-public class Piece {
+import programas_java.games.chess.*;
+import java.util.ArrayList;
+
+public abstract class Piece {
     
     protected String color;
     protected String type;
@@ -12,6 +15,8 @@ public class Piece {
         this.type = type;
 
     }
+
+    public abstract ArrayList<String> movePiece(Square square, ChessBoard board);
 
     public String getColor() {
         return color;

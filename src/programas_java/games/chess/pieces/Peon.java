@@ -34,7 +34,8 @@ public class Peon extends Piece {
 
         ArrayList<String> validMoves = new ArrayList<>();
 
-        if (square.getPiece().getNumberOfMoves() < 1 && (board.boardLayout[filPos + 2][colPos].getPiece() == null)) {
+        if (square.getPiece().getNumberOfMoves() < 1 && board.boardLayout[filPos + 2][colPos].getPiece() == null &&
+            board.boardLayout[filPos + 1][colPos].getPiece() == null) {
 
             String initialMove = board.boardLayout[filPos + 2][colPos].getSquareID();
             validMoves.add(initialMove);
@@ -69,7 +70,8 @@ public class Peon extends Piece {
 
         ArrayList<String> validMoves = new ArrayList<>();
 
-        if (square.getPiece().getNumberOfMoves() < 1 && (board.boardLayout[filPos - 2][colPos].getPiece() == null)) {
+        if (square.getPiece().getNumberOfMoves() < 1 && board.boardLayout[filPos - 2][colPos].getPiece() == null &&
+            board.boardLayout[filPos - 1][colPos].getPiece() == null) {
 
             String initialMove = board.boardLayout[filPos - 2][colPos].getSquareID();
             validMoves.add(initialMove);
