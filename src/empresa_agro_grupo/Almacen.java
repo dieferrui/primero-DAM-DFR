@@ -75,7 +75,7 @@ public class Almacen {
             sb.delete(0, sb.length());
             sb.append("-----------------------\n");
             sb.append(cuenta + ". ");
-            sb.append(productoActual.toString()).append("\n");
+            sb.append(productoActual.toString());
 
             System.out.println(sb.toString());
             cuenta++;
