@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "Main",
+            "projectName": "src_fb376f8a"
+        },
+        {
+            "type": "java",
             "name": "EntornoLogin",
             "request": "launch",
             "mainClass": "entornoJavadoc.EntornoLogin",

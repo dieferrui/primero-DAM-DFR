@@ -27,6 +27,9 @@ public class Almacen {
         
         } else {
             
+            System.out.println("Se han añadido " + cantPosible + "kg del producto " +
+                productoNuevo.getNumeroLote() + " al almacén.");
+
             productosAlmacenados.add(productoEntrante);
             espacioOcupado += productoEntrante.getStock();
         
@@ -63,16 +66,18 @@ public class Almacen {
     public void mostrarProductos() {
 
         StringBuilder sb = new StringBuilder();
+        int cuenta = 1;
 
         sb.append("Estado del almacén: " + espacioOcupado + "/" + espacio + "kg disponibles.\n");
 
         for (PAlmacenado productoActual : productosAlmacenados) {
 
             sb.append("-----------------------\n");
-            sb.append("Descripción: ");
+            sb.append(cuenta + ". ");
             sb.append(productoActual.toString()).append("\n");
 
             System.out.println(sb.toString());
+            cuenta++;
         }
     }
 
