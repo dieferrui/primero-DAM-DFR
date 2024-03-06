@@ -80,6 +80,8 @@ public class Almacen {
             System.out.println(sb.toString());
             cuenta++;
         }
+
+        System.out.println();
     }
 
     public void extraerProducto(String productoID, int cantProducto) {
