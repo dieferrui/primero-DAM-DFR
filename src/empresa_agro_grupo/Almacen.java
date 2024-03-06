@@ -36,7 +36,7 @@ public class Almacen {
 
     }
 
-    public int comprobarEspacio(PAlmacenado productoEntrante) {
+    private int comprobarEspacio(PAlmacenado productoEntrante) {
 
         int espacioDisponible = espacio - espacioOcupado;
 
@@ -53,7 +53,7 @@ public class Almacen {
         }
     }
 
-    public void ordenarProductos() {
+    private void ordenarProductos() {
 
         Collections.sort(productosAlmacenados, (almacenado1, almacenado2) -> 
         almacenado1.getProducto().getFechaCad().compareTo(almacenado2.getProducto().getFechaCad()));
@@ -102,7 +102,7 @@ public class Almacen {
         }
     }
 
-    public int[] restarProducto(PAlmacenado producto, int cant) {
+    private int[] restarProducto(PAlmacenado producto, int cant) {
 
         int res = 0;
         int[] casoValor = new int[2];
