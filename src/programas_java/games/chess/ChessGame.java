@@ -117,7 +117,7 @@ public class ChessGame extends Game {
             }
         }
 
-        returnedPieces = (Square[])validPieces.toArray();
+        returnedPieces = validPieces.toArray(new Square[0]);
         return returnedPieces;
     }
 
