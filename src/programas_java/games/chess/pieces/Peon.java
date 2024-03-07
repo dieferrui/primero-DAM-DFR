@@ -51,25 +51,46 @@ public class Peon extends Piece {
 
         }
 
-        if (board.boardLayout[filPos + 1][colPos].getPiece() == null) {
+        try {
 
-            Square advance = board.boardLayout[filPos + 1][colPos];
-            validMoves.add(advance);
+            if (board.boardLayout[filPos + 1][colPos].getPiece() == null) {
 
+                Square advance = board.boardLayout[filPos + 1][colPos];
+                validMoves.add(advance);
+
+            }
+        
+        } catch (ArrayIndexOutOfBoundsException e) {
+
+            // Square doesn't get added to the Array of moves
         }
 
-        if (board.boardLayout[filPos + 1][colPos - 1].getPiece().getColor().equals("black")) {
+        try {
 
-            Square eatLeft = board.boardLayout[filPos + 1][colPos - 1];
-            validMoves.add(eatLeft);
+            if (board.boardLayout[filPos + 1][colPos - 1].getPiece().getColor().equals("black")) {
 
+                Square eatLeft = board.boardLayout[filPos + 1][colPos - 1];
+                validMoves.add(eatLeft);
+
+            }
+
+        } catch (ArrayIndexOutOfBoundsException e) {
+
+            // Square doesn't get added to Array of moves
         }
 
-        if (board.boardLayout[filPos + 1][colPos + 1].getPiece().getColor().equals("black")) {
+        try {
+            
+            if (board.boardLayout[filPos + 1][colPos + 1].getPiece().getColor().equals("black")) {
 
-            Square eatRight = board.boardLayout[filPos + 1][colPos + 1];
-            validMoves.add(eatRight);
+                Square eatRight = board.boardLayout[filPos + 1][colPos + 1];
+                validMoves.add(eatRight);
 
+            }
+        
+        } catch (ArrayIndexOutOfBoundsException e) {
+
+            // Square doesn't get added to Array of moves
         }
 
         return validMoves;
