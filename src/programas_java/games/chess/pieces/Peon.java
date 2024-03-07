@@ -27,6 +27,15 @@ public class Peon extends Piece {
 
         }
 
+        for (int i = 0; i < validMoves.size(); i++) {
+
+            if (validMoves.get(i).getFil() < 0 || validMoves.get(i).getCol() < 0) {
+
+                validMoves.remove(validMoves.get(i));
+
+            }
+        }
+
         return validMoves;
     }
 
