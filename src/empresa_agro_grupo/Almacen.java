@@ -87,7 +87,7 @@ public class Almacen {
     public void extraerProducto(String productoID, int cantProducto) {
 
         int cantARestar = cantProducto;
-        int[] casos = new int[2];
+        int[] casos;
 
         for (PAlmacenado producto: productosAlmacenados) {
 
