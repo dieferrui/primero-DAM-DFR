@@ -39,17 +39,19 @@ public class ChessGame extends Game {
             
             for (Player player : players) {
 
-                board.paintBoard();
+                // board.paintBoard();
                 playerTurn(player, board);
-                kingNumber = checkForKings();
-
+                // kingNumber = checkForKings();
+                
+                /*
                 if (kingNumber < 2) {
                     break;
                 }
+                */
 
             }
 
-        } while (kingNumber >= 2);
+        } while (true); // (kingNumber >= 2);
 
     }
 

@@ -41,7 +41,7 @@ public class ChessBoard {
 
     private Piece generatePiece(int fil, int col) {
 
-        Piece pieceReturned;
+        Piece pieceReturned = new Peon(WHITE, PAWN);
 
         if (fil == 1) {
             
