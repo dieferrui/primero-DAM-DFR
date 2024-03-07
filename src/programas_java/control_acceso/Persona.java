@@ -1,6 +1,7 @@
 package programas_java.control_acceso;
 
 import java.time.format.DateTimeFormatter;
+import java.time.DateTimeException;
 import java.time.LocalDateTime;
 
 public class Persona {
@@ -32,6 +33,10 @@ public class Persona {
 
             System.out.println("Esta es la primera vez que inicias sesión.");
 
+        } catch (DateTimeException e) {
+
+            System.out.println("Ha ocurrido un error en el formateado de la fecha.");
+            
         }
         
         System.out.println("Has iniciado sesión un total de " + persona.getNumSesiones() + " veces.");
