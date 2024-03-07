@@ -14,25 +14,25 @@ public class Peon extends Piece {
     public ArrayList<Square> movePiece(Square square, ChessBoard board) {
 
         ArrayList<Square> validMoves;
+        int filPos = square.getFil();
+        int colPos = square.getCol();
 
         if (this.getColor().equals("white")) {
 
-            validMoves = moveIfWhite(square, board);
+            validMoves = moveIfWhite(square, board, filPos, colPos);
 
         } else {
 
-            validMoves = moveIfBlack(square, board);
+            validMoves = moveIfBlack(square, board, filPos, colPos);
 
         }
 
         return validMoves;
     }
 
-    private ArrayList<Square> moveIfWhite(Square square, ChessBoard board) {
+    private ArrayList<Square> moveIfWhite(Square square, ChessBoard board, int filPos, int colPos) {
 
         ArrayList<Square> validMoves = new ArrayList<>();
-        int filPos = square.getFil();
-        int colPos = square.getCol();
 
         if (square.getPiece().getNumberOfMoves() < 1 && board.boardLayout[filPos + 2][colPos].getPiece() == null &&
             board.boardLayout[filPos + 1][colPos].getPiece() == null) {

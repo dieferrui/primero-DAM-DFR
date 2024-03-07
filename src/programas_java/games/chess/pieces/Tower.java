@@ -15,21 +15,12 @@ public class Tower extends Piece {
 
     public ArrayList<Square> movePiece(Square square, ChessBoard board) {
 
-        ArrayList<Square> validMoves;
-
-        validMoves = moveByColor(square, board, square.getPiece().getColor());
-
-        return validMoves;
-    }
-
-    public ArrayList<Square> moveByColor(Square square, ChessBoard board, String color) {
-
         ArrayList<Square> validMoves = new ArrayList<>();
-        String targetColor;
         int filPos = square.getFil();
         int colPos = square.getCol();
-        
-        if (color.equals("white")) {
+        String targetColor;
+
+        if (square.getPiece().getColor().equals("white")) {
 
             targetColor = "black";
 
@@ -37,7 +28,7 @@ public class Tower extends Piece {
 
             targetColor = "white";
         }
-        
+
         // Movimiento vertical hacia arriba
         for (int i = (filPos - 1); i >= 0; i--) {
 
@@ -61,7 +52,7 @@ public class Tower extends Piece {
         }
 
         // Movimiento vertical hacia abajo
-        for (int i = (filPos + 1); i <= 8; i++) {
+        for (int i = (filPos + 1); i <= 7; i++) {
 
             if (board.boardLayout[i][colPos].getPiece() == null) {
 
@@ -105,7 +96,7 @@ public class Tower extends Piece {
         }
 
         // Movimiento horizontal a la derecha
-        for (int i = (colPos + 1); i <= 8; i++) {
+        for (int i = (colPos + 1); i <= 7; i++) {
 
             if (board.boardLayout[filPos][i].getPiece() == null) {
 
