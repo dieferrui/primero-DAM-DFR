@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+    <channel>
+        <title>Pizzas "La Serrana"</title>
+        <link>https://www.pizzerialaserrana.it</link>
+        <description>Menú de pizzas</description>
+        <item>
+            <title>La Serrana</title>
+            <description>La única y original</description>
+            <base>Salsa de tomate</base>
+            <ingPrincipal>Jamón serrano</ingPrincipal>
+            <ingAdicionales>Olivas, queso curado</ingAdicionales>
+            <creador>Chef Ramírez</creador>
+        </item>
+        <item>
+            <title>La Costeña</title>
+            <description>Con un toque de mar</description>
+            <base>Salsa de tomate</base>
+            <ingPrincipal>Anchoas</ingPrincipal>
+            <ingAdicionales>Gambas, ajo, piña</ingAdicionales>
+            <creador>Chef Roig</creador>
+        </item>
+        <item>
+            <title>La Montañesa</title>
+            <description>Para los amantes del campo</description>
+            <base>Salsa verde</base>
+            <ingPrincipal>Carne picada</ingPrincipal>
+            <ingAdicionales>Champiñones, maíz, romero</ingAdicionales>
+            <creador>Chef Azo</creador>
+        </item>
+    </channel>
+</rss>
