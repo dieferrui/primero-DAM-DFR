@@ -45,8 +45,6 @@ public class Almacen {
 
         if (productoEntrante.getStock() > espacioDisponible) {
 
-            System.out.println("No hay espacio disponible para " + productoEntrante.toString() +
-                "\nSólo se almacenarán " + espacioDisponible + " kg.");
             return espacioDisponible;
 
         } else {
@@ -89,7 +87,9 @@ public class Almacen {
         int cantARestar = cantProducto;
         int[] casos;
 
-        for (PAlmacenado producto: productosAlmacenados) {
+        for (int i = 0; i < productosAlmacenados.size(); i++) {
+
+            PAlmacenado producto = productosAlmacenados.get(i);
 
             if (productoID.equals(producto.getProducto().getNumeroLote())) {
 
@@ -133,6 +133,7 @@ public class Almacen {
             espacioOcupado -= cant;
             productosAlmacenados.remove(producto);
 
+            resto = 0;
             res = 0;
 
         } else {
@@ -143,6 +144,7 @@ public class Almacen {
             espacioOcupado -= cant;
             producto.setStock(producto.getStock() - cant);
 
+            resto = 0;
             res = 2;
 
         }
