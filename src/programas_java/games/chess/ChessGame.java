@@ -88,7 +88,7 @@ public class ChessGame extends Game {
 
                 if (selectedPiece.equals(square.getSquareID())) {
 
-                    movesThisTurn = movePiece(square, board);
+                    movesThisTurn = executeMove(square, board);
 
                 }
             }
@@ -122,7 +122,7 @@ public class ChessGame extends Game {
     }
 
     // Método para elegir a qué casilla se desea mover la pieza seleccionada
-    private int movePiece(Square square, ChessBoard board) {
+    private int executeMove(Square square, ChessBoard board) {
 
         ArrayList<Square> validMoves = square.getPiece().movePiece(square, board);
         int localMoves = 0;
