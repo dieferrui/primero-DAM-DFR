@@ -27,6 +27,8 @@ public class Main {
 
         almacen.extraerProducto("pa002", 120);
 
+        almacen.extraerProducto("hl003", 50);
+
         almacen.extraerProducto("fr001", 400);
 
         almacen.mostrarProductos();

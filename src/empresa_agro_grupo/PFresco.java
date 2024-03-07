@@ -41,4 +41,35 @@ public class PFresco extends Producto {
         return sb.toString();
     }
 
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = super.hashCode();
+        result = prime * result + ((fechaEnv == null) ? 0 : fechaEnv.hashCode());
+        result = prime * result + ((codPais == null) ? 0 : codPais.hashCode());
+        return result;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (!super.equals(obj))
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        PFresco other = (PFresco) obj;
+        if (fechaEnv == null) {
+            if (other.fechaEnv != null)
+                return false;
+        } else if (!fechaEnv.equals(other.fechaEnv))
+            return false;
+        if (codPais == null) {
+            if (other.codPais != null)
+                return false;
+        } else if (!codPais.equals(other.codPais))
+            return false;
+        return true;
+    }
+
 }

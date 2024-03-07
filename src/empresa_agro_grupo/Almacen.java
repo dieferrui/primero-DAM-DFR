@@ -35,7 +35,7 @@ public class Almacen {
         
         }
 
-        this.ordenarProductos();
+        ordenarProductos();
 
     }
 
@@ -95,7 +95,7 @@ public class Almacen {
 
                 casos = restarProducto(producto, cantARestar);
 
-                if (casos[0] == 0) {
+                if (casos[0] < 0) {
 
                     cantARestar = casos[1];
     
@@ -123,7 +123,7 @@ public class Almacen {
             productosAlmacenados.remove(producto);
 
             resto = cant - producto.getStock();
-            res = 0;
+            res = -1;
 
         } else if (cant == producto.getStock()) {
 
@@ -133,7 +133,7 @@ public class Almacen {
             espacioOcupado -= cant;
             productosAlmacenados.remove(producto);
 
-            res = 1;
+            res = 0;
 
         } else {
 

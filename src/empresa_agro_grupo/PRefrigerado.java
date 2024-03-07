@@ -28,4 +28,30 @@ public class PRefrigerado extends Producto {
         
         return sb.toString();
     }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = super.hashCode();
+        result = prime * result + ((codAl == null) ? 0 : codAl.hashCode());
+        return result;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (!super.equals(obj))
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        PRefrigerado other = (PRefrigerado) obj;
+        if (codAl == null) {
+            if (other.codAl != null)
+                return false;
+        } else if (!codAl.equals(other.codAl))
+            return false;
+        return true;
+    }
+
 }
