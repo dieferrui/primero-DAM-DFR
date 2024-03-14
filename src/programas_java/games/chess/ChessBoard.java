@@ -112,7 +112,7 @@ public class ChessBoard {
 
     public void displayBoard() {
 
-        System.out.println("   A  B  C  D  E  F  G  H");
+        System.out.println("    A  B  C  D  E  F  G  H");
         System.out.println(" +--------------------------+");
 
         for (int fil = 0; fil < 8; fil++) {
@@ -136,6 +136,6 @@ public class ChessBoard {
         }
 
         System.out.println(" +--------------------------+");
-        System.out.println("   A  B  C  D  E  F  G  H");
+        System.out.println("    A  B  C  D  E  F  G  H");
     }
 }
