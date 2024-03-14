@@ -10,7 +10,7 @@ public class Main {
        
         try {
 
-            // Código que puede generar una excepción
+            int res = 20 / 0;
 
         } catch (ArithmeticException e) {
 
