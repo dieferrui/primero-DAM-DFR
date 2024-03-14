@@ -109,9 +109,17 @@ public class ChessGame extends Game {
 
             for (int col = 0; col < 8; col++) {
 
-                if (board.boardLayout[fil][col].getPiece().getColor().equals(player.getColor())) {
+                try {
 
-                    validPieces.add(board.boardLayout[fil][col]);
+                    if (board.boardLayout[fil][col].getPiece().getColor().equals(player.getColor())) {
+
+                        validPieces.add(board.boardLayout[fil][col]);
+
+                    }
+
+                } catch (NullPointerException e) {
+
+                    continue; // Ignorar nulls
 
                 }
             }

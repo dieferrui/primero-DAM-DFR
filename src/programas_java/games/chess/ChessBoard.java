@@ -1,6 +1,5 @@
 package programas_java.games.chess;
 
-import programas_java.games.*;
 import programas_java.games.chess.pieces.*;
 
 public class ChessBoard {
@@ -41,7 +40,7 @@ public class ChessBoard {
 
     private Piece generatePiece(int fil, int col) {
 
-        Piece pieceReturned;
+        Piece pieceReturned = null;
 
         if (fil == 1) {
             
@@ -74,6 +73,7 @@ public class ChessBoard {
                 case 4: pieceReturned = new King(BLACK, KING); break;
 
             }
+
         }
 
         return pieceReturned;
