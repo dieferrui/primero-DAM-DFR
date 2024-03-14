@@ -84,23 +84,23 @@ public class ChessBoard {
             switch(col) {
 
                 case 0, 7: 
-                    pieceReturned = new Tower(WHITE, TOWER);
+                    pieceReturned = new Tower(BLACK, TOWER);
                     pieceReturned.setSymbol("t");
                     break;
                 case 1, 6: 
-                    pieceReturned = new Horse(WHITE, HORSE);
+                    pieceReturned = new Horse(BLACK, HORSE);
                     pieceReturned.setSymbol("h");
                     break;
                 case 2, 5: 
-                    pieceReturned = new Bishop(WHITE, BISHOP);
+                    pieceReturned = new Bishop(BLACK, BISHOP);
                     pieceReturned.setSymbol("b");
                     break;
                 case 3: 
-                    pieceReturned = new Queen(WHITE, QUEEN);
+                    pieceReturned = new Queen(BLACK, QUEEN);
                     pieceReturned.setSymbol("q");
                     break;
                 case 4: 
-                    pieceReturned = new King(WHITE, KING);
+                    pieceReturned = new King(BLACK, KING);
                     pieceReturned.setSymbol("k");
                     break;
 
