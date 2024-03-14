@@ -4,7 +4,7 @@ import org.apache.logging.log4j.*;
 
 public class Main {
     
-    private static Logger LOGGER = LogManager.getRootLogger();
+    private static Logger LOGGER = LogManager.getLogger("practica.solucion_ejercicios");
     
     public static void main(String[] args) {
        
