@@ -105,9 +105,37 @@ public class ChessBoard {
                     break;
 
             }
-
         }
 
         return pieceReturned;
+    }
+
+    public void displayBoard() {
+
+        System.out.println("   A  B  C  D  E  F  G  H");
+        System.out.println(" +--------------------------+");
+
+        for (int fil = 0; fil < 8; fil++) {
+
+            System.out.print(8 - fil + "|");
+
+            for (int col = 0; col < 8; col++) {
+
+                if (boardLayout[fil][col].getPiece() == null) {
+
+                    System.out.print(" . ");
+
+                } else {
+
+                    System.out.print(" " + boardLayout[fil][col].getPiece().getSymbol() + " ");
+                }
+            }
+
+            System.out.println("|" + (8 - fil));
+
+        }
+
+        System.out.println(" +--------------------------+");
+        System.out.println("   A  B  C  D  E  F  G  H");
     }
 }

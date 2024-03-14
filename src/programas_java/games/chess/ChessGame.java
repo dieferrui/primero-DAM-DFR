@@ -67,6 +67,7 @@ public class ChessGame extends Game {
         */
 
         System.out.println(player.getName() + "'s turn...\n");
+        board.displayBoard();
 
         do {
 
