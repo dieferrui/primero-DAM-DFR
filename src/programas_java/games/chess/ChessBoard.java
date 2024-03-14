@@ -117,7 +117,7 @@ public class ChessBoard {
 
         for (int fil = 0; fil < 8; fil++) {
 
-            System.out.print(8 - fil + "|");
+            System.out.print(8 - fil + " |");
 
             for (int col = 0; col < 8; col++) {
 
@@ -131,7 +131,7 @@ public class ChessBoard {
                 }
             }
 
-            System.out.println("|" + (8 - fil));
+            System.out.println("| " + (8 - fil));
 
         }
 
