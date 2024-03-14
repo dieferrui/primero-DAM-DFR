@@ -1,0 +1,434 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Principal",
+            "request": "launch",
+            "mainClass": "caja_magica.Principal",
+            "projectName": "primero-DAM-DFR_10c93ac6"
+        },
+        {
+            "type": "java",
+            "name": "DepuracionEntornosA",
+            "request": "launch",
+            "mainClass": "depuracion_entornos.depuracion_parse.DepuracionEntornosA",
+            "projectName": "primero-DAM-DFR_10c93ac6"
+        },
+        {
+            "type": "java",
+            "name": "EjParse2",
+            "request": "launch",
+            "mainClass": "depuracion_entornos.depuracion_parse.EjParse2",
+            "projectName": "primero-DAM-DFR_10c93ac6"
+        },
+        {
+            "type": "java",
+            "name": "EjerDepuracion",
+            "request": "launch",
+            "mainClass": "depuracion_entornos.depuracion_parse.EjerDepuracion",
+            "projectName": "primero-DAM-DFR_10c93ac6"
+        },
+        {
+            "type": "java",
+            "name": "EjerciciosParse",
+            "request": "launch",
+            "mainClass": "depuracion_entornos.depuracion_parse.EjerciciosParse",
+            "projectName": "primero-DAM-DFR_10c93ac6"
+        },
+        {
+            "type": "java",
+            "name": "EntornoLogin",
+            "request": "launch",
+            "mainClass": "depuracion_entornos.entorno_login.EntornoLogin",
+            "projectName": "primero-DAM-DFR_10c93ac6"
+        },
+        {
+            "type": "java",
+            "name": "AdivinarNumero",
+            "request": "launch",
+            "mainClass": "depuracion_entornos.entornos_swing.AdivinarNumero",
+            "projectName": "primero-DAM-DFR_10c93ac6"
+        },
+        {
+            "type": "java",
+            "name": "DeshabilitarCampos",
+            "request": "launch",
+            "mainClass": "depuracion_entornos.entornos_swing.DeshabilitarCampos",
+            "projectName": "primero-DAM-DFR_10c93ac6"
+        },
+        {
+            "type": "java",
+            "name": "EjercicioEspejo",
+            "request": "launch",
+            "mainClass": "depuracion_entornos.entornos_swing.EjercicioEspejo",
+            "projectName": "primero-DAM-DFR_10c93ac6"
+        },
+        {
+            "type": "java",
+            "name": "FormularioInscripcion",
+            "request": "launch",
+            "mainClass": "depuracion_entornos.entornos_swing.FormularioInscripcion",
+            "projectName": "primero-DAM-DFR_10c93ac6"
+        },
+        {
+            "type": "java",
+            "name": "SaludaComboBox",
+            "request": "launch",
+            "mainClass": "depuracion_entornos.entornos_swing.SaludaComboBox",
+            "projectName": "primero-DAM-DFR_10c93ac6"
+        },
+        {
+            "type": "java",
+            "name": "VentanaConSaludo",
+            "request": "launch",
+            "mainClass": "depuracion_entornos.entornos_swing.VentanaConSaludo",
+            "projectName": "primero-DAM-DFR_10c93ac6"
+        },
+        {
+            "type": "java",
+            "name": "VentanaSaludo",
+            "request": "launch",
+            "mainClass": "depuracion_entornos.entornos_swing.VentanaSaludo",
+            "projectName": "primero-DAM-DFR_10c93ac6"
+        },
+        {
+            "type": "java",
+            "name": "MenuPrincipal",
+            "request": "launch",
+            "mainClass": "descent.funcionalidades.MenuPrincipal",
+            "projectName": "primero-DAM-DFR_10c93ac6"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "empresa_agro.Main",
+            "projectName": "primero-DAM-DFR_10c93ac6"
+        },
+        {
+            "type": "java",
+            "name": "Main(1)",
+            "request": "launch",
+            "mainClass": "empresa_agro_grupo.Main",
+            "projectName": "primero-DAM-DFR_10c93ac6"
+        },
+        {
+            "type": "java",
+            "name": "PlataformaAcceso",
+            "request": "launch",
+            "mainClass": "programas_java.control_acceso.PlataformaAcceso",
+            "projectName": "primero-DAM-DFR_10c93ac6"
+        },
+        {
+            "type": "java",
+            "name": "MainGame",
+            "request": "launch",
+            "mainClass": "programas_java.games.MainGame",
+            "projectName": "primero-DAM-DFR_10c93ac6"
+        },
+        {
+            "type": "java",
+            "name": "Main(2)",
+            "request": "launch",
+            "mainClass": "programas_java.practica_demovehiculo.Main",
+            "projectName": "primero-DAM-DFR_10c93ac6"
+        },
+        {
+            "type": "java",
+            "name": "ArrayMultiSuma",
+            "request": "launch",
+            "mainClass": "programas_java.scripts_sueltos.arrays.ArrayMultiSuma",
+            "projectName": "primero-DAM-DFR_10c93ac6"
+        },
+        {
+            "type": "java",
+            "name": "ComparacionImprobable",
+            "request": "launch",
+            "mainClass": "programas_java.scripts_sueltos.arrays.ComparacionImprobable",
+            "projectName": "primero-DAM-DFR_10c93ac6"
+        },
+        {
+            "type": "java",
+            "name": "InvertirArray",
+            "request": "launch",
+            "mainClass": "programas_java.scripts_sueltos.arrays.InvertirArray",
+            "projectName": "primero-DAM-DFR_10c93ac6"
+        },
+        {
+            "type": "java",
+            "name": "MaximoDeArray",
+            "request": "launch",
+            "mainClass": "programas_java.scripts_sueltos.arrays.MaximoDeArray",
+            "projectName": "primero-DAM-DFR_10c93ac6"
+        },
+        {
+            "type": "java",
+            "name": "OrdenaArrayAlfa",
+            "request": "launch",
+            "mainClass": "programas_java.scripts_sueltos.arrays.OrdenaArrayAlfa",
+            "projectName": "primero-DAM-DFR_10c93ac6"
+        },
+        {
+            "type": "java",
+            "name": "SumaArrayInt",
+            "request": "launch",
+            "mainClass": "programas_java.scripts_sueltos.arrays.SumaArrayInt",
+            "projectName": "primero-DAM-DFR_10c93ac6"
+        },
+        {
+            "type": "java",
+            "name": "CantidadesReceta",
+            "request": "launch",
+            "mainClass": "programas_java.scripts_sueltos.constantes.CantidadesReceta",
+            "projectName": "primero-DAM-DFR_10c93ac6"
+        },
+        {
+            "type": "java",
+            "name": "AdiosMundo",
+            "request": "launch",
+            "mainClass": "programas_java.scripts_sueltos.ejercicios_simples.AdiosMundo",
+            "projectName": "primero-DAM-DFR_10c93ac6"
+        },
+        {
+            "type": "java",
+            "name": "BilleteTren",
+            "request": "launch",
+            "mainClass": "programas_java.scripts_sueltos.ejercicios_simples.BilleteTren",
+            "projectName": "primero-DAM-DFR_10c93ac6"
+        },
+        {
+            "type": "java",
+            "name": "BuscaLetra",
+            "request": "launch",
+            "mainClass": "programas_java.scripts_sueltos.ejercicios_simples.BuscaLetra",
+            "projectName": "primero-DAM-DFR_10c93ac6"
+        },
+        {
+            "type": "java",
+            "name": "CalcSimple",
+            "request": "launch",
+            "mainClass": "programas_java.scripts_sueltos.ejercicios_simples.CalcSimple",
+            "projectName": "primero-DAM-DFR_10c93ac6"
+        },
+        {
+            "type": "java",
+            "name": "CalculoImc",
+            "request": "launch",
+            "mainClass": "programas_java.scripts_sueltos.ejercicios_simples.CalculoImc",
+            "projectName": "primero-DAM-DFR_10c93ac6"
+        },
+        {
+            "type": "java",
+            "name": "CalculoPrimos",
+            "request": "launch",
+            "mainClass": "programas_java.scripts_sueltos.ejercicios_simples.CalculoPrimos",
+            "projectName": "primero-DAM-DFR_10c93ac6"
+        },
+        {
+            "type": "java",
+            "name": "CalculoPrimosMejorado",
+            "request": "launch",
+            "mainClass": "programas_java.scripts_sueltos.ejercicios_simples.CalculoPrimosMejorado",
+            "projectName": "primero-DAM-DFR_10c93ac6"
+        },
+        {
+            "type": "java",
+            "name": "CelsiusKelvin",
+            "request": "launch",
+            "mainClass": "programas_java.scripts_sueltos.ejercicios_simples.CelsiusKelvin",
+            "projectName": "primero-DAM-DFR_10c93ac6"
+        },
+        {
+            "type": "java",
+            "name": "CreaRombos",
+            "request": "launch",
+            "mainClass": "programas_java.scripts_sueltos.ejercicios_simples.CreaRombos",
+            "projectName": "primero-DAM-DFR_10c93ac6"
+        },
+        {
+            "type": "java",
+            "name": "DiasDelMes",
+            "request": "launch",
+            "mainClass": "programas_java.scripts_sueltos.ejercicios_simples.DiasDelMes",
+            "projectName": "primero-DAM-DFR_10c93ac6"
+        },
+        {
+            "type": "java",
+            "name": "EcoEco",
+            "request": "launch",
+            "mainClass": "programas_java.scripts_sueltos.ejercicios_simples.EcoEco",
+            "projectName": "primero-DAM-DFR_10c93ac6"
+        },
+        {
+            "type": "java",
+            "name": "HolaMundo",
+            "request": "launch",
+            "mainClass": "programas_java.scripts_sueltos.ejercicios_simples.HolaMundo",
+            "projectName": "primero-DAM-DFR_10c93ac6"
+        },
+        {
+            "type": "java",
+            "name": "HorasPagadas",
+            "request": "launch",
+            "mainClass": "programas_java.scripts_sueltos.ejercicios_simples.HorasPagadas",
+            "projectName": "primero-DAM-DFR_10c93ac6"
+        },
+        {
+            "type": "java",
+            "name": "MayorDos",
+            "request": "launch",
+            "mainClass": "programas_java.scripts_sueltos.ejercicios_simples.MayorDos",
+            "projectName": "primero-DAM-DFR_10c93ac6"
+        },
+        {
+            "type": "java",
+            "name": "MayorEdad",
+            "request": "launch",
+            "mainClass": "programas_java.scripts_sueltos.ejercicios_simples.MayorEdad",
+            "projectName": "primero-DAM-DFR_10c93ac6"
+        },
+        {
+            "type": "java",
+            "name": "MayorMenorTres",
+            "request": "launch",
+            "mainClass": "programas_java.scripts_sueltos.ejercicios_simples.MayorMenorTres",
+            "projectName": "primero-DAM-DFR_10c93ac6"
+        },
+        {
+            "type": "java",
+            "name": "OrganizarAnimales",
+            "request": "launch",
+            "mainClass": "programas_java.scripts_sueltos.ejercicios_simples.OrganizarAnimales",
+            "projectName": "primero-DAM-DFR_10c93ac6"
+        },
+        {
+            "type": "java",
+            "name": "ParticipaMaraton",
+            "request": "launch",
+            "mainClass": "programas_java.scripts_sueltos.ejercicios_simples.ParticipaMaraton",
+            "projectName": "primero-DAM-DFR_10c93ac6"
+        },
+        {
+            "type": "java",
+            "name": "PrecioTarta",
+            "request": "launch",
+            "mainClass": "programas_java.scripts_sueltos.ejercicios_simples.PrecioTarta",
+            "projectName": "primero-DAM-DFR_10c93ac6"
+        },
+        {
+            "type": "java",
+            "name": "RestoCociente",
+            "request": "launch",
+            "mainClass": "programas_java.scripts_sueltos.ejercicios_simples.RestoCociente",
+            "projectName": "primero-DAM-DFR_10c93ac6"
+        },
+        {
+            "type": "java",
+            "name": "SentenciaRuptura",
+            "request": "launch",
+            "mainClass": "programas_java.scripts_sueltos.ejercicios_simples.SentenciaRuptura",
+            "projectName": "primero-DAM-DFR_10c93ac6"
+        },
+        {
+            "type": "java",
+            "name": "SerieNumerica",
+            "request": "launch",
+            "mainClass": "programas_java.scripts_sueltos.ejercicios_simples.SerieNumerica",
+            "projectName": "primero-DAM-DFR_10c93ac6"
+        },
+        {
+            "type": "java",
+            "name": "SumaDos",
+            "request": "launch",
+            "mainClass": "programas_java.scripts_sueltos.ejercicios_simples.SumaDos",
+            "projectName": "primero-DAM-DFR_10c93ac6"
+        },
+        {
+            "type": "java",
+            "name": "SumaEntero",
+            "request": "launch",
+            "mainClass": "programas_java.scripts_sueltos.ejercicios_simples.SumaEntero",
+            "projectName": "primero-DAM-DFR_10c93ac6"
+        },
+        {
+            "type": "java",
+            "name": "SwitchMes",
+            "request": "launch",
+            "mainClass": "programas_java.scripts_sueltos.ejercicios_simples.SwitchMes",
+            "projectName": "primero-DAM-DFR_10c93ac6"
+        },
+        {
+            "type": "java",
+            "name": "TablaMulti",
+            "request": "launch",
+            "mainClass": "programas_java.scripts_sueltos.ejercicios_simples.TablaMulti",
+            "projectName": "primero-DAM-DFR_10c93ac6"
+        },
+        {
+            "type": "java",
+            "name": "TiposDatos",
+            "request": "launch",
+            "mainClass": "programas_java.scripts_sueltos.ejercicios_simples.TiposDatos",
+            "projectName": "primero-DAM-DFR_10c93ac6"
+        },
+        {
+            "type": "java",
+            "name": "VolumenCono",
+            "request": "launch",
+            "mainClass": "programas_java.scripts_sueltos.ejercicios_simples.VolumenCono",
+            "projectName": "primero-DAM-DFR_10c93ac6"
+        },
+        {
+            "type": "java",
+            "name": "Felicidades",
+            "request": "launch",
+            "mainClass": "programas_java.scripts_sueltos.javatime.Felicidades",
+            "projectName": "primero-DAM-DFR_10c93ac6"
+        },
+        {
+            "type": "java",
+            "name": "RandomNormal",
+            "request": "launch",
+            "mainClass": "programas_java.scripts_sueltos.randoms.RandomNormal",
+            "projectName": "primero-DAM-DFR_10c93ac6"
+        },
+        {
+            "type": "java",
+            "name": "RecursividadTriangulo",
+            "request": "launch",
+            "mainClass": "programas_java.scripts_sueltos.recursividad.RecursividadTriangulo",
+            "projectName": "primero-DAM-DFR_10c93ac6"
+        },
+        {
+            "type": "java",
+            "name": "Agenda",
+            "request": "launch",
+            "mainClass": "programas_java.scripts_sueltos.regexes.Agenda",
+            "projectName": "primero-DAM-DFR_10c93ac6"
+        },
+        {
+            "type": "java",
+            "name": "EntradasCine",
+            "request": "launch",
+            "mainClass": "programas_java.scripts_sueltos.try_catch.EntradasCine",
+            "projectName": "primero-DAM-DFR_10c93ac6"
+        },
+        {
+            "type": "java",
+            "name": "ParesEntreNumeros",
+            "request": "launch",
+            "mainClass": "programas_java.scripts_sueltos.try_catch.ParesEntreNumeros",
+            "projectName": "primero-DAM-DFR_10c93ac6"
+        }
+    ]
+}
