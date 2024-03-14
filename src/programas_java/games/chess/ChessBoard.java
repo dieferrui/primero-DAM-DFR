@@ -45,32 +45,64 @@ public class ChessBoard {
         if (fil == 1) {
             
             pieceReturned = new Peon(WHITE, PAWN);
+            pieceReturned.setSymbol("P");
 
         } else if (fil == 0) {
 
             switch(col) {
 
-                case 0, 7: pieceReturned = new Tower(WHITE, TOWER); break;
-                case 1, 6: pieceReturned = new Horse(WHITE, HORSE); break;
-                case 2, 5: pieceReturned = new Bishop(WHITE, BISHOP); break;
-                case 3: pieceReturned = new Queen(WHITE, QUEEN); break;
-                case 4: pieceReturned = new King(WHITE, KING); break;
+                case 0, 7: 
+                    pieceReturned = new Tower(WHITE, TOWER);
+                    pieceReturned.setSymbol("T");
+                    break;
+                case 1, 6: 
+                    pieceReturned = new Horse(WHITE, HORSE);
+                    pieceReturned.setSymbol("H");
+                    break;
+                case 2, 5: 
+                    pieceReturned = new Bishop(WHITE, BISHOP);
+                    pieceReturned.setSymbol("B");
+                    break;
+                case 3: 
+                    pieceReturned = new Queen(WHITE, QUEEN);
+                    pieceReturned.setSymbol("Q");
+                    break;
+                case 4: 
+                    pieceReturned = new King(WHITE, KING);
+                    pieceReturned.setSymbol("K");
+                    break;
 
             }
 
         } else if (fil == 6) {
 
             pieceReturned = new Peon(BLACK, PAWN);
+            pieceReturned.setSymbol("p");
 
         } else if (fil == 7) {
 
             switch(col) {
 
-                case 0, 7: pieceReturned = new Tower(BLACK, TOWER); break;
-                case 1, 6: pieceReturned = new Horse(BLACK, HORSE); break;
-                case 2, 5: pieceReturned = new Bishop(BLACK, BISHOP); break;
-                case 3: pieceReturned = new Queen(BLACK, QUEEN); break;
-                case 4: pieceReturned = new King(BLACK, KING); break;
+                case 0, 7: 
+                    pieceReturned = new Tower(WHITE, TOWER);
+                    pieceReturned.setSymbol("t");
+                    break;
+                case 1, 6: 
+                    pieceReturned = new Horse(WHITE, HORSE);
+                    pieceReturned.setSymbol("h");
+                    break;
+                case 2, 5: 
+                    pieceReturned = new Bishop(WHITE, BISHOP);
+                    pieceReturned.setSymbol("b");
+                    break;
+                case 3: 
+                    pieceReturned = new Queen(WHITE, QUEEN);
+                    pieceReturned.setSymbol("q");
+                    break;
+                case 4: 
+                    pieceReturned = new King(WHITE, KING);
+                    pieceReturned.setSymbol("k");
+                    break;
 
             }
 

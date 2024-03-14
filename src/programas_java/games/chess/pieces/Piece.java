@@ -7,6 +7,7 @@ public abstract class Piece {
     
     protected String color;
     protected String type;
+    protected String symbol;
     protected int numberOfMoves = 0;
 
     public Piece(String color, String type) {
@@ -42,11 +43,18 @@ public abstract class Piece {
         this.numberOfMoves = numberOfMoves;
     }
 
+    public String getSymbol() {
+        return symbol;
+    }
+
+    public void setSymbol(String symbol) {
+        this.symbol = symbol;
+    }
+
     @Override
     protected Object clone() throws CloneNotSupportedException {
 
         return super.clone();
 
     }
-
 }
