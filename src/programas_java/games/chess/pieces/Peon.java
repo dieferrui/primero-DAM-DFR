@@ -77,6 +77,11 @@ public class Peon extends Piece {
         } catch (ArrayIndexOutOfBoundsException e) {
 
             // Square doesn't get added to Array of moves
+
+        } catch (NullPointerException e) {
+
+            // Ignore null squares
+
         }
 
         try {
@@ -91,6 +96,11 @@ public class Peon extends Piece {
         } catch (ArrayIndexOutOfBoundsException e) {
 
             // Square doesn't get added to Array of moves
+
+        } catch (NullPointerException e) {
+
+            // Ignore null squares
+
         }
 
         return validMoves;
@@ -108,24 +118,60 @@ public class Peon extends Piece {
 
         }
 
-        if (board.boardLayout[filPos - 1][colPos].getPiece() == null) {
+        try {
+            
+            if (board.boardLayout[filPos - 1][colPos].getPiece() == null) {
 
-            Square advance = board.boardLayout[filPos - 1][colPos];
-            validMoves.add(advance);
+                Square advance = board.boardLayout[filPos - 1][colPos];
+                validMoves.add(advance);
+
+            }
+
+        } catch (ArrayIndexOutOfBoundsException e) {
+
+            // Square doesn't get added to Array of moves
+
+        } catch (NullPointerException e) {
+
+            // Ignore null squares
 
         }
 
-        if (board.boardLayout[filPos - 1][colPos - 1].getPiece().getColor().equals("white")) {
+        try {
 
-            Square eatLeft = board.boardLayout[filPos - 1][colPos - 1];
-            validMoves.add(eatLeft);
+            if (board.boardLayout[filPos - 1][colPos - 1].getPiece().getColor().equals("white")) {
+
+                Square eatLeft = board.boardLayout[filPos - 1][colPos - 1];
+                validMoves.add(eatLeft);
+
+            }
+        
+        } catch (ArrayIndexOutOfBoundsException e) {
+
+            // Square doesn't get added to Array of moves
+
+        } catch (NullPointerException e) {
+
+            // Ignore null squares
 
         }
 
-        if (board.boardLayout[filPos - 1][colPos + 1].getPiece().getColor().equals("white")) {
+        try {
 
-            Square eatRight = board.boardLayout[filPos - 1][colPos + 1];
-            validMoves.add(eatRight);
+            if (board.boardLayout[filPos - 1][colPos + 1].getPiece().getColor().equals("white")) {
+
+                Square eatRight = board.boardLayout[filPos - 1][colPos + 1];
+                validMoves.add(eatRight);
+
+            }
+
+        } catch (ArrayIndexOutOfBoundsException e) {
+
+            // Square doesn't get added to Array of moves
+
+        } catch (NullPointerException e) {
+
+            // Ignore null squares
 
         }
 
