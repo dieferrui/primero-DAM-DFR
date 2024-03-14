@@ -163,6 +163,7 @@ public class ChessGame extends Game {
                     if (nextMove.equals(target.getSquareID())) {
 
                         target.setPiece(square.getPiece());
+                        target.getPiece().addMove();
 
                     }
                 }

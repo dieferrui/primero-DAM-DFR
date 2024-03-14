@@ -19,6 +19,12 @@ public abstract class Piece {
 
     public abstract ArrayList<Square> movePiece(Square square, ChessBoard board);
 
+    public void addMove() {
+
+        numberOfMoves++;
+        
+    }
+
     public String getColor() {
         return color;
     }
