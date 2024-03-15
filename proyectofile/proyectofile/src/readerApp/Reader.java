@@ -6,7 +6,7 @@ import java.io.IOException;
 
 public class Reader {
 
-    private StringBuilder sb = new StringBuilder();
+    private StringBuilder sb = new StringBuilder("");
 
     public Reader() {
         // Constructor simple
