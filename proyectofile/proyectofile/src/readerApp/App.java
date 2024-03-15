@@ -18,6 +18,7 @@ public class App {
         String relativePathLocalDir = "src\\readerApp\\exampledir";
         String relativePathLocalDir2 = "src\\readerApp\\exampledir2";
 
+        /*
         reader.openFile(relativePathLocal);
 
         reader.openFile(absolutePathLocal);
@@ -34,6 +35,7 @@ public class App {
         reader2.getInformation(textFileA);
         reader2.getInformation(textFileB);
         reader2.deleteFile(textFileB);
+        */
 
         reader.newDirFilled(relativePathLocalDir2);
 

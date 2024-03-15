@@ -82,17 +82,29 @@ public class Manager {
     public void newDirFilled(String pathText) {
 
         File directoryFile = new File(pathText);
+        directoryFile.mkdir();
 
         for (int i = 1; i < 11; i++) {
 
-            String filePath = directoryFile.getAbsolutePath() + i + ".txt";
-            new File(filePath);
+            String filePath = directoryFile.getAbsolutePath() + "\\example" + i + ".txt";
+            File file = new File(filePath);
+            
+            try {
+                
+                file.createNewFile();
+
+            } catch (IOException e) {
+
+                e.printStackTrace();
+
+            }
 
         }
 
         for (File file : directoryFile.listFiles()) {
 
-            sb.append(file.getName());
+            sb.append(file.getName() + "\n");
+            
         }
     }
 
