@@ -4,8 +4,8 @@ public class App {
 
     public static void main(String[] args) {
 
-        Reader reader = new Reader();
-        Reader reader2 = new Reader();
+        Manager reader = new Manager();
+        Manager reader2 = new Manager();
 
         String relativePathLocal = "src\\readerApp\\exampleLocal.txt";
         String absolutePathLocal = "D:\\Repositorios de código\\primero-DAM-DFR\\proyectofile\\proyectofile\\src\\readerApp\\exampleLocal.txt";

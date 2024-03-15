@@ -4,11 +4,11 @@ import java.awt.Desktop;
 import java.io.File;
 import java.io.IOException;
 
-public class Reader {
+public class Manager {
 
     private StringBuilder sb = new StringBuilder("");
 
-    public Reader() {
+    public Manager() {
         // Constructor simple
     }
     
