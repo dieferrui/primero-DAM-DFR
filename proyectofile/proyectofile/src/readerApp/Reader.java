@@ -24,19 +24,4 @@ public class Reader {
 
         }
     }
-
-    public void openFileAs(String pathText) {
-        
-        try {
-           
-            File textFile = new File(pathText);
-            Desktop desktop = Desktop.getDesktop();
-            desktop.open(textFile);
-
-        } catch (IOException e) {
-           
-            e.printStackTrace();
-
-        }
-    }
 }
