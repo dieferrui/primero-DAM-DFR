@@ -23,7 +23,7 @@ public class App {
 
         reader2.openFile(absolutePathToGif);
 
-        reader2.openFile(relativePathLocalDir);
+        reader2.openDir(relativePathLocalDir);
 
         reader.getSb().toString();
         reader2.getSb().toString();

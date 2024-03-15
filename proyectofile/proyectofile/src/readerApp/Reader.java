@@ -18,6 +18,8 @@ public class Reader {
            
             File textFile = new File(pathText);
             Desktop desktop = Desktop.getDesktop();
+            sb.append(textFile.exists());
+            sb.append("\n");
             desktop.open(textFile);
 
         } catch (IOException e) {
