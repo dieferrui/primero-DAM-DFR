@@ -18,7 +18,7 @@ public class Reader {
            
             File textFile = new File(pathText);
             Desktop desktop = Desktop.getDesktop();
-            sb.append("File " + pathText + " is " + textFile.exists());
+            sb.append("File " + textFile.toPath() + " is " + textFile.exists());
             sb.append("\n");
             desktop.open(textFile);
 
@@ -35,7 +35,7 @@ public class Reader {
            
             File directoryFile = new File(pathText);
             Desktop desktop = Desktop.getDesktop();
-            sb.append("File " + pathText + " is " + directoryFile.mkdir());
+            sb.append("File " + directoryFile.toPath() + " is " + directoryFile.mkdir());
             sb.append("\n");
             desktop.open(directoryFile);
 
