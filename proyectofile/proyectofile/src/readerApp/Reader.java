@@ -18,7 +18,7 @@ public class Reader {
            
             File textFile = new File(pathText);
             Desktop desktop = Desktop.getDesktop();
-            sb.append(textFile.exists());
+            sb.append("File " + pathText + " is " + textFile.exists());
             sb.append("\n");
             desktop.open(textFile);
 
@@ -33,11 +33,11 @@ public class Reader {
         
         try {
            
-            File textFile = new File(pathText);
+            File directoryFile = new File(pathText);
             Desktop desktop = Desktop.getDesktop();
-            sb.append(textFile.exists());
+            sb.append("File " + pathText + " is " + directoryFile.mkdir());
             sb.append("\n");
-            desktop.open(textFile);
+            desktop.open(directoryFile);
 
         } catch (IOException e) {
            
