@@ -6,6 +6,8 @@ import java.io.IOException;
 
 public class Reader {
 
+    private StringBuilder sb = new StringBuilder();
+
     public Reader() {
         // Constructor simple
     }
@@ -24,4 +26,30 @@ public class Reader {
 
         }
     }
+
+    public void openDir(String pathText) {
+        
+        try {
+           
+            File textFile = new File(pathText);
+            Desktop desktop = Desktop.getDesktop();
+            sb.append(textFile.exists());
+            sb.append("\n");
+            desktop.open(textFile);
+
+        } catch (IOException e) {
+           
+            e.printStackTrace();
+
+        }
+    }
+
+    public StringBuilder getSb() {
+        return sb;
+    }
+
+    public void setSb(StringBuilder sb) {
+        this.sb = sb;
+    }
+
 }
