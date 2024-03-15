@@ -11,7 +11,7 @@ public class App {
         String absolutePathLocal = "D:\\Repositorios de código\\primero-DAM-DFR\\proyectofile\\proyectofile\\src\\readerApp\\exampleLocal.txt";
 
         String absolutePathtoD = "d:\\example.txt";
-        String absolutePathToGif = "d:\\ASU-57.gif"; // Not working
+        String absolutePathToGif = "d:\\ASU-57 A.gif";
 
         String relativePathLocalDir = "src\\readerApp\\exampledir";
 
