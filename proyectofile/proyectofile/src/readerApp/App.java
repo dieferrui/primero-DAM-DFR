@@ -11,7 +11,7 @@ public class App {
         String absolutePathLocal = "D:\\Repositorios de código\\primero-DAM-DFR\\proyectofile\\proyectofile\\src\\readerApp\\exampleLocal.txt";
 
         String absolutePathtoD = "d:\\example.txt";
-        String absolutePathToGif = "d:\\ASU-57 A.gif";
+        String absolutePathToGif = "d:\\ASU-57 A.gif"; // No hay aplicación default para gif? No funciona.
 
         String relativePathLocalDir = "src\\readerApp\\exampledir";
 
@@ -25,7 +25,7 @@ public class App {
 
         reader2.openDir(relativePathLocalDir);
 
-        reader.getSb().toString();
-        reader2.getSb().toString();
+        System.out.println(reader.getSb().toString());
+        System.out.println(reader2.getSb().toString());
     }
 }
