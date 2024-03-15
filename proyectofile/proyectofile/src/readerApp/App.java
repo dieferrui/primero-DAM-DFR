@@ -1,5 +1,7 @@
 package readerApp;
 
+import java.io.File;
+
 public class App {
 
     public static void main(String[] args) {
@@ -14,6 +16,7 @@ public class App {
         String absolutePathToGif = "d:\\ASU-57 A.gif"; // No hay aplicación default para gif? No funciona.
 
         String relativePathLocalDir = "src\\readerApp\\exampledir";
+        String relativePathLocalDir2 = "src\\readerApp\\exampledir2";
 
         reader.openFile(relativePathLocal);
 
@@ -24,6 +27,15 @@ public class App {
         reader2.openFile(absolutePathToGif);
 
         reader2.openDir(relativePathLocalDir);
+
+        File textFileA = new File(relativePathLocal);
+        File textFileB = new File(absolutePathLocal);
+
+        reader2.getInformation(textFileA);
+        reader2.getInformation(textFileB);
+        reader2.deleteFile(textFileB);
+
+        reader.newDirFilled(relativePathLocalDir2);
 
         System.out.println(reader.getSb().toString());
         System.out.println(reader2.getSb().toString());
