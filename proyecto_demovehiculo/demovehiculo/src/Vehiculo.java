@@ -1,9 +1,8 @@
-
-
 /**
  * Superclase que engloba todos los vehículos que tienen ruedas.
  */
 public class Vehiculo {
+
     protected int nRuedas;
     protected int nAsientos;
     protected String tipoTraccion;
@@ -81,8 +80,6 @@ public class Vehiculo {
     @Override
     public String toString() {
         return "Vehiculo [nRuedas=" + nRuedas + ", nAsientos=" + nAsientos + ", tipoTraccion=" + tipoTraccion + "]";
-    }
-
-    
+    }  
 
 }

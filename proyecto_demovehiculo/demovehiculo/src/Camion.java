@@ -1,5 +1,3 @@
-
-
 public class Camion implements IVehiculoMotor {
 
     boolean llevaCarga = true;

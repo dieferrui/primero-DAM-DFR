@@ -1,5 +1,3 @@
-
-
 public interface IRadio {
 
     public void startRadio();

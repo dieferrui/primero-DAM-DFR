@@ -1,5 +1,3 @@
-
-
 public class Coche extends Vehiculo implements IRadio, IClimatizador, IVehiculoMotor {
 
     private int nPuertas;

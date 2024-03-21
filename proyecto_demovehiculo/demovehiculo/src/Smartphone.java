@@ -1,5 +1,3 @@
-
-
 public class Smartphone implements IRadio, IGPS, IMusicPlayer {
 
     @Override

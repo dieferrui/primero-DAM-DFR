@@ -1,5 +1,3 @@
-
-
 public interface IClimatizador {
 
     public void encender();

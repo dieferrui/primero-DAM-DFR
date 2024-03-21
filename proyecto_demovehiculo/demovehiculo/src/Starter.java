@@ -1,5 +1,3 @@
-
-
 public class Starter {
     
     public static void startEngine(IVehiculoMotor vehiculo) {

@@ -1,5 +1,3 @@
-
-
 public class Moto implements IVehiculoMotor {
 
     private String color;

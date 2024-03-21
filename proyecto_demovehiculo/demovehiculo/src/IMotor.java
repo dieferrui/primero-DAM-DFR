@@ -1,5 +1,3 @@
-
-
 public interface IMotor {
 
     public static boolean esMasRapido(IMotor vehiculoMotor, IMotor vehiculoMotor2) {
