@@ -1,7 +1,6 @@
 package readerApp;
 
 import java.awt.Desktop;
-import java.io.BufferedWriter;
 import java.io.File;
 import java.io.IOException;
 
@@ -111,10 +110,6 @@ public class Manager {
             sb.append(file.getName() + "\n");
             
         }
-    }
-
-    public void bufferedWrite(File text) {
-        // Esperar
     }
 
     public StringBuilder getSb() {
