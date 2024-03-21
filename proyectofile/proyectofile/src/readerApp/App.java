@@ -8,7 +8,7 @@ public class App {
 
         Manager manager = new Manager();
 
-        File bufferedText = manager.createFile("bufferedText.txt");
+        File bufferedText = manager.createFile("proyectofile/proyectofile/src/readerApp/buffText.txt");
         manager.creaLineas(bufferedText, 50);
 
     }
