@@ -23,13 +23,13 @@ public class Manager {
 
             for (int i = 1; i <= numLin; i++) {
 
-                bw.write("Esta es la línea " + i);
+                bw.write("Linea numero " + i);
                 bw.newLine();
 
             }
 
             bw.close();
-            sb.append(nombreFich + " creado con " + numLin + " lineas.");
+            sb.append(nombreFich + " creado." + numLin + " lineas.");
             System.out.println(sb.toString());
 
         } catch (IOException e) {
