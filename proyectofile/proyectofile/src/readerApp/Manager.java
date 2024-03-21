@@ -30,7 +30,7 @@ public class Manager {
 
             bw.close();
             sb.append(nombreFich + " creado con " + numLin + " lineas.");
-            sb.toString();
+            System.out.println(sb.toString());
 
         } catch (IOException e) {
 
