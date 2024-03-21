@@ -1,4 +1,4 @@
-package caja_magica;
+
 
 public class Aventurero {
     
