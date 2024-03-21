@@ -14,11 +14,11 @@ public class Manager {
         // Constructor simple
     }
 
-    public void creaLineas(String nombreFich, int numLin) {
+    public void creaLineas(File file, int numLin) {
 
         try {
 
-            FileWriter fw = new FileWriter(nombreFich);
+            FileWriter fw = new FileWriter(file);
             BufferedWriter bw = new BufferedWriter(fw);
 
             for (int i = 1; i <= numLin; i++) {
@@ -29,12 +29,12 @@ public class Manager {
             }
 
             bw.close();
-            sb.append(nombreFich + " creado." + numLin + " lineas.");
+            sb.append(file.getName() + " creado." + numLin + " lineas.");
             System.out.println(sb.toString());
 
         } catch (IOException e) {
 
-            System.out.println("Se ha producido un error al crear el archivo " + nombreFich);
+            System.out.println("Se ha producido un error al crear el archivo " + file.getName());
 
         }
 
