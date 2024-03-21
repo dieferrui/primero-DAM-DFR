@@ -3,6 +3,8 @@ package hangman;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import main_classes.*;
+
 public class HangmanGame extends Game {
     
     protected static Scanner sch = new Scanner(System.in);

@@ -1,3 +1,4 @@
+package main_classes;
 public class Player {
     
     String name;

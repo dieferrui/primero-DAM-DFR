@@ -1,3 +1,4 @@
+package main_classes;
 import java.util.Scanner;
 
 import chess.ChessGame;

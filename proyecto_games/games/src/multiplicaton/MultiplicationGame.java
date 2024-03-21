@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import main_classes.*;
+
 public class MultiplicationGame extends Game {
 
     private Random random = new Random();

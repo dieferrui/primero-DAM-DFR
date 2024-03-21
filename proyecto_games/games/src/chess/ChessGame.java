@@ -1,8 +1,8 @@
 package chess;
 
-import chess.pieces.*;
-import java.util.ArrayList;
+import main_classes.*;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ChessGame extends Game {
