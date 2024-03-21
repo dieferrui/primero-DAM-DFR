@@ -1,6 +1,7 @@
 package readerApp;
 
 import java.awt.Desktop;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.IOException;
 
@@ -11,16 +12,21 @@ public class Manager {
     public Manager() {
         // Constructor simple
     }
+
+    public File createFile(String path) {
+
+        return new File(path);
+
+    }
     
-    public void openFile(String pathText) {
+    public void openFile(File file) {
         
         try {
-           
-            File textFile = new File(pathText);
+
             Desktop desktop = Desktop.getDesktop();
-            sb.append("File " + textFile.toPath() + " is " + textFile.exists() + "\n");
+            sb.append("File " + file.toPath() + " is " + file.exists() + "\n");
             sb.append("\n");
-            desktop.open(textFile);
+            desktop.open(file);
 
         } catch (Exception e) {
            
@@ -29,15 +35,14 @@ public class Manager {
         }
     }
 
-    public void openDir(String pathText) {
+    public void openDir(File dir) {
         
         try {
-           
-            File directoryFile = new File(pathText);
+
             Desktop desktop = Desktop.getDesktop();
-            sb.append("File " + directoryFile.toPath() + " is " + directoryFile.mkdir() + "\n");
+            sb.append("File " + dir.toPath() + " is " + dir.mkdir() + "\n");
             sb.append("\n");
-            desktop.open(directoryFile);
+            desktop.open(dir);
 
         } catch (Exception e) {
            
@@ -106,6 +111,10 @@ public class Manager {
             sb.append(file.getName() + "\n");
             
         }
+    }
+
+    public void bufferedWrite(File text) {
+        // Esperar
     }
 
     public StringBuilder getSb() {
