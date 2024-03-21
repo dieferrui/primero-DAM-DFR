@@ -1,5 +1,3 @@
-
-
 import java.util.Scanner;
 
 import programas_java.games.chess.ChessGame;

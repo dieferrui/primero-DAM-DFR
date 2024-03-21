@@ -1,14 +1,10 @@
-package programas_java.games.multiplicaton;
+package multiplicaton;
 
 import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-
-import Game;
-import Player;
-import programas_java.games.*;
 
 public class MultiplicationGame extends Game {
 
