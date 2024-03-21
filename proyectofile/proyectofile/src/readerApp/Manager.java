@@ -1,15 +1,42 @@
 package readerApp;
 
 import java.awt.Desktop;
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 
 public class Manager {
-
+    
     private StringBuilder sb = new StringBuilder("");
 
     public Manager() {
         // Constructor simple
+    }
+
+    public void creaLineas(String nombreFich, int numLin) {
+
+        try {
+
+            FileWriter fw = new FileWriter(nombreFich);
+            BufferedWriter bw = new BufferedWriter(fw);
+
+            for (int i = 1; i <= numLin; i++) {
+
+                bw.write("Esta es la línea " + i);
+                bw.newLine();
+
+            }
+
+            bw.close();
+            sb.append(nombreFich + " creado con " + numLin + " lineas.");
+
+        } catch (IOException e) {
+
+            System.out.println("Se ha producido un error al crear el archivo " + nombreFich);
+            
+        }
+
     }
 
     public File createFile(String path) {
