@@ -30,11 +30,12 @@ public class Manager {
 
             bw.close();
             sb.append(nombreFich + " creado con " + numLin + " lineas.");
+            sb.toString();
 
         } catch (IOException e) {
 
             System.out.println("Se ha producido un error al crear el archivo " + nombreFich);
-            
+
         }
 
     }
