@@ -6,7 +6,7 @@ public class App {
 
         Manager manager = new Manager();
 
-        manager.creaLineas("fichBuff.txt", 50);
+        manager.creaLineas("c:\\fichBuff.txt", 50);
 
     }
 }
