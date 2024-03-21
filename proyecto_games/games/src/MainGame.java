@@ -1,8 +1,8 @@
 import java.util.Scanner;
 
-import programas_java.games.chess.ChessGame;
-import programas_java.games.hangman.HangmanGame;
-import programas_java.games.multiplicaton.MultiplicationGame;
+import chess.ChessGame;
+import hangman.HangmanGame;
+import multiplicaton.MultiplicationGame;
 
 public class MainGame {
 
