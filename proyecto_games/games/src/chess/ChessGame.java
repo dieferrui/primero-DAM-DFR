@@ -1,13 +1,9 @@
-package programas_java.games.chess;
+package chess;
 
-import programas_java.games.*;
-import programas_java.games.chess.pieces.*;
+import chess.pieces.*;
 import java.util.ArrayList;
 
 import java.util.Scanner;
-
-import Game;
-import Player;
 
 public class ChessGame extends Game {
     

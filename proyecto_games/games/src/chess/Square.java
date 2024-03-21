@@ -1,6 +1,6 @@
-package programas_java.games.chess;
+package chess;
 
-import programas_java.games.chess.pieces.*;
+import chess.pieces.*;
 
 public class Square {
     

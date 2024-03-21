@@ -1,9 +1,8 @@
-package programas_java.games.chess.pieces;
+package chess.pieces;
 
 import java.util.ArrayList;
 
-import programas_java.games.chess.ChessBoard;
-import programas_java.games.chess.Square;
+import chess.*;
 
 public class Queen extends Piece {
     

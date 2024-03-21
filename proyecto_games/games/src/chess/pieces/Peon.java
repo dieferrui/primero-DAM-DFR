@@ -1,6 +1,6 @@
-package programas_java.games.chess.pieces;
+package chess.pieces;
 
-import programas_java.games.chess.*;
+import chess.*;
 import java.util.ArrayList;
 
 public class Peon extends Piece {
