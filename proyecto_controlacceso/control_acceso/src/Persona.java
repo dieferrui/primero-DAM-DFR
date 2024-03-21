@@ -1,5 +1,3 @@
-package programas_java.control_acceso;
-
 import java.time.format.DateTimeFormatter;
 import java.time.DateTimeException;
 import java.time.LocalDateTime;
