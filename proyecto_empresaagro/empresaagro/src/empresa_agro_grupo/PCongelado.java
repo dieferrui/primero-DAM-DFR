@@ -1,3 +1,5 @@
+package empresa_agro_grupo;
+
 import java.time.LocalDate;
 
 public class PCongelado extends Producto {

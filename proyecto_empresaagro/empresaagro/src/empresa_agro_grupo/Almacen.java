@@ -1,5 +1,6 @@
-import java.util.ArrayList;
+package empresa_agro_grupo;
 
+import java.util.ArrayList;
 import java.util.Collections;
 
 public class Almacen {

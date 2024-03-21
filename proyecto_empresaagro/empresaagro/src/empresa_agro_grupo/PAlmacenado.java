@@ -1,3 +1,5 @@
+package empresa_agro_grupo;
+
 public class PAlmacenado {
 
     private Producto producto;
