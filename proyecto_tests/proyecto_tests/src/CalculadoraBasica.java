@@ -5,56 +5,61 @@ public class CalculadoraBasica {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-        double num1, num2;
+        int operando1, operando2;
         char operador;
         
         System.out.println("Calculadora Básica");
         System.out.print("Ingrese el primer número: ");
-        num1 = scanner.nextDouble();
+        operando1 = scanner.nextInt();
         System.out.print("Ingrese el segundo número: ");
-        num2 = scanner.nextDouble();
+        operando2 = scanner.nextInt();
         System.out.print("Ingrese el operador (+, -, *, /): ");
         operador = scanner.next().charAt(0);
         
-        double resultado = 0;
+        int resultado = operacion(operador, operando1, operando2);
 
-        switch(operador) {
+        System.out.println("Resultado: " + resultado);
+        scanner.close();
+    }
+
+    public static int operacion(char signo, int operando1, int operando2) {
+
+        int resultado = 0;
+
+        switch(signo) {
 
             case '+':
-                resultado = num1 + num2;
+                resultado = operando1 + operando2;
                 break;
 
             case '-':
-                resultado = num1 - num2;
+                resultado = operando1 - operando2;
                 break;
 
             case '*':
-                resultado = num1 * num2;
+                resultado = operando1 * operando2;
                 break;
 
             case '/':
-                if (num2 != 0) {
+                if (operando2 != 0) {
 
-                    resultado = num1 / num2;
+                    resultado = operando1 / operando2;
 
                 } else {
 
                     System.out.println("Error: División por cero.");
-                    scanner.close();
-                    return;
+                    return resultado;
 
                 }
 
                 break;
-                
+
             default:
                 System.out.println("Operador inválido.");
-                scanner.close();
-                return;
+                return resultado;
         }
-        
-        System.out.println("Resultado: " + resultado);
-        scanner.close();
+
+        return resultado;
     }
 }
 
