@@ -48,7 +48,7 @@ public class CalculadoraBasica {
                 } else {
 
                     System.out.println("Error: División por cero.");
-                    return resultado;
+                    return 0;
 
                 }
 

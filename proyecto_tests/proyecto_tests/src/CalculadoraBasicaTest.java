@@ -1,6 +1,11 @@
 import org.junit.*;
 import static org.junit.Assert.*;
 
+/* 
+Tests realizados en VSCode, desconozco si se pueden importar
+tal y como están hechos aquí a intelliJ
+*/
+
 public class CalculadoraBasicaTest {
 
     @Test
@@ -21,5 +26,10 @@ public class CalculadoraBasicaTest {
     @Test
     public void testDivision() {
         assertEquals(2, CalculadoraBasica.operacion('/', 6, 3), 0);
+    }
+
+    @Test
+    public void testDivisionCero() {
+        assertEquals(0, CalculadoraBasica.operacion('/', 8, 0));
     }
 }
