@@ -1,0 +1,1 @@
+sqlplus alumno/alumno@mibd @cargar_datos_avanzados.sql

@@ -11,7 +11,7 @@ peso 		number(5,2)
 			check (peso >= 0 and peso <= 100)
 );
 
-create table vendedor (
+create table vendedor2 (
 cod_ven 	varchar2(2)
 		constraint vendedor_pk primary key,
 nomven 		varchar2(100)
@@ -22,7 +22,7 @@ salario 	number(6,2)
 		constraint salario_chk
 			check (salario >= 0 and salario <= 3000),
 jefe 		varchar2(2)
-		constraint vendedor_vendedor_fk references vendedor (cod_ven)
+		constraint vendedor_vendedor_fk references vendedor2 (cod_ven)
 );
 
 create table asignacion (
@@ -30,7 +30,7 @@ cod_pieza 	varchar2(3)
 		constraint asignacion_pieza_fk references pieza (cod_pieza)
 			on delete cascade,
 cod_ven 	varchar2(2)
-		constraint asignacion_vendedor_fk references vendedor (cod_ven)
+		constraint asignacion_vendedor_fk references vendedor2 (cod_ven)
 			on delete cascade,
 fecha_inicio 	date
 		default sysdate
