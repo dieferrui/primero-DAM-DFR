@@ -2,6 +2,7 @@ package hangman;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.Random;
 
 import main_classes.*;
 
@@ -17,7 +18,7 @@ public class HangmanGame extends Game {
 
         ArrayList<Player> players = makePlayersAsList(numPlayers);
         int rounds = 1;
-        Palabra palabra = selectPalabra();
+        Incognita palabra = selectPalabra();
         String palabraProgreso = startProgress(palabra);
         StringBuilder letrasFalsas = new StringBuilder();
         
@@ -71,33 +72,22 @@ public class HangmanGame extends Game {
 
     }
 
-    // Method to select word theme
-    private Palabra selectPalabra() {
+    // Selects a word from an array of words
+    private Incognita selectPalabra() {
 
-        System.out.println("Elija la temática de la palabra:\n1. Grupos musicales\n2. Videojuegos"
-        + "\n3. Animes\n4. Tanques");
-        String theme = sch.nextLine();
-        Palabra word;
+        Random random = new Random();
+        Incognita[] incognitas = Incognita.getArrayIncognitas();
+        Incognita incognita;
 
-        switch (theme) {
-
-            case "1": word = new Palabra("Grupo"); break;
-            case "2": word = new Palabra("Juego"); break;
-            case "3": word = new Palabra("Anime"); break;
-            case "4": word = new Palabra("Tanque"); break;
-            default: word = new Palabra("Tanque"); break;
-
-        }
-         
-        System.out.println();
-        return word;
+        incognita = incognitas[random.nextInt(incognitas.length)];
+        return incognita;
 
     }
 
     // Method to generate the blank word that shows the player's progress
-    private String startProgress(Palabra palabra) {
+    private String startProgress(Incognita palabra) {
 
-        StringBuilder palabraOculta = new StringBuilder(palabra.getPalabra());
+        StringBuilder palabraOculta = new StringBuilder(palabra.getTexto());
         char spaceChar = ' ';
 
         for (int i = 0; i < palabraOculta.length(); i++) {
@@ -117,9 +107,16 @@ public class HangmanGame extends Game {
     }
 
     // Method to manage what the player does in their turn
-    private String playerTurn(Player player, Palabra palabra, String palabraProgreso, StringBuilder letrasFalsas) {
+    private String playerTurn(Player player, Incognita palabra, String palabraProgreso, StringBuilder letrasFalsas) {
 
         System.out.println("Adivina la palabra:\n" + palabraProgreso);
+
+        if (player.getLives() <= 3) {
+
+            System.out.println("La palabra que estás buscando es un/a " + palabra.getTipo());
+
+        }
+
         System.out.println("¿Qué quieres hacer en tu turno, " + player.getName() + "?");
         System.out.println("1. Elegir carácter\n2. Resolver");
         String hangMenu = sch.nextLine();
@@ -166,7 +163,7 @@ public class HangmanGame extends Game {
     }
 
     // Method to compare the letter that the player introduced with the occult word
-    private int tryLetter(String letraElegida, Palabra palabra, StringBuilder letrasFalsas) {
+    private int tryLetter(String letraElegida, Incognita palabra, StringBuilder letrasFalsas) {
 
         int caseHappen;
 
@@ -181,7 +178,7 @@ public class HangmanGame extends Game {
                                 + "Pierdes una vida.\n");
             caseHappen = 2;
 
-        } else if (palabra.getPalabra().contains(letraElegida)) {
+        } else if (palabra.getTexto().contains(letraElegida)) {
 
             System.out.println("El carácter está en la palabra oculta.");
             caseHappen = 3;
@@ -202,7 +199,7 @@ public class HangmanGame extends Game {
     }
 
     // Method to substract lives to the player or updates the hint word after a letter is found
-    private String executeResult(Player player, String letraElegida, int caseInPoint, String palabraProgreso, Palabra palabra) {
+    private String executeResult(Player player, String letraElegida, int caseInPoint, String palabraProgreso, Incognita palabra) {
 
         switch (caseInPoint) {
 
@@ -219,9 +216,9 @@ public class HangmanGame extends Game {
 
                 char[] palabraProgresoArray = palabraProgreso.toCharArray();
 
-                for (int i = 0; i < palabra.getPalabra().length(); i++) {
+                for (int i = 0; i < palabra.getTexto().length(); i++) {
 
-                    if (palabra.getPalabra().charAt(i) == letraElegida.charAt(0)) {
+                    if (palabra.getTexto().charAt(i) == letraElegida.charAt(0)) {
 
                         palabraProgresoArray[i] = letraElegida.charAt(0);
 
@@ -247,9 +244,9 @@ public class HangmanGame extends Game {
     }
 
     // Method to compare the answer given with the occult word
-    private void compararPalabra(String resultado, Palabra palabra, Player player) {
+    private void compararPalabra(String resultado, Incognita palabra, Player player) {
 
-        if (resultado.equals(palabra.getPalabra())) {
+        if (resultado.equals(palabra.getTexto())) {
 
             System.out.println("¡La respuesta es correcta!");
             palabra.setSolved(true);

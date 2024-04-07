@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "MainGame",
+            "request": "launch",
+            "mainClass": "main_classes.MainGame",
+            "projectName": "primero-DAM-DFR_627da466"
+        },
+        {
+            "type": "java",
             "name": "App",
             "request": "launch",
             "mainClass": "readerApp.App",
