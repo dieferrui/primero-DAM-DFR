@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.Random;
 
 public class App {
 
@@ -7,13 +8,15 @@ public class App {
     public static void main(String[] args) throws Exception {
 
         ArrayList<Integer> arrayInts = new ArrayList<>();
+        Random random = new Random();
         
         @SuppressWarnings("rawtypes")
         Iterator iterando = arrayInts.iterator();
 
         for (int i = 0; i < 100; i++) {
 
-            arrayInts.add(i);
+            int num = random.nextInt(100);
+            arrayInts.add(num);
 
         }
 
