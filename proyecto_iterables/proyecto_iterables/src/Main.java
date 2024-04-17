@@ -7,6 +7,8 @@ public class Main {
         // Ejercicio 1
         IteraLista.iterarNormal();
 
+        System.out.println();
+
         // Ejercicio 2
         Aula alumnos = new Aula<>();
         
