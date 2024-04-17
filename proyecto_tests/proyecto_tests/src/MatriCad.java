@@ -1,11 +1,11 @@
-public class Matricad {
+public class MatriCad {
 
     private java.util.ArrayList<String> cadenes; 	// referència a la llista de cadenes, un camp
     /**
      * Constructor de Matricad.
      * @param dada matriu amb les cadenes per a la llista
      */
-    public Matricad(String[] dada) {
+    public MatriCad(String[] dada) {
         if ((dada == null) || (dada.length == 0)) {	// Verifiquem que la llista tinga valors  
             throw new IllegalArgumentException();
         }
