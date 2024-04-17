@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class IteraLista {
 
-    public static void main(String[] args) throws Exception {
+    public static void iterarNormal() {
 
         ArrayList<Integer> arrayInts = new ArrayList<>();
         Random random = new Random();
