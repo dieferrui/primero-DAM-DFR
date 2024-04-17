@@ -1,5 +1,4 @@
-import org.junit.*;
-import static org.junit.Assert.*;
+import org.testng.annotations.Test;
 
 /* 
 Tests realizados en VSCode, desconozco si se pueden importar
