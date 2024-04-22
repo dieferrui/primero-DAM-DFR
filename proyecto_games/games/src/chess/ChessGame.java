@@ -137,7 +137,7 @@ public class ChessGame extends Game {
 
         if (validMoves.isEmpty()) {
 
-            System.out.println("This piece can't move.");
+            System.out.println("This piece can't move.\n");
 
         } else {
 
