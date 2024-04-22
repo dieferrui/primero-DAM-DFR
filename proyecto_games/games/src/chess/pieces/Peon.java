@@ -32,7 +32,7 @@ public class Peon extends Piece {
             }
 
         } catch (ArrayIndexOutOfBoundsException | NullPointerException e) {
-            // Square doesn't get added to Array of moves
+            // Las casillas fuera del tablero no se añaden al array de movimientos
         }
 
         try {
@@ -44,7 +44,7 @@ public class Peon extends Piece {
             }
 
         } catch (ArrayIndexOutOfBoundsException | NullPointerException e) {
-            // Square doesn't get added to Array of moves
+            // Las casillas fuera del tablero no se añaden al array de movimientos
         }
 
         try {
@@ -52,11 +52,11 @@ public class Peon extends Piece {
             if (board.boardLayout[filPos + direction][colPos + 1].getPiece().getColor().equals(this.getOppositeColor())) {
 
                 validMoves.add(board.boardLayout[filPos + direction][colPos + 1]);
-                
+
             }
 
         } catch (ArrayIndexOutOfBoundsException | NullPointerException e) {
-            // Square doesn't get added to Array of moves
+            // Las casillas fuera del tablero no se añaden al array de movimientos
         }
 
         return validMoves;

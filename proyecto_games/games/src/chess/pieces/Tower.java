@@ -17,105 +17,81 @@ public class Tower extends Piece {
         ArrayList<Square> validMoves = new ArrayList<>();
         int filPos = square.getFil();
         int colPos = square.getCol();
-        String targetColor;
+        String targetColor = square.getPiece().getColor().equals("white") ? "black" : "white";
 
-        if (square.getPiece().getColor().equals("white")) {
+        validMoves.addAll(getValidVerticalMoves(filPos, colPos, targetColor, board));
+        validMoves.addAll(getValidHorizontalMoves(filPos, colPos, targetColor, board));
 
-            targetColor = "black";
+        return validMoves;
+    }
 
-        } else {
+    private ArrayList<Square> getValidVerticalMoves(int filPos, int colPos, String targetColor, ChessBoard board) {
 
-            targetColor = "white";
-        }
+        ArrayList<Square> validMoves = new ArrayList<>();
 
         // Movimiento vertical hacia arriba
-        for (int i = (filPos - 1); i >= 0; i--) {
+        for (int i = filPos - 1; i >= 0; i--) {
 
-            if (board.boardLayout[i][colPos].getPiece() == null) {
+            if (addValidMove(validMoves, board.boardLayout[i][colPos], targetColor)) {
 
-                validMoves.add(board.boardLayout[i][colPos]);
+                break;
 
-            } else {
-
-                if (board.boardLayout[i][colPos].getPiece().getColor().equals(targetColor)) {
-
-                    validMoves.add(board.boardLayout[i][colPos]);
-                    break;
-
-                } else {
-
-                    break;
-
-                }
             }
         }
 
         // Movimiento vertical hacia abajo
-        for (int i = (filPos + 1); i <= 7; i++) {
+        for (int i = filPos + 1; i <= 7; i++) {
 
-            if (board.boardLayout[i][colPos].getPiece() == null) {
+            if (addValidMove(validMoves, board.boardLayout[i][colPos], targetColor)) {
 
-                validMoves.add(board.boardLayout[i][colPos]);
+                break;
 
-            } else {
-
-                if (board.boardLayout[i][colPos].getPiece().getColor().equals(targetColor)) {
-
-                    validMoves.add(board.boardLayout[i][colPos]);
-                    break;
-
-                } else {
-
-                    break;
-
-                }
-            }
-        }
-
-        // Movimiento horizontal a la izquierda
-        for (int i = (colPos - 1); i >= 0; i--) {
-
-            if (board.boardLayout[filPos][i].getPiece() == null) {
-
-                validMoves.add(board.boardLayout[filPos][i]);
-
-            } else {
-
-                if (board.boardLayout[filPos][i].getPiece().getColor().equals(targetColor)) {
-
-                    validMoves.add(board.boardLayout[filPos][i]);
-                    break;
-
-                } else {
-
-                    break;
-
-                }
-            }
-        }
-
-        // Movimiento horizontal a la derecha
-        for (int i = (colPos + 1); i <= 7; i++) {
-
-            if (board.boardLayout[filPos][i].getPiece() == null) {
-
-                validMoves.add(board.boardLayout[filPos][i]);
-
-            } else {
-
-                if (board.boardLayout[filPos][i].getPiece().getColor().equals(targetColor)) {
-
-                    validMoves.add(board.boardLayout[filPos][i]);
-                    break;
-
-                } else {
-
-                    break;
-
-                }
             }
         }
 
         return validMoves;
+    }
+
+    private ArrayList<Square> getValidHorizontalMoves(int filPos, int colPos, String targetColor, ChessBoard board) {
+
+        ArrayList<Square> validMoves = new ArrayList<>();
+
+        // Movimiento horizontal a la izquierda
+        for (int i = colPos - 1; i >= 0; i--) {
+
+            if (addValidMove(validMoves, board.boardLayout[filPos][i], targetColor)) {
+
+                break;
+
+            }
+        }
+
+        // Movimiento horizontal a la derecha
+        for (int i = colPos + 1; i <= 7; i++) {
+
+            if (addValidMove(validMoves, board.boardLayout[filPos][i], targetColor)) {
+
+                break;
+
+            }
+        }
+
+        return validMoves;
+    }
+
+    private boolean addValidMove(ArrayList<Square> validMoves, Square square, String targetColor) {
+
+        if (square.getPiece() == null) {
+
+            validMoves.add(square);
+
+        } else if (square.getPiece().getColor().equals(targetColor)) {
+
+            validMoves.add(square);
+            return true;
+
+        }
+        
+        return false;
     }
 }
