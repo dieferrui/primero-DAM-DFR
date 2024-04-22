@@ -29,67 +29,116 @@ public class King extends Piece {
         }
 
         // Casilla a la izquierda
-        if (board.boardLayout[filPos][colPos - 1].getPiece() == null || 
+        try {
+
+            if (board.boardLayout[filPos][colPos - 1].getPiece() == null || 
             board.boardLayout[filPos][colPos - 1].getPiece().getColor().equals(targetColor)) {
 
-            validMoves.add(board.boardLayout[filPos][colPos - 1]);
+                validMoves.add(board.boardLayout[filPos][colPos - 1]);
 
+            }
+
+        } catch (IndexOutOfBoundsException e) {
+            // Do nothing
         }
+        
 
         // Casilla a la derecha
-        if (board.boardLayout[filPos][colPos + 1].getPiece() == null || 
-            board.boardLayout[filPos][colPos + 1].getPiece().getColor().equals(targetColor)) {
+        try {
 
-            validMoves.add(board.boardLayout[filPos][colPos + 1]);
+            if (board.boardLayout[filPos][colPos + 1].getPiece() == null || 
+                board.boardLayout[filPos][colPos + 1].getPiece().getColor().equals(targetColor)) {
 
+                validMoves.add(board.boardLayout[filPos][colPos + 1]);
+
+            }
+
+        } catch (IndexOutOfBoundsException e) {
+            // Do nothing
         }
 
         // Casilla arriba
-        if (board.boardLayout[filPos - 1][colPos].getPiece() == null || 
-            board.boardLayout[filPos - 1][colPos].getPiece().getColor().equals(targetColor)) {
+        try {
 
-            validMoves.add(board.boardLayout[filPos - 1][colPos]);
+            if (board.boardLayout[filPos - 1][colPos].getPiece() == null || 
+                board.boardLayout[filPos - 1][colPos].getPiece().getColor().equals(targetColor)) {
 
+                validMoves.add(board.boardLayout[filPos - 1][colPos]);
+
+            }
+            
+        } catch (IndexOutOfBoundsException e) {
+            // Do nothing
         }
 
         // Casilla abajo
-        if (board.boardLayout[filPos + 1][colPos].getPiece() == null || 
-            board.boardLayout[filPos + 1][colPos].getPiece().getColor().equals(targetColor)) {
+        try {
 
-            validMoves.add(board.boardLayout[filPos + 1][colPos]);
+            if (board.boardLayout[filPos + 1][colPos].getPiece() == null || 
+                board.boardLayout[filPos + 1][colPos].getPiece().getColor().equals(targetColor)) {
 
+                validMoves.add(board.boardLayout[filPos + 1][colPos]);
+
+            }
+        
+        } catch (IndexOutOfBoundsException e) { 
+            // Do nothing
         }
 
         // Casilla arriba a la izquierda
-        if (board.boardLayout[filPos - 1][colPos - 1].getPiece() == null || 
-            board.boardLayout[filPos - 1][colPos - 1].getPiece().getColor().equals(targetColor)) {
+        try {
 
-            validMoves.add(board.boardLayout[filPos - 1][colPos - 1]);
+            if (board.boardLayout[filPos - 1][colPos - 1].getPiece() == null || 
+                board.boardLayout[filPos - 1][colPos - 1].getPiece().getColor().equals(targetColor)) {
 
+                validMoves.add(board.boardLayout[filPos - 1][colPos - 1]);
+
+            }
+
+        } catch (IndexOutOfBoundsException e) {
+            // Do nothing
         }
 
         // Casilla arriba a la derecha
-        if (board.boardLayout[filPos - 1][colPos + 1].getPiece() == null || 
-            board.boardLayout[filPos - 1][colPos + 1].getPiece().getColor().equals(targetColor)) {
+        try {
 
-            validMoves.add(board.boardLayout[filPos - 1][colPos + 1]);
+            if (board.boardLayout[filPos - 1][colPos + 1].getPiece() == null || 
+                board.boardLayout[filPos - 1][colPos + 1].getPiece().getColor().equals(targetColor)) {
 
+                validMoves.add(board.boardLayout[filPos - 1][colPos + 1]);
+
+            }
+
+        } catch (IndexOutOfBoundsException e) {
+            // Do nothing
         }
 
         // Casilla abajo a la izquierda
-        if (board.boardLayout[filPos + 1][colPos - 1].getPiece() == null || 
-            board.boardLayout[filPos + 1][colPos - 1].getPiece().getColor().equals(targetColor)) {
+        try {
 
-            validMoves.add(board.boardLayout[filPos + 1][colPos - 1]);
+            if (board.boardLayout[filPos + 1][colPos - 1].getPiece() == null || 
+                board.boardLayout[filPos + 1][colPos - 1].getPiece().getColor().equals(targetColor)) {
 
+                validMoves.add(board.boardLayout[filPos + 1][colPos - 1]);
+
+            }
+
+        } catch (IndexOutOfBoundsException e) {
+            // Do nothing
         }
 
         // Casilla abajo a la derecha
-        if (board.boardLayout[filPos + 1][colPos + 1].getPiece() == null || 
-            board.boardLayout[filPos + 1][colPos + 1].getPiece().getColor().equals(targetColor)) {
+        try {
 
-            validMoves.add(board.boardLayout[filPos + 1][colPos + 1]);
+            if (board.boardLayout[filPos + 1][colPos + 1].getPiece() == null || 
+                board.boardLayout[filPos + 1][colPos + 1].getPiece().getColor().equals(targetColor)) {
 
+                validMoves.add(board.boardLayout[filPos + 1][colPos + 1]);
+
+            }
+
+        } catch (IndexOutOfBoundsException e) {
+            // Do nothing
         }
 
         return validMoves;
