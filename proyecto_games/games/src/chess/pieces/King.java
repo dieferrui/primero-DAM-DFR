@@ -26,121 +26,32 @@ public class King extends Piece {
         } else {
 
             targetColor = "white";
+
         }
 
-        // Casilla a la izquierda
+        addValidMove(board, validMoves, filPos, colPos - 1, targetColor); // Casilla a la izquierda
+        addValidMove(board, validMoves, filPos, colPos + 1, targetColor); // Casilla a la derecha
+        addValidMove(board, validMoves, filPos - 1, colPos, targetColor); // Casilla arriba
+        addValidMove(board, validMoves, filPos + 1, colPos, targetColor); // Casilla abajo
+        addValidMove(board, validMoves, filPos - 1, colPos - 1, targetColor); // Casilla arriba a la izquierda
+        addValidMove(board, validMoves, filPos - 1, colPos + 1, targetColor); // Casilla arriba a la derecha
+        addValidMove(board, validMoves, filPos + 1, colPos - 1, targetColor); // Casilla abajo a la izquierda
+        addValidMove(board, validMoves, filPos + 1, colPos + 1, targetColor); // Casilla abajo a la derecha
+
+        return validMoves;
+    }
+
+    private void addValidMove(ChessBoard board, ArrayList<Square> validMoves, int filPos, int colPos, String targetColor) {
+
         try {
 
-            if (board.boardLayout[filPos][colPos - 1].getPiece() == null || 
-            board.boardLayout[filPos][colPos - 1].getPiece().getColor().equals(targetColor)) {
-
-                validMoves.add(board.boardLayout[filPos][colPos - 1]);
-
-            }
-
-        } catch (IndexOutOfBoundsException e) {
-            // Do nothing
-        }
-        
-
-        // Casilla a la derecha
-        try {
-
-            if (board.boardLayout[filPos][colPos + 1].getPiece() == null || 
-                board.boardLayout[filPos][colPos + 1].getPiece().getColor().equals(targetColor)) {
-
-                validMoves.add(board.boardLayout[filPos][colPos + 1]);
-
-            }
-
-        } catch (IndexOutOfBoundsException e) {
-            // Do nothing
-        }
-
-        // Casilla arriba
-        try {
-
-            if (board.boardLayout[filPos - 1][colPos].getPiece() == null || 
-                board.boardLayout[filPos - 1][colPos].getPiece().getColor().equals(targetColor)) {
-
-                validMoves.add(board.boardLayout[filPos - 1][colPos]);
-
+            if (board.boardLayout[filPos][colPos].getPiece() == null ||
+                    board.boardLayout[filPos][colPos].getPiece().getColor().equals(targetColor)) {
+                validMoves.add(board.boardLayout[filPos][colPos]);
             }
             
         } catch (IndexOutOfBoundsException e) {
-            // Do nothing
+            // Ignora casillas fuera del tablero
         }
-
-        // Casilla abajo
-        try {
-
-            if (board.boardLayout[filPos + 1][colPos].getPiece() == null || 
-                board.boardLayout[filPos + 1][colPos].getPiece().getColor().equals(targetColor)) {
-
-                validMoves.add(board.boardLayout[filPos + 1][colPos]);
-
-            }
-        
-        } catch (IndexOutOfBoundsException e) { 
-            // Do nothing
-        }
-
-        // Casilla arriba a la izquierda
-        try {
-
-            if (board.boardLayout[filPos - 1][colPos - 1].getPiece() == null || 
-                board.boardLayout[filPos - 1][colPos - 1].getPiece().getColor().equals(targetColor)) {
-
-                validMoves.add(board.boardLayout[filPos - 1][colPos - 1]);
-
-            }
-
-        } catch (IndexOutOfBoundsException e) {
-            // Do nothing
-        }
-
-        // Casilla arriba a la derecha
-        try {
-
-            if (board.boardLayout[filPos - 1][colPos + 1].getPiece() == null || 
-                board.boardLayout[filPos - 1][colPos + 1].getPiece().getColor().equals(targetColor)) {
-
-                validMoves.add(board.boardLayout[filPos - 1][colPos + 1]);
-
-            }
-
-        } catch (IndexOutOfBoundsException e) {
-            // Do nothing
-        }
-
-        // Casilla abajo a la izquierda
-        try {
-
-            if (board.boardLayout[filPos + 1][colPos - 1].getPiece() == null || 
-                board.boardLayout[filPos + 1][colPos - 1].getPiece().getColor().equals(targetColor)) {
-
-                validMoves.add(board.boardLayout[filPos + 1][colPos - 1]);
-
-            }
-
-        } catch (IndexOutOfBoundsException e) {
-            // Do nothing
-        }
-
-        // Casilla abajo a la derecha
-        try {
-
-            if (board.boardLayout[filPos + 1][colPos + 1].getPiece() == null || 
-                board.boardLayout[filPos + 1][colPos + 1].getPiece().getColor().equals(targetColor)) {
-
-                validMoves.add(board.boardLayout[filPos + 1][colPos + 1]);
-
-            }
-
-        } catch (IndexOutOfBoundsException e) {
-            // Do nothing
-        }
-
-        return validMoves;
     }
 }

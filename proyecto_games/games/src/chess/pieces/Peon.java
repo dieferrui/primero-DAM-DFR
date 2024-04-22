@@ -6,175 +6,67 @@ import java.util.ArrayList;
 public class Peon extends Piece {
     
     public Peon(String color, String type) {
-
         super(color, type);
-        
     }
 
     public ArrayList<Square> movePiece(Square square, ChessBoard board) {
 
-        ArrayList<Square> validMoves;
+        ArrayList<Square> validMoves = new ArrayList<>();
         int filPos = square.getFil();
         int colPos = square.getCol();
+        int direction = this.getColor().equals("white") ? 1 : -1;
 
-        if (this.getColor().equals("white")) {
+        if (square.getPiece().getNumberOfMoves() < 1 && board.boardLayout[filPos + 2 * direction][colPos].getPiece() == null &&
+            board.boardLayout[filPos + direction][colPos].getPiece() == null) {
 
-            validMoves = moveIfWhite(square, board, filPos, colPos);
-
-        } else {
-
-            validMoves = moveIfBlack(square, board, filPos, colPos);
+            validMoves.add(board.boardLayout[filPos + 2 * direction][colPos]);
 
         }
 
-        for (int i = 0; i < validMoves.size(); i++) {
+        try {
 
-            if (validMoves.get(i).getFil() < 0 || validMoves.get(i).getCol() < 0) {
+            if (board.boardLayout[filPos + direction][colPos].getPiece() == null) {
 
-                validMoves.remove(validMoves.get(i));
+                validMoves.add(board.boardLayout[filPos + direction][colPos]);
 
             }
+
+        } catch (ArrayIndexOutOfBoundsException | NullPointerException e) {
+            // Square doesn't get added to Array of moves
+        }
+
+        try {
+
+            if (board.boardLayout[filPos + direction][colPos - 1].getPiece().getColor().equals(this.getOppositeColor())) {
+
+                validMoves.add(board.boardLayout[filPos + direction][colPos - 1]);
+
+            }
+
+        } catch (ArrayIndexOutOfBoundsException | NullPointerException e) {
+            // Square doesn't get added to Array of moves
+        }
+
+        try {
+
+            if (board.boardLayout[filPos + direction][colPos + 1].getPiece().getColor().equals(this.getOppositeColor())) {
+
+                validMoves.add(board.boardLayout[filPos + direction][colPos + 1]);
+                
+            }
+
+        } catch (ArrayIndexOutOfBoundsException | NullPointerException e) {
+            // Square doesn't get added to Array of moves
         }
 
         return validMoves;
     }
 
-    private ArrayList<Square> moveIfWhite(Square square, ChessBoard board, int filPos, int colPos) {
+    public String getOppositeColor() {
 
-        ArrayList<Square> validMoves = new ArrayList<>();
+        return this.getColor().equals("white") ? "black" : "white";
 
-        if (square.getPiece().getNumberOfMoves() < 1 && board.boardLayout[filPos + 2][colPos].getPiece() == null &&
-            board.boardLayout[filPos + 1][colPos].getPiece() == null) {
-
-            Square initialMove = board.boardLayout[filPos + 2][colPos];
-            validMoves.add(initialMove);
-
-        }
-
-        try {
-
-            if (board.boardLayout[filPos + 1][colPos].getPiece() == null) {
-
-                Square advance = board.boardLayout[filPos + 1][colPos];
-                validMoves.add(advance);
-
-            }
-        
-        } catch (ArrayIndexOutOfBoundsException e) {
-
-            // Square doesn't get added to the Array of moves
-        }
-
-        try {
-
-            if (board.boardLayout[filPos + 1][colPos - 1].getPiece().getColor().equals("black")) {
-
-                Square eatLeft = board.boardLayout[filPos + 1][colPos - 1];
-                validMoves.add(eatLeft);
-
-            }
-
-        } catch (ArrayIndexOutOfBoundsException e) {
-
-            // Square doesn't get added to Array of moves
-
-        } catch (NullPointerException e) {
-
-            // Ignore null squares
-
-        }
-
-        try {
-            
-            if (board.boardLayout[filPos + 1][colPos + 1].getPiece().getColor().equals("black")) {
-
-                Square eatRight = board.boardLayout[filPos + 1][colPos + 1];
-                validMoves.add(eatRight);
-
-            }
-        
-        } catch (ArrayIndexOutOfBoundsException e) {
-
-            // Square doesn't get added to Array of moves
-
-        } catch (NullPointerException e) {
-
-            // Ignore null squares
-
-        }
-
-        return validMoves;
     }
-
-    private ArrayList<Square> moveIfBlack(Square square, ChessBoard board, int filPos, int colPos) {
-
-        ArrayList<Square> validMoves = new ArrayList<>();
-
-        if (square.getPiece().getNumberOfMoves() < 1 && board.boardLayout[filPos - 2][colPos].getPiece() == null &&
-            board.boardLayout[filPos - 1][colPos].getPiece() == null) {
-
-            Square initialMove = board.boardLayout[filPos - 2][colPos];
-            validMoves.add(initialMove);
-
-        }
-
-        try {
-            
-            if (board.boardLayout[filPos - 1][colPos].getPiece() == null) {
-
-                Square advance = board.boardLayout[filPos - 1][colPos];
-                validMoves.add(advance);
-
-            }
-
-        } catch (ArrayIndexOutOfBoundsException e) {
-
-            // Square doesn't get added to Array of moves
-
-        } catch (NullPointerException e) {
-
-            // Ignore null squares
-
-        }
-
-        try {
-
-            if (board.boardLayout[filPos - 1][colPos - 1].getPiece().getColor().equals("white")) {
-
-                Square eatLeft = board.boardLayout[filPos - 1][colPos - 1];
-                validMoves.add(eatLeft);
-
-            }
-        
-        } catch (ArrayIndexOutOfBoundsException e) {
-
-            // Square doesn't get added to Array of moves
-
-        } catch (NullPointerException e) {
-
-            // Ignore null squares
-
-        }
-
-        try {
-
-            if (board.boardLayout[filPos - 1][colPos + 1].getPiece().getColor().equals("white")) {
-
-                Square eatRight = board.boardLayout[filPos - 1][colPos + 1];
-                validMoves.add(eatRight);
-
-            }
-
-        } catch (ArrayIndexOutOfBoundsException e) {
-
-            // Square doesn't get added to Array of moves
-
-        } catch (NullPointerException e) {
-
-            // Ignore null squares
-
-        }
-
-        return validMoves;
-    }
+    
 }
+

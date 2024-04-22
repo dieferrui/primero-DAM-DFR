@@ -17,114 +17,110 @@ public class Bishop extends Piece {
         ArrayList<Square> validMoves = new ArrayList<>();
         int filPos = square.getFil();
         int colPos = square.getCol();
-        String targetColor;
+        String targetColor = square.getPiece().getColor().equals("white") ? "black" : "white";
 
-        if (square.getPiece().getColor().equals("white")) {
+        validMoves.addAll(moveDiagonalUpLeft(filPos, colPos, board, targetColor));
+        validMoves.addAll(moveDiagonalUpRight(filPos, colPos, board, targetColor));
+        validMoves.addAll(moveDiagonalDownLeft(filPos, colPos, board, targetColor));
+        validMoves.addAll(moveDiagonalDownRight(filPos, colPos, board, targetColor));
 
-            targetColor = "black";
+        return validMoves;
+    }
 
-        } else {
+    private ArrayList<Square> moveDiagonalUpLeft(int filPos, int colPos, ChessBoard board, String targetColor) {
 
-            targetColor = "white";
-        }
+        ArrayList<Square> validMoves = new ArrayList<>();
 
-        // Movimiento diagonal arriba izquierda
-        for (int i = (filPos - 1); i >= 0; i--) {
+        for (int i = filPos - 1, j = colPos - 1; i >= 0 && j >= 0; i--, j--) {
 
-            for (int j = (colPos - 1); j >= 0; j--) {
+            if (board.boardLayout[i][j].getPiece() == null) {
 
-                if (board.boardLayout[i][j].getPiece() == null) {
+                validMoves.add(board.boardLayout[i][j]);
 
-                    validMoves.add(board.boardLayout[i][j]);
+            } else if (board.boardLayout[i][j].getPiece().getColor().equals(targetColor)) {
 
-                } else {
+                validMoves.add(board.boardLayout[i][j]);
+                break;
 
-                    if (board.boardLayout[i][j].getPiece().getColor().equals(targetColor)) {
+            } else {
 
-                        validMoves.add(board.boardLayout[i][j]);
-                        break;
+                break;
 
-                    } else {
-
-                        break;
-
-                    }
-                }
             }
         }
 
-        // Movimiento diagonal arriba derecha
-        for (int i = (filPos - 1); i >= 0; i--) {
+        return validMoves;
+    }
 
-            for (int j = (colPos + 1); j <= 7; j++) {
+    private ArrayList<Square> moveDiagonalUpRight(int filPos, int colPos, ChessBoard board, String targetColor) {
 
-                if (board.boardLayout[i][j].getPiece() == null) {
+        ArrayList<Square> validMoves = new ArrayList<>();
 
-                    validMoves.add(board.boardLayout[i][j]);
+        for (int i = filPos - 1, j = colPos + 1; i >= 0 && j <= 7; i--, j++) {
 
-                } else {
+            if (board.boardLayout[i][j].getPiece() == null) {
 
-                    if (board.boardLayout[i][j].getPiece().getColor().equals(targetColor)) {
+                validMoves.add(board.boardLayout[i][j]);
 
-                        validMoves.add(board.boardLayout[i][j]);
-                        break;
+            } else if (board.boardLayout[i][j].getPiece().getColor().equals(targetColor)) {
 
-                    } else {
+                validMoves.add(board.boardLayout[i][j]);
+                break;
 
-                        break;
+            } else {
 
-                    }
-                }
+                break;
+
             }
         }
 
-        // Movimiento diagonal abajo izquierda
-        for (int i = (filPos + 1); i <= 7; i++) {
+        return validMoves;
+    }
 
-            for (int j = (colPos - 1); j >= 0; j--) {
+    private ArrayList<Square> moveDiagonalDownLeft(int filPos, int colPos, ChessBoard board, String targetColor) {
 
-                if (board.boardLayout[i][j].getPiece() == null) {
+        ArrayList<Square> validMoves = new ArrayList<>();
 
-                    validMoves.add(board.boardLayout[i][j]);
+        for (int i = filPos + 1, j = colPos - 1; i <= 7 && j >= 0; i++, j--) {
 
-                } else {
+            if (board.boardLayout[i][j].getPiece() == null) {
 
-                    if (board.boardLayout[i][j].getPiece().getColor().equals(targetColor)) {
+                validMoves.add(board.boardLayout[i][j]);
 
-                        validMoves.add(board.boardLayout[i][j]);
-                        break;
+            } else if (board.boardLayout[i][j].getPiece().getColor().equals(targetColor)) {
 
-                    } else {
+                validMoves.add(board.boardLayout[i][j]);
+                break;
 
-                        break;
+            } else {
 
-                    }
-                }
+                break;
+
             }
         }
 
-        // Movimiento diagonal abajo derecha
-        for (int i = (filPos + 1); i <= 7; i++) {
+        return validMoves;
+    }
 
-            for (int j = (colPos + 1); j <= 7; j++) {
+    private ArrayList<Square> moveDiagonalDownRight(int filPos, int colPos, ChessBoard board, String targetColor) {
 
-                if (board.boardLayout[i][j].getPiece() == null) {
+        ArrayList<Square> validMoves = new ArrayList<>();
 
-                    validMoves.add(board.boardLayout[i][j]);
+        for (int i = filPos + 1, j = colPos + 1; i <= 7 && j <= 7; i++, j++) {
 
-                } else {
+            if (board.boardLayout[i][j].getPiece() == null) {
 
-                    if (board.boardLayout[i][j].getPiece().getColor().equals(targetColor)) {
+                validMoves.add(board.boardLayout[i][j]);
 
-                        validMoves.add(board.boardLayout[i][j]);
-                        break;
+            } else if (board.boardLayout[i][j].getPiece().getColor().equals(targetColor)) {
 
-                    } else {
+                validMoves.add(board.boardLayout[i][j]);
+                break;
 
-                        break;
+            } else {
 
-                    }
-                }
+                break;
+
             }
         }
 

@@ -26,73 +26,34 @@ public class Horse extends Piece {
         } else {
 
             targetColor = "white";
-        }
-
-        // L superior izquierda
-        if (board.boardLayout[filPos - 1][colPos - 2].getPiece() == null || 
-            board.boardLayout[filPos - 1][colPos - 2].getPiece().getColor().equals(targetColor)) {
-
-            validMoves.add(board.boardLayout[filPos - 1][colPos - 2]);
 
         }
 
-        // L superior invertida izquierda
-        if (board.boardLayout[filPos - 2][colPos - 1].getPiece() == null || 
-            board.boardLayout[filPos - 2][colPos - 1].getPiece().getColor().equals(targetColor)) {
-
-            validMoves.add(board.boardLayout[filPos - 2][colPos - 1]);
-
-        }
-
-        // L superior invertida derecha
-        if (board.boardLayout[filPos - 2][colPos + 1].getPiece() == null || 
-            board.boardLayout[filPos - 2][colPos + 1].getPiece().getColor().equals(targetColor)) {
-
-            validMoves.add(board.boardLayout[filPos - 2][colPos + 1]);
-
-        }
-
-        // L superior derecha
-        if (board.boardLayout[filPos - 1][colPos + 2].getPiece() == null || 
-            board.boardLayout[filPos - 1][colPos + 2].getPiece().getColor().equals(targetColor)) {
-
-            validMoves.add(board.boardLayout[filPos - 1][colPos + 2]);
-
-        }
-
-        // L inferior invertida izquierda
-        if (board.boardLayout[filPos + 1][colPos - 2].getPiece() == null || 
-            board.boardLayout[filPos + 1][colPos - 2].getPiece().getColor().equals(targetColor)) {
-
-            validMoves.add(board.boardLayout[filPos + 1][colPos - 2]);
-
-        }
-
-        // L inferior izquierda
-        if (board.boardLayout[filPos + 2][colPos - 1].getPiece() == null || 
-            board.boardLayout[filPos + 2][colPos - 1].getPiece().getColor().equals(targetColor)) {
-
-            validMoves.add(board.boardLayout[filPos + 2][colPos - 1]);
-
-        }
-
-        // L inferior derecha
-        if (board.boardLayout[filPos + 2][colPos + 1].getPiece() == null || 
-            board.boardLayout[filPos + 2][colPos + 1].getPiece().getColor().equals(targetColor)) {
-
-            validMoves.add(board.boardLayout[filPos + 2][colPos + 1]);
-
-        }
-
-        // L inferior invertida derecha
-        if (board.boardLayout[filPos + 1][colPos + 2].getPiece() == null || 
-            board.boardLayout[filPos + 1][colPos + 2].getPiece().getColor().equals(targetColor)) {
-
-            validMoves.add(board.boardLayout[filPos + 1][colPos + 2]);
-
-        }
+        addValidMove(validMoves, board, filPos - 1, colPos - 2, targetColor);
+        addValidMove(validMoves, board, filPos - 2, colPos - 1, targetColor);
+        addValidMove(validMoves, board, filPos - 2, colPos + 1, targetColor);
+        addValidMove(validMoves, board, filPos - 1, colPos + 2, targetColor);
+        addValidMove(validMoves, board, filPos + 1, colPos - 2, targetColor);
+        addValidMove(validMoves, board, filPos + 2, colPos - 1, targetColor);
+        addValidMove(validMoves, board, filPos + 2, colPos + 1, targetColor);
+        addValidMove(validMoves, board, filPos + 1, colPos + 2, targetColor);
 
         return validMoves;
+    }
+
+    private void addValidMove(ArrayList<Square> validMoves, ChessBoard board, int fil, int col, String targetColor) {
+
+        try {
+
+            if (board.boardLayout[fil][col].getPiece() == null || board.boardLayout[fil][col].getPiece().getColor().equals(targetColor)) {
+
+                validMoves.add(board.boardLayout[fil][col]);
+
+            }
+            
+        } catch (IndexOutOfBoundsException e) {
+            // Ignorar casillas fuera del tablero
+        }
     }
 }
 

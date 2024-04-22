@@ -95,7 +95,7 @@ public class ChessGame extends Game {
 
         } while (movesThisTurn < 1);
         
-        // TODO finalizar el método
+        // TODO finalizar el método con la condición de fin de partida (checkmate)
     }
 
     // Método para visualizar qué piezas puede mover el jugador
@@ -118,9 +118,7 @@ public class ChessGame extends Game {
                     }
 
                 } catch (NullPointerException e) {
-
-                    continue; // Ignorar nulls
-
+                    // Ignorar nulls
                 }
             }
         }
