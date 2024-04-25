@@ -51,7 +51,7 @@ public class Triangulo extends FiguraPlana {
     public void calcularBaseAltura() {
 
         this.base = a;
-        this.altura = (2 * getArea()) / a;
+        this.altura = (2 * getAreaDeSemiperimetro()) / a;
 
     }
 
