@@ -33,7 +33,7 @@ public class Main {
 
         Collections.sort(figuras);
 
-        System.out.println("Figuras ordenadas por área: ");
+        System.out.println("Figuras ordenadas por área (de menor a mayor): ");
         
         for (FiguraPlana figura : figuras) {
 

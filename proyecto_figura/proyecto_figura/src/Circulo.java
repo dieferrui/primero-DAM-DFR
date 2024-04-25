@@ -65,10 +65,9 @@ public class Circulo extends FiguraPlana {
      */
     @Override
     public String toString() {
-        return "Círculo{" +
-                "radio=" + radio +
-                ", area=" + getArea() +
-                '}';
+
+        return "Círculo: Radio = " + radio + ", Área = " + getArea();
+        
     }
 
 

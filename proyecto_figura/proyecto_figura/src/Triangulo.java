@@ -92,7 +92,7 @@ public class Triangulo extends FiguraPlana {
     @Override
     public String toString() {
 
-        return "Triangulo2:\n" + "a = " + a + "\nb = " + b + "\nc = " + c;
+        return "Triángulo: A = " + a + ", B = " + b + ", C = " + c + ", Área = " + getArea();
 
     }
 }

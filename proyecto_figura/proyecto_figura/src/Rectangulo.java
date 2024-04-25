@@ -44,11 +44,9 @@ public class Rectangulo extends FiguraPlana {
      */
     @Override
     public String toString() {
-        return "Rectangulo{" +
-                "base=" + base +
-                ", altura=" + altura +
-                ", area=" + getArea() +
-                '}';
+
+        return "Rectángulo: Base = " + base + ", Altura = " + altura + ", Área = " + getArea();
+        
     }
 
     public void setAltura(double altura) {
