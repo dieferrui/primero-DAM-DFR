@@ -11,7 +11,7 @@ public class HangmanGame extends Game {
     protected static Scanner sch = new Scanner(System.in);
 
     public HangmanGame() {
-        // Needs an instance, don't need params
+        // Instancia vacía
     }
 
     public void gameCycle(int numPlayers) {

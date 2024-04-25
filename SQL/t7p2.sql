@@ -13,15 +13,14 @@ where 	A.codart = F.codart and
 select 	L.nombre, P.nombre "Provincia"
 from 	localidad L, provincia P
 where  	L.codprov = P.codprov and
-	L.nombre like 'V%T'
+	lower(L.nombre) like 'v%t'
 order by P.nombre asc;
 
 --3
-select 	C.nombre, L.codloc
-from 	cliente C, localidad L, cpostal P
-where 	C.codpostal = P.codpostal and
-	P.codloc = L.codloc
-order by L.codloc asc;
+select 	C.nombre, P.codloc
+from 	cliente C, cpostal P
+where 	C.codpostal = P.codpostal
+order by P.codloc asc;
 
 --4
 select 	C.nombre, L.nombre "Localidad"
@@ -85,9 +84,8 @@ where 	L.nombre = L2.nombre and
 	
 --12
 select 	distinct L.nombre "Nombre duplicado"
-from 	localidad L, localidad L2, provincia P, provincia P2
+from 	localidad L, localidad L2, provincia P
 where 	L.nombre = L2.nombre and
 	L.codprov = P.codprov and
 	lower(P.nombre) = 'castellon' and
-	L2.codprov = P2.codprov and
-	lower(P2.nombre) != 'castellon';
+	L2.codprov != L.codprov;
