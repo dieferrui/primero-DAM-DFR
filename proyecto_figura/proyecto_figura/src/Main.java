@@ -6,7 +6,7 @@ public class Main {
     
     public static void main(String[] args) {
 
-        Circulo circulo1 = new Circulo(2.0d);
+        Circulo circulo1 = new Circulo(1.1d);
         Circulo circulo2 = new Circulo(5.5d);
         Circulo circulo3 = new Circulo(7.2d);
         Circulo circulo4 = new Circulo(11.0d);
