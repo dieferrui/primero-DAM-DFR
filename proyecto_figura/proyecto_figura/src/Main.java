@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class Main {
@@ -31,9 +32,32 @@ public class Main {
         figuras.add(rectangulo2);
         figuras.add(rectangulo3);
 
+        /*
         Collections.sort(figuras);
 
-        System.out.println("Figuras ordenadas por área (de menor a mayor): ");
+        System.out.println("Figuras ordenadas por área (de menor a mayor) mediante comparable: ");
+        
+        for (FiguraPlana figura : figuras) {
+
+            System.out.println(figura.toString());
+
+        }
+        */
+
+        ComparadorArea comparadorArea = new ComparadorArea(){
+
+            @Override
+            public int compare(FiguraPlana figura1, FiguraPlana figura2) {
+
+                return Double.compare(figura1.getArea(), figura2.getArea());
+        
+            }
+            
+        };
+
+        Collections.sort(figuras, comparadorArea);
+
+        System.out.println("Figuras ordenadas por área (de menor a mayor) mediante comparator: ");
         
         for (FiguraPlana figura : figuras) {
 
@@ -42,4 +66,14 @@ public class Main {
         }
         
     }
+}
+
+class ComparadorArea implements Comparator<FiguraPlana> {
+
+    public int compare(FiguraPlana figura1, FiguraPlana figura2) {
+
+        return Double.compare(figura1.getArea(), figura2.getArea());
+
+    }
+
 }
