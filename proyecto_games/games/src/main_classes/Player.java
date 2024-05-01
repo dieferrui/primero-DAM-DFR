@@ -181,7 +181,7 @@ public class Player {
         return cartonCopy;
     }
 
-    public void setCartonCopy() {
+    public void setCartonCopy(Carton carton) {
         this.cartonCopy = carton;
     }
 

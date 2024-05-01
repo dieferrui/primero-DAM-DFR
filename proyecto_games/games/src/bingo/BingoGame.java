@@ -6,7 +6,6 @@ import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
 import java.util.Set;
-import java.util.Timer;
 
 import main_classes.*;
 
@@ -14,8 +13,7 @@ public class BingoGame extends Game {
 
     private static Scanner scb = new Scanner(System.in);
     private Random random = new Random();
-    private Timer timer = new Timer();
-
+    
     public BingoGame() {
         // Nothing to see here
     }
@@ -32,7 +30,7 @@ public class BingoGame extends Game {
         for (Player player : players) {
 
             player.setCarton(new Carton());
-            player.setCartonCopy();
+            player.setCartonCopy(player.getCarton());
 
         }
 
@@ -59,15 +57,16 @@ public class BingoGame extends Game {
                 player.getCarton().setFila2(contieneValor(player.getCarton().getFila2(), numero, player));
                 player.getCarton().setFila3(contieneValor(player.getCarton().getFila3(), numero, player));
 
+                System.out.println(player.getName() + "'s carton:");
                 System.out.println(player.getCarton().toString());
 
                 try {
-                    
-                    timer.wait(2000);
+
+                    Thread.sleep(2000);
 
                 } catch (InterruptedException e) {
 
-                    System.out.println("An error has ocurred with the timer...");
+                    e.printStackTrace();
                     
                 }
 
@@ -158,6 +157,8 @@ public class BingoGame extends Game {
 
                 numeros[i] = 0;
                 player.getCarton().setAciertos(player.getCarton().getAciertos() + 1);
+
+                System.out.println("Number " + valor + " found in " + player.getName() + "'s carton!");
 
             }
         }
