@@ -132,7 +132,7 @@ public class MainGame {
                 default: break;
             }
 
-        } while (!select.equals("5"));
+        } while (!select.equals("4"));
     }
     
 }

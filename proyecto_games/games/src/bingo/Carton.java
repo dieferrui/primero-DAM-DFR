@@ -14,6 +14,9 @@ public class Carton {
     private int[] fila3 = new int[9];
     int aciertos;
 
+    private final String ZERO = "0";
+    private final String NULL_VAL = "--";
+
     public Carton() {
 
         int[] numElegidos = generarNumeros();
@@ -56,15 +59,15 @@ public class Carton {
         int[] numeros = new int[5];
         int[] numReturn = new int[9];
         Set<Integer> posiciones = new HashSet<>();
-        int numero = 0;
+        int numeroPos = 0;
 
         switch (fila) {
             
-            case 1: numeros = Arrays.copyOfRange(numRepartir, 0, 4); break;
+            case 1: numeros = Arrays.copyOfRange(numRepartir, 0, 5); break;
 
-            case 2: numeros = Arrays.copyOfRange(numRepartir, 5, 9); break;
+            case 2: numeros = Arrays.copyOfRange(numRepartir, 5, 10); break;
 
-            case 3: numeros = Arrays.copyOfRange(numRepartir, 10, 14); break;
+            case 3: numeros = Arrays.copyOfRange(numRepartir, 10, 15); break;
 
         }
 
@@ -72,13 +75,13 @@ public class Carton {
 
             do {
 
-                numero = random.nextInt(10);
+                numeroPos = random.nextInt(9);
 
-            } while (posiciones.contains(numero));
+            } while (posiciones.contains(numeroPos));
 
-            posiciones.add(numero);
+            posiciones.add(numeroPos);
             
-            numReturn[numero] = numeros[i];
+            numReturn[numeroPos] = numeros[i];
             
         }
 
@@ -120,7 +123,87 @@ public class Carton {
 
     @Override
     public String toString() {
-        return Arrays.toString(fila1) + "\n" + Arrays.toString(fila2) + "\n" + Arrays.toString(fila3);
-    }
 
+        String fil1;
+        String fil2;
+        String fil3;
+        StringBuilder sb = new StringBuilder("[");
+
+        Set<String> digitosSingulares = new HashSet<>(Set.of("1", "2", "3", "4", "5", "6", "7", "8", "9"));
+
+        for (int i = 0; i < 9; i++) {
+
+            String valorNum = String.valueOf(fila1[i]);
+
+            if (valorNum.equals(ZERO)) {
+
+                valorNum = NULL_VAL;
+
+            } else if (digitosSingulares.contains(valorNum)) {
+
+                valorNum = ZERO + valorNum;
+                
+            }
+
+            sb.append(valorNum + " ");
+
+        }
+
+        sb.append("]");
+        fil1 = sb.toString();
+
+        sb.delete(0, 999);
+        sb.append("[");
+
+        for (int i = 0; i < 9; i++) {
+
+            String valorNum = String.valueOf(fila2[i]);
+
+            if (valorNum.equals(ZERO)) {
+
+                valorNum = NULL_VAL;
+
+            } else if (digitosSingulares.contains(valorNum)) {
+
+                valorNum = ZERO + valorNum;
+                
+            }
+
+            sb.append(valorNum + " ");
+
+        }
+
+        sb.append("]");
+        fil2 = sb.toString();
+
+        sb.delete(0, 999);
+        sb.append("[");
+
+        for (int i = 0; i < 9; i++) {
+
+            String valorNum = String.valueOf(fila3[i]);
+
+            if (valorNum.equals(ZERO)) {
+
+                valorNum = NULL_VAL;
+
+            } else if (digitosSingulares.contains(valorNum)) {
+
+                valorNum = ZERO + valorNum;
+                
+            }
+
+            sb.append(valorNum + " ");
+
+        }
+
+        sb.append("]");
+        fil3 = sb.toString();
+
+        sb.delete(0, 999);
+
+        return fil1 + "\n" + fil2 + "\n" + fil3+ "\n";
+
+    }
+    
 }

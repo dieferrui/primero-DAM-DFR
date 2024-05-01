@@ -29,7 +29,7 @@ public class BingoGame extends Game {
 
             for (Player player : players) {
 
-                player.getCarton().toString();
+                System.out.println(player.getCarton().toString());
     
             }
 
@@ -63,6 +63,10 @@ public class BingoGame extends Game {
                 } catch (InputMismatchException e) {
 
                     System.out.println("That's not an age.");
+
+                } finally {
+
+                    scb.nextLine();
 
                 }
 
