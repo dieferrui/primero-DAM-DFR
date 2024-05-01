@@ -25,8 +25,6 @@ public class ChessGame extends Game {
     // Método para ciclo de juego
     public void gameCycle(int numPlayers) {
 
-        int kingNumber;
-
         Player[] players = makePlayers(numPlayers);
         players[0].setColor("white");
         players[1].setColor("black");
