@@ -12,6 +12,7 @@ public class Player {
     String ciudad;
     int edad;
     Carton carton;
+    Carton cartonCopy;
 
     public Player(String name, int playerNumber) {
 
@@ -175,7 +176,15 @@ public class Player {
     public void setCarton(Carton carton) {
         this.carton = carton;
     }
-    
+
+    public Carton getCartonCopy() {
+        return cartonCopy;
+    }
+
+    public void setCartonCopy() {
+        this.cartonCopy = carton;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;

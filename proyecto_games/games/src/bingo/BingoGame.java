@@ -18,7 +18,7 @@ public class BingoGame extends Game {
         // Nothing to see here
     }
 
-    public void gameCycle(int numPlayers) {
+    public void gameCycle(int numPlayers) throws InterruptedException {
 
         ArrayList<Player> players = makePlayersAsList(numPlayers);
         Set<Integer> numEscogidos = new HashSet<>();
@@ -30,6 +30,7 @@ public class BingoGame extends Game {
         for (Player player : players) {
 
             player.setCarton(new Carton());
+            player.setCartonCopy();
 
         }
 
@@ -52,11 +53,32 @@ public class BingoGame extends Game {
 
             for (Player player : players) {
 
-                
+                player.getCarton().setFila1(contieneValor(player.getCarton().getFila1(), numero, player));
+                player.getCarton().setFila2(contieneValor(player.getCarton().getFila2(), numero, player));
+                player.getCarton().setFila3(contieneValor(player.getCarton().getFila3(), numero, player));
+
+                System.out.println(player.getCarton().toString());
+                Thread.sleep(2000);
+
+                if (player.getCarton().getAciertos() >= 15) {
+
+                    playerFinish = Boolean.TRUE;
+                    System.out.println(player.showBingoVictor() + "\n");
+                    System.out.println(player.getCartonCopy().toString());
+
+                    players.remove(player);
+
+                    for (Player playerLose : players) {
+
+                        System.out.println(playerLose.getName() + "'s carton:\n");
+                        System.out.println(playerLose.getCarton().toString() + "\n");
+                        System.out.println();
+
+                    }
+
+                }
     
             }
-
-            playerFinish = true;
 
             numberBall++;
 
@@ -117,17 +139,18 @@ public class BingoGame extends Game {
         return players;
     }
 
-    public static boolean contieneValor(int[] array, int valor) {
+    public static int[] contieneValor(int[] numeros, int valor, Player player) {
 
-        for (int elemento : array) {
+        for (int i = 0; i < numeros.length; i++) {
 
-            if (elemento == valor) {
+            if (numeros[i] == valor) {
 
-                return true;
+                numeros[i] = 0;
+                player.getCarton().setAciertos(player.getCarton().getAciertos() + 1);
 
             }
         }
-        
-        return false;
+
+        return numeros;
     }
 }
