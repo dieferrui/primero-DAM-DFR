@@ -6,6 +6,7 @@ import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
 import java.util.Set;
+import java.util.Timer;
 
 import main_classes.*;
 
@@ -13,12 +14,13 @@ public class BingoGame extends Game {
 
     private static Scanner scb = new Scanner(System.in);
     private Random random = new Random();
+    private Timer timer = new Timer();
 
     public BingoGame() {
         // Nothing to see here
     }
 
-    public void gameCycle(int numPlayers) throws InterruptedException {
+    public void gameCycle(int numPlayers) {
 
         ArrayList<Player> players = makePlayersAsList(numPlayers);
         Set<Integer> numEscogidos = new HashSet<>();
@@ -58,7 +60,16 @@ public class BingoGame extends Game {
                 player.getCarton().setFila3(contieneValor(player.getCarton().getFila3(), numero, player));
 
                 System.out.println(player.getCarton().toString());
-                Thread.sleep(2000);
+
+                try {
+                    
+                    timer.wait(2000);
+
+                } catch (InterruptedException e) {
+
+                    System.out.println("An error has ocurred with the timer...");
+                    
+                }
 
                 if (player.getCarton().getAciertos() >= 15) {
 
