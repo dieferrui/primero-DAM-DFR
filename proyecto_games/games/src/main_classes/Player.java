@@ -1,4 +1,7 @@
 package main_classes;
+
+import bingo.Carton;
+
 public class Player {
     
     String name;
@@ -6,6 +9,9 @@ public class Player {
     boolean state;
     int lives;
     String color;
+    String ciudad;
+    int edad;
+    Carton carton;
 
     public Player(String name, int playerNumber) {
 
@@ -18,6 +24,15 @@ public class Player {
         this.name = name;
         this.playerNumber = playerNumber;
         this.lives = lives;
+    }
+
+    public Player(String name, int playerNumber, String ciudad, int edad) {
+
+        this.name = name;
+        this.playerNumber = playerNumber;
+        this.ciudad = ciudad;
+        this.edad = edad;
+    
     }
 
     public void showHangman() {
@@ -137,6 +152,30 @@ public class Player {
         this.color = color;
     }
 
+    public String getCiudad() {
+        return ciudad;
+    }
+
+    public void setCiudad(String ciudad) {
+        this.ciudad = ciudad;
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+
+    public Carton getCarton() {
+        return carton;
+    }
+
+    public void setCarton(Carton carton) {
+        this.carton = carton;
+    }
+    
     @Override
     public int hashCode() {
         final int prime = 31;
@@ -169,6 +208,10 @@ public class Player {
     @Override
     public String toString() {
         return "Player [name=" + name + ", playerNumber=" + playerNumber + "]";
+    }
+
+    public String showBingoVictor() {
+        return "Player " + name + ", " + edad + " from " + ciudad + " has won the game.";
     }
 
 }
