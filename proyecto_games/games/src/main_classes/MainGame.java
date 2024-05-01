@@ -4,6 +4,7 @@ import java.util.Scanner;
 import chess.ChessGame;
 import hangman.HangmanGame;
 import multiplicaton.MultiplicationGame;
+import bingo.BingoGame;
 
 public class MainGame {
 
@@ -17,7 +18,7 @@ public class MainGame {
             
             System.out.println("Welcome to the Game selection screen.");
             System.out.println("What game would you like to play?\n1. Multiplication Game\n"
-                            + "2. Hangman\n3. Chess\n4. Exit");
+                            + "2. Hangman\n3. Chess\n4. Bingo\n5. Exit");
             mainSelect = SC.nextLine();
 
             switch (mainSelect) {
@@ -25,6 +26,7 @@ public class MainGame {
                 case "1": multiplyGame(); break;
                 case "2": hangmanGame(); break;
                 case "3": chessGame(); break;
+                case "4": bingoGame(); break;
                 default: break;
             }
 
@@ -95,7 +97,7 @@ public class MainGame {
         do {
 
             System.out.println("Chess");
-            System.out.println("Choose game mode:\n1. Classic\n2. Quantum\n3. Rules\n4. Exit");
+            System.out.println("Choose game mode:\n1. Classic\n2. Quantum (in progress)\n3. Rules\n4. Exit");
 
             select = SC.nextLine();
 
@@ -108,6 +110,29 @@ public class MainGame {
             }
 
         } while (!select.equals("4"));
+    }
+
+    public static void bingoGame() {
+
+        String select;
+        BingoGame game = new BingoGame();
+
+        do {
+
+            System.out.println("Bingo");
+            System.out.println("Choose game mode:\n1. Two players\n2. Three players\n3. Four players\n4. Exit");
+
+            select = SC.nextLine();
+
+            switch (select) {
+
+                case "1": game.gameCycle(2); break;
+                case "2": game.gameCycle(3); break;
+                case "3": game.gameCycle(4); break;
+                default: break;
+            }
+
+        } while (!select.equals("5"));
     }
     
 }
