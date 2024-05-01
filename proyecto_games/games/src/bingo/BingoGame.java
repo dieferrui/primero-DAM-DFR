@@ -78,13 +78,7 @@ public class BingoGame extends Game {
 
                     players.remove(player);
 
-                    for (Player playerLose : players) {
-
-                        System.out.println(playerLose.getName() + "'s carton:\n");
-                        System.out.println(playerLose.getCarton().toString() + "\n");
-                        System.out.println();
-
-                    }
+                    break;
 
                 }
     
@@ -93,6 +87,14 @@ public class BingoGame extends Game {
             numberBall++;
 
         } while (!playerFinish);
+
+        for (Player playerLose : players) {
+
+            System.out.println(playerLose.getName() + "'s carton:\n");
+            System.out.println(playerLose.getCarton().toString() + "\n");
+            System.out.println();
+
+        }
 
     }
 

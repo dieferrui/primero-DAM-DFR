@@ -181,8 +181,8 @@ public class Player {
         return cartonCopy;
     }
 
-    public void setCartonCopy(Carton carton) {
-        this.cartonCopy = carton;
+    public void setCartonCopy(Carton cartonCopy) {
+        this.cartonCopy = cartonCopy;
     }
 
     @Override
