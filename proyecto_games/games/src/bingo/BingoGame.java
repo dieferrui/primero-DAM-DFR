@@ -1,14 +1,18 @@
 package bingo;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.InputMismatchException;
+import java.util.Random;
 import java.util.Scanner;
+import java.util.Set;
 
 import main_classes.*;
 
 public class BingoGame extends Game {
 
     private static Scanner scb = new Scanner(System.in);
+    private Random random = new Random();
 
     public BingoGame() {
         // Nothing to see here
@@ -17,7 +21,11 @@ public class BingoGame extends Game {
     public void gameCycle(int numPlayers) {
 
         ArrayList<Player> players = makePlayersAsList(numPlayers);
+        Set<Integer> numEscogidos = new HashSet<>();
+
         boolean playerFinish = Boolean.FALSE;
+        int numberBall = 1;
+        int numero;
 
         for (Player player : players) {
 
@@ -27,13 +35,30 @@ public class BingoGame extends Game {
 
         do {
 
+            System.out.println("Ball number " + numberBall);
+
+            do {
+
+                numero = random.nextInt(91);
+
+                if (numero == 0) {
+                    numero = 1;
+                }
+
+            } while (numEscogidos.contains(numero));
+
+            System.out.println("-- " + numero + " --\n");
+            numEscogidos.add(numero);
+
             for (Player player : players) {
 
-                System.out.println(player.getCarton().toString());
+                
     
             }
 
             playerFinish = true;
+
+            numberBall++;
 
         } while (!playerFinish);
 
@@ -90,5 +115,19 @@ public class BingoGame extends Game {
         }
 
         return players;
+    }
+
+    public static boolean contieneValor(int[] array, int valor) {
+
+        for (int elemento : array) {
+
+            if (elemento == valor) {
+
+                return true;
+
+            }
+        }
+        
+        return false;
     }
 }
