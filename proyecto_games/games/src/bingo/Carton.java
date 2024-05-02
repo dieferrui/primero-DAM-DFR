@@ -13,9 +13,9 @@ public class Carton {
     private int[] fila2 = new int[9];
     private int[] fila3 = new int[9];
     int aciertos;
-
-    private final String ZERO = "0";
-    private final String NULL_VAL = "--";
+    
+    private static final String ZERO = "0";
+    private static final String NULL_VAL = "--";
 
     public Carton() {
 
@@ -36,12 +36,8 @@ public class Carton {
         for (int i = 0; i < 15; i++) {
 
             do {
-
-                numero = random.nextInt(91);
-
-                if (numero == 0) {
-                    numero = 1;
-                }
+                
+                numero = random.nextInt(90) + 1;
 
             } while (numControl.contains(numero));
 
@@ -124,9 +120,7 @@ public class Carton {
     @Override
     public String toString() {
 
-        String fil1;
-        String fil2;
-        String fil3;
+        String fil1, fil2, fil3;
         StringBuilder sb = new StringBuilder("[");
 
         Set<String> digitosSingulares = new HashSet<>(Set.of("1", "2", "3", "4", "5", "6", "7", "8", "9"));

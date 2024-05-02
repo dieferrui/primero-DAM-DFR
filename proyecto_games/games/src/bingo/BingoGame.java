@@ -39,12 +39,8 @@ public class BingoGame extends Game {
             System.out.println("Ball number " + numberBall);
 
             do {
-
-                numero = random.nextInt(91);
-
-                if (numero == 0) {
-                    numero = 1;
-                }
+            
+                numero = random.nextInt(90) + 1;
 
             } while (numEscogidos.contains(numero));
 
