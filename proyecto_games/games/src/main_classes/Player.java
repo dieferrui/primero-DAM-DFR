@@ -4,15 +4,15 @@ import bingo.Carton;
 
 public class Player {
     
-    String name;
-    int playerNumber;
-    boolean state;
-    int lives;
-    String color;
-    String ciudad;
-    int edad;
-    Carton carton;
-    Carton cartonCopy;
+    private String name;
+    private int playerNumber;
+    private boolean state;
+    private int lives;
+    private String color;
+    private String ciudad;
+    private int edad;
+    private Carton carton;
+    private Carton cartonCopy;
 
     public Player(String name, int playerNumber) {
 

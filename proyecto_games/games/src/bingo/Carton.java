@@ -13,7 +13,7 @@ public class Carton {
     private int[] fila2 = new int[9];
     private int[] fila3 = new int[9];
     int aciertos;
-    
+
     private static final String ZERO = "0";
     private static final String NULL_VAL = "--";
 
@@ -64,6 +64,9 @@ public class Carton {
             case 2: numeros = Arrays.copyOfRange(numRepartir, 5, 10); break;
 
             case 3: numeros = Arrays.copyOfRange(numRepartir, 10, 15); break;
+
+            default: // Esto no va a ocurrir nunca 
+            break;
 
         }
 
