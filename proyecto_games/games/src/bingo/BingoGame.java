@@ -92,6 +92,8 @@ public class BingoGame extends Game {
 
         }
 
+        scb.close();
+
     }
 
     @Override
