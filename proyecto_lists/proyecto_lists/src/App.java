@@ -3,6 +3,7 @@ import java.util.LinkedList;
 public class App {
     public static void main(String[] args) {
     
+        /*
         int[] numeritos = {1, 2, 3, 6, 89, 23, 66, 102, 32, 420, 69};
 
         LinkedList<Integer> listaNums = new LinkedList<>();
@@ -27,5 +28,10 @@ public class App {
         }
 
         System.out.println(numberitos);
+        */
+
+        FileManager.generarListaEstudiantes();
+
+        
     }
 }

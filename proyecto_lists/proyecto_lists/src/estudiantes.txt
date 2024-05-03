@@ -1,0 +1,6 @@
+nombre,apellidos,fechaNac,notaMedia
+Juan,Gómez Garrido,10-01-1999,8.9
+Ana María,Fernández Martínez,19-02-2002,7.3
+Joseba,el de Carglass,22-09-1991,6.1
+Salazar,el calamar,30-11-2023,6.3
+Jose,García Sangabino,10-01-1997,9.4
