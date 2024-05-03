@@ -1,6 +1,6 @@
 public enum ValorCartas {
 
-    AS(13),
+    AS(11),
     DOS(2),
     TRES(3),
     CUATRO(4),
@@ -11,8 +11,8 @@ public enum ValorCartas {
     NUEVE(9),
     DIEZ(10),
     J(10),
-    Q(11),
-    K(12);
+    Q(10),
+    K(10);
 
     private int puntos;
 
