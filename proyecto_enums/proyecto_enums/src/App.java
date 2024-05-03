@@ -16,6 +16,16 @@ public class App {
         System.out.println(estado.mostrarEstado());
         System.out.println(estado2.mostrarEstado());
         System.out.println(estado3.mostrarEstado());
+
+        ValorCartas as = ValorCartas.AS;
+        ValorCartas tres = ValorCartas.TRES;
+        ValorCartas jester = ValorCartas.J;
+        ValorCartas rey = ValorCartas.K;
+
+        System.out.println(as.obtenerPuntos());
+        System.out.println(tres.obtenerPuntos());
+        System.out.println(jester.obtenerPuntos());
+        System.out.println(rey.obtenerPuntos());
         
     }
 }
