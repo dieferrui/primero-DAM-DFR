@@ -13,6 +13,8 @@ public class App {
 
         }
 
+        listaNums.add(190);
+
         System.out.println(listaNums);
 
 
