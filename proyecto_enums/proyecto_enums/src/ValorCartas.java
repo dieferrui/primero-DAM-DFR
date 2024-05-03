@@ -14,7 +14,7 @@ public enum ValorCartas {
     Q(10),
     K(10);
 
-    private int puntos;
+    private final int puntos;
 
     private ValorCartas(int puntos) {
 
