@@ -60,7 +60,7 @@ public class App {
         Set<String> canciones = new LinkedHashSet<>();
 
         canciones.add("Assuming We Survive - Say My Name");
-        canciones.add("Adept - At Least Give Me My Dreams Back, You Negligent Wh...");
+        canciones.add("Adept - At Least Give Me My Dreams Back");
         canciones.add("Adept - The Ballad of Planet Earth");
         canciones.add("Hell or Highwater - I Want It All");
         canciones.add("Adept - Black Veins");
@@ -72,7 +72,7 @@ public class App {
         System.out.println(canciones.toString());
 
         System.out.println("Tratamos de añadir canciones ya en el Set:");
-        canciones.add("Adept - At Least Give Me My Dreams Back, You Negligent Wh...");
+        canciones.add("Adept - At Least Give Me My Dreams Back");
         canciones.add("Adept - The Ballad of Planet Earth");
         System.out.println(canciones.toString());
 
