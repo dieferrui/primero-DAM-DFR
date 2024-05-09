@@ -1,6 +1,7 @@
 public class MatriCad {
 
     private java.util.ArrayList<String> cadenes; 	// referència a la llista de cadenes, un camp
+
     /**
      * Constructor de Matricad.
      * @param dada matriu amb les cadenes per a la llista
@@ -14,6 +15,7 @@ public class MatriCad {
             cadenes.add(element);
         }
     }
+
     /**
      * @return la cadena que té més caràcters. La primera si hi ha diverses amb la mateixa longitud
      */
@@ -26,6 +28,7 @@ public class MatriCad {
         }
         return max;
     }
+
     /**
      * @return la suma total de caràcters de totes les cadenes.
      */
@@ -36,6 +39,7 @@ public class MatriCad {
         }
         return total;
     }
+    
     /**
      * Retorna l'índex de la cadena buscada.
      *
