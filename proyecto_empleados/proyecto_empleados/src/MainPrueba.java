@@ -67,18 +67,26 @@ public class MainPrueba {
 
     public static void agregarEmpleado(Map<Integer, Empleado> empleados) {
 
-        int id;
+        int id = 0;
  
-        do {
-            
-            System.out.println("Introduzca el ID del empleado:");
-            id = Integer.parseInt(SC.nextLine());
+        try {
 
-            if (empleados.containsKey(id)) {
-                System.out.println("El ID ya existe.");
-            }
+            do {
+                
+                System.out.println("Introduzca el ID del empleado:");
+                id = Integer.parseInt(SC.nextLine());
 
-        } while (empleados.containsKey(id));
+                if (empleados.containsKey(id)) {
+                    System.out.println("El ID ya existe.");
+                }
+
+            } while (empleados.containsKey(id));
+
+        } catch (NumberFormatException e) {
+                
+            System.out.println("El ID debe ser un número entero.");
+    
+        }
 
         System.out.println("Introduzca el nombre del empleado:");
         String nombre = SC.nextLine();
