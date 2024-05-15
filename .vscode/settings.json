@@ -3,5 +3,7 @@
         "lib/**/*.jar",
         "resources/log4j-api-2.23.1.jar",
         "resources/log4j-core-2.23.1.jar"
-    ]
+    ],
+    "java.configuration.updateBuildConfiguration": "interactive",
+    "java.compile.nullAnalysis.mode": "automatic"
 }
