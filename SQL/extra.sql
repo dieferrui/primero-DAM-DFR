@@ -157,6 +157,9 @@ where 	edad =   (select   min(edad)
 --29
 select 	C.nombre
 from  	ciclista C, etapa E
-where 	C.dorsal = E.dorsal and
-	edad =   (select   min(edad)
-		  from     ciclista); --Incompleta
+where   C.dorsal = E.dorsal and
+	C.edad =     (select   min(edad)
+		      from     ciclista C2, etapa E2
+		      where    C2.dorsal = E2.dorsal);
+		    
+--30

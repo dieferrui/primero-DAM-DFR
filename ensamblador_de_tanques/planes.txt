@@ -1,0 +1,58 @@
+1. Clase Chasis: La base a partir de la cual se construye el tanque.
+    -Atributo país: Define el origen del chasis
+    -Atributo capacidad de carga: Delimita el peso de los componentes y equipamiento que puede llevar un vehículo
+    -Atributo espacio interno: Delimita la cantidad de componentes internos que puede llevar el vehículo
+    -Atributo blindaje (Front, Sides, Back): Por simplicidad se obtiene el valor del blindaje medio de cada sección
+    
+    -Atributos necesarios para completar el vehículo:
+        a) Torreta / Superestructura
+        b) Arma principal
+        c) Motor y transmisión
+        d) Tripulación
+
+    -Atributos opcionales:
+        a) Ametralladoras coaxiales/fijas/montadas
+        b) Lanzadores de granadas de humo interiores/exteriores
+        c) Suspensiones de rodaje autónomo
+        d) Piezas de repuesto
+        e) Blindaje improvisado y tipo
+        f) Depósitos de combustible externos
+        g) Añadidos de confort de Tripulación
+
+2. Clase Componente: Interfaz que define las características que se comparten entre todos los componentes. Implementa serializable.
+    -Atributo ID? (podría llegar a ser necesaria para serialización?)
+    -Atributo usuarios: Define los países que pueden usar el armamento (buen sitio para otro enum)
+    -Atributo peso
+
+3. Clase Armamento: Hereda de componente. Define la capacidad del vehículo para dañar a un contrincante.
+    -Atributo clase: Define el tipo de armamento (probablemente otro enum)
+    -Atributo descripción.
+    -Atributo(s?) penetración: Tres valores para penetración a distancias largas, medias y cortas
+    -Atributo calibre: Define el tamaño del cañón
+    -Atributo munición: Define el tipo de munición que usa el cañón (probablemente más enums)
+
+4. Clase Torreta/Superestructura: Hereda de componente. Define el tipo y la cantidad de espacio adicional para montar el cañón.
+    -Atributo tipo: Define si es una torreta o una Superestructura
+    -Atributo ángulo de tiro: Define el ángulo de tiro del componente (generalmente 360 grados para torretas normales)
+    -Atributo ángulo de depresión/elevación: Define los ángulos de depresión y elevación del componente
+    -Atributo espacio: Añade su valor al total de espacio del vehículo
+    -Atributo blindaje (Front, Sides, Back): Mismo que con chasis
+
+5. Clase Motor: Hereda de componente. Define la movilidad del vehículo.
+    -Atributo tipo de transmisión: Define el tipo de transmisión (clutch breaking, twin transmission)
+    -Atributo aceleración: Define la usabilidad de la tranmisión en distintos terrenos
+    -Atributo potencia: La potencia es el caballaje del Motor
+    -Atributo velocidad máxima: Aunque no sea demasiado importante
+
+6. Clase tripulante: Define la triplación a bordo del vehículo.
+    -Rol: Define el rol del tripulante. Como mínimo, un vehículo debe tener un conductor y un comandante.
+
+7. Clase componentes adicionales: Define el resto de componentes.
+    -Usabilidad: Un número arbitrario que se añade al cómputo cuando se usa en el simulador.
+
+8. Clase main: El menú integra características para crear, visualizar y eliminar vehiculos, además del simulador de escenarios y el comparador.
+
+9. Simulador de escenarios: Dos vehículos ya creados se enfrentan en un escenario con diversas características. 
+El resultado se calcula en porcentajes de victoria.
+
+10. Comparador de vehículos: Compara una a una las características de dos vehículos e indica cuál es la mejor.

@@ -8,6 +8,7 @@ public class MapExamples {
 
     public static void main(String[] args) {
 
+        
         Map<String, Integer> map1 = new HashMap<>();
         Map<String, Integer> map2 = new TreeMap<>();
         Map<String, Integer> map3 = new LinkedHashMap<>();
@@ -121,6 +122,7 @@ public class MapExamples {
                 mapa.put(palabra, 1);
 
             }
+
         }
 
         System.out.println("Conteo de las palabras de la lista: ");
