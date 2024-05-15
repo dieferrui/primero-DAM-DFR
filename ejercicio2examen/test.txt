@@ -1,0 +1,2 @@
+El archivo pom.xml, que es el que maneja la importación de dependencias,
+debería funcionar correctamente, pero no lo hace.
