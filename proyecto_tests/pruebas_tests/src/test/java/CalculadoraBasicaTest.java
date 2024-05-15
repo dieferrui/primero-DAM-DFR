@@ -1,4 +1,6 @@
 import org.testng.annotations.Test;
+import static org.testng.Assert.assertEquals;
+import pruebas_de_tests.CalculadoraBasica;
 
 /* 
 Tests realizados en VSCode, desconozco si se pueden importar
@@ -31,4 +33,5 @@ public class CalculadoraBasicaTest {
     public void testDivisionCero() {
         assertEquals(0, CalculadoraBasica.operacion('/', 8, 0));
     }
+    
 }

@@ -1,3 +1,5 @@
+package pruebas_de_tests;
+
 import java.util.Scanner;
 
 public class CalculadoraBasica {
