@@ -4,7 +4,11 @@ import java.io.Serializable;
 
 public class Chassis implements Serializable {
 
+    private static final String MILL = "mm";
+
+    private String designacion;
     private String pais;
+    private String[] nomenclatura;
 
     private double cargaMaxima;
     private double cargaActual;
@@ -20,9 +24,11 @@ public class Chassis implements Serializable {
     private int[] blindaje = {blindajeFrontal, blindajeLateral, blindajeTrasero};
 
     // El constructor sólo se usará por el administrador de la app para añadir componentes
-    public Chassis(String pais, double[] carga, double[] espacio, int[] blindaje) {
+    public Chassis(String[] nomenclatura, double[] carga, double[] espacio, int[] blindaje) {
 
-        this.pais = pais;
+        this.nomenclatura = nomenclatura;
+        this.designacion = nomenclatura[0];
+        this.pais = nomenclatura[1];
 
         this.carga = carga;
         this.cargaMaxima = carga[0];
@@ -72,6 +78,10 @@ public class Chassis implements Serializable {
         return blindajeTrasero;
     }
 
+    public String getDesignacion() {
+        return designacion;
+    }
+
     // Setters (sólo se incluyen las características que se pueden modificar)
     public void setCargaActual(double cargaActual) {
         this.cargaActual = cargaActual;
@@ -85,6 +95,7 @@ public class Chassis implements Serializable {
     public int hashCode() {
         final int prime = 31;
         int result = 1;
+        result = prime * result + ((designacion == null) ? 0 : designacion.hashCode());
         result = prime * result + ((pais == null) ? 0 : pais.hashCode());
         long temp;
         temp = Double.doubleToLongBits(cargaMaxima);
@@ -106,6 +117,11 @@ public class Chassis implements Serializable {
         if (getClass() != obj.getClass())
             return false;
         Chassis other = (Chassis) obj;
+        if (designacion == null) {
+            if (other.designacion != null)
+                return false;
+        } else if (!designacion.equals(other.designacion))
+            return false;
         if (pais == null) {
             if (other.pais != null)
                 return false;
@@ -123,5 +139,35 @@ public class Chassis implements Serializable {
             return false;
         return true;
     }
-    
+
+    @Override
+    public String toString() {
+        return "Chassis [designacion=" + designacion + ", pais=" + pais + ", cargaMaxima=" + cargaMaxima
+                + ", espacioInterno=" + espacioInterno + ", blindajeFrontal=" + blindajeFrontal + ", blindajeLateral="
+                + blindajeLateral + ", blindajeTrasero=" + blindajeTrasero + "]";
+    }
+
+    public String mostrarDatos() {
+        return "Chasis " + this.devolverOrigen(pais) + ", designación " + designacion + ":\n" +
+                "Carga máxima: " + cargaMaxima + " Kg\n" +
+                "Blindaje frontal: " + blindajeFrontal + " " + MILL + "\n" +
+                "Blindaje lateral: " + blindajeLateral + " " + MILL + "\n" +
+                "Blindaje trasero: " + blindajeTrasero + " " + MILL;
+    }
+
+    public String devolverOrigen(String pais) {
+
+        switch (pais) {
+            case "ALEMANIA":
+                return "alemán";
+            case "EEUU":
+                return "estadounidense";
+            case "UK":
+                return "inglés";
+            case "URSS":
+                return "soviético";
+            default:
+                return "de potencia secundaria";
+        }
+    }
 }
