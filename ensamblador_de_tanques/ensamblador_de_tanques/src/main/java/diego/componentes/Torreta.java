@@ -11,6 +11,7 @@ public class Torreta extends Componente {
 
     private String designacion;
     private Paises[] usuarios;
+    private double peso;
 
     private TipoTorreta tipoTorreta;
 
@@ -20,7 +21,6 @@ public class Torreta extends Componente {
     private double[] restricciones;
 
     private double espacio;
-    private double peso;
     
     private int blindajeFrontal;
     private int blindajeLateral;
@@ -90,10 +90,10 @@ public class Torreta extends Componente {
     public int hashCode() {
         final int prime = 31;
         int result = 1;
-        result = prime * result + ((designacion == null) ? 0 : designacion.hashCode());
-        result = prime * result + Arrays.hashCode(usuarios);
-        result = prime * result + ((tipoTorreta == null) ? 0 : tipoTorreta.hashCode());
         long temp;
+        temp = Double.doubleToLongBits(peso);
+        result = prime * result + (int) (temp ^ (temp >>> 32));
+        result = prime * result + ((tipoTorreta == null) ? 0 : tipoTorreta.hashCode());
         temp = Double.doubleToLongBits(anguloTiro);
         result = prime * result + (int) (temp ^ (temp >>> 32));
         temp = Double.doubleToLongBits(anguloElev);
@@ -102,11 +102,10 @@ public class Torreta extends Componente {
         result = prime * result + (int) (temp ^ (temp >>> 32));
         temp = Double.doubleToLongBits(espacio);
         result = prime * result + (int) (temp ^ (temp >>> 32));
-        temp = Double.doubleToLongBits(peso);
-        result = prime * result + (int) (temp ^ (temp >>> 32));
         result = prime * result + blindajeFrontal;
         result = prime * result + blindajeLateral;
         result = prime * result + blindajeTrasero;
+        result = prime * result + ((designacion == null) ? 0 : designacion.hashCode());
         return result;
     }
 
@@ -119,12 +118,7 @@ public class Torreta extends Componente {
         if (getClass() != obj.getClass())
             return false;
         Torreta other = (Torreta) obj;
-        if (designacion == null) {
-            if (other.designacion != null)
-                return false;
-        } else if (!designacion.equals(other.designacion))
-            return false;
-        if (!Arrays.equals(usuarios, other.usuarios))
+        if (Double.doubleToLongBits(peso) != Double.doubleToLongBits(other.peso))
             return false;
         if (tipoTorreta != other.tipoTorreta)
             return false;
@@ -135,8 +129,6 @@ public class Torreta extends Componente {
         if (Double.doubleToLongBits(anguloDepr) != Double.doubleToLongBits(other.anguloDepr))
             return false;
         if (Double.doubleToLongBits(espacio) != Double.doubleToLongBits(other.espacio))
-            return false;
-        if (Double.doubleToLongBits(peso) != Double.doubleToLongBits(other.peso))
             return false;
         if (blindajeFrontal != other.blindajeFrontal)
             return false;

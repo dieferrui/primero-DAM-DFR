@@ -26,7 +26,6 @@
 
 3. Clase Armamento: Hereda de componente. Define la capacidad del vehículo para dañar a un contrincante.
     -Atributo clase: Define el tipo de armamento (probablemente otro enum)
-    -Atributo descripción.
     -Atributo(s?) penetración: Tres valores para penetración a distancias largas, medias y cortas
     -Atributo calibre: Define el tamaño del cañón
     -Atributo munición: Define el tipo de munición que usa el cañón (probablemente más enums)

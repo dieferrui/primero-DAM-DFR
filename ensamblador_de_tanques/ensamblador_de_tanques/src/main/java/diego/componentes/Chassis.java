@@ -10,6 +10,7 @@ public class Chassis extends Componente {
 
     private String designacion;
     private Paises[] usuarios;
+    private double peso;
 
     private double cargaMaxima;
     private double cargaActual;
@@ -18,8 +19,6 @@ public class Chassis extends Componente {
     private double espacioInterno;
     private double espacioOcupado;
     private double[] espacio = {espacioInterno, espacioOcupado};
-
-    private double peso;
 
     private int blindajeFrontal;
     private int blindajeLateral;
@@ -86,24 +85,21 @@ public class Chassis extends Componente {
         this.espacioOcupado = espacioOcupado;
     }
 
-    
-
     @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
-        result = prime * result + ((designacion == null) ? 0 : designacion.hashCode());
-        result = prime * result + Arrays.hashCode(usuarios);
         long temp;
+        temp = Double.doubleToLongBits(peso);
+        result = prime * result + (int) (temp ^ (temp >>> 32));
         temp = Double.doubleToLongBits(cargaMaxima);
         result = prime * result + (int) (temp ^ (temp >>> 32));
         temp = Double.doubleToLongBits(espacioInterno);
         result = prime * result + (int) (temp ^ (temp >>> 32));
-        temp = Double.doubleToLongBits(peso);
-        result = prime * result + (int) (temp ^ (temp >>> 32));
         result = prime * result + blindajeFrontal;
         result = prime * result + blindajeLateral;
         result = prime * result + blindajeTrasero;
+        result = prime * result + ((designacion == null) ? 0 : designacion.hashCode());
         return result;
     }
 
@@ -116,18 +112,11 @@ public class Chassis extends Componente {
         if (getClass() != obj.getClass())
             return false;
         Chassis other = (Chassis) obj;
-        if (designacion == null) {
-            if (other.designacion != null)
-                return false;
-        } else if (!designacion.equals(other.designacion))
-            return false;
-        if (!Arrays.equals(usuarios, other.usuarios))
+        if (Double.doubleToLongBits(peso) != Double.doubleToLongBits(other.peso))
             return false;
         if (Double.doubleToLongBits(cargaMaxima) != Double.doubleToLongBits(other.cargaMaxima))
             return false;
         if (Double.doubleToLongBits(espacioInterno) != Double.doubleToLongBits(other.espacioInterno))
-            return false;
-        if (Double.doubleToLongBits(peso) != Double.doubleToLongBits(other.peso))
             return false;
         if (blindajeFrontal != other.blindajeFrontal)
             return false;
