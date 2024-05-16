@@ -5,7 +5,7 @@ import java.util.Arrays;
 
 import diego.componentes.*;
 
-public class Tanque implements Serializable {
+public class Tanque implements Serializable, Comparable<Tanque> {
 
     private String nombre;
 
@@ -122,8 +122,13 @@ public class Tanque implements Serializable {
         return true;
     }
     
-    public String mostrarDatosCompletos() {
+    // Compara cada tanque y lo ordena según su peso total
+    @Override
+    public int compareTo(Tanque otroTanque) {
+        return Double.compare(this.getChasis().getCargaActual(), otroTanque.getChasis().getCargaActual());
+    }
 
+    public String mostrarDatosCompletos() {
         return "Tanque: " + getNombre() + "\n" +
                 "Tripulantes: " + getTripulacion().length + "\n\n" +
                 getChasis().mostrarDatos() + "\n\n" + 
