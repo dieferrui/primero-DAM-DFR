@@ -125,10 +125,10 @@ public class Tanque implements Serializable {
     public String mostrarDatosCompletos() {
 
         return "Tanque: " + nombre + "\n" +
-                "Tripulantes: " + tripulacion.length + "\n" +
-                chasis.mostrarDatos() + "\n" + 
-                torreta.mostrarDatos() + "\n" + 
-                motor.mostrarDatos() + "\n" + 
-                arma.mostrarDatos() + "\n";
+                "Tripulantes: " + tripulacion.length + "\n\n" +
+                chasis.mostrarDatos() + "\n\n" + 
+                torreta.mostrarDatos() + "\n\n" + 
+                motor.mostrarDatos() + "\n\n" + 
+                arma.mostrarDatos() + "\n\n";
     }
 }
