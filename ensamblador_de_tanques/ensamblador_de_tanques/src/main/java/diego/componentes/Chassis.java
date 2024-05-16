@@ -107,10 +107,12 @@ public class Chassis extends Componente {
         DecimalFormat df = new DecimalFormat("#.#");
         String pesoFormat = df.format(getPeso()/1000);
         String cargaFormat = df.format(getCargaMaxima()/1000);
+        String cargaActualFormat = df.format(getCargaActual()/1000);
         
         return "Chasis con designación " + getDesignacion() + ":\n" +
                 "Peso: " + pesoFormat + "t\n" +
                 "Carga máxima: " + cargaFormat + "t\n" +
+                "Carga actual: " + cargaActualFormat + "t\n" +
                 "Blindaje frontal: " + getBlindajeFrontal() + MILL + "\n" +
                 "Blindaje lateral: " + getBlindajeLateral() + MILL + "\n" +
                 "Blindaje trasero: " + getBlindajeTrasero() + MILL;

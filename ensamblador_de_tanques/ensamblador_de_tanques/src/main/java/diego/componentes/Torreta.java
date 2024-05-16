@@ -128,7 +128,7 @@ public class Torreta extends Componente {
 
     public String mostrarDatos() {
 
-        return "Compartimento de combate con designación " + designacion + ":\n" +
+        return "Compartimento de combate con designación " + getDesignacion() + ":\n" +
                 "Tipo: " + getTipoTorreta().getTipo() + "\n" +
                 "Peso: " + getPeso() + "Kg\n" +
                 "Ángulo de tiro: " + (getAnguloTiro() == 360.0 ? "Completo" : (getAnguloTiro() + ANG)) + "\n" +

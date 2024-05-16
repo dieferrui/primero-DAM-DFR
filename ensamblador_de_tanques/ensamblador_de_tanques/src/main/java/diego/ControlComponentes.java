@@ -24,10 +24,10 @@ public class ControlComponentes {
     public void agregarComponentes() {
 
         // Chasis
-        Chassis testChasis = new Chassis("Chasis de prueba", new Paises[]{Paises.ALEMANIA}, 18000, 
-                                        new double[]{24500, 14000}, new int[]{60, 30, 30});
+        Chassis testChasis = new Chassis("Chasis de prueba", new Paises[]{Paises.ALEMANIA}, 11000, 
+                                        new double[]{24500, 0}, new int[]{60, 30, 30});
         Chassis testChasis2 = new Chassis("Chasis de prueba 2", new Paises[]{Paises.ESTADOS_UNIDOS},22000, 
-                                        new double[]{26350, 17000}, new int[]{70, 40, 40});
+                                        new double[]{26350, 0}, new int[]{70, 40, 40});
 
         mapaChasis.put("CHS-GE-000", testChasis);
         mapaChasis.put("CHS-US-000", testChasis2);

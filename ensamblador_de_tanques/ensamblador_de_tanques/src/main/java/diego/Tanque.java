@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.Arrays;
 
 import diego.componentes.*;
+import java.text.DecimalFormat;
 
 public class Tanque implements Serializable, Comparable<Tanque> {
 
@@ -16,6 +17,7 @@ public class Tanque implements Serializable, Comparable<Tanque> {
     private Motor motor;
     private Armamento arma;
     private Tripulante[] tripulacion;
+    private double relacionPotencia;
 
     public Tanque(String nombre, Chassis chasis, Torreta torreta, Motor motor, Armamento arma, 
                     Tripulante[] tripulacion) {
@@ -26,6 +28,14 @@ public class Tanque implements Serializable, Comparable<Tanque> {
         this.motor = motor;
         this.arma = arma;
         this.tripulacion = tripulacion;
+
+        this.getChasis().setCargaActual(getChasis().getPeso() + getTorreta().getPeso() + 
+                        getMotor().getPeso() + getArma().getPeso() + 
+                        (getTripulacion().length * 100));
+
+        this.relacionPotencia = getMotor().getPotencia() / (getChasis().getCargaActual() / 1000);
+
+        // TODO Controlar peso en el main
 
     }
 
@@ -73,8 +83,16 @@ public class Tanque implements Serializable, Comparable<Tanque> {
         return tripulacion;
     }
 
+    public double getRelacionPotencia() {
+        return relacionPotencia;
+    }
+
     public void setTripulacion(Tripulante[] tripulacion) {
         this.tripulacion = tripulacion;
+    }
+
+    public void setRelacionPotencia(double relacionPotencia) {
+        this.relacionPotencia = relacionPotencia;
     }
 
     @Override
@@ -131,8 +149,13 @@ public class Tanque implements Serializable, Comparable<Tanque> {
     }
 
     public String mostrarDatosCompletos() {
+
+        DecimalFormat df = new DecimalFormat("#.#");
+        String relacionPotFormat = df.format(getRelacionPotencia());
+
         return "Tanque: " + getNombre() + "\n" +
                 "Tripulantes: " + getTripulacion().length + "\n\n" +
+                "Relación potencia/peso: " + relacionPotFormat + "CV/t\n\n" +
                 getChasis().mostrarDatos() + "\n\n" + 
                 getTorreta().mostrarDatos() + "\n\n" + 
                 getMotor().mostrarDatos() + "\n\n" + 
