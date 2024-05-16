@@ -7,6 +7,8 @@ import diego.componentes.*;
 
 public class Tanque implements Serializable, Comparable<Tanque> {
 
+    private static final long serialVersionUID = 8008L;
+
     private String nombre;
 
     private Chassis chasis;
