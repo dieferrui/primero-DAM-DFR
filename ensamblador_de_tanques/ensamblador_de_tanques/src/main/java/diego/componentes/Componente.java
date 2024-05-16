@@ -9,7 +9,7 @@ public abstract class Componente implements Serializable {
     private Paises[] usuarios;
     private double peso;
 
-    public Componente(String designacion, Paises[] usuarios, double peso) {
+    protected Componente(String designacion, Paises[] usuarios, double peso) {
 
         this.designacion = designacion;
         this.usuarios = usuarios;

@@ -26,7 +26,7 @@ public class Torreta extends Componente {
 
     // El constructor sólo se usará por el administrador de la app para añadir componentes
     public Torreta(String designacion, Paises[] usuarios, double peso, TipoTorreta tipoTorreta,
-                    double[] restricciones, double espacio, int[] blindaje) {
+                    double[] restricciones, int[] blindaje) {
 
         super(designacion, usuarios, peso);
 

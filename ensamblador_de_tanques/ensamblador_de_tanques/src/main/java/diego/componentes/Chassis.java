@@ -21,7 +21,7 @@ public class Chassis extends Componente {
     private int[] blindaje = {blindajeFrontal, blindajeLateral, blindajeTrasero};
 
     // El constructor sólo se usará por el administrador de la app para añadir componentes
-    public Chassis(String designacion, Paises[] usuarios, double peso, double[] carga, double[] espacio, 
+    public Chassis(String designacion, Paises[] usuarios, double peso, double[] carga, 
                     int[] blindaje) {
 
         super(designacion, usuarios, peso);
