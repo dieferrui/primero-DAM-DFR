@@ -4,41 +4,48 @@ import java.util.Arrays;
 
 import diego.*;
 
-public class Chassis extends Componente {
+public class Torreta extends Componente {
 
     private static final String MILL = "mm";
+    private static final String ANG = "º";
 
     private String designacion;
     private Paises[] usuarios;
 
-    private double cargaMaxima;
-    private double cargaActual;
-    private double[] carga = {cargaMaxima, cargaActual};
+    private TipoTorreta tipoTorreta;
 
-    private double espacioInterno;
-    private double espacioOcupado;
-    private double[] espacio = {espacioInterno, espacioOcupado};
+    private double anguloTiro;
+    private double anguloElev;
+    private double anguloDepr;
+    private double[] restricciones;
 
+    private double espacio;
     private double peso;
-
+    
     private int blindajeFrontal;
     private int blindajeLateral;
     private int blindajeTrasero;
-    private int[] blindaje = {blindajeFrontal, blindajeLateral, blindajeTrasero};
+    private int[] blindaje;
 
     // El constructor sólo se usará por el administrador de la app para añadir componentes
-    public Chassis(String designacion, Paises[] usuarios, double peso, double[] carga, double[] espacio, 
-                    int[] blindaje) {
+    public Torreta(String designacion, Paises[] usuarios, double peso, TipoTorreta tipoTorreta,
+                    double[] restricciones, double espacio, int[] blindaje) {
 
         super(designacion, usuarios, peso);
 
-        this.carga = carga;
-        this.cargaMaxima = carga[0];
-        this.cargaActual = carga[1];
+        this.tipoTorreta = tipoTorreta;
+
+        this.restricciones = restricciones;
+        if (tipoTorreta == TipoTorreta.TORRETA) {
+            this.anguloTiro = 360;
+        } else {
+            this.anguloTiro = restricciones[0];
+        }
+
+        this.anguloElev = restricciones[1];
+        this.anguloDepr = restricciones[2];
 
         this.espacio = espacio;
-        this.espacioInterno = espacio[0];
-        this.espacioOcupado = espacio[1];
 
         this.blindaje = blindaje;
         this.blindajeFrontal = blindaje[0];
@@ -47,22 +54,24 @@ public class Chassis extends Componente {
 
     }
 
-    // Getters (se incluyen todas las características individuales)
-
-    public double getCargaMaxima() {
-        return cargaMaxima;
+    public TipoTorreta getTipoTorreta() {
+        return tipoTorreta;
     }
 
-    public double getCargaActual() {
-        return cargaActual;
+    public double getAnguloTiro() {
+        return anguloTiro;
     }
 
-    public double getEspacioInterno() {
-        return espacioInterno;
+    public double getAnguloElev() {
+        return anguloElev;
     }
 
-    public double getEspacioOcupado() {
-        return espacioOcupado;
+    public double getAnguloDepr() {
+        return anguloDepr;
+    }
+
+    public double getEspacio() {
+        return espacio;
     }
 
     public int getBlindajeFrontal() {
@@ -77,27 +86,21 @@ public class Chassis extends Componente {
         return blindajeTrasero;
     }
 
-    // Setters (sólo se incluyen las características que se pueden modificar)
-    public void setCargaActual(double cargaActual) {
-        this.cargaActual = cargaActual;
-    }
-
-    public void setEspacioOcupado(double espacioOcupado) {
-        this.espacioOcupado = espacioOcupado;
-    }
-
-    
-
     @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
         result = prime * result + ((designacion == null) ? 0 : designacion.hashCode());
         result = prime * result + Arrays.hashCode(usuarios);
+        result = prime * result + ((tipoTorreta == null) ? 0 : tipoTorreta.hashCode());
         long temp;
-        temp = Double.doubleToLongBits(cargaMaxima);
+        temp = Double.doubleToLongBits(anguloTiro);
         result = prime * result + (int) (temp ^ (temp >>> 32));
-        temp = Double.doubleToLongBits(espacioInterno);
+        temp = Double.doubleToLongBits(anguloElev);
+        result = prime * result + (int) (temp ^ (temp >>> 32));
+        temp = Double.doubleToLongBits(anguloDepr);
+        result = prime * result + (int) (temp ^ (temp >>> 32));
+        temp = Double.doubleToLongBits(espacio);
         result = prime * result + (int) (temp ^ (temp >>> 32));
         temp = Double.doubleToLongBits(peso);
         result = prime * result + (int) (temp ^ (temp >>> 32));
@@ -115,7 +118,7 @@ public class Chassis extends Componente {
             return false;
         if (getClass() != obj.getClass())
             return false;
-        Chassis other = (Chassis) obj;
+        Torreta other = (Torreta) obj;
         if (designacion == null) {
             if (other.designacion != null)
                 return false;
@@ -123,9 +126,15 @@ public class Chassis extends Componente {
             return false;
         if (!Arrays.equals(usuarios, other.usuarios))
             return false;
-        if (Double.doubleToLongBits(cargaMaxima) != Double.doubleToLongBits(other.cargaMaxima))
+        if (tipoTorreta != other.tipoTorreta)
             return false;
-        if (Double.doubleToLongBits(espacioInterno) != Double.doubleToLongBits(other.espacioInterno))
+        if (Double.doubleToLongBits(anguloTiro) != Double.doubleToLongBits(other.anguloTiro))
+            return false;
+        if (Double.doubleToLongBits(anguloElev) != Double.doubleToLongBits(other.anguloElev))
+            return false;
+        if (Double.doubleToLongBits(anguloDepr) != Double.doubleToLongBits(other.anguloDepr))
+            return false;
+        if (Double.doubleToLongBits(espacio) != Double.doubleToLongBits(other.espacio))
             return false;
         if (Double.doubleToLongBits(peso) != Double.doubleToLongBits(other.peso))
             return false;
@@ -139,12 +148,14 @@ public class Chassis extends Componente {
     }
 
     public String mostrarDatos() {
-        return "Chasis con designación " + designacion + ":\n" +
+        return "Compartimento de combate con designación " + designacion + ":\n" +
+                "Tipo: " + tipoTorreta.getTipo() + "\n" +
                 "Peso: " + peso + " Kg\n" +
-                "Carga máxima: " + cargaMaxima + " Kg\n" +
+                "Ángulo de tiro: " + anguloTiro + ANG + "\n" +
+                "Ángulo de elevación: " + anguloElev + ANG + "\n" +
+                "Ángulo de depresión: " + anguloDepr + ANG + "\n" +
                 "Blindaje frontal: " + blindajeFrontal + MILL + "\n" +
                 "Blindaje lateral: " + blindajeLateral + MILL + "\n" +
                 "Blindaje trasero: " + blindajeTrasero + MILL;
     }
-
 }
