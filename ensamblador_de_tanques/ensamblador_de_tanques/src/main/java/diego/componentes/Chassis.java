@@ -127,8 +127,8 @@ public class Chassis extends Componente {
 
     public String mostrarDatos() {
         return "Chasis con designación " + designacion + ":\n" +
-                "Peso: " + peso + " Kg\n" +
-                "Carga máxima: " + cargaMaxima + " Kg\n" +
+                "Peso: " + peso + "Kg\n" +
+                "Carga máxima: " + cargaMaxima + "Kg\n" +
                 "Blindaje frontal: " + blindajeFrontal + MILL + "\n" +
                 "Blindaje lateral: " + blindajeLateral + MILL + "\n" +
                 "Blindaje trasero: " + blindajeTrasero + MILL;

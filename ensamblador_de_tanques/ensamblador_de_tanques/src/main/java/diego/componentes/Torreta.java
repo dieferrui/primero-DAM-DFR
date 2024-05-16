@@ -141,7 +141,7 @@ public class Torreta extends Componente {
     public String mostrarDatos() {
         return "Compartimento de combate con designación " + designacion + ":\n" +
                 "Tipo: " + tipoTorreta.getTipo() + "\n" +
-                "Peso: " + peso + " Kg\n" +
+                "Peso: " + peso + "Kg\n" +
                 "Ángulo de tiro: " + anguloTiro + ANG + "\n" +
                 "Ángulo de elevación: " + anguloElev + ANG + "\n" +
                 "Ángulo de depresión: " + anguloDepr + ANG + "\n" +

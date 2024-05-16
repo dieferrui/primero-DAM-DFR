@@ -102,7 +102,7 @@ public class Armamento extends Componente {
     public String mostrarDatos() {
         return "Armamento con designación " + designacion + ":\n" +
                 "Clase: " + clase.getClase() + "\n" +
-                "Peso: " + peso + " Kg\n" +
+                "Peso: " + peso + "Kg\n" +
                 "Calibre: " + calibre + MILL + "\n" +
                 "Penetración a distancias cortas: " + penetracionCorta + MILL + "\n" +
                 "Penetración a distancias medias: " + penetracionMedia + MILL + "\n" +

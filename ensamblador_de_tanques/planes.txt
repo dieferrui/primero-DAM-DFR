@@ -38,7 +38,6 @@
     -Atributo blindaje (Front, Sides, Back): Mismo que con chasis
 
 5. Clase Motor: Hereda de componente. Define la movilidad del vehículo.
-    -Atributo tipo de transmisión: Define el tipo de transmisión (clutch breaking, twin transmission)
     -Atributo aceleración: Define la usabilidad de la tranmisión en distintos terrenos
     -Atributo potencia: La potencia es el caballaje del Motor
     -Atributo velocidad máxima: Aunque no sea demasiado importante
