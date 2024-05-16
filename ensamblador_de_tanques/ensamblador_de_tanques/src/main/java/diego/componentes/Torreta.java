@@ -1,8 +1,7 @@
 package diego.componentes;
 
-import java.util.Arrays;
-
 import diego.*;
+import diego.componentes.enums.TipoTorreta;
 
 public class Torreta extends Componente {
 

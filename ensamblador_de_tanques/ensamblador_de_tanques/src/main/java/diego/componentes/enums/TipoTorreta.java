@@ -1,4 +1,4 @@
-package diego.componentes;
+package diego.componentes.enums;
 
 public enum TipoTorreta {
     

@@ -1,7 +1,5 @@
 package diego.componentes;
 
-import java.util.Arrays;
-
 import diego.*;
 
 public class Chassis extends Componente {

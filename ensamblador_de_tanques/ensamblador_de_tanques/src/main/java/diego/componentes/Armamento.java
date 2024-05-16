@@ -1,7 +1,7 @@
 package diego.componentes;
 
-import java.util.Arrays;
-
+import diego.componentes.enums.ClaseArmamento;
+import diego.componentes.enums.Municion;
 import diego.Paises;
 
 public class Armamento extends Componente {
@@ -109,4 +109,5 @@ public class Armamento extends Componente {
                 "Penetración a distancias largas: " + penetracionLarga + MILL + "\n" +
                 "Tipo de munición primaria: " + municionPrimaria.getTipo();
     }
+
 }
