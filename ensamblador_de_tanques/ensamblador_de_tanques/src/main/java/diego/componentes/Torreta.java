@@ -18,8 +18,6 @@ public class Torreta extends Componente {
     private double anguloElev;
     private double anguloDepr;
     private double[] restricciones;
-
-    private double espacio;
     
     private int blindajeFrontal;
     private int blindajeLateral;
@@ -44,8 +42,6 @@ public class Torreta extends Componente {
         this.anguloElev = restricciones[1];
         this.anguloDepr = restricciones[2];
 
-        this.espacio = espacio;
-
         this.blindaje = blindaje;
         this.blindajeFrontal = blindaje[0];
         this.blindajeLateral = blindaje[1];
@@ -67,10 +63,6 @@ public class Torreta extends Componente {
 
     public double getAnguloDepr() {
         return anguloDepr;
-    }
-
-    public double getEspacio() {
-        return espacio;
     }
 
     public int getBlindajeFrontal() {
@@ -99,8 +91,6 @@ public class Torreta extends Componente {
         result = prime * result + (int) (temp ^ (temp >>> 32));
         temp = Double.doubleToLongBits(anguloDepr);
         result = prime * result + (int) (temp ^ (temp >>> 32));
-        temp = Double.doubleToLongBits(espacio);
-        result = prime * result + (int) (temp ^ (temp >>> 32));
         result = prime * result + blindajeFrontal;
         result = prime * result + blindajeLateral;
         result = prime * result + blindajeTrasero;
@@ -126,8 +116,6 @@ public class Torreta extends Componente {
         if (Double.doubleToLongBits(anguloElev) != Double.doubleToLongBits(other.anguloElev))
             return false;
         if (Double.doubleToLongBits(anguloDepr) != Double.doubleToLongBits(other.anguloDepr))
-            return false;
-        if (Double.doubleToLongBits(espacio) != Double.doubleToLongBits(other.espacio))
             return false;
         if (blindajeFrontal != other.blindajeFrontal)
             return false;

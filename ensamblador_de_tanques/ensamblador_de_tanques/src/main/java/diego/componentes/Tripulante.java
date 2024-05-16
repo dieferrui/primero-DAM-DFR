@@ -7,6 +7,7 @@ public class Tripulante implements Serializable {
 
     private RolTripulante rol;
     private int experiencia;
+    private static final int PESO = 100;
 
     public Tripulante(RolTripulante rol, int experiencia) {
 
@@ -21,6 +22,10 @@ public class Tripulante implements Serializable {
 
     public int getExperiencia() {
         return experiencia;
+    }
+
+    public static int getPeso() {
+        return PESO;
     }
 
     @Override

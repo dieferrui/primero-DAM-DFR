@@ -1,6 +1,7 @@
 package diego.componentes;
 
 import diego.*;
+import java.text.DecimalFormat;
 
 public class Chassis extends Componente {
 
@@ -13,10 +14,6 @@ public class Chassis extends Componente {
     private double cargaMaxima;
     private double cargaActual;
     private double[] carga = {cargaMaxima, cargaActual};
-
-    private double espacioInterno;
-    private double espacioOcupado;
-    private double[] espacio = {espacioInterno, espacioOcupado};
 
     private int blindajeFrontal;
     private int blindajeLateral;
@@ -33,10 +30,6 @@ public class Chassis extends Componente {
         this.cargaMaxima = carga[0];
         this.cargaActual = carga[1];
 
-        this.espacio = espacio;
-        this.espacioInterno = espacio[0];
-        this.espacioOcupado = espacio[1];
-
         this.blindaje = blindaje;
         this.blindajeFrontal = blindaje[0];
         this.blindajeLateral = blindaje[1];
@@ -52,14 +45,6 @@ public class Chassis extends Componente {
 
     public double getCargaActual() {
         return cargaActual;
-    }
-
-    public double getEspacioInterno() {
-        return espacioInterno;
-    }
-
-    public double getEspacioOcupado() {
-        return espacioOcupado;
     }
 
     public int getBlindajeFrontal() {
@@ -79,10 +64,6 @@ public class Chassis extends Componente {
         this.cargaActual = cargaActual;
     }
 
-    public void setEspacioOcupado(double espacioOcupado) {
-        this.espacioOcupado = espacioOcupado;
-    }
-
     @Override
     public int hashCode() {
         final int prime = 31;
@@ -91,8 +72,6 @@ public class Chassis extends Componente {
         temp = Double.doubleToLongBits(peso);
         result = prime * result + (int) (temp ^ (temp >>> 32));
         temp = Double.doubleToLongBits(cargaMaxima);
-        result = prime * result + (int) (temp ^ (temp >>> 32));
-        temp = Double.doubleToLongBits(espacioInterno);
         result = prime * result + (int) (temp ^ (temp >>> 32));
         result = prime * result + blindajeFrontal;
         result = prime * result + blindajeLateral;
@@ -114,8 +93,6 @@ public class Chassis extends Componente {
             return false;
         if (Double.doubleToLongBits(cargaMaxima) != Double.doubleToLongBits(other.cargaMaxima))
             return false;
-        if (Double.doubleToLongBits(espacioInterno) != Double.doubleToLongBits(other.espacioInterno))
-            return false;
         if (blindajeFrontal != other.blindajeFrontal)
             return false;
         if (blindajeLateral != other.blindajeLateral)
@@ -126,8 +103,12 @@ public class Chassis extends Componente {
     }
 
     public String mostrarDatos() {
+
+        DecimalFormat df = new DecimalFormat("#.#");
+        String pesoFormat = df.format(peso/1000);
+        
         return "Chasis con designación " + designacion + ":\n" +
-                "Peso: " + peso + "Kg\n" +
+                "Peso: " + pesoFormat + "t\n" +
                 "Carga máxima: " + cargaMaxima + "Kg\n" +
                 "Blindaje frontal: " + blindajeFrontal + MILL + "\n" +
                 "Blindaje lateral: " + blindajeLateral + MILL + "\n" +
