@@ -1,14 +1,14 @@
 package diego.componentes;
 
 import java.io.Serializable;
+import diego.*;
 
 public class Chassis implements Serializable {
 
     private static final String MILL = "mm";
 
     private String designacion;
-    private String pais;
-    private String[] nomenclatura;
+    private Paises pais;
 
     private double cargaMaxima;
     private double cargaActual;
@@ -24,11 +24,10 @@ public class Chassis implements Serializable {
     private int[] blindaje = {blindajeFrontal, blindajeLateral, blindajeTrasero};
 
     // El constructor sólo se usará por el administrador de la app para añadir componentes
-    public Chassis(String[] nomenclatura, double[] carga, double[] espacio, int[] blindaje) {
+    public Chassis(String designacion, Paises pais, double[] carga, double[] espacio, int[] blindaje) {
 
-        this.nomenclatura = nomenclatura;
-        this.designacion = nomenclatura[0];
-        this.pais = nomenclatura[1];
+        this.pais = pais;
+        this.designacion = designacion;
 
         this.carga = carga;
         this.cargaMaxima = carga[0];
@@ -47,7 +46,7 @@ public class Chassis implements Serializable {
 
     // Getters (se incluyen todas las características individuales)
     public String getPais() {
-        return pais;
+        return pais.getNombre();
     }
 
     public double getCargaMaxima() {
@@ -155,16 +154,16 @@ public class Chassis implements Serializable {
                 "Blindaje trasero: " + blindajeTrasero + " " + MILL;
     }
 
-    public String devolverOrigen(String pais) {
+    public String devolverOrigen(Paises pais) {
 
         switch (pais) {
-            case "ALEMANIA":
+            case ALEMANIA:
                 return "alemán";
-            case "EEUU":
+            case ESTADOS_UNIDOS:
                 return "estadounidense";
-            case "UK":
+            case REINO_UNIDO:
                 return "inglés";
-            case "URSS":
+            case UNION_SOVIETICA:
                 return "soviético";
             default:
                 return "de potencia secundaria";
