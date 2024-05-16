@@ -127,14 +127,15 @@ public class Torreta extends Componente {
     }
 
     public String mostrarDatos() {
+
         return "Compartimento de combate con designación " + designacion + ":\n" +
-                "Tipo: " + tipoTorreta.getTipo() + "\n" +
-                "Peso: " + peso + "Kg\n" +
-                "Ángulo de tiro: " + anguloTiro + ANG + "\n" +
-                "Ángulo de elevación: " + anguloElev + ANG + "\n" +
-                "Ángulo de depresión: " + anguloDepr + ANG + "\n" +
-                "Blindaje frontal: " + blindajeFrontal + MILL + "\n" +
-                "Blindaje lateral: " + blindajeLateral + MILL + "\n" +
-                "Blindaje trasero: " + blindajeTrasero + MILL;
+                "Tipo: " + getTipoTorreta().getTipo() + "\n" +
+                "Peso: " + getPeso() + "Kg\n" +
+                "Ángulo de tiro: " + (getAnguloTiro() == 360.0 ? "Completo" : (getAnguloTiro() + ANG)) + "\n" +
+                "Ángulo de elevación: " + getAnguloElev() + ANG + "\n" +
+                "Ángulo de depresión: " + getAnguloDepr() + ANG + "\n" +
+                "Blindaje frontal: " + getBlindajeFrontal() + MILL + "\n" +
+                "Blindaje lateral: " + getBlindajeLateral() + MILL + "\n" +
+                "Blindaje trasero: " + getBlindajeTrasero() + MILL;
     }
 }

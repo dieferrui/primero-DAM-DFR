@@ -68,9 +68,9 @@ public class Motor extends Componente {
     }
 
     public String mostrarDatos() {
-        return "Motor con designación " + designacion + ":\n" +
-                "Peso: " + peso + "Kg\n" +
-                "Potencia: " + potencia + "CV\n" +
-                "Velocidad máxima: " + velocidadMax + "Km/h";
+        return "Motor con designación " + getDesignacion() + ":\n" +
+                "Peso: " + getPeso() + "Kg\n" +
+                "Potencia: " + getPotencia() + "CV\n" +
+                "Velocidad máxima: " + getVelocidadMax() + "Km/h";
     }
 }

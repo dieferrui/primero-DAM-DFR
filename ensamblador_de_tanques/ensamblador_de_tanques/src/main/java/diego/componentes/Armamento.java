@@ -100,14 +100,14 @@ public class Armamento extends Componente {
     }
 
     public String mostrarDatos() {
-        return "Armamento con designación " + designacion + ":\n" +
-                "Clase: " + clase.getClase() + "\n" +
-                "Peso: " + peso + "Kg\n" +
-                "Calibre: " + calibre + MILL + "\n" +
-                "Penetración a distancias cortas: " + penetracionCorta + MILL + "\n" +
-                "Penetración a distancias medias: " + penetracionMedia + MILL + "\n" +
-                "Penetración a distancias largas: " + penetracionLarga + MILL + "\n" +
-                "Tipo de munición primaria: " + municionPrimaria.getTipo();
+        return "Armamento con designación " + getDesignacion() + ":\n" +
+                "Clase: " + getClase().getClase() + "\n" +
+                "Peso: " + getPeso() + "Kg\n" +
+                "Calibre: " + getCalibre() + MILL + "\n" +
+                "Penetración a distancias cortas: " + getPenetracionCorta() + MILL + "\n" +
+                "Penetración a distancias medias: " + getPenetracionMedia() + MILL + "\n" +
+                "Penetración a distancias largas: " + getPenetracionLarga() + MILL + "\n" +
+                "Tipo de munición primaria: " + getMunicionPrimaria().getTipo();
     }
 
 }
