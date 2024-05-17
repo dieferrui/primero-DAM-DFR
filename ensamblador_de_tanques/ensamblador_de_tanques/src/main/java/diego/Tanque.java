@@ -31,7 +31,7 @@ public class Tanque implements Serializable, Comparable<Tanque> {
 
         this.getChasis().setCargaActual(getChasis().getPeso() + getTorreta().getPeso() + 
                         getMotor().getPeso() + getArma().getPeso() + 
-                        (getTripulacion().length * 100));
+                        (getTripulacion().length * Tripulante.getPeso()));
 
         this.relacionPotencia = getMotor().getPotencia() / (getChasis().getCargaActual() / 1000);
 

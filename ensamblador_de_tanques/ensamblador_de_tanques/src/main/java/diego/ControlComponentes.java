@@ -29,8 +29,8 @@ public class ControlComponentes {
         Chassis testChasis2 = new Chassis("Chasis de prueba 2", new Paises[]{Paises.ESTADOS_UNIDOS},22000, 
                                         new double[]{26350, 0}, new int[]{70, 40, 40});
 
-        mapaChasis.put("CHS-GE-000", testChasis);
-        mapaChasis.put("CHS-US-000", testChasis2);
+        mapaChasis.put("GER-CHS-000", testChasis);
+        mapaChasis.put("USA-CHS-000", testChasis2);
 
         // Armamento
         Armamento testArma = new Armamento("Cañón de prueba", new Paises[]{Paises.ALEMANIA}, 3000,
@@ -38,8 +38,8 @@ public class ControlComponentes {
         Armamento testArma2 = new Armamento("Cañón automático de prueba", new Paises[]{Paises.ESTADOS_UNIDOS}, 1200,
                                         ClaseArmamento.AUTOCANNON, new int[]{71, 58, 33}, 37, Municion.AP);
 
-        mapaArmas.put("GUN-GE-000", testArma);
-        mapaArmas.put("GUN-US-000", testArma2);
+        mapaArmas.put("GER-GUN-000", testArma);
+        mapaArmas.put("USA-GUN-000", testArma2);
 
         // Motores
         Motor testMotor = new Motor("Motor de prueba", new Paises[]{Paises.ALEMANIA}, 700, 
@@ -47,8 +47,8 @@ public class ControlComponentes {
         Motor testMotor2 = new Motor("Motor de prueba 2", new Paises[]{Paises.ESTADOS_UNIDOS}, 800, 
                     600, 50, 600);
 
-        mapaMotores.put("ENG-GE-000", testMotor);
-        mapaMotores.put("ENG-US-000", testMotor2);
+        mapaMotores.put("GER-ENG-000", testMotor);
+        mapaMotores.put("USA-ENG-000", testMotor2);
 
         // Torretas
         Torreta testTorreta = new Torreta("Torreta de prueba", new Paises[]{Paises.ALEMANIA}, 3400,
@@ -56,8 +56,8 @@ public class ControlComponentes {
         Torreta testTorreta2 = new Torreta("Torreta de prueba 2", new Paises[]{Paises.ESTADOS_UNIDOS}, 2000,
                         TipoTorreta.SUPERESTRUCTURA, new double[]{40, 12, 10}, new int[]{90, 60, 60});
 
-        mapaTorretas.put("TUR-GE-000", testTorreta);
-        mapaTorretas.put("SUP-US-000", testTorreta2);
+        mapaTorretas.put("GER-TUR-000", testTorreta);
+        mapaTorretas.put("USA-SUP-000", testTorreta2);
 
     }
 }

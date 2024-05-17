@@ -53,19 +53,25 @@ public class TanquesManager {
  
     }
 
-    public static void borrarTanque(String nomArchivo) {
+    public static String borrarTanque(String nomArchivo) {
 
         File archivo = new File(CARPETA + "\\" + nomArchivo + ".dat");
+        boolean exito = false;
 
         if (archivo.exists()) {
 
-            archivo.delete();
+            exito = archivo.delete();
+
+        }
+
+        if (exito) {
+
+            return "Borrado con éxito.";
 
         } else {
 
-            // Logger.error("No se ha encontrado el archivo");
-            System.out.println("No se ha encontrado el archivo.");
-
+            return "Fallo al borrar. Asegúrese que el nombre del archivo coincide con el nombre introducido.";
+            
         }
 
     }
