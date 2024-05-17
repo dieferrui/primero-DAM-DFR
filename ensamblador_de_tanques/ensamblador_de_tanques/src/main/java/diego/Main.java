@@ -140,7 +140,7 @@ public class Main {
 
         boolean cargaSobrepasada = Boolean.TRUE;
         String nombre;
-        String res = "0";
+        String res;
         int numTripulantes = 2;
 
         Chassis chasis;
@@ -153,6 +153,9 @@ public class Main {
 
             double controlCargaMax;
             double controlCarga = 0;
+
+            System.out.println("Paso 0: Introduzca un nombre para el vehículo: ");
+            nombre = SC.nextLine();
             
             System.out.println("Paso 1: Seleccione el chasis del vehículo: ");
             chasis = seleccionarChasis(pais);
@@ -183,9 +186,6 @@ public class Main {
                 System.out.println("La carga máxima del vehículo ha sido sobrepasada.");
 
             }
-
-            System.out.println("Paso 6: Introduzca un nombre para el vehículo: ");
-            nombre = SC.nextLine();
 
         } while (cargaSobrepasada);
 

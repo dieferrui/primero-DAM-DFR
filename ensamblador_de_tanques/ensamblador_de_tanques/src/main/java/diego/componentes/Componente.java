@@ -3,7 +3,7 @@ package diego.componentes;
 import java.io.Serializable;
 import diego.*;
 
-public abstract class Componente implements Serializable {
+public class Componente implements Serializable {
 
     private String designacion;
     private Paises[] usuarios;
@@ -16,8 +16,6 @@ public abstract class Componente implements Serializable {
         this.peso = peso;
 
     }
-
-    public abstract String mostrarDatos();
 
     public String getDesignacion() {
         return designacion;

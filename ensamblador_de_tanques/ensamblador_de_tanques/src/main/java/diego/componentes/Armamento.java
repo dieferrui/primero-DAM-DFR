@@ -2,6 +2,9 @@ package diego.componentes;
 
 import diego.componentes.enums.ClaseArmamento;
 import diego.componentes.enums.Municion;
+
+import java.util.Arrays;
+
 import diego.Paises;
 
 public class Armamento extends Componente {
@@ -75,7 +78,6 @@ public class Armamento extends Componente {
         result = prime * result + ((clase == null) ? 0 : clase.hashCode());
         result = prime * result + calibre;
         result = prime * result + ((municionPrimaria == null) ? 0 : municionPrimaria.hashCode());
-        result = prime * result + ((designacion == null) ? 0 : designacion.hashCode());
         return result;
     }
     
@@ -99,7 +101,8 @@ public class Armamento extends Componente {
         return true;
     }
 
-    public String mostrarDatos() {
+    @Override
+    public String toString() {
         return "Armamento con designación " + getDesignacion() + ":\n" +
                 "Clase: " + getClase().getClase() + "\n" +
                 "Peso: " + getPeso() + "Kg\n" +
