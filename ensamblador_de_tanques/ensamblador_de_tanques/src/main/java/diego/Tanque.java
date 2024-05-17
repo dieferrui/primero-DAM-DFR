@@ -159,6 +159,6 @@ public class Tanque implements Serializable, Comparable<Tanque> {
                 getChasis().mostrarDatos() + "\n\n" + 
                 getTorreta().mostrarDatos() + "\n\n" + 
                 getMotor().mostrarDatos() + "\n\n" + 
-                getArma().mostrarDatos() + "\n\n";
+                getArma().toString() + "\n\n";
     }
 }
