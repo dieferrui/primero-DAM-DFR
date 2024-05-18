@@ -2,15 +2,15 @@ package diego;
 
 public enum Paises {
 
-    ESTADOS_UNIDOS("USA"),
-    REINO_UNIDO("GBR"),
-    UNION_SOVIETICA("RUS"),
-    ALEMANIA("GER"),
-    SUECIA("SWE"),
-    FRANCIA("FRA"),
-    ITALIA("ITA"),
-    JAPON("JAP"),
-    CHINA("CHN");
+    USA("USA"),
+    GBR("GBR"),
+    RUS("RUS"),
+    GER("GER"),
+    SWE("SWE"),
+    FRA("FRA"),
+    ITA("ITA"),
+    JAP("JAP"),
+    CHN("CHN");
 
     private final String nombre;
 

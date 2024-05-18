@@ -88,7 +88,7 @@ public class ControlComponentes {
                     generarPaises(datosMotor[2]), // Usuarios
                     Double.parseDouble(datosMotor[3]), // Peso
                     Double.parseDouble(datosMotor[4]), // Velocidad Máxima
-                    Integer.parseInt(datosMotor[4]) // Potencia
+                    Integer.parseInt(datosMotor[5]) // Potencia
 
                 );
 
@@ -190,44 +190,6 @@ public class ControlComponentes {
             System.out.println("Error de lectura/escritura en el fichero torretas");
 
         }
-
-        /*
-        Chassis testChasis = new Chassis("Chasis de prueba", new Paises[]{Paises.ALEMANIA}, 11000, 
-                                        new double[]{24500, 0}, new int[]{60, 30, 30});
-        Chassis testChasis2 = new Chassis("Chasis de prueba 2", new Paises[]{Paises.ESTADOS_UNIDOS},22000, 
-                                        new double[]{26350, 0}, new int[]{70, 40, 40});
-
-        mapaChasis.put("GER-CHS-000", testChasis);
-        mapaChasis.put("USA-CHS-000", testChasis2);
-
-        // Armamento
-        Armamento testArma = new Armamento("Cañón de prueba", new Paises[]{Paises.ALEMANIA}, 3000,
-                                        ClaseArmamento.CANNON, new int[]{131, 109, 94}, 75, Municion.APHE);
-        Armamento testArma2 = new Armamento("Cañón automático de prueba", new Paises[]{Paises.ESTADOS_UNIDOS}, 1200,
-                                        ClaseArmamento.AUTOCANNON, new int[]{71, 58, 33}, 37, Municion.AP);
-
-        mapaArmas.put("GER-GUN-000", testArma);
-        mapaArmas.put("USA-GUN-000", testArma2);
-
-        // Motores
-        Motor testMotor = new Motor("Motor de prueba", new Paises[]{Paises.ALEMANIA}, 700, 
-                    500, 45, 540);
-        Motor testMotor2 = new Motor("Motor de prueba 2", new Paises[]{Paises.ESTADOS_UNIDOS}, 800, 
-                    600, 50, 600);
-
-        mapaMotores.put("GER-ENG-000", testMotor);
-        mapaMotores.put("USA-ENG-000", testMotor2);
-
-        // Torretas
-        Torreta testTorreta = new Torreta("Torreta de prueba", new Paises[]{Paises.ALEMANIA}, 3400,
-                        TipoTorreta.TORRETA, new double[]{360, 8, 8}, new int[]{80, 50, 50});
-        Torreta testTorreta2 = new Torreta("Torreta de prueba 2", new Paises[]{Paises.ESTADOS_UNIDOS}, 2000,
-                        TipoTorreta.SUPERESTRUCTURA, new double[]{40, 12, 10}, new int[]{90, 60, 60});
-
-        mapaTorretas.put("GER-TUR-000", testTorreta);
-        mapaTorretas.put("USA-SUP-000", testTorreta2);
-        */
-
     }
 
     public ArrayList<Paises> generarPaises(String paisesChasis) {
