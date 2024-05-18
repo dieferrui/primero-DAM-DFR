@@ -82,31 +82,31 @@ public class TanquesManager {
         StringBuilder sb = new StringBuilder();
 
         File[] archivos = carpeta.listFiles();
+
+        if (archivos == null || archivos.length == 0) {
+
+            System.out.println("No hay vehículos guardados.");
+            return "";
+
+        }
+
         ArrayList<File> elementos = new ArrayList<>(Arrays.asList(archivos));
 
-        if (elementos.size() == 0) {
+        sb.append("Listado de tanques disponibles:\n");
+        Collections.sort(elementos);
+        Iterator<File> it = elementos.iterator();
+        int n = 1;
 
-            // Logger.info("No hay tanques guardados");
-            System.out.println("No hay vehículos guardados.");
+        while (it.hasNext()) {
 
-        } else {
-
-            sb.append("Listado de tanques disponibles:\n");
-
-            Collections.sort(elementos);
-            Iterator<File> it = elementos.iterator();
-
-            while (it.hasNext()) {
-
-                File archivo = it.next();
-                String nombre = archivo.getName();
-                sb.append(nombre.substring(0, nombre.length() - 4) + "\n");
-
-            }
+            File archivo = it.next();
+            String nombre = archivo.getName();
+            sb.append(n + ". ");
+            sb.append(nombre.substring(0, nombre.length() - 4)).append("\n");
+            n++;
 
         }
 
         return sb.toString();
-
     }
 }

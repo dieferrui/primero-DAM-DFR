@@ -19,25 +19,7 @@ public class Tanque implements Serializable, Comparable<Tanque> {
     private Tripulante[] tripulacion;
     private double relacionPotencia;
 
-    public Tanque(String nombre, Chassis chasis, Torreta torreta, Motor motor, Armamento arma, 
-                    Tripulante[] tripulacion) {
-        
-        this.nombre = nombre;
-        this.chasis = chasis;
-        this.torreta = torreta;
-        this.motor = motor;
-        this.arma = arma;
-        this.tripulacion = tripulacion;
-
-        this.getChasis().setCargaActual(getChasis().getPeso() + getTorreta().getPeso() + 
-                        getMotor().getPeso() + getArma().getPeso() + 
-                        (getTripulacion().length * Tripulante.getPeso()));
-
-        this.relacionPotencia = getMotor().getPotencia() / (getChasis().getCargaActual() / 1000);
-
-        // TODO Controlar peso en el main
-
-    }
+    public Tanque() {}
 
     public String getNombre() {
         return nombre;
