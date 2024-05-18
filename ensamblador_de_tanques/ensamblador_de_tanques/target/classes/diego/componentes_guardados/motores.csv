@@ -1,0 +1,4 @@
+hash;designacion;pais1,pais2...;peso;velocidadMax;potencia
+GER-MOT-001;Maybach HL 108 TR;GER;450;32;250
+GER-MOT-002;Maybach HL 120 TR;GER,JAP;600;38;300
+GER-MOT-003;Maybach HL 120 TRM;GER,JAP;610;42;320

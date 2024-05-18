@@ -5,7 +5,12 @@ public enum Paises {
     ESTADOS_UNIDOS("USA"),
     REINO_UNIDO("GBR"),
     UNION_SOVIETICA("RUS"),
-    ALEMANIA("GER");
+    ALEMANIA("GER"),
+    SUECIA("SWE"),
+    FRANCIA("FRA"),
+    ITALIA("ITA"),
+    JAPON("JAP"),
+    CHINA("CHN");
 
     private final String nombre;
 
