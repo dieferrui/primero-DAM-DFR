@@ -1,5 +1,7 @@
 package diego.componentes;
 
+import java.util.ArrayList;
+
 import diego.*;
 import java.text.DecimalFormat;
 
@@ -8,12 +10,11 @@ public class Chassis extends Componente {
     private static final String MILL = "mm";
 
     private String designacion;
-    private Paises[] usuarios;
+    private ArrayList<Paises> usuarios;
     private double peso;
 
-    private double cargaMaxima;
+    private double carga;
     private double cargaActual;
-    private double[] carga = {cargaMaxima, cargaActual};
 
     private int blindajeFrontal;
     private int blindajeLateral;
@@ -21,14 +22,13 @@ public class Chassis extends Componente {
     private int[] blindaje = {blindajeFrontal, blindajeLateral, blindajeTrasero};
 
     // El constructor sólo se usará por el administrador de la app para añadir componentes
-    public Chassis(String designacion, Paises[] usuarios, double peso, double[] carga, 
+    public Chassis(String designacion, ArrayList<Paises> usuarios, double peso, double carga, 
                     int[] blindaje) {
 
         super(designacion, usuarios, peso);
 
         this.carga = carga;
-        this.cargaMaxima = carga[0];
-        this.cargaActual = carga[1];
+        this.cargaActual = 0;
 
         this.blindaje = blindaje;
         this.blindajeFrontal = blindaje[0];
@@ -40,7 +40,7 @@ public class Chassis extends Componente {
     // Getters (se incluyen todas las características individuales)
 
     public double getCargaMaxima() {
-        return cargaMaxima;
+        return carga;
     }
 
     public double getCargaActual() {
@@ -71,7 +71,7 @@ public class Chassis extends Componente {
         long temp;
         temp = Double.doubleToLongBits(peso);
         result = prime * result + (int) (temp ^ (temp >>> 32));
-        temp = Double.doubleToLongBits(cargaMaxima);
+        temp = Double.doubleToLongBits(carga);
         result = prime * result + (int) (temp ^ (temp >>> 32));
         result = prime * result + blindajeFrontal;
         result = prime * result + blindajeLateral;
@@ -91,7 +91,7 @@ public class Chassis extends Componente {
         Chassis other = (Chassis) obj;
         if (Double.doubleToLongBits(peso) != Double.doubleToLongBits(other.peso))
             return false;
-        if (Double.doubleToLongBits(cargaMaxima) != Double.doubleToLongBits(other.cargaMaxima))
+        if (Double.doubleToLongBits(carga) != Double.doubleToLongBits(other.carga))
             return false;
         if (blindajeFrontal != other.blindajeFrontal)
             return false;

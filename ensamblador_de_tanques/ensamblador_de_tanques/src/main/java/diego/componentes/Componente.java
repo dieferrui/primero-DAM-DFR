@@ -3,13 +3,15 @@ package diego.componentes;
 import java.io.Serializable;
 import diego.*;
 
+import java.util.ArrayList;
+
 public class Componente implements Serializable {
 
     private String designacion;
-    private Paises[] usuarios;
+    private ArrayList<Paises> usuarios;
     private double peso;
 
-    public Componente(String designacion, Paises[] usuarios, double peso) {
+    public Componente(String designacion, ArrayList<Paises> usuarios, double peso) {
 
         this.designacion = designacion;
         this.usuarios = usuarios;
@@ -21,7 +23,7 @@ public class Componente implements Serializable {
         return designacion;
     }
 
-    public Paises[] getUsuarios() {
+    public ArrayList<Paises> getUsuarios() {
         return usuarios;
     }
 

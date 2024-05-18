@@ -3,7 +3,7 @@ package diego.componentes;
 import diego.componentes.enums.ClaseArmamento;
 import diego.componentes.enums.Municion;
 
-import java.util.Arrays;
+import java.util.ArrayList;
 
 import diego.Paises;
 
@@ -12,7 +12,7 @@ public class Armamento extends Componente {
     private static final String MILL = "mm";
 
     private String designacion;
-    private Paises[] usuarios;
+    private ArrayList<Paises> usuarios;
     private double peso;
 
     private ClaseArmamento clase;
@@ -27,7 +27,7 @@ public class Armamento extends Componente {
     private Municion municionPrimaria;
 
     // El constructor sólo se usará por el administrador de la app para añadir componentes
-    public Armamento(String designacion, Paises[] usuarios, double peso, ClaseArmamento clase, 
+    public Armamento(String designacion, ArrayList<Paises> usuarios, double peso, ClaseArmamento clase, 
                         int[] penetracion, int calibre, Municion municionPrimaria) {
 
         super(designacion, usuarios, peso);

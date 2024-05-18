@@ -3,13 +3,15 @@ package diego.componentes;
 import diego.*;
 import diego.componentes.enums.TipoTorreta;
 
+import java.util.ArrayList;
+
 public class Torreta extends Componente {
 
     private static final String MILL = "mm";
     private static final String ANG = "º";
 
     private String designacion;
-    private Paises[] usuarios;
+    private ArrayList<Paises> usuarios;
     private double peso;
 
     private TipoTorreta tipoTorreta;
@@ -25,7 +27,7 @@ public class Torreta extends Componente {
     private int[] blindaje;
 
     // El constructor sólo se usará por el administrador de la app para añadir componentes
-    public Torreta(String designacion, Paises[] usuarios, double peso, TipoTorreta tipoTorreta,
+    public Torreta(String designacion, ArrayList<Paises> usuarios, double peso, TipoTorreta tipoTorreta,
                     double[] restricciones, int[] blindaje) {
 
         super(designacion, usuarios, peso);

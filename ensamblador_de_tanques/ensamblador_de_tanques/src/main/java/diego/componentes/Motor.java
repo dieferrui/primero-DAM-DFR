@@ -1,30 +1,25 @@
 package diego.componentes;
 
 import diego.Paises;
+import java.util.ArrayList;
 
 public class Motor extends Componente {
 
     private String designacion;
-    private Paises[] usuarios;
+    private ArrayList<Paises> usuarios;
     private double peso;
 
-    private double aceleracion;
     private double velocidadMax;
     private int potencia;
 
-    public Motor(String designacion, Paises[] usuarios, double peso, double aceleracion, 
+    public Motor(String designacion, ArrayList<Paises> usuarios, double peso, 
                     double velocidadMax, int potencia) {
 
         super(designacion, usuarios, peso);
 
-        this.aceleracion = aceleracion;
         this.velocidadMax = velocidadMax;
         this.potencia = potencia;
 
-    }
-
-    public double getAceleracion() {
-        return aceleracion;
     }
 
     public double getVelocidadMax() {
@@ -40,8 +35,6 @@ public class Motor extends Componente {
         final int prime = 31;
         int result = 1;
         long temp;
-        temp = Double.doubleToLongBits(aceleracion);
-        result = prime * result + (int) (temp ^ (temp >>> 32));
         temp = Double.doubleToLongBits(velocidadMax);
         result = prime * result + (int) (temp ^ (temp >>> 32));
         result = prime * result + potencia;
@@ -58,8 +51,6 @@ public class Motor extends Componente {
         if (getClass() != obj.getClass())
             return false;
         Motor other = (Motor) obj;
-        if (Double.doubleToLongBits(aceleracion) != Double.doubleToLongBits(other.aceleracion))
-            return false;
         if (Double.doubleToLongBits(velocidadMax) != Double.doubleToLongBits(other.velocidadMax))
             return false;
         if (potencia != other.potencia)
