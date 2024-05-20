@@ -1,4 +1,4 @@
-package diego;
+package diego.enums_general;
 
 public enum Experiencia {
     

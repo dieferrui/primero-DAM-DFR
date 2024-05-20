@@ -2,6 +2,7 @@ package diego.componentes;
 
 import diego.*;
 import diego.componentes.enums.TipoTorreta;
+import diego.enums_general.Paises;
 
 import java.util.ArrayList;
 

@@ -1,7 +1,8 @@
 package diego.componentes;
 
-import diego.Paises;
 import java.util.ArrayList;
+
+import diego.enums_general.Paises;
 
 public class Motor extends Componente {
 

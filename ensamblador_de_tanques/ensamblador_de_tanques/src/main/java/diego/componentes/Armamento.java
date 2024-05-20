@@ -2,10 +2,9 @@ package diego.componentes;
 
 import diego.componentes.enums.ClaseArmamento;
 import diego.componentes.enums.Municion;
+import diego.enums_general.Paises;
 
 import java.util.ArrayList;
-
-import diego.Paises;
 
 public class Armamento extends Componente {
 

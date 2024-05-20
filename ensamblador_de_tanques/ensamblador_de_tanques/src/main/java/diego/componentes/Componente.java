@@ -2,6 +2,7 @@ package diego.componentes;
 
 import java.io.Serializable;
 import diego.*;
+import diego.enums_general.Paises;
 
 import java.util.ArrayList;
 

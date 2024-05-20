@@ -7,6 +7,8 @@ import java.util.Map;
 
 import diego.componentes.*;
 import diego.componentes.enums.*;
+import diego.enums_general.Experiencia;
+import diego.enums_general.Paises;
 
 public class Ensamblador {
 
@@ -138,6 +140,7 @@ public class Ensamblador {
             
         } while (!res.equals("1") && !res.equals("2"));
 
+        SC.close();
         return finalizado;
 
     }

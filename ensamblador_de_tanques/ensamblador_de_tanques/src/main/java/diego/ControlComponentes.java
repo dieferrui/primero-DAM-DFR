@@ -10,6 +10,7 @@ import java.util.ArrayList;
 
 import diego.componentes.*;
 import diego.componentes.enums.*;
+import diego.enums_general.Paises;
 
 public class ControlComponentes {
 
