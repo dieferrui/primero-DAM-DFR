@@ -298,7 +298,7 @@ public class Ensamblador {
 
             if (torreSelect == null) {
 
-                System.out.println("El arma especificada no existe.");
+                System.out.println("La torreta especificada no existe.");
 
             }
 

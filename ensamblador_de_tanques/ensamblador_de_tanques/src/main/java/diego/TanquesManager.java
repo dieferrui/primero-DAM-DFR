@@ -14,7 +14,8 @@ public class TanquesManager {
 
         try {
 
-            ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(CARPETA + "\\" + nomArchivo + ".dat"));
+            String nomArchivoValido = nomArchivo.replaceAll("[\\\\/:*?\"<>|]", "");
+            ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(CARPETA + "\\" + nomArchivoValido + ".dat"));
             oos.writeObject(tanque);
             oos.close();
 

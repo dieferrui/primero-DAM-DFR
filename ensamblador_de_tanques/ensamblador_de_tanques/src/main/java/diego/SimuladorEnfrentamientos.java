@@ -284,6 +284,8 @@ public class SimuladorEnfrentamientos {
         return new double[] {movilidadTanque1, movilidadTanque2};
     }
 
+    // TODO tener en cuenta el giro de la torreta para el enfrentamiento
+
     private double ajustarPorExperiencia(Tripulante[] tripulacion, double puntuacionTotal) {
 
         // La experiencia de la tripulación afecta a la efectividad de un vehículo en combate
