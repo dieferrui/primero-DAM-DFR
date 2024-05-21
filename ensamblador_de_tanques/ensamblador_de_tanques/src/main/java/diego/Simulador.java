@@ -1,7 +1,6 @@
 package diego;
 
-import diego.componentes.*;
-import diego.componentes.enums.*;
+import org.apache.log4j.Logger;
 import diego.enums_general.*;
 import java.util.Scanner;
 import java.util.InputMismatchException;
@@ -9,6 +8,7 @@ import java.util.InputMismatchException;
 public class Simulador {
 
     private static final Scanner SCC = new Scanner(System.in);
+    private static Logger log = Logger.getLogger(Simulador.class.getName());
 
     private Tanque tanque1;
     private Tanque tanque2;
@@ -22,6 +22,7 @@ public class Simulador {
         if (TanquesManager.listarTanques().isEmpty()) {
 
             System.out.println("No hay vehículos disponibles para simular un combate.");
+            log.info("El simulador no se ha podido iniciar porque no hay vehículos disponibles.");
             System.exit(0);
 
         }
@@ -37,6 +38,7 @@ public class Simulador {
         if (tanque1.equals(tanque2)) {
 
             System.out.println("No puedes enfrentar dos vehículos iguales.");
+            log.info("El simulador no se ha podido iniciar porque los vehículos seleccionados son iguales.");
             System.exit(0);
 
         }
@@ -81,10 +83,12 @@ public class Simulador {
             } catch (ArrayIndexOutOfBoundsException e) {
 
                 System.out.println("Por favor, introduce un número de opción válido.");
+                log.error("Error en la selección de la distancia del combate.");
 
             } catch (InputMismatchException e) {
 
                 System.out.println("Por favor, introduce un número.");
+                log.error("Error en la selección de la distancia del combate.");
 
             }
 
