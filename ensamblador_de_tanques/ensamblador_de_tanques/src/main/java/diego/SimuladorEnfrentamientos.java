@@ -82,7 +82,7 @@ public class SimuladorEnfrentamientos {
         String probabilidadFormat = df.format(probabilidad1);
 
         return "\nLa probabilidad de que el/la " + simulador.getTanque1().getNombre() + 
-                " gane el enfrentamiento contra el/la " + simulador.getTanque2().getNombre() + " es del " + probabilidadFormat + "%." + 
+                " gane el enfrentamiento contra el/la " + simulador.getTanque2().getNombre() + " es del " + probabilidadFormat + "%.\n" + 
                 "---------- Simulador finalizado ----------\n";
 
     }
@@ -118,8 +118,8 @@ public class SimuladorEnfrentamientos {
         Para calcular la potencia de fuego relativa, se asignan 5 puntos por cada mm de blindaje que el cañón pueda superar,
         o cero puntos si el blindaje consigue superar la penetración efectiva del cañón.
         */
-        potenciaTanque1 = Math.max(Math.floor((penTanque1 * multiPotencia1) - (blindajeEfectivoTanque2 * multiBlindaje2)) * 5, 0);
-        potenciaTanque2 = Math.max(Math.floor((penTanque2 * multiPotencia2) - (blindajeEfectivoTanque1 * multiBlindaje1)) * 5, 0);
+        potenciaTanque1 = Math.max(Math.floor((penTanque1 * multiPotencia1) - (blindajeEfectivoTanque2 * multiBlindaje2)) * 15, 0);
+        potenciaTanque2 = Math.max(Math.floor((penTanque2 * multiPotencia2) - (blindajeEfectivoTanque1 * multiBlindaje1)) * 15, 0);
 
         return new double[] {potenciaTanque1, potenciaTanque2};
 
