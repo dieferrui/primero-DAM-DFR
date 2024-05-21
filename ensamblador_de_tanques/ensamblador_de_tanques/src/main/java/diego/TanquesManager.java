@@ -20,7 +20,6 @@ public class TanquesManager {
 
         } catch (IOException e) {
 
-            e.printStackTrace();
             // Logger.error("Error al guardar tanque");
             System.out.println("No se ha podido guardar el vehículo.");
 
@@ -37,13 +36,11 @@ public class TanquesManager {
             
         } catch (IOException e) {
 
-            e.printStackTrace();
             // Logger.error("Error al leer el archivo del tanque");
             System.out.println("No se ha podido cargar el vehículo.");
 
         } catch (ClassNotFoundException e) {
 
-            e.printStackTrace();
             // Logger.error("No se ha podido castear a tanque");
             System.out.println("No se ha podido cargar el vehículo.");
 
