@@ -28,8 +28,6 @@ public class Main {
 
         } while (!mainSelect.equals("4"));
 
-        SC.close();
-
     }
 
     public static void manejador() {

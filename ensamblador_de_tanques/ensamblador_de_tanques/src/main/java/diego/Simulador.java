@@ -8,7 +8,7 @@ import java.util.InputMismatchException;
 
 public class Simulador {
 
-    private static final Scanner SC = new Scanner(System.in);
+    private static final Scanner SCC = new Scanner(System.in);
 
     private Tanque tanque1;
     private Tanque tanque2;
@@ -26,11 +26,11 @@ public class Simulador {
 
         }
 
-        TanquesManager.listarTanques();
+        System.out.println(TanquesManager.listarTanques());
 
         this.tanque1 = seleccionarVehiculo(1);
 
-        TanquesManager.listarTanques();
+        System.out.println(TanquesManager.listarTanques());
 
         this.tanque2 = seleccionarVehiculo(2);
 
@@ -55,7 +55,7 @@ public class Simulador {
         do {
             
             System.out.println("Introduce el nombre del " + (numVehiculo == 1 ? "primer" : "segundo")  + " vehículo:");
-            tanque = TanquesManager.cargarTanque(SC.nextLine());
+            tanque = TanquesManager.cargarTanque(SCC.nextLine());
 
         } while (tanque == null);
 
@@ -68,15 +68,15 @@ public class Simulador {
         
         do {
 
-            System.out.println("Selecciona la distancia del combate:\n" + 
+            System.out.println("\nSelecciona la distancia del combate:\n" + 
                                 "1. Cercana\n" +
                                 "2. Media\n" +
-                                "3. Larga\n");
+                                "3. Larga");
             
             
             try {
 
-                distancia = Distancia.values()[SC.nextInt() - 1];
+                distancia = Distancia.values()[SCC.nextInt() - 1];
 
             } catch (ArrayIndexOutOfBoundsException e) {
 
@@ -100,7 +100,7 @@ public class Simulador {
         
         do {
 
-            System.out.println("Selecciona el terreno del combate:\n" + 
+            System.out.println("\nSelecciona el terreno del combate:\n" + 
                                 "1. Desierto\n" +
                                 "2. Bosque\n" +
                                 "3. Montaña\n" +
@@ -110,7 +110,7 @@ public class Simulador {
             
             try {
 
-                terreno = Terreno.values()[SC.nextInt() - 1];
+                terreno = Terreno.values()[SCC.nextInt() - 1];
 
             } catch (ArrayIndexOutOfBoundsException e) {
 
@@ -134,14 +134,14 @@ public class Simulador {
         
         do {
 
-            System.out.println("Selecciona en qué momento de han detectado los vehículos entre sí:\n" + 
+            System.out.println("\nSelecciona en qué momento de han detectado los vehículos entre sí:\n" + 
                                 "1. Los vehículos se detectan antes de que empiece el enfrentamiento\n" +
                                 "2. Los vehículos no se detectan hasta que el enfrentamiento es inevitable\n" + 
                                 "3. El primer vehículo detecta al otro antes de que empiece el enfrentamiento");
             
             try {
 
-                deteccion = Deteccion.values()[SC.nextInt() - 1];
+                deteccion = Deteccion.values()[SCC.nextInt() - 1];
 
             } catch (ArrayIndexOutOfBoundsException e) {
 
@@ -165,14 +165,14 @@ public class Simulador {
         
         do {
 
-            System.out.println("Selecciona la situación de los vehículos al iniciar el combate:\n" + 
+            System.out.println("\nSelecciona la situación de los vehículos al iniciar el combate:\n" + 
                                 "1. Neutra\n" +
                                 "2. El primer vehículo está en una posición defensiva\n" +
                                 "3. El primer vehículo está atacando una posición defendida por el segundo");
             
             try {
 
-                situacion = Situacion.values()[SC.nextInt() - 1];
+                situacion = Situacion.values()[SCC.nextInt() - 1];
 
             } catch (ArrayIndexOutOfBoundsException e) {
 
@@ -251,13 +251,13 @@ public class Simulador {
                 break;
         }
             
-        return "Simulador iniciado.\n" +
+        return "---------- Simulador iniciado ----------\n" +
                 "Vehículo 1: " + this.tanque1.getNombre() + "\n" +
                 "Vehículo 2: " + this.tanque2.getNombre() + "\n" +
                 "Distancia de enfrentamiento: " + dist + "\n" +
                 "Momento de la detección: " + detec + "\n" +
                 "Terreno del enfrentamiento: " + terr + "\n" +
-                "Situación de los vehículos: " + situ;
+                "Situación de los vehículos: " + situ + "\n";
 
     }
 

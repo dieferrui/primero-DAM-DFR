@@ -34,7 +34,7 @@ public class SimuladorEnfrentamientos {
         potenciasFuego = calcularPotenciaDeFuegoRelativa(simulador);
 
         System.out.println("En la simulación de tiro, el primer vehículo obtiene " + potenciasFuego[0] + " puntos de potencia de fuego,\n" +
-                            "mientras que el segundo vehículo obtiene " + potenciasFuego[1] + " puntos de potencia de fuego.\n");
+                            "mientras que el segundo vehículo obtiene " + potenciasFuego[1] + " puntos de potencia de fuego.");
 
         if (potenciasFuego[0] == 0) {
 
@@ -48,8 +48,8 @@ public class SimuladorEnfrentamientos {
 
         puntosMovilidad = calcularMovilidadEfectiva(simulador);
 
-        System.out.println("En la simulación de movilidad, el primer vehículo obtiene " + puntosMovilidad[0] + " puntos de movilidad,\n" +
-                            "mientras que el segundo vehículo obtiene " + puntosMovilidad[1] + " puntos de movilidad.\n");
+        System.out.println("\nEn la simulación de movilidad, el primer vehículo obtiene " + Math.round(puntosMovilidad[0]) + " puntos de movilidad,\n" +
+                            "mientras que el segundo vehículo obtiene " + Math.round(puntosMovilidad[1]) + " puntos de movilidad.\n");
 
         if (puntosMovilidad[0] > puntosMovilidad[1]) {
 
@@ -68,18 +68,22 @@ public class SimuladorEnfrentamientos {
         puntuacionTotal1 = potenciasFuego[0] + puntosMovilidad[0];
         puntuacionTotal2 = potenciasFuego[1] + puntosMovilidad[1];
 
-        puntuacionReal1 = ajustarPorExperiencia(simulador.getTanque1().getTripulacion(), puntuacionTotal1);
-        puntuacionReal2 = ajustarPorExperiencia(simulador.getTanque2().getTripulacion(), puntuacionTotal2);
+        puntuacionTotal1 = ajustarConAnguloTorreta(simulador, puntuacionTotal1, puntuacionTotal2)[0];
+        puntuacionTotal2 = ajustarConAnguloTorreta(simulador, puntuacionTotal1, puntuacionTotal2)[1];
 
-        System.out.println("La puntuación total del primer vehículo es de " + puntuacionReal1 + ",\n" +
-                            "mientras que la del segundo vehículo es de " + puntuacionReal2 + ".\n");
+        puntuacionReal1 = ajustarPorExperiencia(simulador.getTanque1().getTripulacion(), puntuacionTotal1, simulador.getDeteccion());
+        puntuacionReal2 = ajustarPorExperiencia(simulador.getTanque2().getTripulacion(), puntuacionTotal2, simulador.getDeteccion());
 
-        probabilidad1 = puntuacionReal1 / (puntuacionReal1 + puntuacionReal2);
+        System.out.println("\nLa puntuación total del primer vehículo es de " + Math.round(puntuacionReal1) + ",\n" +
+                            "mientras que la del segundo vehículo es de " + Math.round(puntuacionReal2) + ".");
+
+        probabilidad1 = (puntuacionReal1 / (puntuacionReal1 + puntuacionReal2)) * 100;
         DecimalFormat df = new DecimalFormat("#.##");
         String probabilidadFormat = df.format(probabilidad1);
 
-        return "La probabilidad de que el/la " + simulador.getTanque1().getNombre() + 
-                " gane el enfrentamiento contra el/la " + simulador.getTanque2().getNombre() + " es del " + probabilidadFormat + "%.";
+        return "\nLa probabilidad de que el/la " + simulador.getTanque1().getNombre() + 
+                " gane el enfrentamiento contra el/la " + simulador.getTanque2().getNombre() + " es del " + probabilidadFormat + "%." + 
+                "---------- Simulador finalizado ----------\n";
 
     }
 
@@ -111,11 +115,11 @@ public class SimuladorEnfrentamientos {
         double multiBlindaje2 = devolverMultiplicadorBlindaje(simulador)[1];
 
         /*
-        Para calcular la potencia de fuego relativa, se asignan 50 puntos por cada mm de blindaje que el cañón pueda superar,
+        Para calcular la potencia de fuego relativa, se asignan 5 puntos por cada mm de blindaje que el cañón pueda superar,
         o cero puntos si el blindaje consigue superar la penetración efectiva del cañón.
         */
-        potenciaTanque1 = Math.max(Math.floor((penTanque1 * multiPotencia1) - (blindajeEfectivoTanque2 * multiBlindaje2)) * 50, 0);
-        potenciaTanque2 = Math.max(Math.floor((penTanque2 * multiPotencia2) - (blindajeEfectivoTanque1 * multiBlindaje1)) * 50, 0);
+        potenciaTanque1 = Math.max(Math.floor((penTanque1 * multiPotencia1) - (blindajeEfectivoTanque2 * multiBlindaje2)) * 5, 0);
+        potenciaTanque2 = Math.max(Math.floor((penTanque2 * multiPotencia2) - (blindajeEfectivoTanque1 * multiBlindaje1)) * 5, 0);
 
         return new double[] {potenciaTanque1, potenciaTanque2};
 
@@ -284,20 +288,78 @@ public class SimuladorEnfrentamientos {
         return new double[] {movilidadTanque1, movilidadTanque2};
     }
 
-    // TODO tener en cuenta el giro de la torreta para el enfrentamiento
+    private double[] ajustarConAnguloTorreta(Simulador simulador, double potenciaTanque1, double potenciaTanque2) {
 
-    private double ajustarPorExperiencia(Tripulante[] tripulacion, double puntuacionTotal) {
+        double angMax = Math.max(simulador.getTanque1().getTorreta().getAnguloTiro(), simulador.getTanque2().getTorreta().getAnguloTiro());
+        double angMin = Math.min(simulador.getTanque1().getTorreta().getAnguloTiro(), simulador.getTanque2().getTorreta().getAnguloTiro());
+        double potenciaExtra = 0;
+
+        switch (simulador.getTerreno()) {
+
+            case DESIERTO:
+                potenciaExtra = ((angMax - angMin));
+                break;
+
+            case BOSQUE:
+                potenciaExtra = ((angMax -angMin) * 1.3);
+                break;
+
+            case MONTAÑA:
+                potenciaExtra = ((angMax - angMin) * 0.8);
+                break;
+
+            case CIUDAD:
+                potenciaExtra = ((angMax - angMin) * 0.5);
+                break;
+
+            default:
+                potenciaExtra = ((angMax - angMin) * 1.8);
+                break;
+        }
+
+        if (simulador.getTanque1().getTorreta().getAnguloTiro() == angMax) {
+
+            potenciaTanque1 += potenciaExtra;
+
+        } else if (simulador.getTanque1().getTorreta().getAnguloTiro() < simulador.getTanque2().getTorreta().getAnguloTiro()) {
+
+            potenciaTanque2 += potenciaExtra;
+
+        }
+
+        return new double[] {potenciaTanque1, potenciaTanque2};
+
+    }
+
+    private double ajustarPorExperiencia(Tripulante[] tripulacion, double puntuacionTotal, Deteccion deteccion) {
 
         // La experiencia de la tripulación afecta a la efectividad de un vehículo en combate
         double expTotalTripulacion = 0;
 
         for (Tripulante tripulante : tripulacion) {
 
-            expTotalTripulacion += (tripulante.getExperiencia() / 100);
+            expTotalTripulacion += (tripulante.getExperiencia());
 
         }
 
-        double expMediaTripulacion = expTotalTripulacion / tripulacion.length;
+        /*  
+        También ajustaremos los valores de la tripulación si están sorprendidos 
+        (las tripulaciones más experimentadas se recuperan más rápido de la sorpresa)
+        */
+        if (deteccion == Deteccion.SORPRESA) {
+
+            expTotalTripulacion *= 1.2;
+            /*
+            ¿Por qué 1.2? Porque para hacer más grande la diferencia entre tripulaciones necesitamos un multiplicador mayor que 1.
+            Supongamos una tripulación de media 0.9 y otra de media 0.5.
+            -Diferencia inicial: 0.9 - 0.5 = 0.4
+            -Diferencia final: 0.9 * 1.2 - 0.5 * 1.2 = 0.48
+            Así, se representa mejor la diferencia de capacidad de reacción entre tripulaciones.
+            */
+
+        }
+
+        double expMediaTripulacion = (expTotalTripulacion / tripulacion.length) / 100;
 
         return puntuacionTotal * expMediaTripulacion;
         

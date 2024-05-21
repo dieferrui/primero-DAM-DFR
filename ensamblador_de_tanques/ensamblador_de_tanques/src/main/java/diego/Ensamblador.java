@@ -12,7 +12,7 @@ import diego.enums_general.Paises;
 
 public class Ensamblador {
 
-    private static final Scanner SC = new Scanner(System.in);
+    private static final Scanner SCB = new Scanner(System.in);
     protected static final ControlComponentes CONTROL = new ControlComponentes();
 
     public static void ensamblarTanque() {
@@ -51,7 +51,7 @@ public class Ensamblador {
 
         do {
 
-            paisSelect = SC.nextLine();
+            paisSelect = SCB.nextLine();
             contiene = Paises.contiene(paisSelect);
 
             if (!contiene) {
@@ -85,7 +85,7 @@ public class Ensamblador {
             double controlCarga = 0;
 
             System.out.println("Paso 0: Introduzca un nombre para el vehículo: ");
-            nombre = SC.nextLine();
+            nombre = SCB.nextLine();
             tanque.setNombre(nombre);
             
             chasis = seleccionarChasis(pais);
@@ -132,7 +132,7 @@ public class Ensamblador {
         do {
             
             System.out.println("¿Desea guardar el vehículo?\n1. Sí\n2. No");
-            res = SC.nextLine();
+            res = SCB.nextLine();
 
             if (res.equals("1")) {
 
@@ -142,7 +142,6 @@ public class Ensamblador {
             
         } while (!res.equals("1") && !res.equals("2"));
 
-        SC.close();
         return finalizado;
 
     }
@@ -172,7 +171,7 @@ public class Ensamblador {
 
         do {
 
-            elegir = SC.nextLine();
+            elegir = SCB.nextLine();
 
             chasisSelect = CONTROL.mapaChasis.get(elegir);
 
@@ -211,7 +210,7 @@ public class Ensamblador {
 
         do {
 
-            elegir = SC.nextLine();
+            elegir = SCB.nextLine();
 
             motorSelect = CONTROL.mapaMotores.get(elegir);
 
@@ -252,7 +251,7 @@ public class Ensamblador {
 
         do {
 
-            elegir = SC.nextLine();
+            elegir = SCB.nextLine();
 
             armaSelect = CONTROL.mapaArmas.get(elegir);
 
@@ -292,7 +291,7 @@ public class Ensamblador {
 
         do {
 
-            elegir = SC.nextLine();
+            elegir = SCB.nextLine();
 
             torreSelect = CONTROL.mapaTorretas.get(elegir);
 
@@ -321,7 +320,7 @@ public class Ensamblador {
 
             try {
 
-                numTripulantes = Integer.parseInt(SC.nextLine());
+                numTripulantes = Integer.parseInt(SCB.nextLine());
 
             } catch (NumberFormatException e) {
                     
@@ -361,7 +360,7 @@ public class Ensamblador {
 
             System.out.println("Elija el nivel de experiencia de la tripulación:");
             System.out.println("1. Novatos\n2. Experimentados\n3. Veteranos\n");
-            elegir = SC.nextLine();
+            elegir = SCB.nextLine();
 
         } while (!elegir.equals("1") && !elegir.equals("2") && !elegir.equals("3"));
     
