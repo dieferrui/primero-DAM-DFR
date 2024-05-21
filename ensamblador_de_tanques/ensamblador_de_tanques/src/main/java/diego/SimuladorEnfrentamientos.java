@@ -1,5 +1,6 @@
 package diego;
 
+import diego.componentes.*;
 import diego.enums_general.*;
 import java.text.DecimalFormat;
 
@@ -7,6 +8,8 @@ public class SimuladorEnfrentamientos {
 
     private double puntuacionTotal1;
     private double puntuacionTotal2;
+    private double puntuacionReal1;
+    private double puntuacionReal2;
     private double probabilidad1;
     private double[] potenciasFuego;
     private double[] puntosMovilidad;
@@ -65,10 +68,13 @@ public class SimuladorEnfrentamientos {
         puntuacionTotal1 = potenciasFuego[0] + puntosMovilidad[0];
         puntuacionTotal2 = potenciasFuego[1] + puntosMovilidad[1];
 
-        System.out.println("La puntuación total del primer vehículo es de " + puntuacionTotal1 + ",\n" +
-                            "mientras que la del segundo vehículo es de " + puntuacionTotal2 + ".\n");
+        puntuacionReal1 = ajustarPorExperiencia(simulador.getTanque1().getTripulacion(), puntuacionTotal1);
+        puntuacionReal2 = ajustarPorExperiencia(simulador.getTanque2().getTripulacion(), puntuacionTotal2);
 
-        probabilidad1 = puntuacionTotal1 / (puntuacionTotal1 + puntuacionTotal2);
+        System.out.println("La puntuación total del primer vehículo es de " + puntuacionReal1 + ",\n" +
+                            "mientras que la del segundo vehículo es de " + puntuacionReal2 + ".\n");
+
+        probabilidad1 = puntuacionReal1 / (puntuacionReal1 + puntuacionReal2);
         DecimalFormat df = new DecimalFormat("#.##");
         String probabilidadFormat = df.format(probabilidad1);
 
@@ -276,5 +282,22 @@ public class SimuladorEnfrentamientos {
         }
 
         return new double[] {movilidadTanque1, movilidadTanque2};
+    }
+
+    private double ajustarPorExperiencia(Tripulante[] tripulacion, double puntuacionTotal) {
+
+        // La experiencia de la tripulación afecta a la efectividad de un vehículo en combate
+        double expTotalTripulacion = 0;
+
+        for (Tripulante tripulante : tripulacion) {
+
+            expTotalTripulacion += (tripulante.getExperiencia() / 100);
+
+        }
+
+        double expMediaTripulacion = expTotalTripulacion / tripulacion.length;
+
+        return puntuacionTotal * expMediaTripulacion;
+        
     }
 }
