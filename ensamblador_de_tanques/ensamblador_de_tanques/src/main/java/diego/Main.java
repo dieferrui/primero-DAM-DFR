@@ -87,10 +87,14 @@ public class Main {
 
     }
 
-    public static String simulador() {
+    public static void simulador() {
 
-        return "WIP";
-        // TODO implementar comparador de vehículos
+        SimuladorEnfrentamientos simulacion = new SimuladorEnfrentamientos();
+
+        Simulador simil = simulacion.prepararEnfrentamiento();
+        String resultado = simulacion.enfrentarVehiculos(simil);
+
+        System.out.println(resultado);
         
     }
 }

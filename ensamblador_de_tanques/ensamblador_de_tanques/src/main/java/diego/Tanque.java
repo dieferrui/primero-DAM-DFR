@@ -18,6 +18,7 @@ public class Tanque implements Serializable, Comparable<Tanque> {
     private Armamento arma;
     private Tripulante[] tripulacion;
     private double relacionPotencia;
+    private String clase;
 
     public Tanque() {}
 
@@ -75,6 +76,14 @@ public class Tanque implements Serializable, Comparable<Tanque> {
 
     public void setRelacionPotencia(double relacionPotencia) {
         this.relacionPotencia = relacionPotencia;
+    }
+
+    public String getClase() {
+        return clase;
+    }
+
+    public void setClase(String clase) {
+        this.clase = clase;
     }
 
     @Override
@@ -135,7 +144,7 @@ public class Tanque implements Serializable, Comparable<Tanque> {
         DecimalFormat df = new DecimalFormat("#.#");
         String relacionPotFormat = df.format(getRelacionPotencia());
 
-        return "Tanque: " + getNombre() + "\n" +
+        return getClase() + " " + getNombre() + "\n" +
                 "Tripulantes: " + getTripulacion().length + "\n\n" +
                 "Relación potencia/peso: " + relacionPotFormat + "CV/t\n\n" +
                 getChasis().mostrarDatos() + "\n\n" + 

@@ -184,13 +184,73 @@ public class Simulador {
     }
 
     public String devolverDatos() {
+
+        String dist;
+        String detec;
+        String terr;
+        String situ;
+
+        switch (this.distancia) {
+            case CORTA:
+                dist = "Cercana, " + Distancia.CORTA.getMetros() + "m";
+                break;
+            case MEDIA:
+                dist = "Media, " + Distancia.MEDIA.getMetros() + "m";
+                break;
+            default:
+                dist = "Larga, " + Distancia.LARGA.getMetros() + "m";
+                break;
+        }
+
+        switch (this.deteccion) {
+            case NORMAL:
+                detec = "Los vehículos se detectan antes de que empiece el enfrentamiento.";
+                break;
+            case SORPRESA:
+                detec = "Los vehículos no se detectan hasta que el enfrentamiento es inevitable.";
+                break;
+            default:
+                detec = "El primer vehículo detecta al otro antes de que empiece el enfrentamiento.";
+                break;
+        }
+
+        switch (this.terreno) {
+            case DESIERTO:
+                terr = "Desértico";
+                break;
+            case BOSQUE:
+                terr = "Boscoso";
+                break;
+            case MONTAÑA:
+                terr = "Montañoso";
+                break;
+            case CIUDAD:
+                terr = "Urbano";
+                break;
+            default:
+                terr = "Llano";
+                break;
+        }
+
+        switch (this.situacion) {
+            case NEUTRA:
+                situ = "Los dos vehículos se encuentran durante una patrulla.";
+                break;
+            case DEFENSIVA:
+                situ = "El primer vehículo está defendiendo una posición.";
+                break;
+            default:
+                situ = "El primer vehículo está atacando una posición defendida por el segundo.";
+                break;
+        }
             
-        return "Vehículo 1: " + tanque1.getNombre() + "\n" +
-                "Vehículo 2: " + tanque2.getNombre() + "\n" +
-                "Distancia: " + distancia + "\n" +
-                "Terreno: " + terreno + "\n" +
-                "Detección: " + deteccion + "\n" +
-                "Situación: " + situacion;
+        return "Simulador iniciado.\n" +
+                "Vehículo 1: " + this.tanque1.getNombre() + "\n" +
+                "Vehículo 2: " + this.tanque2.getNombre() + "\n" +
+                "Distancia de enfrentamiento: " + dist + "\n" +
+                "Momento de la detección: " + detec + "\n" +
+                "Terreno del enfrentamiento: " + terr + "\n" +
+                "Situación de los vehículos: " + situ;
 
     }
 

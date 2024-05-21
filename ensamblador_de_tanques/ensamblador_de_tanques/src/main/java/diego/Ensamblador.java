@@ -112,6 +112,8 @@ public class Ensamblador {
             tanque.getChasis().setCargaActual(controlCarga);
             tanque.setRelacionPotencia(motor.getPotencia() / (controlCarga / 1000));
 
+            tanque.setClase(devolverClase(tanque));
+
             if (controlCarga < controlCargaMax) {
 
                 cargaSobrepasada = Boolean.FALSE;
@@ -372,5 +374,76 @@ public class Ensamblador {
         }
     }
     
+    private static String devolverClase(Tanque tanque) {
 
+        StringBuilder clase = new StringBuilder();
+
+        if ((tanque.getArma().getCalibre()) > (tanque.getChasis().getCargaMaxima() * 3) || tanque.getTorreta().getTipoTorreta() == TipoTorreta.SUPERESTRUCTURA) {
+
+            clase.append("Cazacarros ");
+
+            if (tanque.getChasis().getCargaMaxima() > 50000) {
+
+                clase.append("pesado");
+
+            } else {
+
+                clase.append("ligero");
+
+            }
+
+            tanque.setClase(clase.toString());
+
+        } else if (tanque.getArma().getClase() == ClaseArmamento.AUTOCANNON) {
+
+            clase.append("IFV ");
+
+            if (tanque.getChasis().getCargaMaxima() > 50000) {
+
+                clase.append("pesado");
+
+            } else {
+
+                clase.append("ligero");
+
+            }
+
+            tanque.setClase(clase.toString());
+
+        } else if (tanque.getArma().getClase() == ClaseArmamento.HOWITZER && tanque.getChasis().getCargaMaxima() < 20000) {
+
+            if (tanque.getTorreta().getTipoTorreta() == TipoTorreta.SUPERESTRUCTURA) {
+
+                clase.append("Obús autopropulsado");
+
+            } else {
+
+                clase.append("Atrillería autopropulsada");
+
+            }
+
+            tanque.setClase(clase.toString());
+
+        } else {
+
+            clase.append("Tanque ");
+
+            if (tanque.getChasis().getCargaMaxima() > 50000) {
+
+                clase.append("pesado");
+
+            } else if (tanque.getChasis().getCargaMaxima() > 25000) {
+
+                clase.append("medio");
+
+            } else {
+
+                clase.append("ligero");
+
+            }
+        }
+
+        return clase.toString();
+
+    }
 }
