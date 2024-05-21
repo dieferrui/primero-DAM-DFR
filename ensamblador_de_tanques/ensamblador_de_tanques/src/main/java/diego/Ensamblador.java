@@ -428,11 +428,11 @@ public class Ensamblador {
 
             clase.append("Tanque ");
 
-            if (tanque.getChasis().getCargaMaxima() > 50000) {
+            if (tanque.getChasis().getCargaMaxima() >= 50000) {
 
                 clase.append("pesado");
 
-            } else if (tanque.getChasis().getCargaMaxima() > 25000) {
+            } else if (tanque.getChasis().getCargaMaxima() >= 20000) {
 
                 clase.append("medio");
 
