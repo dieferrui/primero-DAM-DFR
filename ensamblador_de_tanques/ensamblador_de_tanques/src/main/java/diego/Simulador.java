@@ -19,6 +19,13 @@ public class Simulador {
 
     public Simulador() {
 
+        if (TanquesManager.listarTanques().isEmpty()) {
+
+            System.out.println("No hay vehículos disponibles para simular un combate.");
+            System.exit(0);
+
+        }
+
         TanquesManager.listarTanques();
 
         this.tanque1 = seleccionarVehiculo(1);
