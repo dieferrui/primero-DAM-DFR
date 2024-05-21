@@ -14,21 +14,19 @@ public class Main {
             
             System.out.println("Ensamblador de tanques 0.1");
             System.out.println("¿Qué quieres hacer?\n1. Ensamblar tanque\n"
-                            + "2. Manejo de archivos\n3. Comparador de vehículos\n"
-                            + "4. Simulador de enfrentamiento\n5. Salir");
+                            + "2. Manejo de archivos\n3. Simulador de enfrentamiento\n4. Salir");
             mainSelect = SC.nextLine();
 
             switch (mainSelect) {
 
                 case "1": Ensamblador.ensamblarTanque(); break;
                 case "2": manejador(); break;
-                case "3": comparador(); break;
-                case "4": simulador(); break;
+                case "3": simulador(); break;
                 default: break;
             }
 
 
-        } while (!mainSelect.equals("5"));
+        } while (!mainSelect.equals("4"));
 
         SC.close();
 
@@ -77,13 +75,6 @@ public class Main {
 
 
         } while (!manejoSelect.equals("4"));
-
-    }
-
-    public static String comparador() {
-
-        return "WIP";
-        // TODO implementar comparador de vehículos
 
     }
 
