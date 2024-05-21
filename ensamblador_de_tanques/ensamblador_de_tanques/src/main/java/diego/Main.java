@@ -48,7 +48,6 @@ public class Main {
 
                 case "1":
                     System.out.println(TanquesManager.listarTanques());
-                    System.out.println();
                     break;
 
                 case "2":

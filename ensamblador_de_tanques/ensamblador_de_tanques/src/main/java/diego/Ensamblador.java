@@ -359,7 +359,7 @@ public class Ensamblador {
         do {
 
             System.out.println("Elija el nivel de experiencia de la tripulación:");
-            System.out.println("1. Novatos\n2. Experimentados\n3. Veteranos\n");
+            System.out.println("1. Novatos\n2. Experimentados\n3. Veteranos");
             elegir = SCB.nextLine();
 
         } while (!elegir.equals("1") && !elegir.equals("2") && !elegir.equals("3"));
