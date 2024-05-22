@@ -86,3 +86,17 @@ public class Main {
         
     }
 }
+
+// TODO 1: Añadir angulos de depresión y elevación a cálculos de potencia de ataque
+// TODO 2: Añadir componentes extra al programa:
+    /*
+     * Lanzadores de granadas de humo externos (más pesados, mayor cobertura)
+     * Lanzadores de granadas internos (más ligeros, menos usos)
+     * Blindaje espaciado (mayor protección si el oponente usa HE o HEAT)
+     * Blindaje adicional (mayor protección a cambio de más peso)
+     * Blindaje improvisado (protección adicional ligera)
+     * Filtros mejorados (mayor movilidad en desierto y urbano)
+     * Ametralladora media montada (mejora ligera de potencia de ataque)
+     * Ametralladora pesada montada (mejora ligera de potencia y ventaja extra contra oponentes de menos de 10t)
+     * Pala de bulldozer (el blindaje de la torreta consigue más peso en el cálculo)
+     */
