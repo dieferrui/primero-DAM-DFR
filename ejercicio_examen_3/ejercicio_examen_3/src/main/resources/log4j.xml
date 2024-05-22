@@ -23,7 +23,22 @@
 
     <!-- Loggers específicos deben ir antes del root logger -->
     <!-- Logger for specific package with different logging level -->
-    <logger name="examen-log">
+    <logger name="debug-log">
+        <level value="debug"/>
+        <appender-ref ref="console"/>
+    </logger>
+
+    <logger name="warn-log">
+        <level value="debug"/>
+        <appender-ref ref="console"/>
+    </logger>
+
+    <logger name="error-log">
+        <level value="debug"/>
+        <appender-ref ref="console"/>
+    </logger>
+
+    <logger name="fatal-log">
         <level value="debug"/>
         <appender-ref ref="console"/>
     </logger>
