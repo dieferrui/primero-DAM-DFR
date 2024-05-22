@@ -386,7 +386,7 @@ public class Ensamblador {
 
             clase.append("Cazacarros ");
 
-            if (tanque.getChasis().getCargaMaxima() > 50000) {
+            if (tanque.getChasis().getCargaMaxima() > 45000) {
 
                 clase.append(PES);
 
@@ -402,7 +402,7 @@ public class Ensamblador {
 
             clase.append("IFV ");
 
-            if (tanque.getChasis().getCargaMaxima() > 50000) {
+            if (tanque.getChasis().getCargaMaxima() > 32000) {
 
                 clase.append(PES);
 
@@ -432,11 +432,11 @@ public class Ensamblador {
 
             clase.append("Tanque ");
 
-            if (tanque.getChasis().getCargaMaxima() >= 50000) {
+            if (tanque.getChasis().getCargaMaxima() >= 45000) {
 
                 clase.append(PES);
 
-            } else if (tanque.getChasis().getCargaMaxima() >= 20000) {
+            } else if (tanque.getChasis().getCargaMaxima() >= 18000) {
 
                 clase.append(MED);
 
