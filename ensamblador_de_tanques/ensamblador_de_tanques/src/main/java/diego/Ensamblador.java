@@ -15,6 +15,12 @@ public class Ensamblador {
     private static final Scanner SCB = new Scanner(System.in);
     protected static final ControlComponentes CONTROL = new ControlComponentes();
 
+    private static final Random RANDOM = new Random();
+
+    private static final String LIG = "ligero";
+    private static final String MED = "medio";
+    private static final String PES = "pesado";
+
     public static void ensamblarTanque() {
 
         boolean finalizado = Boolean.FALSE;
@@ -309,7 +315,6 @@ public class Ensamblador {
 
     public static Tripulante[] agregarTripulantes() {
 
-        Random random = new Random();
         int numTripulantes;
         int expMax;
         int expMin;
@@ -337,15 +342,15 @@ public class Ensamblador {
 
         ArrayList<Tripulante> tripulantes = new ArrayList<>();
 
-        if (numTripulantes >= 1) tripulantes.add(new Tripulante(RolTripulante.COMANDANTE, random.nextInt((expMax - expMin) + 1) + expMin));
-        if (numTripulantes >= 2) tripulantes.add(new Tripulante(RolTripulante.CONDUCTOR, random.nextInt((expMax - expMin) + 1) + expMin));
-        if (numTripulantes >= 3) tripulantes.add(new Tripulante(RolTripulante.ARTILLERO, random.nextInt((expMax - expMin) + 1) + expMin));
-        if (numTripulantes >= 4) tripulantes.add(new Tripulante(RolTripulante.CARGADOR, random.nextInt((expMax - expMin) + 1) + expMin));
-        if (numTripulantes >= 5) tripulantes.add(new Tripulante(RolTripulante.OPERADOR_DE_RADIO, random.nextInt((expMax - expMin) + 1) + expMin));
+        if (numTripulantes >= 1) tripulantes.add(new Tripulante(RolTripulante.COMANDANTE, RANDOM.nextInt((expMax - expMin) + 1) + expMin));
+        if (numTripulantes >= 2) tripulantes.add(new Tripulante(RolTripulante.CONDUCTOR, RANDOM.nextInt((expMax - expMin) + 1) + expMin));
+        if (numTripulantes >= 3) tripulantes.add(new Tripulante(RolTripulante.ARTILLERO, RANDOM.nextInt((expMax - expMin) + 1) + expMin));
+        if (numTripulantes >= 4) tripulantes.add(new Tripulante(RolTripulante.CARGADOR, RANDOM.nextInt((expMax - expMin) + 1) + expMin));
+        if (numTripulantes >= 5) tripulantes.add(new Tripulante(RolTripulante.OPERADOR_DE_RADIO, RANDOM.nextInt((expMax - expMin) + 1) + expMin));
 
         for (int i = 6; i <= numTripulantes; i++) {
 
-            tripulantes.add(new Tripulante(RolTripulante.TRIPULANTE_AUXILIAR, random.nextInt((expMax - expMin) + 1) + expMin));
+            tripulantes.add(new Tripulante(RolTripulante.TRIPULANTE_AUXILIAR, RANDOM.nextInt((expMax - expMin) + 1) + expMin));
 
         }
 
@@ -383,11 +388,11 @@ public class Ensamblador {
 
             if (tanque.getChasis().getCargaMaxima() > 50000) {
 
-                clase.append("pesado");
+                clase.append(PES);
 
             } else {
 
-                clase.append("ligero");
+                clase.append(LIG);
 
             }
 
@@ -399,11 +404,11 @@ public class Ensamblador {
 
             if (tanque.getChasis().getCargaMaxima() > 50000) {
 
-                clase.append("pesado");
+                clase.append(PES);
 
             } else {
 
-                clase.append("ligero");
+                clase.append(LIG);
 
             }
 
@@ -429,15 +434,15 @@ public class Ensamblador {
 
             if (tanque.getChasis().getCargaMaxima() >= 50000) {
 
-                clase.append("pesado");
+                clase.append(PES);
 
             } else if (tanque.getChasis().getCargaMaxima() >= 20000) {
 
-                clase.append("medio");
+                clase.append(MED);
 
             } else {
 
-                clase.append("ligero");
+                clase.append(LIG);
 
             }
         }
