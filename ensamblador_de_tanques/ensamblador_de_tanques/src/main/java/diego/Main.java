@@ -12,7 +12,7 @@ public class Main {
 
         do {
             
-            System.out.println("Ensamblador de tanques 0.2");
+            System.out.println("Ensamblador de tanques 1.0");
             System.out.println("¿Qué quieres hacer?\n1. Ensamblar tanque\n"
                             + "2. Manejo de archivos\n3. Simulador de enfrentamiento\n4. Salir");
             mainSelect = SC.nextLine();
