@@ -1,4 +1,4 @@
-package programacion.tercera_evaluacion.repasar_examen.patterns;
+package java;
 
 public enum PatronValidacion {
     // Ejemplos previos
