@@ -5,22 +5,22 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Iterator;
+import org.apache.log4j.Logger;
 
 public class TanquesManager {
 
     private static final String CARPETA = "ensamblador_de_tanques\\src\\main\\java\\diego\\tanques_guardados";
+    private static Logger log = Logger.getLogger(TanquesManager.class.getName());
 
     public static void guardarTanque(Tanque tanque, String nomArchivo) {
 
-        try {
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(CARPETA + "\\" + nomArchivo + ".dat"))) {
 
-            ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(CARPETA + "\\" + nomArchivo + ".dat"));
             oos.writeObject(tanque);
-            oos.close();
 
         } catch (IOException e) {
 
-            // Logger.error("Error al guardar tanque");
+            log.error("Error al guardar un vehículo");
             System.out.println("No se ha podido guardar el vehículo.");
 
         }
@@ -36,12 +36,12 @@ public class TanquesManager {
             
         } catch (IOException e) {
 
-            // Logger.error("Error al leer el archivo del tanque");
+            log.error("Error de entrada/salida al cargar un vehículo");
             System.out.println("No se ha podido cargar el vehículo.");
 
         } catch (ClassNotFoundException e) {
 
-            // Logger.error("No se ha podido castear a tanque");
+            log.error("Error al cargar un vehículo, clase no encontrada");
             System.out.println("No se ha podido cargar el vehículo.");
 
         }

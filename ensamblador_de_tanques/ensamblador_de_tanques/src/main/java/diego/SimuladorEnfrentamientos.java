@@ -14,7 +14,9 @@ public class SimuladorEnfrentamientos {
     private double[] potenciasFuego;
     private double[] puntosMovilidad;
 
-    public SimuladorEnfrentamientos() {}
+    public SimuladorEnfrentamientos() {
+        // Constructor vacío, todos los datos se pasan por programa
+    }
     
     public Simulador prepararEnfrentamiento () {
         
