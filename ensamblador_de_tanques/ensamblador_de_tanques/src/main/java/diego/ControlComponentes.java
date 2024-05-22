@@ -2,6 +2,8 @@ package diego;
 
 import java.util.HashMap;
 import java.util.Map;
+import org.apache.log4j.Logger;
+
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -13,6 +15,8 @@ import diego.componentes.enums.*;
 import diego.enums_general.Paises;
 
 public class ControlComponentes {
+
+    private static Logger log = Logger.getLogger(ControlComponentes.class.getName());
 
     private static final String ARCHIVO_CHASIS = "ensamblador_de_tanques\\src\\main\\java\\diego\\componentes_guardados\\chasis.csv";
     private static final String ARCHIVO_MOTORES = "ensamblador_de_tanques\\src\\main\\java\\diego\\componentes_guardados\\motores.csv";
@@ -34,9 +38,8 @@ public class ControlComponentes {
     public void agregarComponentes() {
 
         // Agregar chasis desde CSV
-        try {
+        try (BufferedReader brChasis = new BufferedReader(new FileReader(ARCHIVO_CHASIS))) {
 
-            BufferedReader brChasis = new BufferedReader(new FileReader(ARCHIVO_CHASIS));
             brChasis.readLine();
             String linea;
 
@@ -58,24 +61,21 @@ public class ControlComponentes {
 
             }
 
-            brChasis.close();
-
         } catch (FileNotFoundException e) {
 
-            // LOGGER.error("ERROR: El fichero no ha sido encontrado" + e.getMessage());
+            log.error("El fichero chasis no ha sido encontrado" + e.getMessage());
             System.out.println("El fichero chasis no ha sido encontrado");
 
         } catch (IOException e) {
 
-            // LOGGER.error(ex.getMessage());
-            System.out.println("Error de lectura/escritura en el fichero motores");
+            log.error("Error de lectura/escritura en el fichero chasis" + e.getMessage());
+            System.out.println("No se ha podido leer el fichero chasis");
 
         }
 
         // Agregar motores desde CSV
-        try {
+        try (BufferedReader brMotor = new BufferedReader(new FileReader(ARCHIVO_MOTORES))) {
 
-            BufferedReader brMotor = new BufferedReader(new FileReader(ARCHIVO_MOTORES));
             brMotor.readLine();
             String linea;
 
@@ -97,24 +97,21 @@ public class ControlComponentes {
 
             }
 
-            brMotor.close();
-
         } catch (FileNotFoundException e) {
 
-            // LOGGER.error("ERROR: El fichero no ha sido encontrado" + e.getMessage());
-            System.out.println("El fichero de motores no ha sido encontrado");
+            log.error("El fichero motor no ha sido encontrado" + e.getMessage());
+            System.out.println("El fichero motores no ha sido encontrado");
 
         } catch (IOException e) {
 
-            // LOGGER.error(ex.getMessage());
-            System.out.println("Error de lectura/escritura en el fichero motores");
+            log.error("Error de lectura/escritura en el fichero motor" + e.getMessage());
+            System.out.println("No se ha podido leer el fichero motores");
 
         }
 
         // Agregar torretas desde CSV
-        try {
+        try (BufferedReader brTorres = new BufferedReader(new FileReader(ARCHIVO_TORRES))) {
 
-            BufferedReader brTorres = new BufferedReader(new FileReader(ARCHIVO_TORRES));
             brTorres.readLine();
             String linea;
 
@@ -137,24 +134,21 @@ public class ControlComponentes {
 
             }
 
-            brTorres.close();
-
         } catch (FileNotFoundException e) {
 
-            // LOGGER.error("ERROR: El fichero no ha sido encontrado" + e.getMessage());
-            System.out.println("El fichero de torretas no ha sido encontrado");
+            log.error("El fichero torretas no ha sido encontrado" + e.getMessage());
+            System.out.println("El fichero torretas no ha sido encontrado");
 
         } catch (IOException e) {
 
-            // LOGGER.error(ex.getMessage());
-            System.out.println("Error de lectura/escritura en el fichero torretas");
+            log.error("Error de lectura/escritura en el fichero torretas" + e.getMessage());
+            System.out.println("No se ha podido leer el fichero torretas");
 
         }
 
         // Agregar armas desde CSV
-        try {
+        try (BufferedReader brArmas = new BufferedReader(new FileReader(ARCHIVO_ARMAS))) {
 
-            BufferedReader brArmas = new BufferedReader(new FileReader(ARCHIVO_ARMAS));
             brArmas.readLine();
             String linea;
 
@@ -178,17 +172,15 @@ public class ControlComponentes {
 
             }
 
-            brArmas.close();
-
         } catch (FileNotFoundException e) {
 
-            // LOGGER.error("ERROR: El fichero no ha sido encontrado" + e.getMessage());
-            System.out.println("El fichero de torretas no ha sido encontrado");
+            log.error("El fichero armas no ha sido encontrado" + e.getMessage());
+            System.out.println("El fichero armas no ha sido encontrado");
 
         } catch (IOException e) {
 
-            // LOGGER.error(ex.getMessage());
-            System.out.println("Error de lectura/escritura en el fichero torretas");
+            log.error("Error de lectura/escritura en el fichero armas" + e.getMessage());
+            System.out.println("No se ha podido leer el fichero armas");
 
         }
     }
