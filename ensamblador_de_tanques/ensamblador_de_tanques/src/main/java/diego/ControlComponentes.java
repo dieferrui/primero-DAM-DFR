@@ -63,12 +63,12 @@ public class ControlComponentes {
 
         } catch (FileNotFoundException e) {
 
-            log.error("El fichero chasis no ha sido encontrado" + e.getMessage());
+            log.error("El fichero chasis no ha sido encontrado");
             System.out.println("El fichero chasis no ha sido encontrado");
 
         } catch (IOException e) {
 
-            log.error("Error de lectura/escritura en el fichero chasis" + e.getMessage());
+            log.error("Error de lectura/escritura en el fichero chasis");
             System.out.println("No se ha podido leer el fichero chasis");
 
         }
@@ -99,12 +99,12 @@ public class ControlComponentes {
 
         } catch (FileNotFoundException e) {
 
-            log.error("El fichero motor no ha sido encontrado" + e.getMessage());
+            log.error("El fichero motor no ha sido encontrado");
             System.out.println("El fichero motores no ha sido encontrado");
 
         } catch (IOException e) {
 
-            log.error("Error de lectura/escritura en el fichero motor" + e.getMessage());
+            log.error("Error de lectura/escritura en el fichero motor");
             System.out.println("No se ha podido leer el fichero motores");
 
         }
@@ -136,12 +136,12 @@ public class ControlComponentes {
 
         } catch (FileNotFoundException e) {
 
-            log.error("El fichero torretas no ha sido encontrado" + e.getMessage());
+            log.error("El fichero torretas no ha sido encontrado");
             System.out.println("El fichero torretas no ha sido encontrado");
 
         } catch (IOException e) {
 
-            log.error("Error de lectura/escritura en el fichero torretas" + e.getMessage());
+            log.error("Error de lectura/escritura en el fichero torretas");
             System.out.println("No se ha podido leer el fichero torretas");
 
         }
@@ -174,12 +174,12 @@ public class ControlComponentes {
 
         } catch (FileNotFoundException e) {
 
-            log.error("El fichero armas no ha sido encontrado" + e.getMessage());
+            log.error("El fichero armas no ha sido encontrado");
             System.out.println("El fichero armas no ha sido encontrado");
 
         } catch (IOException e) {
 
-            log.error("Error de lectura/escritura en el fichero armas" + e.getMessage());
+            log.error("Error de lectura/escritura en el fichero armas");
             System.out.println("No se ha podido leer el fichero armas");
 
         }

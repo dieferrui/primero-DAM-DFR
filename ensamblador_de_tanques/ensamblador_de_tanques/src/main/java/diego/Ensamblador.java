@@ -263,7 +263,7 @@ public class Ensamblador {
 
             if (armaSelect == null) {
 
-                System.out.println("El compartimento especificado no existe.");
+                System.out.println("El armamento especificado no existe.");
 
             }
 
@@ -276,7 +276,7 @@ public class Ensamblador {
     public static Torreta seleccionarTorreta(String pais) {
 
         System.out.println("Paso 3: Seleccione el compartimento de combate del vehículo");
-        System.out.println("Compartimentos disponibles para selección (elija arma por clave completa):");
+        System.out.println("Compartimentos disponibles para selección (elija compartimento por clave completa):");
         Torreta torreSelect = null;
         String elegir;
 
@@ -321,7 +321,7 @@ public class Ensamblador {
 
         do {
             
-            System.out.println("Paso 5: Seleccione el número de tripulantes (mínimo 2): ");
+            System.out.println("Paso 5: Seleccione el número de tripulantes (mínimo 2). Cada tripulante añade 100kg al peso del vehículo: ");
 
             try {
 
@@ -329,7 +329,7 @@ public class Ensamblador {
 
             } catch (NumberFormatException e) {
                     
-                System.out.println("Por favor, introduzca un número válido de tripulantes (cada tripulante añade 100kg al peso del vehículo).");
+                System.out.println("Por favor, introduzca un número válido de tripulantes.");
                 numTripulantes = 0;
     
             }

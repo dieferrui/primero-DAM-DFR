@@ -83,12 +83,12 @@ public class Simulador {
             } catch (ArrayIndexOutOfBoundsException e) {
 
                 System.out.println("Por favor, introduce un número de opción válido.");
-                log.error("Error en la selección de la distancia del combate.");
+                log.info("Error en la selección de la distancia del combate.");
 
             } catch (InputMismatchException e) {
 
                 System.out.println("Por favor, introduce un número.");
-                log.error("Error en la selección de la distancia del combate.");
+                log.info("Error en la selección de la distancia del combate.");
 
             }
 
@@ -138,7 +138,7 @@ public class Simulador {
         
         do {
 
-            System.out.println("\nSelecciona en qué momento de han detectado los vehículos entre sí:\n" + 
+            System.out.println("\nSelecciona en qué momento se han detectado los vehículos entre sí:\n" + 
                                 "1. Los vehículos se detectan antes de que empiece el enfrentamiento\n" +
                                 "2. Los vehículos no se detectan hasta que el enfrentamiento es inevitable\n" + 
                                 "3. El primer vehículo detecta al otro antes de que empiece el enfrentamiento");

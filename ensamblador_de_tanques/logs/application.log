@@ -1,3 +1,5 @@
 2024-05-21 23:15:01,651 [main] INFO  diego.Simulador - El simulador no se ha podido iniciar porque no hay vehículos disponibles.
 2024-05-21 23:17:32,383 [main] INFO  diego.Simulador - El simulador no se ha podido iniciar porque no hay vehículos disponibles.
 2024-05-22 09:58:22,841 [main] ERROR diego.TanquesManager - Error al guardar un vehículo
+2024-05-23 10:51:13,072 [main] ERROR diego.TanquesManager - Error de entrada/salida al cargar un vehículo
+2024-05-23 10:51:48,679 [main] ERROR diego.TanquesManager - Error de entrada/salida al cargar un vehículo
