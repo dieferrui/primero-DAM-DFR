@@ -68,6 +68,7 @@ body {
 .carousel {
     position: relative;
     color: #fff;
+    background-clip: border-box;
 }
 
 .carousel::before {
@@ -88,6 +89,10 @@ body {
 .carousel-item {
     text-align: center;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    width: 70vw;
+    height: 80vh;
+    border: 5px solid #556b2f;
+    box-sizing: border-box;
     /* Agregar animación */
     animation: slideIn 1s ease-in-out;
 }
