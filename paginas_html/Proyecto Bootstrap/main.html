@@ -1,90 +1,148 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página Sencilla</title>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Página Sencilla</title>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
 
-<script src="script.js"></script>
+        <script src="script.js"></script>
 
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg sticky-top">
-    <a class="navbar-brand" href="#">Mi Página</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="#inicio">Inicio</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#sobre">Sobre Nosotros</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#contacto">Contacto</a>
-            </li>
-        </ul>
-    </div>
-</nav>
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg sticky-top">
+            <a class="navbar-brand" href="#">Mi Página</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#inicio">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#sobre">Sobre Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#miCarrusel">Carrusel</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contacto">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
 
-<!-- Jumbotron -->
-<section id="inicio" class="jumbotron text-center">
-    <div class="container">
-        <h1 class="jumbotron-heading">Bienvenido a Mi Página</h1>
-        <p class="lead text-muted">Esta es una página web sencilla de una sola página.</p>
-        <p>
-            <a href="#sobre" class="btn btn-primary my-2">Aprende más</a>
-            <a href="#contacto" class="btn btn-secondary my-2">Contáctanos</a>
-        </p>
-    </div>
-</section>
+        <!-- Jumbotron -->
+        <section id="inicio" class="jumbotron text-center">
+            <div class="container">
+                <h1 class="jumbotron-heading">Bienvenido a Mi Página</h1>
+                <p class="lead text-muted">Esta es una página web sencilla de una sola página.</p>
+                <p>
+                    <a href="#sobre" class="btn btn-primary my-2">Aprende más</a>
+                    <a href="#contacto" class="btn btn-secondary my-2">Contáctanos</a>
+                </p>
+            </div>
+        </section>
 
-    <!-- Sobre nosotros -->
-    <section id="sobre">
-        <div class="container">
-            <h2>Sobre Nosotros</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eget tincidunt arcu. Nulla facilisi. Duis lacinia turpis vitae orci lobortis, vel bibendum libero convallis.</p>
-            <img src="https://via.placeholder.com/500" alt="Sobre nosotros" class="img-fluid">
+        <!-- Sobre nosotros -->
+        <section id="sobre">
+            <div class="container">
+                <h2>Sobre Nosotros</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eget tincidunt arcu. Nulla facilisi. Duis lacinia turpis vitae orci lobortis, vel bibendum libero convallis.</p>
+                <img src="https://via.placeholder.com/500" alt="Sobre nosotros" class="img-fluid">
+            </div>
+        </section>
+
+        <!-- Carrusel -->
+        <div id="contenedorCarrusel" class="containerCarr">
+            <section id="carrusel">
+                <div id="miCarrusel" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="card">
+                                <img src="imagenes\M26 Carousel.jpg" class="card-img-top" alt="Imagen 1">
+                                <div class="card-body">
+                                    <h5 class="card-title">Título 1</h5>
+                                    <p class="card-text">Subtítulo 1</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="card">
+                                <img src="imagenes\Panther Carousel.jpg" class="card-img-top" alt="Imagen 2">
+                                <div class="card-body">
+                                    <h5 class="card-title">Título 2</h5>
+                                    <p class="card-text">Subtítulo 2</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="card">
+                                <img src="imagenes\T-34 Carousel.jpg" class="card-img-top" alt="Imagen 3">
+                                <div class="card-body">
+                                    <h5 class="card-title">Título 3</h5>
+                                    <p class="card-text">Subtítulo 3</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#miCarrusel" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Anterior</span>
+                    </a>
+                    <a class="carousel-control-next" href="#miCarrusel" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Siguiente</span>
+                    </a>
+                </div>
+            </section>
         </div>
-    </section>
 
-<!-- Contacto -->
-<section id="contacto">
-    <div class="container">
-        <h2>Contacto</h2>
-        <form>
-            <div class="form-group">
-                <label for="name">Nombre</label>
-                <input type="text" class="form-control" id="name" placeholder="Tu nombre">
+        <!-- Contacto -->
+        <section id="contacto">
+            <div class="container">
+                <h2>Contacto</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="name">Nombre</label>
+                        <input type="text" class="form-control" id="name" placeholder="Tu nombre">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" placeholder="Tu email">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Mensaje</label>
+                        <textarea class="form-control" id="message" rows="4" placeholder="Tu mensaje"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="contactReason">Razón de contacto</label>
+                        <select class="form-control" id="contactReason">
+                            <option selected>Elige...</option>
+                            <option value="1">Soporte técnico</option>
+                            <option value="2">Ventas</option>
+                            <option value="3">Facturación</option>
+                            <!-- Añade más opciones si es necesario -->
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                </form>
             </div>
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" class="form-control" id="email" placeholder="Tu email">
-            </div>
-            <div class="form-group">
-                <label for="message">Mensaje</label>
-                <textarea class="form-control" id="message" rows="4" placeholder="Tu mensaje"></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary">Enviar</button>
-        </form>
-    </div>
-</section>
+        </section>
 
-<!-- Pie de página -->
-<footer class="text-muted py-4 bg-light">
-    <div class="container text-center">
-        <p class="mb-1">&copy; 2024 Mi Página. Todos los derechos reservados.</p>
-    </div>
-</footer>
+        <!-- Pie de página -->
+        <footer class="text-muted py-4 bg-light">
+            <div class="container text-center">
+                <p class="mb-1">&copy; 2024 Mi Página. Todos los derechos reservados.</p>
+            </div>
+        </footer>
 
-<!-- Dependencias -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
+        <!-- Dependencias -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </body>
 </html>
