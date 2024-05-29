@@ -259,3 +259,63 @@ where 	substr(lower(llegada), 2, 1) in ('o', 'ó') or
 	length(translate(lower(salida), 'aábcdeéfghiíjklmnoópqrstuúvwxyz ', 'aa')) > 2;
 	
 --46
+select 	nompuerto
+from 	puerto
+where 	categoria in ('1', '2', '3');
+
+--47
+select 	*
+from 	ciclista
+where 	edad is null or
+	edad = 0;
+	
+--48
+select 	C.nombre, C.edad
+from 	ciclista C, equipo E
+where 	C.nomeq = E.nomeq and
+	E.nomeq like '%100%%';
+	
+--49
+select 	C.nombre
+from  	ciclista C, equipo E
+where 	C.nomeq = E.nomeq and
+	E.director = 'Álvaro Pino';
+	
+--50
+select 	C.nombre, E.netapa
+from 	ciclista C, etapa E
+where 	C.dorsal = E.dorsal and
+	E.km > 150;
+	
+--51
+select 	nompuerto
+from 	puerto
+where 	altura > (select   avg(altura)
+		  from     puerto
+		  where    categoria = '2');
+		  
+--52
+select 	E.netapa
+from 	etapa E, ciclista C
+where 	E.dorsal = C.dorsal and
+	C.edad > 30;
+	
+--53
+select 	E.netapa
+from 	etapa E, ciclista C, equipo EQ
+where 	E.dorsal = C.dorsal and
+	C.nomeq = EQ.nomeq and
+	lower(EQ.director) like 'm%';
+	
+--54
+select 	distinct C.nombre
+from 	ciclista C, llevar L, maillot M
+where 	C.dorsal = L.dorsal and
+	L.codigo = M.codigo and
+	M.premio > 5000000;
+	
+--55
+select 	distinct nombre
+from 	ciclista
+where 	dorsal not in (select   dorsal
+                       from     etapa);
