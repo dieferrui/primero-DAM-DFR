@@ -3,7 +3,9 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Página Sencilla</title>
+        <title>ReTankliation tank dealership</title>
+        <link rel="icon" href="imagenes/favicon.png">
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" href="styles.css">
     </head>
@@ -13,23 +15,23 @@
 
         <!-- Navbar -->
         <nav class="navbar navbar-expand-lg sticky-top">
-            <a class="navbar-brand" href="#">Mi Página</a>
+            <a class="navbar-brand" href="#">ReTankliation</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#inicio">Inicio</a>
+                        <a class="nav-link" href="#inicio">Qué es este sitio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#sobre">Sobre Nosotros</a>
+                        <a class="nav-link" href="#sobre">Sobre ReTankliation</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#miCarrusel">Carrusel</a>
+                        <a class="nav-link" href="#miCarrusel">Nuestros vehículos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#contacto">Contacto</a>
+                        <a class="nav-link" href="#contacto">Reservar un tanque</a>
                     </li>
                 </ul>
             </div>
@@ -38,57 +40,83 @@
         <!-- Jumbotron -->
         <section id="inicio" class="jumbotron text-center">
             <div class="container">
-                <h1 class="jumbotron-heading">Bienvenido a Mi Página</h1>
-                <p class="lead text-muted">Esta es una página web sencilla de una sola página.</p>
+                <h1 class="jumbotron-heading">La venganza se sirve con hierro frio</h1>
+                <p class="lead text-muted">Llevamos desde 1957 proveyendo los mejores vehículos blindados históricos
+                                            para que lleves a cabo tus ajustes de cuentas por todo lo alto. Desde nuestra amplia
+                                            experiencia, comprar un blindado de los años 60 no tiene ni la mitad de papeleo ni escrutinio
+                                            que comprar una Glock. Aprovecha la oportunidad, haz temblar a aquellos que osan desafiarte
+                                            con un método patentado desde la SGM: aplastar su casa con un tanque.</p>
                 <p>
-                    <a href="#sobre" class="btn btn-primary my-2">Aprende más</a>
-                    <a href="#contacto" class="btn btn-secondary my-2">Contáctanos</a>
+                    <a href="#miCarrusel" class="btn btn-primary my-2">Muéstrame los vehículos</a>
+                    <a href="#contacto" class="btn btn-secondary my-2">Quiero uno!</a>
                 </p>
             </div>
         </section>
 
         <!-- Sobre nosotros -->
         <section id="sobre">
-            <div class="container">
-                <h2>Sobre Nosotros</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eget tincidunt arcu. Nulla facilisi. Duis lacinia turpis vitae orci lobortis, vel bibendum libero convallis.</p>
-                <img src="https://via.placeholder.com/500" alt="Sobre nosotros" class="img-fluid">
+            <div class="container about-container">
+                <div class="text-container">
+                    <h2>Sobre ReTankliation</h2>
+                    <p>En 1957, el dueño de una pequeña
+                        colección de tanques de la SGM, el Sr. Diavolo di Ravia, es
+                        agredido por un grupo de jóvenes que le roba la cartera. Tras
+                        consultar la legislación vigente, se da cuenta de que utilizar
+                        sus vehículos blindados para aplastar la casa de los jóvenes
+                        no constituye un delito penal. Así nace ReTankliation, la
+                        primera empresa de venta de vehículos blindados históricos
+                        para ajustes de cuentas.<br>67 años después, pasear vehículos
+                        de 50 toneladas por encima de las paredes de tus vecinos aún
+                        no constituye un delito grave en ninguno de los estados de
+                        nuestro gran país.<br><br>ReTankliation: la venganza se sirve con
+                        hierro frío.</p>
+                </div>
+                <img src="imagenes\tank-home.jpg" alt="Sobre nosotros" class="img-fluid">
             </div>
         </section>
 
         <!-- Carrusel -->
         <div id="contenedorCarrusel" class="containerCarr">
+            <h2 class="carousel-title">Nuestros vehiculos</h2>
             <section id="carrusel">
-                <div id="miCarrusel" class="carousel slide" data-ride="carousel">
+                <div id="miCarrusel" class="carousel slide" data-ride="carousel" data-interval="false">
+
+                    <ol class="carousel-indicators">
+                        <li data-target="#miCarrusel" data-slide-to="0" class="active"></li>
+                        <li data-target="#miCarrusel" data-slide-to="1"></li>
+                        <li data-target="#miCarrusel" data-slide-to="2"></li>
+                    </ol>
+
                     <div class="carousel-inner">
                         <div class="carousel-item active">
                             <div class="card">
-                                <img src="imagenes\M26 Carousel.jpg" class="card-img-top" alt="Imagen 1">
+                                <img src="imagenes\M26 Carousel.jpg" class="card-img-top" alt="M26">
                                 <div class="card-body">
-                                    <h5 class="card-title">Título 1</h5>
-                                    <p class="card-text">Subtítulo 1</p>
+                                    <h5 class="card-title">M26 Pershing</h5>
+                                    <p class="card-text">Origen americano: Pisotea con la fuerza de la libertad de tu lado</p>
                                 </div>
                             </div>
                         </div>
                         <div class="carousel-item">
                             <div class="card">
-                                <img src="imagenes\Panther Carousel.jpg" class="card-img-top" alt="Imagen 2">
+                                <img src="imagenes\Panther Carousel.jpg" class="card-img-top" alt="Panther">
                                 <div class="card-body">
-                                    <h5 class="card-title">Título 2</h5>
-                                    <p class="card-text">Subtítulo 2</p>
+                                    <h5 class="card-title">Panzer V Panther Ausf.F</h5>
+                                    <p class="card-text">La elegancia y eficiencia alemana al servicio del apisonamiento</p>
                                 </div>
                             </div>
                         </div>
                         <div class="carousel-item">
                             <div class="card">
-                                <img src="imagenes\T-34 Carousel.jpg" class="card-img-top" alt="Imagen 3">
+                                <img src="imagenes\T-34 Carousel.jpg" class="card-img-top" alt="T-34">
                                 <div class="card-body">
-                                    <h5 class="card-title">Título 3</h5>
-                                    <p class="card-text">Subtítulo 3</p>
+                                    <h5 class="card-title">T-34-76 (1942)</h5>
+                                    <p class="card-text">Para los amantes de la sencillez y la crudeza soviéticas</p>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    
                     <a class="carousel-control-prev" href="#miCarrusel" role="button" data-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                         <span class="sr-only">Anterior</span>
@@ -104,7 +132,7 @@
         <!-- Contacto -->
         <section id="contacto">
             <div class="container">
-                <h2>Contacto</h2>
+                <h2>Reservar un tanque</h2>
                 <form>
                     <div class="form-group">
                         <label for="name">Nombre</label>
@@ -115,16 +143,16 @@
                         <input type="email" class="form-control" id="email" placeholder="Tu email">
                     </div>
                     <div class="form-group">
-                        <label for="message">Mensaje</label>
-                        <textarea class="form-control" id="message" rows="4" placeholder="Tu mensaje"></textarea>
+                        <label for="message">Motivo de venganza</label>
+                        <textarea class="form-control" id="message" rows="4" placeholder="Tu motivo"></textarea>
                     </div>
                     <div class="form-group">
-                        <label for="contactReason">Razón de contacto</label>
+                        <label for="contactReason">Modelo solicitado</label>
                         <select class="form-control" id="contactReason">
                             <option selected>Elige...</option>
-                            <option value="1">Soporte técnico</option>
-                            <option value="2">Ventas</option>
-                            <option value="3">Facturación</option>
+                            <option value="1">M26 Pershing</option>
+                            <option value="2">Panzer V Panther Ausf.F</option>
+                            <option value="3">T-34-76 (1942)</option>
                             <!-- Añade más opciones si es necesario -->
                         </select>
                     </div>
@@ -136,7 +164,7 @@
         <!-- Pie de página -->
         <footer class="text-muted py-4 bg-light">
             <div class="container text-center">
-                <p class="mb-1">&copy; 2024 Mi Página. Todos los derechos reservados.</p>
+                <p class="mb-1">&copy; 2024 ReTankliation. Todos los derechos reservados.</p>
             </div>
         </footer>
 
