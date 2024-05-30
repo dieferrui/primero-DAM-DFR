@@ -9,6 +9,7 @@ public class Chassis extends Componente implements Comparable<Chassis> {
 
     private static final String MILL = "mm";
 
+    private String ID;
     private String designacion;
     private ArrayList<Paises> usuarios;
     private double peso;
@@ -22,10 +23,10 @@ public class Chassis extends Componente implements Comparable<Chassis> {
     private int[] blindaje = {blindajeFrontal, blindajeLateral, blindajeTrasero};
 
     // El constructor sólo se usará por el administrador de la app para añadir componentes
-    public Chassis(String designacion, ArrayList<Paises> usuarios, double peso, double carga, 
+    public Chassis(String ID, String designacion, ArrayList<Paises> usuarios, double peso, double carga, 
                     int[] blindaje) {
 
-        super(designacion, usuarios, peso);
+        super(ID, designacion, usuarios, peso);
 
         this.carga = carga;
         this.cargaActual = 0;

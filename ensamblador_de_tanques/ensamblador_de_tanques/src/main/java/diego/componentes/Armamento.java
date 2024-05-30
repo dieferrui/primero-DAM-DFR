@@ -10,6 +10,7 @@ public class Armamento extends Componente implements Comparable<Armamento> {
 
     private static final String MILL = "mm";
 
+    private String ID;
     private String designacion;
     private ArrayList<Paises> usuarios;
     private double peso;
@@ -26,10 +27,10 @@ public class Armamento extends Componente implements Comparable<Armamento> {
     private Municion municionPrimaria;
 
     // El constructor sólo se usará por el administrador de la app para añadir componentes
-    public Armamento(String designacion, ArrayList<Paises> usuarios, double peso, ClaseArmamento clase, 
+    public Armamento(String ID, String designacion, ArrayList<Paises> usuarios, double peso, ClaseArmamento clase, 
                         int[] penetracion, int calibre, Municion municionPrimaria) {
 
-        super(designacion, usuarios, peso);
+        super(ID, designacion, usuarios, peso);
 
         this.clase = clase;
 

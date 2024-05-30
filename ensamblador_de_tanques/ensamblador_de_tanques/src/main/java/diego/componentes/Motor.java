@@ -6,6 +6,7 @@ import diego.enums_general.Paises;
 
 public class Motor extends Componente implements Comparable<Motor>{
 
+    private String ID;
     private String designacion;
     private ArrayList<Paises> usuarios;
     private double peso;
@@ -13,10 +14,10 @@ public class Motor extends Componente implements Comparable<Motor>{
     private double velocidadMax;
     private int potencia;
 
-    public Motor(String designacion, ArrayList<Paises> usuarios, double peso, 
+    public Motor(String ID, String designacion, ArrayList<Paises> usuarios, double peso, 
                     double velocidadMax, int potencia) {
 
-        super(designacion, usuarios, peso);
+        super(ID, designacion, usuarios, peso);
 
         this.velocidadMax = velocidadMax;
         this.potencia = potencia;

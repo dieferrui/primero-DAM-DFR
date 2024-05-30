@@ -1,5 +1,9 @@
 package diego;
 
+import java.util.List;
+import java.util.Arrays;
+import java.util.Set;
+import java.util.TreeSet;
 import java.util.Scanner;
 import java.util.Random;
 import java.util.ArrayList;
@@ -23,7 +27,7 @@ public class Ensamblador {
 
     public static void ensamblarTanque() {
 
-        boolean finalizado = Boolean.FALSE;
+        boolean finalizado;
         String paisSelect;
         Tanque tanque = new Tanque();
         
@@ -159,21 +163,28 @@ public class Ensamblador {
         Chassis chasisSelect = null;
         String elegir;
 
-        
+        Set<Chassis> setChasis = new TreeSet<>();
 
         for (Map.Entry<String, Chassis> chasis : CONTROL.mapaChasis.entrySet()) {
 
             for (Paises paisComponente : chasis.getValue().getUsuarios()) {
             
                 if (paisComponente.getNombre().equals(pais)) {
-                    
-                    System.out.println(chasis.getKey() + ": " + chasis.getValue().getDesignacion() + 
-                                ", Carga máxima: " + chasis.getValue().getCargaMaxima() + "kg , Blindaje (mm): " + 
-                                chasis.getValue().getBlindajeFrontal() + "/" + chasis.getValue().getBlindajeLateral() + 
-                                "/" + chasis.getValue().getBlindajeTrasero());
+
+                    setChasis.add(chasis.getValue());
+
                 }
 
             }
+
+        }
+
+        for (Chassis chasis : setChasis) {
+
+            System.out.println(chasis.getID() + ": " + chasis.getDesignacion() + 
+                                ", Carga máxima: " + chasis.getCargaMaxima() + "kg , Blindaje (mm): " + 
+                                chasis.getBlindajeFrontal() + "/" + chasis.getBlindajeLateral() + 
+                                "/" + chasis.getBlindajeTrasero());
 
         }
 
@@ -202,17 +213,26 @@ public class Ensamblador {
         Motor motorSelect = null;
         String elegir;
 
+        Set<Motor> setMotor = new TreeSet<>();
+
         for (Map.Entry<String, Motor> motor : CONTROL.mapaMotores.entrySet()) {
 
             for (Paises paisComponente : motor.getValue().getUsuarios()) {
             
                 if (paisComponente.getNombre().equals(pais)) {
+
+                    setMotor.add(motor.getValue());
                     
-                    System.out.println(motor.getKey() + ": " + motor.getValue().getDesignacion() + 
-                                ", Potencia: " + motor.getValue().getPotencia() + "CV, Peso: " + motor.getValue().getPeso() + "kg");
                 }
 
             }
+
+        }
+
+        for (Motor motor : setMotor) {
+
+            System.out.println(motor.getID() + ": " + motor.getDesignacion() + 
+                                ", Potencia: " + motor.getPotencia() + "CV, Peso: " + motor.getPeso() + "kg");
 
         }
 
@@ -241,19 +261,28 @@ public class Ensamblador {
         Armamento armaSelect = null;
         String elegir;
 
+        Set<Armamento> setArma = new TreeSet<>();
+
         for (Map.Entry<String, Armamento> arma : CONTROL.mapaArmas.entrySet()) {
 
             for (Paises paisComponente : arma.getValue().getUsuarios()) {
             
                 if (paisComponente.getNombre().equals(pais)) {
+
+                    setArma.add(arma.getValue());
                     
-                    System.out.println(arma.getKey() + ": " + arma.getValue().getDesignacion() + 
-                                ", Penetración (mm): " + arma.getValue().getPenetracionCorta() + "/" + arma.getValue().getPenetracionMedia() + 
-                                "/" + arma.getValue().getPenetracionLarga() + ", Calibre: " + arma.getValue().getCalibre() + 
-                                "mm , Peso: " + arma.getValue().getPeso() + "kg");
                 }
 
             }
+
+        }
+
+        for (Armamento arma : setArma) {
+
+            System.out.println(arma.getID() + ": " + arma.getDesignacion() + 
+                                ", Penetración (mm): " + arma.getPenetracionCorta() + "/" + arma.getPenetracionMedia() + 
+                                "/" + arma.getPenetracionLarga() + ", Calibre: " + arma.getCalibre() + 
+                                "mm , Peso: " + arma.getPeso() + "kg");
 
         }
 
@@ -282,18 +311,27 @@ public class Ensamblador {
         Torreta torreSelect = null;
         String elegir;
 
+        Set<Torreta> setTorre = new TreeSet<>();
+
         for (Map.Entry<String, Torreta> torre : CONTROL.mapaTorretas.entrySet()) {
 
             for (Paises paisComponente : torre.getValue().getUsuarios()) {
             
                 if (paisComponente.getNombre().equals(pais)) {
+
+                    setTorre.add(torre.getValue());
                     
-                    System.out.println(torre.getKey() + ": " + torre.getValue().getDesignacion() + 
-                                ", Blindaje (mm): " + torre.getValue().getBlindajeFrontal() + "/" + torre.getValue().getBlindajeLateral() + 
-                                "/" + torre.getValue().getBlindajeTrasero() + ", Peso: " + torre.getValue().getPeso() + "kg");
                 }
 
             }
+
+        }
+
+        for (Torreta torre : setTorre) {
+
+            System.out.println(torre.getID() + ": " + torre.getDesignacion() + 
+                                ", Blindaje (mm): " + torre.getBlindajeFrontal() + "/" + torre.getBlindajeLateral() + 
+                                "/" + torre.getBlindajeTrasero() + ", Peso: " + torre.getPeso() + "kg");
 
         }
 
@@ -362,6 +400,8 @@ public class Ensamblador {
     public static Experiencia elegirExperiencia() {
 
         String elegir;
+        String[] resArray = {"1", "2", "3"};
+        List<String> resValida = new ArrayList<>(Arrays.asList(resArray));
 
         do {
 
@@ -369,7 +409,7 @@ public class Ensamblador {
             System.out.println("1. Novatos\n2. Experimentados\n3. Veteranos");
             elegir = SCB.nextLine();
 
-        } while (!elegir.equals("1") && !elegir.equals("2") && !elegir.equals("3"));
+        } while (!resValida.contains(elegir));
     
         switch (elegir) {
 

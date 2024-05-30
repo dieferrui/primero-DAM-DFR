@@ -101,5 +101,4 @@ public class Main {
      * Pala de bulldozer (el blindaje de la torreta consigue más peso en el cálculo)
      */
 // TODO 3: Implementar sistema para guardar, visualizar y eliminar los resultados de simulación (en .txt)
-// TODO 4: Implementar comparable para los mapas de componentes
 // TODO 5: Implementar comparators para filtrar la lista de vehículos en TanquesManager

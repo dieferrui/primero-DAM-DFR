@@ -2,7 +2,8 @@ package diego;
 
 import org.apache.log4j.Logger;
 
-import java.util.TreeMap;
+import java.util.Map;
+import java.util.HashMap;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -22,10 +23,10 @@ public class ControlComponentes {
     private static final String ARCHIVO_TORRES = "ensamblador_de_tanques\\src\\main\\java\\diego\\componentes_guardados\\torres.csv";
     private static final String ARCHIVO_ARMAS = "ensamblador_de_tanques\\src\\main\\java\\diego\\componentes_guardados\\armas.csv";
 
-    protected TreeMap<String, Chassis> mapaChasis = new TreeMap<>();
-    protected TreeMap<String, Armamento> mapaArmas = new TreeMap<>();
-    protected TreeMap<String, Motor> mapaMotores = new TreeMap<>();
-    protected TreeMap<String, Torreta> mapaTorretas = new TreeMap<>();
+    protected Map<String, Chassis> mapaChasis = new HashMap<>();
+    protected Map<String, Armamento> mapaArmas = new HashMap<>();
+    protected Map<String, Motor> mapaMotores = new HashMap<>();
+    protected Map<String, Torreta> mapaTorretas = new HashMap<>();
 
     // El constructor crea una instancia con los componentes especificados
     public ControlComponentes() {
@@ -48,6 +49,7 @@ public class ControlComponentes {
 
                 Chassis chasis = new Chassis(
 
+                    datosChasis[0], // ID
                     datosChasis[1], // Designación
                     generarPaises(datosChasis[2]), // Usuarios
                     Double.parseDouble(datosChasis[3]), // Peso
@@ -84,6 +86,7 @@ public class ControlComponentes {
 
                 Motor motor = new Motor(
 
+                    datosMotor[0], // ID
                     datosMotor[1], // Designación
                     generarPaises(datosMotor[2]), // Usuarios
                     Double.parseDouble(datosMotor[3]), // Peso
@@ -120,6 +123,7 @@ public class ControlComponentes {
 
                 Torreta torre = new Torreta(
 
+                    datosTorre[0], // ID
                     datosTorre[1], // Designación
                     generarPaises(datosTorre[2]), // Usuarios
                     Double.parseDouble(datosTorre[3]), // Peso
@@ -157,6 +161,7 @@ public class ControlComponentes {
 
                 Armamento arma = new Armamento(
 
+                    datosArma[0], // ID
                     datosArma[1], // Designación
                     generarPaises(datosArma[2]), // Usuarios
                     Double.parseDouble(datosArma[3]), // Peso
