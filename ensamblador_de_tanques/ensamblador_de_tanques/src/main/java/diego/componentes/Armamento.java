@@ -6,7 +6,7 @@ import diego.enums_general.Paises;
 
 import java.util.ArrayList;
 
-public class Armamento extends Componente {
+public class Armamento extends Componente implements Comparable<Armamento> {
 
     private static final String MILL = "mm";
 
@@ -65,6 +65,20 @@ public class Armamento extends Componente {
 
     public Municion getMunicionPrimaria() {
         return municionPrimaria;
+    }
+
+    @Override
+    public int compareTo(Armamento otroArma) {
+
+        int returnValue = Integer.compare(this.getCalibre(), otroArma.getCalibre());
+
+        if (returnValue == 0) {
+
+            returnValue = Integer.compare(this.getPenetracionCorta(), otroArma.getPenetracionCorta());
+
+        }
+
+        return returnValue;
     }
 
     @Override

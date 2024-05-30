@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import diego.enums_general.Paises;
 
-public class Motor extends Componente {
+public class Motor extends Componente implements Comparable<Motor>{
 
     private String designacion;
     private ArrayList<Paises> usuarios;
@@ -29,6 +29,22 @@ public class Motor extends Componente {
 
     public int getPotencia() {
         return potencia;
+    }
+
+    @Override
+    public int compareTo(Motor otroMotor) {
+        
+        int returnValue = 0;
+
+        returnValue = Integer.compare(this.getPotencia(), otroMotor.getPotencia());
+
+        if (returnValue == 0) {
+
+            returnValue = Double.compare(this.getVelocidadMax(), otroMotor.getVelocidadMax());
+
+        }
+
+        return returnValue;
     }
 
     @Override

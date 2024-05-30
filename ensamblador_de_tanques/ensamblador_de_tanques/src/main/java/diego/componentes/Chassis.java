@@ -1,13 +1,11 @@
 package diego.componentes;
 
 import java.util.ArrayList;
-
-import diego.*;
-import diego.enums_general.Paises;
-
 import java.text.DecimalFormat;
 
-public class Chassis extends Componente {
+import diego.enums_general.Paises;
+
+public class Chassis extends Componente implements Comparable<Chassis> {
 
     private static final String MILL = "mm";
 
@@ -64,6 +62,22 @@ public class Chassis extends Componente {
     // Setters (sólo se incluyen las características que se pueden modificar)
     public void setCargaActual(double cargaActual) {
         this.cargaActual = cargaActual;
+    }
+
+    @Override
+    public int compareTo(Chassis otroChasis) {
+        
+        int returnValue = 0;
+
+        returnValue = Double.compare(this.getCargaMaxima(), otroChasis.getCargaMaxima());
+
+        if (returnValue == 0) {
+
+            returnValue = Integer.compare(this.getBlindajeFrontal(), otroChasis.getBlindajeFrontal());
+
+        }
+
+        return returnValue;
     }
 
     @Override

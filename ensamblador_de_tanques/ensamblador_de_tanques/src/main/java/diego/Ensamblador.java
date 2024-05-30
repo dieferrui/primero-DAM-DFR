@@ -159,6 +159,8 @@ public class Ensamblador {
         Chassis chasisSelect = null;
         String elegir;
 
+        
+
         for (Map.Entry<String, Chassis> chasis : CONTROL.mapaChasis.entrySet()) {
 
             for (Paises paisComponente : chasis.getValue().getUsuarios()) {

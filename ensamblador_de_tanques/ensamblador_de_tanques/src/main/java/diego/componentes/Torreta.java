@@ -6,7 +6,7 @@ import diego.enums_general.Paises;
 
 import java.util.ArrayList;
 
-public class Torreta extends Componente {
+public class Torreta extends Componente implements Comparable<Torreta> {
 
     private static final String MILL = "mm";
     private static final String ANG = "º";
@@ -78,6 +78,22 @@ public class Torreta extends Componente {
 
     public int getBlindajeTrasero() {
         return blindajeTrasero;
+    }
+
+    @Override
+    public int compareTo(Torreta otraTorre) {
+        
+        int returnValue = 0;
+
+        returnValue = Double.compare(this.getAnguloTiro(), otraTorre.getAnguloTiro());
+
+        if (returnValue == 0) {
+
+            returnValue = Double.compare(this.getPeso(), otraTorre.getPeso());
+
+        }
+
+        return returnValue;
     }
 
     @Override
