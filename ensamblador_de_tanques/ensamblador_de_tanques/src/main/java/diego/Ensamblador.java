@@ -61,7 +61,7 @@ public class Ensamblador {
 
         do {
 
-            paisSelect = SCB.nextLine();
+            paisSelect = (SCB.nextLine()).toUpperCase();
             contiene = Paises.contiene(paisSelect);
 
             if (!contiene) {

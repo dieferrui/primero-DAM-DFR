@@ -1,0 +1,16 @@
+---------- Simulador iniciado ----------
+Vehículo 1: Panzer IV J
+Vehículo 2: Sherman Firefly
+Distancia de enfrentamiento: Cercana, 100m
+Momento de la detección: El primer vehículo detecta al otro antes de que empiece el enfrentamiento.
+Terreno del enfrentamiento: Boscoso
+Situación de los vehículos: El primer vehículo está defendiendo una posición.
+En la simulación de tiro, el primer vehículo obtiene 1125.0 puntos de potencia de fuego,
+mientras que el segundo vehículo obtiene 2445.0 puntos de potencia de fuego.
+En la simulación de movilidad, el primer vehículo obtiene 283 puntos de movilidad,
+mientras que el segundo vehículo obtiene 374 puntos de movilidad.
+El segundo vehículo es generalmente más móvil que el primero.
+La puntuación total del primer vehículo es de 941,
+mientras que la del segundo vehículo es de 1705.
+La probabilidad de que el/la Panzer IV J gane el enfrentamiento contra el/la Sherman Firefly es del 35,55%.
+---------- Simulador finalizado ----------

@@ -6,14 +6,6 @@ import java.text.DecimalFormat;
 
 public class SimuladorEnfrentamientos {
 
-    private double puntuacionTotal1;
-    private double puntuacionTotal2;
-    private double puntuacionReal1;
-    private double puntuacionReal2;
-    private double probabilidad1;
-    private double[] potenciasFuego;
-    private double[] puntosMovilidad;
-
     public SimuladorEnfrentamientos() {
         // Constructor vacío, todos los datos se pasan por programa
     }
@@ -31,61 +23,66 @@ public class SimuladorEnfrentamientos {
 
     public String enfrentarVehiculos(Simulador simulador) {
 
-        System.out.println(simulador.devolverDatos());
+        StringBuilder sbToFile = new StringBuilder();
 
-        potenciasFuego = calcularPotenciaDeFuegoRelativa(simulador);
+        sbToFile.append(simulador.devolverDatos());
 
-        System.out.println("En la simulación de tiro, el primer vehículo obtiene " + potenciasFuego[0] + " puntos de potencia de fuego,\n" +
-                            "mientras que el segundo vehículo obtiene " + potenciasFuego[1] + " puntos de potencia de fuego.");
+        double[] potenciasFuego = calcularPotenciaDeFuegoRelativa(simulador);
+
+        String simPot = "En la simulación de tiro, el primer vehículo obtiene " + potenciasFuego[0] + " puntos de potencia de fuego,\n" +
+                            "mientras que el segundo vehículo obtiene " + potenciasFuego[1] + " puntos de potencia de fuego.";
+        sbToFile.append(simPot);
 
         if (potenciasFuego[0] == 0) {
 
-            System.out.println("El primer vehículo no puede penetrar el blindaje del segundo vehículo con efectividad.");
+            sbToFile.append("El primer vehículo no puede penetrar el blindaje del segundo vehículo con efectividad.");
 
         } else if (potenciasFuego[1] == 0) {
 
-            System.out.println("El segundo vehículo no puede penetrar el blindaje del primer vehículo con efectividad.");
+            sbToFile.append("El segundo vehículo no puede penetrar el blindaje del primer vehículo con efectividad.");
 
         }
 
-        puntosMovilidad = calcularMovilidadEfectiva(simulador);
+        double[] puntosMovilidad = calcularMovilidadEfectiva(simulador);
 
-        System.out.println("\nEn la simulación de movilidad, el primer vehículo obtiene " + Math.round(puntosMovilidad[0]) + " puntos de movilidad,\n" +
-                            "mientras que el segundo vehículo obtiene " + Math.round(puntosMovilidad[1]) + " puntos de movilidad.\n");
+        sbToFile.append("\nEn la simulación de movilidad, el primer vehículo obtiene " + (int)Math.round(puntosMovilidad[0]) + " puntos de movilidad,\n" +
+                            "mientras que el segundo vehículo obtiene " + (int)Math.round(puntosMovilidad[1]) + " puntos de movilidad.\n");
 
-        if (puntosMovilidad[0] > puntosMovilidad[1]) {
+        if (puntosMovilidad[0] > puntosMovilidad[1] && Math.abs(puntosMovilidad[0] - puntosMovilidad[1]) > 20) {
 
-            System.out.println("El primer vehículo puede sacar cierta ventaja con su movilidad.");
+            sbToFile.append("El primer vehículo puede sacar cierta ventaja con su movilidad.");
 
-        } else if (puntosMovilidad[1] > puntosMovilidad[0]) {
+        } else if (puntosMovilidad[1] > puntosMovilidad[0] && Math.abs(puntosMovilidad[0] - puntosMovilidad[1]) > 20) {
 
-            System.out.println("El segundo vehículo es generalmente más móvil que el primero.");
+            sbToFile.append("El segundo vehículo es generalmente más móvil que el primero.");
 
         } else {
 
-            System.out.println("Ambos vehículos tienen la misma movilidad.");
+            sbToFile.append("Ambos vehículos tienen la misma movilidad.");
 
         }
 
-        puntuacionTotal1 = potenciasFuego[0] + puntosMovilidad[0];
-        puntuacionTotal2 = potenciasFuego[1] + puntosMovilidad[1];
+        double puntuacionTotal1 = potenciasFuego[0] + puntosMovilidad[0];
+        double puntuacionTotal2 = potenciasFuego[1] + puntosMovilidad[1];
 
         puntuacionTotal1 = ajustarConAnguloTorreta(simulador, puntuacionTotal1, puntuacionTotal2)[0];
         puntuacionTotal2 = ajustarConAnguloTorreta(simulador, puntuacionTotal1, puntuacionTotal2)[1];
 
-        puntuacionReal1 = ajustarPorExperiencia(simulador.getTanque1().getTripulacion(), puntuacionTotal1, simulador.getDeteccion());
-        puntuacionReal2 = ajustarPorExperiencia(simulador.getTanque2().getTripulacion(), puntuacionTotal2, simulador.getDeteccion());
+        double puntuacionReal1 = ajustarPorExperiencia(simulador.getTanque1().getTripulacion(), puntuacionTotal1, simulador.getDeteccion());
+        double puntuacionReal2 = ajustarPorExperiencia(simulador.getTanque2().getTripulacion(), puntuacionTotal2, simulador.getDeteccion());
 
-        System.out.println("\nLa puntuación total del primer vehículo es de " + Math.round(puntuacionReal1) + ",\n" +
+        sbToFile.append("\nLa puntuación total del primer vehículo es de " + Math.round(puntuacionReal1) + ",\n" +
                             "mientras que la del segundo vehículo es de " + Math.round(puntuacionReal2) + ".");
 
-        probabilidad1 = (puntuacionReal1 / (puntuacionReal1 + puntuacionReal2)) * 100;
+        double probabilidad1 = (puntuacionReal1 / (puntuacionReal1 + puntuacionReal2)) * 100;
         DecimalFormat df = new DecimalFormat("#.##");
         String probabilidadFormat = df.format(probabilidad1);
 
-        return "\nLa probabilidad de que el/la " + simulador.getTanque1().getNombre() + 
+        sbToFile.append("\nLa probabilidad de que el/la " + simulador.getTanque1().getNombre() + 
                 " gane el enfrentamiento contra el/la " + simulador.getTanque2().getNombre() + " es del " + probabilidadFormat + "%.\n" + 
-                "---------- Simulador finalizado ----------\n";
+                "---------- Simulador finalizado ----------\n");
+
+        return sbToFile.toString();
 
     }
 
@@ -118,7 +115,7 @@ public class SimuladorEnfrentamientos {
 
         /*
         Para calcular la potencia de fuego relativa, se asignan 5 puntos por cada mm de blindaje que el cañón pueda superar,
-        o cero puntos si el blindaje consigue superar la penetración efectiva del cañón.
+        o cero puntos si el blindaje consigue resistir la penetración del cañón.
         */
         potenciaTanque1 = Math.max(Math.floor((penTanque1 * multiPotencia1) - (blindajeEfectivoTanque2 * multiBlindaje2)) * 15, 0);
         potenciaTanque2 = Math.max(Math.floor((penTanque2 * multiPotencia2) - (blindajeEfectivoTanque1 * multiBlindaje1)) * 15, 0);
@@ -250,7 +247,7 @@ public class SimuladorEnfrentamientos {
         double movilidadTanque2 = 0;
 
         /*
-        Por lo general, la relación potencia/peso de un vehículo es un buen indicador de su movilidad, sobre todo
+        Por lo general, la relación potencia/peso de un vehículo es un buen indicador de su movilidad, más aún
         en terrenos difíciles. La velocidad máxima se tiene en cuenta a un menor grado, aunque también otorga puntos.
         En una situación normal, la relación potencia/peso debería dar diez veces más puntos que la velocidad máxima.
         */
@@ -287,7 +284,7 @@ public class SimuladorEnfrentamientos {
                 break;
         }
 
-        return new double[] {movilidadTanque1, movilidadTanque2};
+        return new double[] {movilidadTanque1 * 2, movilidadTanque2 * 2};
     }
 
     private double[] ajustarConAnguloTorreta(Simulador simulador, double potenciaTanque1, double potenciaTanque2) {
@@ -299,7 +296,7 @@ public class SimuladorEnfrentamientos {
         switch (simulador.getTerreno()) {
 
             case DESIERTO:
-                potenciaExtra = ((angMax - angMin));
+                potenciaExtra = (angMax - angMin);
                 break;
 
             case BOSQUE:

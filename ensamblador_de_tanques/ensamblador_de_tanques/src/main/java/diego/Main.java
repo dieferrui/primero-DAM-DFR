@@ -1,5 +1,6 @@
 package diego;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
@@ -37,9 +38,9 @@ public class Main {
         do {
             
             System.out.println("\nMenú manejo de archivos");
-            System.out.println("¿Qué quieres hacer?\n1. Visualizar lista de vehículos\n"
-                            + "2. Eliminar vehículos\n3. Mostrar datos de vehículo\n"
-                            + "4. Atrás\n");
+            System.out.println("¿Qué quieres hacer?\n--- Manejo de vehículos ---\n1. Visualizar lista de vehículos\n"
+                            + "2. Eliminar vehículos\n3. Mostrar datos de vehículo\n--- Manejo de resultados ---\n"
+                            + "4. Visualizar lista de resultados\n5. Eliminar resultados\n6. Mostrar resultado\n7. Salir");
             manejoSelect = SC.nextLine();
             String nomArchivo;
             Tanque tanqueMostrado;
@@ -51,7 +52,8 @@ public class Main {
                     break;
 
                 case "2":
-                    System.out.println("Introduzca el nombre del archivo que desea borrar: ");
+                    TanquesManager.listarTanques();
+                    System.out.println("Introduzca el nombre del tanque que desea borrar: ");
                     nomArchivo = SC.nextLine();
 
                     String respuesta = TanquesManager.borrarTanque(nomArchivo);
@@ -59,7 +61,7 @@ public class Main {
                     break;
 
                 case "3":
-                    System.out.println("Introduzca el nombre del archivo que desea mostrar: ");
+                    System.out.println("Introduzca el nombre del tanque que desea mostrar: ");
                     nomArchivo = SC.nextLine();
 
                     tanqueMostrado = TanquesManager.cargarTanque(nomArchivo);
@@ -67,7 +69,29 @@ public class Main {
 
                     break;
 
-                default: break;
+                case "4":
+                    System.out.println(TanquesManager.listarResultados());
+                    break;
+
+                case "5":
+                    System.out.println(TanquesManager.listarResultados());
+                    System.out.println("Introduzca el nombre del resultado que desea borrar: ");
+                    nomArchivo = SC.nextLine();
+
+                    respuesta = TanquesManager.borrarTanque(nomArchivo);
+                    System.out.println(respuesta);
+                    break;
+
+                case "6":
+                    System.out.println("Introduzca el nombre del resultado que desea mostrar: ");
+                    nomArchivo = SC.nextLine();
+
+                    String resultado = TanquesManager.leerResultado(nomArchivo);
+                    System.out.println(resultado);
+                    break;
+
+                default:
+                    break;
             }
 
 
@@ -83,6 +107,16 @@ public class Main {
         String resultado = simulacion.enfrentarVehiculos(simil);
 
         System.out.println(resultado);
+
+        System.out.println("\n¿Quieres guardar el resultado del enfrentamiento?\n1. Sí\n2. No");
+        String guardar = SC.nextLine();
+
+        if (guardar.equals("1")) {
+
+            String nomArchivo = simil.getTanque1().getNombre() + " vs " + simil.getTanque2().getNombre();
+        
+            TanquesManager.guardarResultado(nomArchivo, resultado);
+        }
         
     }
 }

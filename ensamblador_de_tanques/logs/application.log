@@ -3,3 +3,11 @@
 2024-05-22 09:58:22,841 [main] ERROR diego.TanquesManager - Error al guardar un vehículo
 2024-05-23 10:51:13,072 [main] ERROR diego.TanquesManager - Error de entrada/salida al cargar un vehículo
 2024-05-23 10:51:48,679 [main] ERROR diego.TanquesManager - Error de entrada/salida al cargar un vehículo
+2024-05-31 09:15:28,025 [main] ERROR diego.TanquesManager - Error de entrada/salida al cargar un vehículo
+2024-05-31 09:15:43,562 [main] ERROR diego.TanquesManager - Error de entrada/salida al cargar un vehículo
+2024-05-31 09:15:50,554 [main] ERROR diego.TanquesManager - Error de entrada/salida al cargar un vehículo
+2024-05-31 09:15:54,682 [main] ERROR diego.TanquesManager - Error de entrada/salida al cargar un vehículo
+2024-05-31 09:16:19,593 [main] ERROR diego.TanquesManager - Error de entrada/salida al cargar un vehículo
+2024-05-31 10:35:30,161 [main] ERROR diego.TanquesManager - Error al guardar un resultado
+2024-05-31 10:39:52,232 [main] ERROR diego.TanquesManager - Error al guardar un resultado
+2024-05-31 10:45:45,832 [main] ERROR diego.TanquesManager - Error al leer un resultado
