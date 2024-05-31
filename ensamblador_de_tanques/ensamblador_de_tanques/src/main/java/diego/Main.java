@@ -1,6 +1,5 @@
 package diego;
 
-import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
@@ -61,6 +60,7 @@ public class Main {
                     break;
 
                 case "3":
+                    System.out.println(TanquesManager.listarTanques());
                     System.out.println("Introduzca el nombre del tanque que desea mostrar: ");
                     nomArchivo = SC.nextLine();
 
@@ -83,6 +83,7 @@ public class Main {
                     break;
 
                 case "6":
+                    System.out.println(TanquesManager.listarResultados());
                     System.out.println("Introduzca el nombre del resultado que desea mostrar: ");
                     nomArchivo = SC.nextLine();
 
@@ -134,5 +135,5 @@ public class Main {
      * Ametralladora pesada montada (mejora ligera de potencia y ventaja extra contra oponentes de menos de 10t)
      * Pala de bulldozer (el blindaje de la torreta consigue más peso en el cálculo)
      */
-// TODO 3: Implementar sistema para guardar, visualizar y eliminar los resultados de simulación (en .txt)
+// TODO 3: Implementar encriptación de partidas para evitar que se toquen los resultados
 // TODO 5: Implementar comparators para filtrar la lista de vehículos en TanquesManager
