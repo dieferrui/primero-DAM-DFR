@@ -52,7 +52,7 @@ public class Main {
                     break;
 
                 case "2":
-                    TanquesManager.listarTanques();
+                    System.out.println(TanquesManager.listarTanques());
                     System.out.println("Introduzca el nombre del tanque que desea borrar: ");
                     nomArchivo = SC.nextLine();
 
